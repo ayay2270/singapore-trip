@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>新加坡 4天3夜自由行指南 2026/10/8–10/11</title>
+<meta name="theme-color" content="#0F1F2E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Sora:wght@500;700;800&amp;display=swap" rel="stylesheet">
+<style>
+/* ---------- tokens: 以新加坡 MRT 路線色當每天的識別色 ---------- */
+:root{
+  --paper:#F1F4F6; --surface:#FFFFFF; --soft:#E6ECF0; --ink:#0F1F2E; --muted:#4A5B69; --line:#CBD5DC;
+  --ew:#007A38; --dt:#005EC4; --ne:#9900AA; --cc:#FA9E0D;
+  --ew-r:#007A38; --dt-r:#005EC4; --ne-r:#9900AA; --cc-r:#E58A00;
+  --red:#D42E12; --red-t:#B3250D;
+  --sign:#FFD84D; --sign-ink:#1B1600;
+  --veg-bg:#DDF3E4; --veg-ink:#0B5D2A;
+  --rain-bg:#DCEBFA; --rain-ink:#0B3F85;
+  --focus:#005EC4;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B1620; --surface:#13222E; --soft:#1B2D3A; --ink:#EAF0F4; --muted:#A5B5C1; --line:#2B3E4C;
+    --ew-r:#2BC46F; --dt-r:#5AA2FF; --ne-r:#D675E6; --cc-r:#FFB23E;
+    --red-t:#FF8A73; --veg-bg:#133B24; --veg-ink:#8FE0AE; --rain-bg:#12304F; --rain-ink:#9CC8FF; --focus:#8FC0FF;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0B1620; --surface:#13222E; --soft:#1B2D3A; --ink:#EAF0F4; --muted:#A5B5C1; --line:#2B3E4C;
+  --ew-r:#2BC46F; --dt-r:#5AA2FF; --ne-r:#D675E6; --cc-r:#FFB23E;
+  --red-t:#FF8A73; --veg-bg:#133B24; --veg-ink:#8FE0AE; --rain-bg:#12304F; --rain-ink:#9CC8FF; --focus:#8FC0FF;
+}
+.L1{--lnc:var(--ew);--lnr:var(--ew-r);--lni:#fff}
+.L2{--lnc:var(--dt);--lnr:var(--dt-r);--lni:#fff}
+.L3{--lnc:var(--ne);--lnr:var(--ne-r);--lni:#fff}
+.L4{--lnc:var(--cc);--lnr:var(--cc-r);--lni:#1B1100}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:inherit}
+html{background:var(--paper);-webkit-text-size-adjust:100%;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:400 17px/1.7 "Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+h1,h2,h3,h4{font-family:Sora,"Noto Sans TC",system-ui,sans-serif;margin:0;line-height:1.3}
+p{margin:0 0 10px}
+small{font-size:13px;color:var(--muted)}
+b,strong{font-weight:700}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+
+/* ---------- top bar & nav ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px 8px;max-width:760px;margin:0 auto}
+.brand{font:800 17px/1.2 Sora,"Noto Sans TC",sans-serif}
+.brand small{display:block;font:500 12px/1.4 "Noto Sans TC",sans-serif;color:var(--muted)}
+.tools{display:flex;gap:8px}
+.tools button{min-height:44px;min-width:44px;padding:0 12px;border:2px solid var(--ink);border-radius:8px;background:var(--surface);color:var(--ink);font:700 14px/1 "Noto Sans TC",sans-serif;cursor:pointer}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:3px solid var(--ink)}
+.nav .row{display:flex;gap:8px;overflow-x:auto;padding:8px 16px;max-width:760px;margin:0 auto;scrollbar-width:none}
+.nav .row::-webkit-scrollbar{display:none}
+.nav a{flex:none;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:2px solid var(--ink);border-radius:999px;background:var(--surface);color:var(--ink);font:700 15px/1 "Noto Sans TC",sans-serif;text-decoration:none}
+.nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.nav a.dy{min-width:54px;padding:0 12px;border-color:var(--lnc);background:var(--lnc);color:var(--lni);font-family:Sora,sans-serif;font-weight:800}
+.nav a.dy[aria-current="page"]{background:var(--lnc);color:var(--lni);outline:3px solid var(--ink);outline-offset:2px}
+main{max-width:760px;margin:0 auto;padding:18px 16px 56px}
+.js .panel{display:none}
+.js .panel.on{display:block}
+
+/* ---------- hero: 站名牌 + 四站路線 ---------- */
+.hero{background:#0F1F2E;color:#fff;border-radius:6px;padding:22px 18px 20px;border:2px solid var(--line)}
+.hero h1{font:800 clamp(40px,12vw,64px)/1.05 Sora,sans-serif;letter-spacing:-.01em}
+.hero h1 span{display:block;margin-top:8px;font:700 clamp(20px,5.6vw,26px)/1.3 "Noto Sans TC",sans-serif}
+.hero .lead{margin:14px 0 22px;font-size:16px;color:#D5DFE7}
+.strip{list-style:none;margin:0;padding:0;display:flex}
+.strip li{flex:1;position:relative;padding-top:26px}
+.strip li::before{content:"";position:absolute;left:0;right:0;top:8px;height:10px}
+.strip li:nth-child(1)::before{background:#2BC46F}
+.strip li:nth-child(2)::before{background:#5AA2FF}
+.strip li:nth-child(3)::before{background:#D675E6}
+.strip li:nth-child(4)::before{background:#FFB23E;right:70%}
+.strip li::after{content:"";position:absolute;left:0;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;border:5px solid #0F1F2E;box-shadow:0 0 0 3px #fff inset}
+.strip a{display:block;min-height:56px;color:#fff;text-decoration:none;padding-right:6px}
+.strip b{display:block;font:800 18px/1.3 Sora,sans-serif}
+.strip span{display:block;font-size:13px;line-height:1.4;color:#D5DFE7}
+.stamp{margin:12px 0 0;font-size:14px;color:var(--muted)}
+
+/* ---------- headings & signage ---------- */
+.panel h2.sec{margin:34px 0 12px;padding-top:10px;border-top:3px solid var(--ink);font-size:22px}
+.panel h2.sec:first-child{margin-top:0}
+.sign{margin:14px 0;padding:12px 14px;border:2px solid var(--ink);border-left-width:10px;border-radius:2px;background:var(--surface)}
+.sign .t{display:block;font:800 16px/1.4 Sora,"Noto Sans TC",sans-serif;margin-bottom:2px}
+.sign p:last-child{margin-bottom:0}
+.sign.warn{background:var(--sign);color:var(--sign-ink);border-color:var(--sign-ink)}
+.sign.red{border-color:var(--red)}
+.sign.blue{border-color:var(--dt-r)}
+.sign.green{border-color:var(--ew-r)}
+
+/* ---------- day header ---------- */
+.dayhead{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.dayhead .badge{flex:none;display:grid;place-items:center;width:62px;height:62px;border-radius:12px;background:var(--lnc);color:var(--lni);font:800 24px/1 Sora,sans-serif}
+.dayhead .date{margin:0;font:700 15px/1.3 "Noto Sans TC",sans-serif;color:var(--muted)}
+.dayhead h2{font-size:24px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:3px solid var(--lnr);border-bottom:3px solid var(--lnr);margin:0 0 18px}
+.facts div{padding:10px 8px;border-left:1px solid var(--line)}
+.facts div:first-child{border-left:0;padding-left:0}
+.facts b{display:block;font:800 18px/1.3 Sora,"Noto Sans TC",sans-serif}
+.facts span{display:block;font-size:13px;line-height:1.4;color:var(--muted)}
+
+/* ---------- timeline: 每個停靠點像一個車站 ---------- */
+.stop{position:relative;padding:0 0 26px 38px}
+.stop::before{content:"";position:absolute;left:11px;top:10px;bottom:-10px;width:8px;border-radius:4px;background:var(--lnr)}
+.stop:last-of-type::before{bottom:auto;height:20px}
+.stop::after{content:"";position:absolute;left:3px;top:3px;width:24px;height:24px;border-radius:50%;background:var(--surface);border:5px solid var(--ink)}
+.stop.key::after{background:var(--ink);box-shadow:0 0 0 4px var(--surface) inset}
+.time{margin:0 0 2px;font:800 20px/1.3 Sora,"Noto Sans TC",sans-serif;letter-spacing:.01em}
+.stop h3{font-size:19px;margin:0 0 4px}
+.what{margin:2px 0 4px}
+.meta{margin:6px 0 4px;padding:0;list-style:none;font-size:15px;line-height:1.6}
+.meta li{display:grid;grid-template-columns:3.7em 1fr;gap:6px;padding:3px 0}
+.meta b{color:var(--muted);font-weight:700}
+.tags{margin:8px 0 0}
+.tag{display:inline-block;margin:0 6px 6px 0;padding:2px 10px;border-radius:4px;font:700 13px/1.7 "Noto Sans TC",sans-serif}
+.t-res{background:var(--red);color:#fff}
+.t-cash{background:var(--sign);color:var(--sign-ink)}
+.t-veg{background:var(--veg-bg);color:var(--veg-ink);box-shadow:inset 0 0 0 1.5px currentColor}
+.t-rain{background:var(--rain-bg);color:var(--rain-ink)}
+.t-must{background:var(--ink);color:var(--paper)}
+.t-booked{background:#007A38;color:#fff}
+.t-booked[hidden]{display:none}
+.maps{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.maps a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:8px;background:var(--ink);color:var(--paper);font:700 14px/1.3 "Noto Sans TC",sans-serif;text-decoration:none}
+details{margin:8px 0}
+summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:700;color:var(--muted)}
+
+/* ---------- 餐點區塊 ---------- */
+.meal{margin:10px 0;padding:10px 12px;background:var(--soft);border-radius:6px}
+.meal h4{font-size:16px;margin:0 0 6px}
+.meal .r{display:grid;grid-template-columns:3.4em 1fr;gap:8px;padding:6px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.55}
+.meal .r:first-of-type{border-top:0}
+.k{align-self:start;text-align:center;border-radius:4px;font:700 12px/1.9 "Noto Sans TC",sans-serif}
+.k.n{background:var(--ink);color:var(--paper)}
+.k.v{background:var(--veg-ink);color:var(--veg-bg)}
+.k.g{background:var(--veg-bg);color:var(--veg-ink);box-shadow:inset 0 0 0 1.5px currentColor}
+.k.b{background:var(--line);color:var(--ink)}
+.meal .info{margin:6px 0 0;padding-top:6px;border-top:1px solid var(--line);font-size:14px;line-height:1.6;color:var(--muted)}
+
+/* ---------- tables, cards, lists ---------- */
+.scroll{overflow-x:auto;margin:10px 0;border:2px solid var(--ink);border-radius:4px;background:var(--surface);-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:540px;font-size:15px;line-height:1.55}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{background:var(--soft);font-weight:700;white-space:nowrap}
+td a,.lnk{color:var(--dt-r);font-weight:700}
+.num{white-space:nowrap}
+.dl{margin:0}
+.dl .row{display:grid;grid-template-columns:7.2em 1fr;gap:8px;padding:9px 0;border-bottom:1px solid var(--line)}
+.dl .row:first-child{border-top:2px solid var(--ink)}
+.dl dt{font-weight:700;color:var(--muted)}
+.dl dd{margin:0}
+.daylist a{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);text-decoration:none;min-height:56px}
+.daylist a:first-child{border-top:2px solid var(--ink)}
+.daylist .badge{flex:none;display:grid;place-items:center;width:48px;height:48px;border-radius:10px;background:var(--lnc);color:var(--lni);font:800 18px/1 Sora,sans-serif}
+.daylist b{display:block;line-height:1.4}
+.daylist span.t2{display:block;font-size:15px;line-height:1.55;color:var(--muted)}
+.vc{margin:12px 0;padding:12px 14px;border:2px solid var(--ink);border-radius:6px;background:var(--surface)}
+.vc h4{font-size:17px;margin:0 0 4px}
+.vc p{margin:0 0 6px;font-size:15px;line-height:1.6}
+.vc .k2{font-size:14px;color:var(--muted);line-height:1.6}
+.cc{margin:14px 0;border:2px solid var(--ink);border-radius:6px;background:var(--surface)}
+.cc summary{list-style:none;display:block;position:relative;min-height:60px;padding:10px 46px 10px 14px;background:var(--ink);color:var(--paper);border-radius:3px;cursor:pointer}
+.cc summary::-webkit-details-marker{display:none}
+.cc summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font:800 26px/1 Sora,sans-serif}
+.cc[open] summary{border-radius:3px 3px 0 0}
+.cc[open] summary::after{content:"−"}
+.cc .cn{display:block;font:800 17px/1.4 Sora,"Noto Sans TC",sans-serif}
+.cc .cs{display:block;font-size:14px;line-height:1.4;opacity:.85}
+.cc .calc{margin:0 14px 12px}
+details.grab{margin:12px 0;border:2px solid var(--ink);border-radius:6px;background:var(--surface)}
+details.grab summary{padding:10px 14px;min-height:52px;color:var(--ink);font-weight:800}
+details.grab .gb{padding:0 14px 12px;font-size:15.5px}
+.gb .steps,.steps{margin:6px 0 10px;padding-left:22px}
+.gb .steps li,.steps li{margin:0 0 8px}
+.cc dl{margin:0;padding:4px 14px 8px;font-size:15px}
+.cc .row{display:grid;grid-template-columns:7em 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}
+.cc .row:last-child{border-bottom:0}
+.cc dt{font-weight:700;color:var(--muted)}
+.cc dd{margin:0}
+.calc{margin:12px 0;padding:12px 14px;background:var(--soft);border-radius:6px;font-size:15px}
+.calc p{margin:0 0 6px}
+.calc .big{font:800 20px/1.4 Sora,"Noto Sans TC",sans-serif}
+.phrase{display:block;width:100%;margin:8px 0;padding:12px 14px;min-height:60px;text-align:left;background:var(--surface);color:var(--ink);border:2px solid var(--ink);border-radius:6px;font:inherit;cursor:pointer}
+.phrase b{display:block;font-size:17px;line-height:1.45}
+.phrase span{display:block;font-size:15px;line-height:1.5;color:var(--muted)}
+.show{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:calc(24px + env(safe-area-inset-top,0px)) 22px calc(24px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);cursor:pointer}
+.show[hidden]{display:none}
+.show .en{font:800 clamp(28px,8.4vw,46px)/1.3 Sora,"Noto Sans TC",sans-serif}
+.show .zh{font:700 clamp(24px,7vw,36px)/1.4 "Noto Sans TC",sans-serif}
+.show .ms,.show .ta{font:500 clamp(18px,5vw,24px)/1.5 "Noto Sans TC",sans-serif;opacity:.85}
+.show small{color:inherit;opacity:.7}
+.chk{display:flex;gap:12px;align-items:flex-start;min-height:52px;padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.chk input{flex:none;width:26px;height:26px;margin:2px 0 0;accent-color:var(--ink)}
+.chk input:checked + span{color:var(--muted);text-decoration:line-through}
+.chk small{display:block}
+.group{margin:0 0 6px;padding-top:8px;border-top:2px solid var(--ink)}
+.group:first-of-type{border-top:0}
+.pager{display:flex;gap:10px;margin:30px 0 0}
+.pager a{flex:1;display:flex;align-items:center;justify-content:center;min-height:56px;padding:0 10px;border:2px solid var(--ink);border-radius:8px;background:var(--surface);font-weight:700;text-align:center;text-decoration:none}
+.src li{margin:0 0 10px;font-size:15px;line-height:1.6;word-break:break-word}
+.src ul{margin:0;padding-left:20px}
+.foot{margin-top:40px;padding-top:12px;border-top:3px solid var(--ink);font-size:14px;color:var(--muted)}
+
+/* ---------- print: 每個分頁各自成頁，存成 PDF ---------- */
+@media print{
+  html:root[data-theme]{--paper:#fff;--surface:#fff;--soft:#EEF1F3;--ink:#000;--muted:#333;--line:#BBB;
+    --ew-r:#007A38;--dt-r:#005EC4;--ne-r:#9900AA;--cc-r:#E58A00;--red-t:#B3250D;--veg-bg:#DDF3E4;--veg-ink:#0B5D2A;--rain-bg:#DCEBFA;--rain-ink:#0B3F85}
+  :root{padding:0}
+  html,body{background:#fff !important;color:#000 !important;font-size:12.5px}
+  .top .tools,.nav,.pager{display:none !important}
+  .js .panel{display:block !important}
+  .panel{break-before:page}
+  #home{break-before:auto}
+  .stop,.meal,.sign,.cc,.vc,.facts{break-inside:avoid}
+  .hero{background:#fff;color:#000;border:2px solid #000}
+  .hero .lead,.strip a,.strip span{color:#000}
+  .strip li::after{background:#000;border-color:#fff}
+  .maps a{background:#fff;color:#000;border:1px solid #000;min-height:0;padding:2px 8px}
+  .phrase{break-inside:avoid}
+  .scroll{overflow:visible}
+  table{min-width:0}
+  details > *{display:block}
+  details{display:block}
+  details:not(.cc) summary{display:none}
+}
+/* ================= Interactive itinerary map ================= */
+#map{margin:-18px -16px -56px}
+body.map-on main{max-width:1120px}
+body.map-on .top{display:none}
+.mapui{display:flex;flex-direction:column;height:var(--mh,calc(100vh - 130px));min-height:540px;background:var(--paper)}
+.mtabs{flex:none;display:flex;gap:8px;overflow-x:auto;padding:8px 12px 8px;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.mtabs::-webkit-scrollbar{display:none}
+.mtabs button{flex:none;min-height:44px;min-width:56px;padding:0 16px;border:2px solid var(--ink);border-radius:999px;background:var(--surface);color:var(--ink);font:700 15px/1 "Noto Sans TC",system-ui,sans-serif;cursor:pointer}
+.mtabs button.dy{border-color:var(--lnc);background:transparent;color:var(--ink)}
+.mtabs button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mtabs button.dy[aria-pressed="true"]{background:var(--lnc);color:var(--lni);border-color:var(--lnc)}
+.mwrap{flex:1 1 auto;min-height:240px;position:relative}
+.mapc{position:absolute;inset:0;overflow:hidden;background:var(--soft);touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab;outline-offset:-3px}
+.mapc.drag{cursor:grabbing}
+.m-tiles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.m-tiles .tile{position:absolute;left:0;top:0;max-width:none;display:block;image-rendering:auto;opacity:0;transition:opacity .25s}
+.m-tiles .tile.ok{opacity:1}
+.m-svg{position:absolute;inset:0;pointer-events:none}
+.m-marks{position:absolute;inset:0;pointer-events:none}
+.mk{position:absolute;left:0;top:0;width:44px;height:44px;margin:-22px 0 0 -22px;padding:0;border:0;background:none;cursor:pointer;pointer-events:auto;display:grid;place-items:center;z-index:1}
+.mk .dot{position:relative;display:grid;place-items:center;min-width:34px;height:34px;padding:0 5px;border-radius:17px;background:var(--mc,#005EC4);color:#fff;font:800 15px/1 Sora,system-ui,sans-serif;border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.45);white-space:nowrap}
+.mk.sq .dot{border-radius:9px}
+.mk.small .dot{min-width:20px;height:20px;border-width:2px;font-size:11px;padding:0}
+.mk .bd{position:absolute;top:-8px;right:-8px;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;font:800 11px/1 "Noto Sans TC",system-ui,sans-serif;border:2px solid #fff;color:#fff}
+.mk .bd.veg{background:#15803D}
+.mk .bd.must{background:#F5B301;color:#1B1100}
+.mk .bd.ap{background:#0F172A;font-size:12px}
+.mk.must .dot{box-shadow:0 0 0 3px #F5B301,0 1px 5px rgba(0,0,0,.5)}
+.mk.sel{z-index:5}
+.mk.sel .dot{transform:scale(1.28);box-shadow:0 0 0 4px rgba(255,255,255,.95),0 0 0 7px var(--mc,#005EC4),0 2px 8px rgba(0,0,0,.5)}
+.mk .lab{position:absolute;left:100%;top:50%;transform:translateY(-50%);margin-left:2px;padding:1px 6px;border-radius:4px;background:rgba(255,255,255,.92);color:#0F1F2E;font:700 12px/1.4 "Noto Sans TC",system-ui,sans-serif;white-space:nowrap;box-shadow:0 1px 2px rgba(0,0,0,.25);pointer-events:none}
+.mk:focus-visible .dot{outline:3px solid var(--focus);outline-offset:2px}
+.me{position:absolute;left:0;top:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#2563EB;border:3px solid #fff;box-shadow:0 0 0 6px rgba(37,99,235,.25);pointer-events:none;z-index:4}
+.m-pop{position:absolute;left:0;top:0;z-index:10;width:min(310px,calc(100% - 20px));max-height:calc(100% - 16px);overflow-y:auto;padding:12px 14px 12px;background:var(--surface);color:var(--ink);border-radius:12px;box-shadow:0 4px 18px rgba(0,0,0,.35);font-size:14px;line-height:1.5;touch-action:pan-y;cursor:default;user-select:text;-webkit-user-select:text}
+.m-pop .px{position:absolute;right:2px;top:2px;width:44px;height:44px;border:0;background:none;color:var(--muted);font:700 22px/1 system-ui;cursor:pointer}
+.m-pop h4{margin:0 34px 2px 0;font:700 17px/1.35 "Noto Sans TC",system-ui,sans-serif}
+.m-pop .pt{margin:0;font:700 13px var(--f,Sora,system-ui);color:var(--muted)}
+.m-pop dl{margin:6px 0 0}
+.m-pop dl div{display:grid;grid-template-columns:3.6em 1fr;gap:6px;padding:2px 0}
+.m-pop dt{color:var(--muted);font-weight:700}
+.m-pop dd{margin:0}
+.m-pop .pb{display:flex;gap:8px;margin:8px 0 4px}
+.m-pop .pb a{flex:1;display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:8px;background:var(--ink);color:var(--paper);font:700 14px/1.2 "Noto Sans TC",system-ui,sans-serif;text-decoration:none;text-align:center}
+.m-pop .pb a.alt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.m-pop .same{margin:8px 0 0;font-size:13px;color:var(--muted)}
+.m-pop .same button{min-height:36px;margin-right:6px;padding:0 10px;border:1.5px solid var(--ink);border-radius:999px;background:none;color:var(--ink);font:700 13px system-ui;cursor:pointer}
+.m-pop .nv{display:flex;gap:6px;margin-top:6px}
+.m-pop .nv span{padding:1px 8px;border-radius:4px;background:var(--soft);font-size:12.5px;font-weight:700}
+.m-pop .nv .v{background:var(--veg-bg);color:var(--veg-ink)}
+.m-pop .nv .m{background:var(--sign);color:var(--sign-ink)}
+.m-ctl{position:absolute;left:10px;top:10px;display:flex;flex-direction:column;gap:8px;z-index:6;align-items:flex-start}
+.m-ctl button,.m-zoom button{min-height:44px;padding:0 14px;border:0;border-radius:22px;background:var(--surface);color:var(--ink);font:700 14px/1 "Noto Sans TC",system-ui,sans-serif;box-shadow:0 1px 5px rgba(0,0,0,.35);cursor:pointer}
+.m-zoom{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:6px;z-index:6}
+.m-zoom button{width:44px;padding:0;font-size:22px;border-radius:12px}
+.m-note{position:absolute;left:10px;bottom:30px;z-index:6;max-width:calc(100% - 80px);padding:4px 8px;border-radius:8px;background:var(--sign);color:var(--sign-ink);font-size:12px;line-height:1.4}
+.m-note button{margin-left:6px;min-height:30px;border:0;background:none;color:inherit;text-decoration:underline;font:700 13px system-ui;cursor:pointer}
+.m-attr{position:absolute;right:0;bottom:0;z-index:6;padding:1px 6px;background:rgba(255,255,255,.8);color:#333;font:11px/1.5 system-ui}
+.m-scale{position:absolute;left:10px;bottom:8px;z-index:6;font:700 11px/1 Sora,system-ui;color:var(--ink)}
+.m-scale i{display:block;height:5px;border:2px solid var(--ink);border-top:0;margin-bottom:2px}
+.m-toast{position:absolute;left:50%;bottom:48px;transform:translateX(-50%);z-index:12;max-width:calc(100% - 24px);padding:8px 14px;border-radius:18px;background:var(--ink);color:var(--paper);font:600 13.5px/1.45 "Noto Sans TC",system-ui,sans-serif;text-align:center}
+.m-legend{position:absolute;left:10px;top:118px;z-index:7;padding:10px 12px;background:var(--surface);color:var(--ink);border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.35);font-size:13.5px;line-height:1.9}
+.m-legend div{display:flex;align-items:center;gap:8px}
+.m-legend i{display:inline-block;width:18px;height:18px;border-radius:9px;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.3)}
+.m-legend i.sq{border-radius:5px}
+
+/* bottom itinerary panel */
+.mpanel{flex:none;background:var(--paper);border-top:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+.mhead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 12px 0}
+.mhead b{font:700 15px/1.3 "Noto Sans TC",system-ui,sans-serif}
+.mhead small{display:block;font-size:12.5px;color:var(--muted)}
+.mhead a{flex:none;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:8px;background:var(--ink);color:var(--paper);font:700 13px/1.2 "Noto Sans TC",system-ui,sans-serif;text-decoration:none}
+.mcards{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 12px 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.mcards::-webkit-scrollbar{display:none}
+.card{flex:none;width:min(268px,78vw);scroll-snap-align:start;padding:8px 12px 9px;border-radius:12px;background:var(--surface);cursor:pointer;box-shadow:inset 0 0 0 1.5px var(--line)}
+.card[aria-current="true"]{box-shadow:inset 0 0 0 3px var(--ink)}
+.card:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.c-top{display:flex;align-items:center;gap:8px}
+.c-n{display:grid;place-items:center;min-width:28px;height:28px;padding:0 6px;border-radius:14px;background:var(--mc,#005EC4);color:#fff;font:800 14px/1 Sora,system-ui,sans-serif}
+.c-t{font:700 15px/1.2 Sora,system-ui,sans-serif}
+.c-tags{margin-left:auto;display:flex;gap:4px}
+.c-tags span{padding:0 7px;border-radius:9px;font:700 11.5px/1.7 "Noto Sans TC",system-ui,sans-serif;color:#fff;background:#15803D}
+.c-tags span.m{background:#F5B301;color:#1B1100}
+.c-tags span.u{background:var(--soft);color:var(--muted)}
+.card h3{margin:4px 0 0;font:700 16px/1.3 "Noto Sans TC",system-ui,sans-serif}
+.c-act{margin:1px 0 5px;font-size:13px;line-height:1.45;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.c-next{padding-top:5px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.c-next b{color:var(--muted);margin-right:6px}
+.card.day .c-n{background:var(--lnc);color:var(--lni)}
+.card.day p{margin:4px 0 0;font-size:13.5px;color:var(--muted)}
+
+@media (min-width:900px){
+  #map{margin:-18px 0 -56px}
+  .mapui{display:grid;grid-template-columns:minmax(0,1fr) 390px;grid-template-rows:auto minmax(0,1fr);height:var(--mh,calc(100vh - 140px));min-height:600px}
+  .mtabs{grid-column:1/3}
+  .mwrap{grid-column:1;grid-row:2;min-height:0}
+  .mpanel{grid-column:2;grid-row:2;border-top:0;border-left:1px solid var(--line);overflow:hidden}
+  .mcards{flex-direction:column;overflow-y:auto;overflow-x:hidden;scroll-snap-type:none;padding:8px 12px 16px}
+  .card{width:auto}
+  .mhead{padding-top:12px}
+}
+@media (max-width:420px){ .m-legend{top:112px} }
+@media print{ .js #map.panel{display:none !important} }
+
+.mk.tiny .dot{min-width:26px;height:26px;border-width:2px;font-size:12px;padding:0 3px;border-radius:13px}
+.mk.tiny.sq .dot{border-radius:7px}
+.mk.tiny .bd{top:-9px;right:-9px;min-width:16px;height:16px;font-size:10px}
+
+.mapjump{display:inline-flex;align-items:center;min-height:44px;margin:0 0 16px;padding:0 16px;border:2px solid var(--lnc);border-radius:999px;font:700 14px/1 "Noto Sans TC",system-ui,sans-serif;text-decoration:none;color:var(--ink);background:var(--surface)}
+@media print{.mapjump{display:none}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand">Singapore 2026<small>新加坡 4天3夜自由行指南</small></div>
+  <div class="tools">
+    <button type="button" id="themeBtn" aria-label="切換外觀">外觀：自動</button>
+    <button type="button" id="printBtn" aria-label="列印或存成 PDF">列印</button>
+  </div>
+</header>
+
+<nav class="nav" aria-label="分頁">
+  <div class="row">
+    <a href="#home">首頁</a>
+    <a href="#map">地圖</a>
+    <a href="#d1" class="dy L1">D1</a>
+    <a href="#d2" class="dy L2">D2</a>
+    <a href="#d3" class="dy L3">D3</a>
+    <a href="#d4" class="dy L4">D4</a>
+    <a href="#food">美食</a>
+    <a href="#move">交通</a>
+    <a href="#money">錢</a>
+    <a href="#todo">清單</a>
+    <a href="#src">來源</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===================== HOME ===================== -->
+<section class="panel on" id="home">
+  <div class="hero">
+    <h1>Singapore<span>新加坡 4天3夜自由行</span></h1>
+    <p class="lead">2026/10/8 Thu 到 10/11 Sun。4 位大人、2 對情侶，2 位吃葷、2 位吃素。</p>
+    <ol class="strip" aria-label="四天路線">
+      <li><a href="#d1"><b>10/8</b><span>週四 抵達</span></a></li>
+      <li><a href="#d2"><b>10/9</b><span>週五 雙溫室＋河邊夜景</span></a></li>
+      <li><a href="#d3"><b>10/10</b><span>週六 雙層巴士＋HaveFun</span></a></li>
+      <li><a href="#d4"><b>10/11</b><span>週日 回程</span></a></li>
+    </ol>
+  </div>
+  <p class="stamp">資料查證日 2026/10/4。價格和營業時間出發前請再確認，標「估」的是估算值，標「需確認」的是沒查到可靠資料。</p>
+
+  <h2 class="sec">先看這 9 個答案</h2>
+  <dl class="dl">
+    <div class="row"><dt>雙層巴士</dt><dd><b>Day 3（10/10 六）搭公車 7 號。</b>13:50 在 Bugis Stn/Parkview Sq（01139）上車，到 Napier Stn Exit 2（13011）。回程 15:35 在 Napier Stn Exit 1（13019）上車，到 Opp Bugis Stn Exit C（01112）。坐上層最前排，四人來回約 S$12–14。</dd></div>
+    <div class="row"><dt>Clarke Quay</dt><dd><b>10/9（五）22:15–23:30。</b>先在 Lau Pa Sat 吃完沙爹，再沿河走過去。</dd></div>
+    <div class="row"><dt>HaveFun</dt><dd><b>10/10（六）21:30 那場。</b>建議先訂 4 人 High Table，週五、六最低消費 S$200++。</dd></div>
+    <div class="row"><dt>Hawker Centre</dt><dd>D2 午餐 Maxwell Food Centre、D2 晚餐 Lau Pa Sat、D3 午餐 Food Junction（有冷氣）。</dd></div>
+    <div class="row"><dt>主要付款</dt><dd>自己的實體信用卡或 Apple Pay。刷卡機問幣別，一律選 <b>SGD</b>。</dd></div>
+    <div class="row"><dt>備用付款</dt><dd>第二張不同卡組織的信用卡（Visa 和 Mastercard 各一張），加上少量現金。</dd></div>
+    <div class="row"><dt>現金</dt><dd>每人 <b>S$80</b>、每對 S$160、四人 S$320。在臺灣銀行換現鈔。</dd></div>
+    <div class="row"><dt>搭車付款</dt><dd>SimplyGo：每人用自己的感應式卡或手機嗶卡。外國卡每個搭乘日加收 S$0.60。</dd></div>
+    <div class="row"><dt>現在要訂</dt><dd>① HaveFun 10/10 的 4 人 High Table　② SG Arrival Card（10/6 到 10/8 之間填）　③ Gardens by the Bay 雙溫室票（建議先上網買，省排隊）</dd></div>
+  </dl>
+
+  <h2 class="sec">四天怎麼走</h2>
+  <div class="daylist">
+    <a href="#d1" class="L1"><span class="badge">D1</span><span><b>10/8 週四 抵達日</b><span class="t2">19:00 落地，入境後兩對各自搭 Grab 回飯店。晚上不排付費景點。</span></span></a>
+    <a href="#d2" class="L2"><span class="badge">D2</span><span><b>10/9 週五 Chinatown、雙溫室、Clarke Quay</b><span class="t2">Maxwell 午餐、Gardens by the Bay、19:45 Garden Rhapsody、Lau Pa Sat 晚餐，22:15 起在 Clarke Quay。</span></span></a>
+    <a href="#d3" class="L3"><span class="badge">D3</span><span><b>10/10 週六 Little India、Kampong Glam、雙層巴士、HaveFun</b><span class="t2">Tekka 早餐、Haji Lane、公車 7 號、Herbivore 晚餐，21:30 進 HaveFun。</span></span></a>
+    <a href="#d4" class="L4"><span class="badge">D4</span><span><b>10/11 週日 回程</b><span class="t2">08:15 最晚出發，Grab 到 Changi T3，11:45 起飛。Jewel 取消。</span></span></a>
+  </div>
+
+  <h2 class="sec">航班</h2>
+  <div class="sign green">
+    <b class="t">去程 SQ877　10/8 Thu</b>
+    <p>TPE Terminal 2　14:25 起飛<br>SIN　19:00 抵達（Boeing 787-10）<br>抵達航廈以登機證和 SQ app 為準。</p>
+  </div>
+  <div class="sign red">
+    <b class="t">回程 SQ878　10/11 Sun</b>
+    <p>SIN Terminal 3　11:45 起飛<br>TPE Terminal 2　16:30 抵達<br><span class="tag t-must">MUST LEAVE BY 08:15</span>08:45 前後抵達 T3。</p>
+  </div>
+  <p>新加坡和臺灣同為 UTC+8，沒有時差。</p>
+
+  <h2 class="sec">住宿</h2>
+  <dl class="dl">
+    <div class="row"><dt>Couple A</dt><dd><b>Hotel 81 (Premier) Star</b><br>31 Lor 18 Geylang, Singapore 398828<br>10/8 入住，10/11 退房<div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+81+Premier+Star+31+Lor+18+Geylang+Singapore" target="_blank" rel="noopener">Google Maps：Hotel 81 Premier Star</a></div></dd></div>
+    <div class="row"><dt>Couple B</dt><dd>住宿還沒確定。每天標示「依實際住宿位置調整」，集合點都選在 MRT 站、商場入口或景點入口。</dd></div>
+  </dl>
+
+  <h2 class="sec">同行與飲食</h2>
+  <dl class="dl">
+    <div class="row"><dt>人數</dt><dd>4 位大人：2 對情侶。白天在集合點碰面後一起走。</dd></div>
+    <div class="row"><dt>飲食</dt><dd>2 位吃葷、2 位吃素。素食細節還沒確認，先以蛋奶素為基準，盡量提供 vegan 選項。五辛待確認。</dd></div>
+    <div class="row"><dt>注意</dt><dd>沒有肉塊不等於素食。魚露、蝦醬（belacan）、蠔油、豬油、雞湯、豬骨湯、江魚仔、蝦米都可能藏在醬料和湯底裡。沒有可靠資訊的標「需現場確認」。</dd></div>
+  </dl>
+
+  <h2 class="sec">天氣</h2>
+  <div class="sign warn"><b class="t">預報準確度低</b><p>下面是 10/4 查到的第三方預報，10/10 和 10/11 超出可信範圍。10/7 晚上請看 <a href="https://www.weather.gov.sg/" target="_blank" rel="noopener" class="lnk">MSS 官方 4 天預報</a>再確認。</p></div>
+  <div class="scroll"><table>
+    <tr><th>日期</th><th>高／低</th><th>降雨機率</th><th>雷雨與時段</th><th>行程要改嗎</th></tr>
+    <tr><td class="num">10/8 四</td><td class="num">約 31–32°C／25–26°C</td><td>36–45%</td><td>午後可能有 1–2 陣雷雨</td><td>不用，晚上才抵達</td></tr>
+    <tr><td class="num">10/9 五</td><td class="num">約 33°C／24°C</td><td>45–50%</td><td>午後可能有雷雨</td><td>不用，下午本來就在室內溫室</td></tr>
+    <tr><td class="num">10/10 六</td><td>沒有可靠預報</td><td>—</td><td>依季節判斷午後可能有雷雨</td><td>照 Botanic Gardens 的雨天備案走</td></tr>
+    <tr><td class="num">10/11 日</td><td>沒有可靠預報</td><td>—</td><td>—</td><td>不影響</td></tr>
+  </table></div>
+  <p>MSS 10/1 發布的雙週展望（AsiaOne 報導）說 10 月上半月多數日子晴熱，部分日子下午有局部雷陣雨，總雨量低於平均。所以室內行程都排在下午。</p>
+
+  <h2 class="sec">緊急與旅行資訊</h2>
+  <dl class="dl">
+    <div class="row"><dt>新加坡緊急</dt><dd>警察 <b>999</b>　救護車與消防 <b>995</b>　非緊急救護車 1777</dd></div>
+    <div class="row"><dt>臺灣外交部</dt><dd>在新加坡撥 <b>001-800-0885-0885</b>（旅外國人急難救助免付費專線）。也可撥 <b>+886-800-085-095</b>（要付國際電話費）。只限急難，護照和簽證問題請在上班時間洽詢。</dd></div>
+    <div class="row"><dt>駐外館處</dt><dd>台北駐新加坡代表處，電話出發前先查好存進手機。<div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Taipei+Representative+Office+in+Singapore" target="_blank" rel="noopener">Google Maps：台北駐新加坡代表處</a></div></dd></div>
+    <div class="row"><dt>電壓插頭</dt><dd>230V，英規 Type G 三孔插頭。</dd></div>
+    <div class="row"><dt>貨幣</dt><dd>SGD（新加坡幣）。</dd></div>
+  </dl>
+  <p class="stamp">要存成 PDF：按右上角「列印」，再選「另存為 PDF」。每個分頁會各自一頁。</p>
+</section>
+
+<!-- ===================== DAY 1 ===================== -->
+<section class="panel L1" id="d1">
+  <header class="dayhead"><span class="badge">D1</span><div><p class="date">10/8 週四</p><h2>抵達日：落地、入境、回飯店</h2></div></header>
+  <a class="mapjump" href="#map" data-day="D1">在地圖看這一天</a>
+  <div class="facts">
+    <div><b>1–2 km</b><span>步行，Light</span></div>
+    <div><b>2–3 千步</b><span>約 2,000–3,000 步</span></div>
+    <div><b>S$118</b><span>4 人當天花費（估）</span></div>
+  </div>
+  <div class="sign blue"><b class="t">這天的原則</b><p>19:00 才落地，不排錯過就補不回來的付費行程。入境到出關預留 70 分鐘。</p></div>
+
+  <article class="stop">
+    <p class="time">19:00–19:20</p>
+    <h3>SQ877 落地，走到入境大廳</h3>
+    <p class="what">不同航廈走到入境大廳的距離差很多，航廈以登機證和 SQ app 為準。</p>
+  </article>
+
+  <article class="stop">
+    <p class="time">19:20–19:40</p>
+    <h3>自動通關</h3>
+    <p class="what">ICA 規定外國旅客都能走自動通關，不用先註冊。條件是護照效期超過 6 個月，而且<b>已經填好 SG Arrival Card</b>。e-Pass 會寄到你填的 email，護照不蓋章。</p>
+    <div class="tags"><span class="tag t-must">MUST DO 先填 SG Arrival Card</span></div>
+    <div class="maps"><a href="https://www.ica.gov.sg/enter-depart/for-visitors/ACI" target="_blank" rel="noopener">ICA 官網：填入境卡</a><a href="https://ianchen.life/sgac-singapore-arrival-card/" target="_blank" rel="noopener">入境卡填寫教學（圖解）</a></div>
+    <p class="what" style="margin-top:8px"><small>教學文章是第三方部落格，只當參考。實際只在 ICA 官網或 MyICA app 填寫，免費。</small></p>
+  </article>
+
+  <article class="stop">
+    <p class="time">19:40–20:10</p>
+    <h3>領行李</h3>
+    <p class="what">估 15–30 分鐘。</p>
+  </article>
+
+  <article class="stop key">
+    <p class="time">20:10</p>
+    <h3>集合點：入境大廳的 Taxi Stand 前</h3>
+    <p class="what">4 人在這裡分開，兩對各自搭車回飯店。</p>
+    <ul class="meta"><li><b>Couple B</b><span>依實際住宿位置調整</span></li></ul>
+  </article>
+
+  <article class="stop">
+    <p class="time">20:15–20:45</p>
+    <h3>Couple A：Grab 到 Hotel 81 Premier Star</h3>
+    <ul class="meta">
+      <li><b>交通</b><span>Grab（推薦），門口上下車</span></li>
+      <li><b>時間</b><span>約 20–30 分鐘，不用轉車，不用走路</span></li>
+      <li><b>費用</b><span>預算用 S$35 一車，兩人每人 S$17.5（估，Grab 會先報價）</span></li>
+      <li><b>行李</b><span>2 人 2 個大箱放一般 GrabCar 就夠</span></li>
+      <li><b>備案</b><span>叫不到車或價格跳太高，就去排計程車</span></li>
+    </ul>
+    <details class="grab" open>
+      <summary>Grab 是什麼？怎麼用？</summary>
+      <div class="gb">
+<p><b>Grab 是什麼：</b>東南亞最常用的叫車 app，就像 Uber。用手機叫車，司機到你設定的地點接你，不用在路邊攔車，也不用跟司機講價。新加坡的私家車和計程車都能在上面叫，它也能叫外送（GrabFood）。</p>
+<ol class="steps">
+<li><b>出發前先裝好。</b>下載「Grab」app，用台灣手機號碼註冊並收簡訊驗證。如果驗證失敗，落地後連上機場 Wi-Fi 再試一次。</li>
+<li><b>綁一張信用卡。</b>Visa、Mastercard 都可以。綁卡後車資自動扣款，不用準備現金。Grab 官網也說可以付現金，但綁卡最省事。</li>
+<li><b>到新加坡要有網路。</b>用漫遊、eSIM，或 Changi 機場的免費 Wi-Fi。</li>
+<li><b>輸入目的地。</b>直接搜尋「Hotel 81 Premier Star」，確認地圖上的位置。</li>
+<li><b>選車型。</b>2 人帶 2 個大箱，選 4 人座就夠。4 人一起帶行李，要選 6 人座。叫車前 app 會先顯示價格。</li>
+<li><b>按確認，等司機。</b>app 會顯示車牌、車款和司機名字，上車前核對車牌。到了直接下車，費用從綁定的卡扣款。</li>
+</ol>
+<p><b>在 Changi 機場：</b>領完行李、準備走出去再叫車。app 會問你在哪個門（door）或柱子（pillar），要和出關後看到的標示一致。</p>
+<p><b>價格：</b>叫車前顯示的價格不含過路費和附加費，最後金額可能略高。尖峰、下雨、深夜會加價。綁的卡會算海外消費，手續費照卡片規定。</p>
+<p><b>兩對各自叫車：</b>Couple A 和 Couple B 住不同飯店，各自用自己的手機叫車。每個人的手機都先裝好 Grab。</p>
+      </div>
+    </details>
+    <details>
+      <summary>為什麼選 Grab，不選 MRT 或 Taxi</summary>
+      <div class="scroll"><table>
+        <tr><th>方式</th><th>時間</th><th>費用</th><th>走路／轉乘</th><th>行李</th></tr>
+        <tr><td>MRT（Changi Airport → Tanah Merah 轉 EW 線 → Aljunied）</td><td>約 45–60 分</td><td>每人約 S$2</td><td>轉 1 次，下車拖行李走約 10 分</td><td>差</td></tr>
+        <tr><td><b>Grab（選這個）</b></td><td>約 20–30 分</td><td>一車約 S$25–40（先報價）</td><td>門口上下車</td><td>好</td></tr>
+        <tr><td>Taxi</td><td>約 20–30 分</td><td>跳表約 S$20–25，加機場附加費 S$8（17:00–23:59），同時段另加 25% 尖峰附加費</td><td>門口上下車</td><td>好</td></tr>
+      </table></div>
+      <p>兩人分攤後 Grab 每人只比 MRT 多 S$13–18，卻省 30 分鐘、少轉一次車，晚上也不用拖行李走路。計程車附加費來自 Changi Airport 官網。</p>
+    </details>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+81+Premier+Star+31+Lor+18+Geylang+Singapore" target="_blank" rel="noopener">Google Maps：Hotel 81 Premier Star</a></div>
+  </article>
+
+  <article class="stop">
+    <p class="time">20:45–21:00</p>
+    <h3>辦入住</h3>
+  </article>
+
+  <article class="stop">
+    <p class="time">21:00–22:00</p>
+    <h3>簡單晚餐</h3>
+    <div class="meal">
+      <div class="r"><span class="k n">葷</span><span>飯店附近隨意吃，或回飯店叫外送。</span></div>
+      <div class="r"><span class="k v">素</span><span>Geylang 一帶的店<b>都不保證是素食</b>。素食者在機場先買好，或叫 GrabFood 並選 100% 素食的店。</span></div>
+      <div class="r"><span class="k b">備案</span><span>如果 20:00 前就出關，4 人可以在入境大廳附近的美食街一起吃完再分開（營業時間沒查到，需現場確認）。20:15 之後不要在機場逗留。</span></div>
+      <p class="info">預算每人約 S$12。不用訂位。</p>
+    </div>
+  </article>
+
+  <nav class="pager" aria-label="換日"><a href="#home">回首頁</a><a href="#d2">下一天 D2</a></nav>
+</section>
+
+<!-- ===================== DAY 2 ===================== -->
+<section class="panel L2" id="d2">
+  <header class="dayhead"><span class="badge">D2</span><div><p class="date">10/9 週五</p><h2>Chinatown、雙溫室、Clarke Quay 夜晚</h2></div></header>
+  <a class="mapjump" href="#map" data-day="D2">在地圖看這一天</a>
+  <div class="facts">
+    <div><b>9–10 km</b><span>步行，Moderate</span></div>
+    <div><b>1.3–1.5 萬步</b><span>約 13,000–15,000 步</span></div>
+    <div><b>S$458</b><span>4 人當天花費（估）</span></div>
+  </div>
+  <div class="sign blue"><b class="t">這天的原則</b><p>下午排在有冷氣的溫室，不怕午後雷雨。Marina Bay 周邊 10/9–10/11 有道路管制、人潮多，去 Marina 一律搭 MRT，不要在 Marina Bay Sands 或 Suntec 附近叫 Grab。9 公里以上但不到 12 公里，不用刪景點。</p></div>
+
+  <article class="stop">
+    <p class="time">08:00–09:15</p>
+    <h3>早餐：Kaya Toast 加 kopi</h3>
+    <p class="what">飯店附近的 kopitiam，或 Ya Kun、Toast Box 這類連鎖店。</p>
+    <div class="tags"><span class="tag t-veg">VEGETARIAN 蛋奶素可以</span></div>
+    <p class="what"><small>Kaya 裡有蛋和椰奶，蛋奶素可以吃，全素不行。</small></p>
+  </article>
+
+  <article class="stop">
+    <p class="time">09:15–09:50</p>
+    <h3>Couple A：Hotel 81 → Aljunied MRT → Tanjong Pagar</h3>
+    <ul class="meta">
+      <li><b>步行</b><span>飯店走到 Aljunied（EW9）約 10–12 分鐘（推估，請用 Google Maps 確認）</span></li>
+      <li><b>交通</b><span>EW 線 Aljunied（EW9）到 Tanjong Pagar（EW15），同一條線不用轉車</span></li>
+      <li><b>費用</b><span>每人約 S$1.6–1.9（估）</span></li>
+    </ul>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Aljunied+MRT+Station" target="_blank" rel="noopener">Google Maps：Aljunied MRT</a></div>
+  </article>
+
+  <article class="stop key">
+    <p class="time">10:00–11:30</p>
+    <h3>集合點：Maxwell Food Centre 門口（Kadayanallur St 側）</h3>
+    <p class="what">從這裡開始走 Chinatown：Buddha Tooth Relic Temple、Sri Mariamman Temple、Pagoda Street。</p>
+    <ul class="meta">
+      <li><b>Couple B</b><span>依實際住宿位置調整</span></li>
+      <li><b>步行</b><span>約 1.5 km</span></li>
+      <li><b>提醒</b><span>進寺廟要遮住肩膀和膝蓋</span></li>
+    </ul>
+    <div class="maps">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Maxwell+Food+Centre" target="_blank" rel="noopener">Google Maps：Maxwell Food Centre</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Buddha+Tooth+Relic+Temple+Singapore" target="_blank" rel="noopener">Google Maps：Buddha Tooth Relic Temple</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Mariamman+Temple+Singapore" target="_blank" rel="noopener">Google Maps：Sri Mariamman Temple</a>
+    </div>
+  </article>
+
+  <article class="stop">
+    <p class="time">11:30–12:30</p>
+    <h3>午餐：Maxwell Food Centre</h3>
+    <p class="what">12:00–13:30 是上班族人潮，11:30 先到先佔位。</p>
+    <div class="meal">
+      <div class="r"><span class="k n">葷</span><span><b>Tian Tian Hainanese Chicken Rice</b> 海南雞飯，約 S$6–8（估）</span></div>
+      <div class="r"><span class="k v">素</span><span><b>Soon Seng／Shun Cheng Vegetarian（第 15 攤）</b> 素米粉套餐。有評論寫約 S$3，價格可能已經漲了</span></div>
+      <div class="r"><span class="k g">Vegan</span><span><b>Traditional Delight</b> 的部分糕點，蛋奶要現場問</span></div>
+      <div class="r"><span class="k b">備案</span><span>The Green Leaf（#01-100）；MS Dessert 的甜湯（例如 tau suan）</span></div>
+      <p class="info">每人約 S$8–12。付款以現金或 PayNow 為主。天天都排隊，約 15–30 分鐘。不用訂位。4 人可同桌（11:30 前到比較好找位）。素食可靠度中高（是專門素食攤），隱藏動物成分風險中等：醬料和湯底要問。選這裡是因為它就在 Chinatown 集合點，坐 TE 線直達 Gardens。</p>
+    </div>
+    <div class="tags"><span class="tag t-cash">CASH ONLY 帶現金</span><span class="tag t-veg">VEGETARIAN</span></div>
+  </article>
+
+  <article class="stop">
+    <p class="time">12:40–13:30</p>
+    <h3>Chinatown 隨意逛</h3>
+    <p class="what">Chinatown Complex 或街區逛逛、買伴手禮、躲太陽。</p>
+  </article>
+
+  <article class="stop">
+    <p class="time">13:30–14:00</p>
+    <h3>MRT：Maxwell（TE18）→ Gardens by the Bay（TE22）</h3>
+    <ul class="meta">
+      <li><b>交通</b><span>TE 線，約 4 站</span></li>
+      <li><b>費用</b><span>每人約 S$1.3–1.6（估），4 人約 S$5–6</span></li>
+    </ul>
+  </article>
+
+  <article class="stop key">
+    <p class="time">14:00–17:15</p>
+    <h3>Gardens by the Bay：Flower Dome 和 Cloud Forest</h3>
+    <p class="what">兩座溫室都在室內，有冷氣，下雨也不受影響。</p>
+    <ul class="meta">
+      <li><b>門票</b><span>非居民成人 <b>S$46</b>（來源是搜尋摘要，出發前請看官網確認）。4 人約 S$184</span></li>
+      <li><b>休館</b><span>官網提到 Flower Dome 只有 10/6 休館，10/9 照常開放</span></li>
+      <li><b>預約</b><span>可現場買，建議先上網買省排隊</span></li>
+    </ul>
+    <div class="tags"><span class="tag t-rain">RAIN BACKUP 下雨照排</span><span class="tag t-res">建議先買票</span></div>
+    <div class="maps">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Flower+Dome+Gardens+by+the+Bay" target="_blank" rel="noopener">Google Maps：Flower Dome</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Cloud+Forest+Gardens+by+the+Bay" target="_blank" rel="noopener">Google Maps：Cloud Forest</a>
+    </div>
+  </article>
+
+  <article class="stop">
+    <p class="time">17:15–19:30</p>
+    <h3>Supertree Grove 散步、休息</h3>
+    <p class="what">在 Supertree 下散步、拍照、找位子休息，等 19:45 的燈光秀。</p>
+    <p class="what"><small>Satay by the Bay 依 Gardens by the Bay 官網公告自 10/1 起關閉，所以不排。</small></p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Supertree+Grove+Gardens+by+the+Bay" target="_blank" rel="noopener">Google Maps：Supertree Grove</a></div>
+  </article>
+
+  <article class="stop key">
+    <p class="time">19:45–20:00</p>
+    <h3>Garden Rhapsody 燈光秀</h3>
+    <p class="what">免費，每晚 19:45 和 20:45 兩場，每場約 15 分鐘。提早 15–20 分鐘去卡位。</p>
+  </article>
+
+  <article class="stop">
+    <p class="time">20:00–20:30</p>
+    <h3>MRT：Bayfront（DT16）→ Downtown（DT17）</h3>
+    <ul class="meta">
+      <li><b>交通</b><span>DT 線坐 1 站</span></li>
+      <li><b>費用</b><span>每人約 S$1.1–1.3（估）</span></li>
+      <li><b>提醒</b><span>週五晚上 Bayfront 周邊有道路管制、人多，照現場指示走</span></li>
+    </ul>
+  </article>
+
+  <article class="stop key">
+    <p class="time">20:30–21:45</p>
+    <h3>晚餐：Lau Pa Sat（Satay Street, Boon Tat St）</h3>
+    <p class="what">從 Downtown 站走過來約 3 分鐘。Satay Street 平日 19:00–03:00。</p>
+    <div class="meal">
+      <div class="r"><span class="k n">葷</span><span>Satay Street 的雞、牛、羊沙爹（第 7、8 攤人氣高，要排隊）。每人約 S$15–20</span></div>
+      <div class="r"><span class="k v">素</span><span><b>Su Xiang Chinese Vegetarian（第 46 攤）</b> 素炒麵、炒飯、素肉、素煮炒；或 <b>Maya Indian Veggie Delight（第 47 攤）</b> 素 briyani、paneer。每人約 S$10–14</span></div>
+      <div class="r"><span class="k g">Vegan</span><span>Maya 的豆類或蔬菜咖哩（要確認沒有 ghee 和乳製品）；Su Xiang 的炒麵（要確認沒放蛋）</span></div>
+      <div class="r"><span class="k b">備案</span><span>Shree Bhaavan（第 40 攤，純印度素食）</span></div>
+      <p class="info">付款以現金為主。週五 20:30 有人潮，不用訂位，4 人可以同桌（坐戶外長桌）。素食可靠度高（專門素食攤）。<b>沙爹不是素的，沾醬也可能有蝦醬，素食者不要碰。</b>Maya 營業到 22:30，21:45 前要點完。</p>
+    </div>
+    <div class="tags"><span class="tag t-cash">CASH ONLY 多數攤位</span><span class="tag t-veg">VEGETARIAN</span></div>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Lau+Pa+Sat" target="_blank" rel="noopener">Google Maps：Lau Pa Sat</a></div>
+  </article>
+
+  <article class="stop">
+    <p class="time">21:45–22:15</p>
+    <h3>沿新加坡河散步</h3>
+    <p class="what">Raffles Place → Boat Quay 河岸 → Clarke Quay，約 1.5–2 km。</p>
+  </article>
+
+  <article class="stop key">
+    <p class="time">22:15–23:30</p>
+    <h3>Clarke Quay：河邊喝一杯或吃甜點</h3>
+    <p class="what">過 Read Bridge 拍夜景，找河邊的位子坐。雞尾酒大約 S$18–28（經驗值，以現場為準）。不喝酒的可以點 mocktail。</p>
+    <ul class="meta">
+      <li><b>費用</b><span>每人約 S$15–28，可以刷卡，不用訂位。個別店家沒有查證，現場挑。</span></li>
+    </ul>
+    <div class="maps">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Clarke+Quay+Singapore" target="_blank" rel="noopener">Google Maps：Clarke Quay</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Read+Bridge+Singapore" target="_blank" rel="noopener">Google Maps：Read Bridge</a>
+    </div>
+  </article>
+
+  <article class="stop">
+    <p class="time">23:30</p>
+    <h3>回住處</h3>
+    <ul class="meta">
+      <li><b>Couple A</b><span>Grab 到 Geylang，約 15 分鐘，一車約 S$15–22（估，深夜可能漲價）</span></li>
+      <li><b>Couple B</b><span>依實際住宿位置調整</span></li>
+    </ul>
+  </article>
+
+  <nav class="pager" aria-label="換日"><a href="#d1">上一天 D1</a><a href="#d3">下一天 D3</a></nav>
+</section>
+
+<!-- ===================== DAY 3 ===================== -->
+<section class="panel L3" id="d3">
+  <header class="dayhead"><span class="badge">D3</span><div><p class="date">10/10 週六</p><h2>Little India、Kampong Glam、雙層巴士、HaveFun</h2></div></header>
+  <a class="mapjump" href="#map" data-day="D3">在地圖看這一天</a>
+  <div class="facts">
+    <div><b>8–9 km</b><span>步行，Moderate</span></div>
+    <div><b>1.1–1.3 萬步</b><span>約 11,000–13,000 步</span></div>
+    <div><b>S$511–651</b><span>4 人當天花費（估）</span></div>
+  </div>
+  <div class="sign blue"><b class="t">這天的原則</b><p>Bugis、Kampong Glam、Haji Lane 集中在同一天，HaveFun 就在 Bugis，不用為它單獨再跑一趟。下午有雷雨就改去 ION Orchard。</p></div>
+
+  <article class="stop">
+    <p class="time">08:30</p>
+    <h3>Couple A：Grab 到 Little India</h3>
+    <ul class="meta">
+      <li><b>時間</b><span>約 10–15 分鐘</span></li>
+      <li><b>費用</b><span>一車約 S$10–14（估）。搭 MRT 要轉車，兩人分攤 Grab 更划算</span></li>
+    </ul>
+  </article>
+
+  <article class="stop key">
+    <p class="time">09:00–09:45</p>
+    <h3>集合點：Tekka Centre（Buffalo Rd 側入口，Little India MRT 旁）</h3>
+    <ul class="meta"><li><b>Couple B</b><span>依實際住宿位置調整</span></li></ul>
+    <div class="meal">
+      <h4>早餐</h4>
+      <div class="r"><span class="k n">葷</span><span>Biryani、Roti Prata 配 Teh Tarik</span></div>
+      <div class="r"><span class="k v">素</span><span>印度素食攤的 Thosai（dosa）、Idli</span></div>
+      <div class="r"><span class="k g">Vegan</span><span>Plain Thosai 配 sambar（要確認沒用 ghee）</span></div>
+      <div class="r"><span class="k b">備案</span><span>Komala Vilas（Serangoon Rd，老字號南印度素食，營業時間沒查證）</span></div>
+      <p class="info">每人約 S$5–8。付款以現金為主。4 人可以同桌。素食要選掛「Vegetarian」招牌的攤位；印度素食通常會用洋蔥和大蒜（有五辛）。各攤營業時間沒查證，需現場確認。</p>
+    </div>
+    <div class="tags"><span class="tag t-cash">CASH ONLY 多數攤位</span><span class="tag t-veg">VEGETARIAN</span></div>
+    <div class="maps">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Tekka+Centre" target="_blank" rel="noopener">Google Maps：Tekka Centre</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Komala+Vilas+Serangoon+Road" target="_blank" rel="noopener">Google Maps：Komala Vilas</a>
+    </div>
+  </article>
+
+  <article class="stop">
+    <p class="time">09:45–11:00</p>
+    <h3>Little India 散步</h3>
+    <p class="what">Serangoon Road → Sri Veeramakaliamman Temple → 彩色的 Tan Teng Niah 舊宅。</p>
+    <div class="maps">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Veeramakaliamman+Temple" target="_blank" rel="noopener">Google Maps：Sri Veeramakaliamman Temple</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Tan+Teng+Niah" target="_blank" rel="noopener">Google Maps：Tan Teng Niah</a>
+    </div>
+  </article>
+
+  <article class="stop">
+    <p class="time">11:00–11:20</p>
+    <h3>往 Kampong Glam</h3>
+    <ul class="meta">
+      <li><b>步行</b><span>約 1.3 km</span></li>
+      <li><b>Grab</b><span>天熱就叫 Grab，4 人一車約 S$8–10（估）。4 人坐一般 GrabCar（4 座）就夠，白天沒行李</span></li>
+    </ul>
+  </article>
+
+  <article class="stop">
+    <p class="time">11:20–13:00</p>
+    <h3>Kampong Glam：Sultan Mosque、Bussorah St、Haji Lane、Arab Street</h3>
+    <p class="what">Sultan Mosque 看外觀就好。Haji Lane 是塗鴉小巷和小店。</p>
+    <div class="maps">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Sultan+Mosque+Singapore" target="_blank" rel="noopener">Google Maps：Sultan Mosque</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Haji+Lane+Singapore" target="_blank" rel="noopener">Google Maps：Haji Lane</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Arab+Street+Singapore" target="_blank" rel="noopener">Google Maps：Arab Street</a>
+    </div>
+  </article>
+
+  <article class="stop">
+    <p class="time">13:00–13:45</p>
+    <h3>午餐：Food Junction（Bugis Junction）</h3>
+    <p class="what">走路約 5 分鐘。有冷氣，4 人坐得下。</p>
+    <div class="meal">
+      <div class="r"><span class="k n">葷</span><span>Laksa 或雞飯類，看當天開哪些攤位</span></div>
+      <div class="r"><span class="k v">素</span><span><b>Truly Vegetarian（#03-30 第 15 攤）</b> 素食飯麵，約 S$10</span></div>
+      <div class="r"><span class="k g">Vegan</span><span>問 Truly Vegetarian 有沒有不含蛋奶的菜</span></div>
+      <div class="r"><span class="k b">備案</span><span>Herbivore（Fortune Centre，走路約 8 分鐘）</span></div>
+      <p class="info">每人約 S$8–12。通常可以刷卡（需確認）。有冷氣。營業時間跟商場時間走，需確認。</p>
+    </div>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Food+Junction+Bugis+Junction" target="_blank" rel="noopener">Google Maps：Food Junction Bugis Junction</a></div>
+  </article>
+
+  <article class="stop key">
+    <p class="time">13:50–14:20</p>
+    <h3>雙層巴士①：公車 7 號去程</h3>
+    <p class="what"><b>Bugis Stn/Parkview Sq（01139，North Bridge Rd，往 Clementi）→ Napier Stn Exit 2（13011）</b>。坐<b>上層最前排</b>。</p>
+    <ul class="meta">
+      <li><b>時間</b><span>約 25–30 分鐘（估）</span></li>
+      <li><b>費用</b><span>每人約 S$1.49–1.68，用感應卡嗶</span></li>
+      <li><b>沿途</b><span>Bugis 和 Kampong Glam、National Library、Capitol Building、SMU 和博物館一帶、Dhoby Ghaut、Somerset</span></li>
+      <li><b>注意</b><span>7 號大多是雙層車，偶爾會來單層車，單層就讓它過，等下一班</span></li>
+    </ul>
+    <div class="tags"><span class="tag t-must">BUS 7 上層最前排</span></div>
+    <div class="maps">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Bugis+Stn%2FParkview+Sq+bus+stop+01139" target="_blank" rel="noopener">Google Maps：上車站 01139</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Napier+Stn+Exit+2+bus+stop+13011" target="_blank" rel="noopener">Google Maps：下車站 13011</a>
+    </div>
+  </article>
+
+  <article class="stop">
+    <p class="time">14:20–15:30</p>
+    <h3>Singapore Botanic Gardens（Tanglin Gate 進）</h3>
+    <p class="what">走天鵝湖、Bandstand，免費。</p>
+    <div class="tags"><span class="tag t-rain">RAIN BACKUP</span></div>
+    <p class="what">雨勢大就不要下到 Napier，提早在 Orchard Stn Exit 13（09022）下車，改逛 ION Orchard。站序請用 Google Maps 確認。</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Singapore+Botanic+Gardens+Tanglin+Gate" target="_blank" rel="noopener">Google Maps：Botanic Gardens Tanglin Gate</a></div>
+  </article>
+
+  <article class="stop key">
+    <p class="time">15:35–16:10</p>
+    <h3>雙層巴士②：公車 7 號回程，走 Orchard Road</h3>
+    <p class="what"><b>Napier Stn Exit 1（13019，往 Bedok）→ Opp Bugis Stn Exit C（01112）</b>，經過 Orchard Road、Somerset、Dhoby Ghaut。</p>
+    <ul class="meta">
+      <li><b>時間</b><span>約 30–35 分鐘（估）</span></li>
+      <li><b>費用</b><span>每人約 S$1.49–1.68</span></li>
+      <li><b>座位</b><span>回程坐左側（靠人行道和商場門口那一側）。前排被坐走就選這邊</span></li>
+      <li><b>逛街</b><span>想逛 Orchard 就在 Orchard Stn/Lucky Plaza（09048）下車</span></li>
+    </ul>
+    <div class="maps">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Napier+Stn+Exit+1+bus+stop+13019" target="_blank" rel="noopener">Google Maps：上車站 13019</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Opp+Bugis+Stn+Exit+C+bus+stop+01112" target="_blank" rel="noopener">Google Maps：下車站 01112</a>
+    </div>
+  </article>
+
+  <article class="stop">
+    <p class="time">16:15–18:30</p>
+    <h3>休息、換衣服</h3>
+    <ul class="meta">
+      <li><b>Couple A</b><span>Bugis（EW12）→ Aljunied（EW9）坐 3 站，每人約 S$1.3（估）；或叫 Grab 約 10 分鐘</span></li>
+      <li><b>Couple B</b><span>依實際住宿位置調整</span></li>
+      <li><b>服裝</b><span>HaveFun 有服裝規定，換好包鞋和長褲再出門</span></li>
+    </ul>
+  </article>
+
+  <article class="stop key">
+    <p class="time">18:45</p>
+    <h3>集合點：Bugis MRT 往 Bugis Junction 的出口</h3>
+    <p class="what">實際出口以站內指標為準。</p>
+    <ul class="meta"><li><b>Couple B</b><span>依實際住宿位置調整</span></li></ul>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bugis+MRT+Station" target="_blank" rel="noopener">Google Maps：Bugis MRT</a></div>
+  </article>
+
+  <article class="stop">
+    <p class="time">19:00–20:30</p>
+    <h3>晚餐：Herbivore（Fortune Centre）</h3>
+    <p class="what">190 Middle Rd #01-13/14，走路約 5–8 分鐘。全店素食，有日式和在地菜色。葷食的兩位這一餐配合吃素（只有這一餐）。</p>
+    <div class="meal">
+      <div class="r"><span class="k v">素</span><span>全店素食，每人約 S$25</span></div>
+      <div class="r"><span class="k g">Vegan</span><span>選擇很多</span></div>
+      <div class="r"><span class="k b">備案</span><span><b>Warung Ijo</b>（印尼素食，素 rendang 炒飯、素 nasi lemak；地址沒查證，用 Google Maps 搜尋）；<b>Beirut Grill（Arab Street）</b>黎巴嫩菜，鷹嘴豆泥、falafel 這類蔬食冷盤多，葷食的人也有肉可以點，4 人同桌最容易</span></div>
+      <p class="info">週六晚上建議先訂位或早點到。4 人可同桌。素食可靠度高，隱藏動物成分風險低（全素店）。付款可刷卡（估，需確認）。</p>
+    </div>
+    <div class="tags"><span class="tag t-res">建議訂位</span><span class="tag t-veg">VEGETARIAN／VEGAN</span></div>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Herbivore+Fortune+Centre+Singapore" target="_blank" rel="noopener">Google Maps：Herbivore Fortune Centre</a></div>
+  </article>
+
+  <article class="stop key">
+    <p class="time">20:45–00:00</p>
+    <h3>HaveFun Live Show（Bugis+ 7 樓）</h3>
+    <p class="what">20:45–21:00 到報到或排隊，<b>21:30 開演</b>，待到 00:00 左右。現場演出加 DJ。</p>
+    <div class="tags">
+      <span class="tag t-res">RESERVATION REQUIRED 建議訂位</span>
+      <span class="tag t-booked" data-booked="havefun" hidden>BOOKED 已訂</span>
+      <span class="tag t-must">服裝：包鞋、長褲</span>
+    </div>
+    <dl class="dl">
+      <div class="row"><dt>地址</dt><dd>201 Victoria St #07-01, Singapore 188067（Bugis+ 7 樓）</dd></div>
+      <div class="row"><dt>開演</dt><dd>Fri–Sat 9:30PM。官網首頁另一處寫 20:30，以 9:30PM 為準，訂位時用 WhatsApp 再確認。</dd></div>
+      <div class="row"><dt>最低消費</dt><dd>週五、六 S$200++（4 人 High Table）；週一到週四免最低消費。S$200 加 10% 服務費再加 9% GST，約 S$239.8，4 人每人約 S$60。</dd></div>
+      <div class="row"><dt>入場費</dt><dd>2026/1 版條款的搜尋摘要寫週五、六每人 S$35，含 1 杯飲料。原頁面現在打不開，<b>需確認</b>。如果另外收，每人約 S$95。</dd></div>
+      <div class="row"><dt>訂位</dt><dd>WhatsApp 8318 9300（請對照官網確認號碼）。訂金不退。</dd></div>
+      <div class="row"><dt>規定</dt><dd>限 18 歲以上，帶護照。男生不能穿無袖或短褲，刺青要遮住，要穿包鞋；女生不能穿拖鞋、Crocs、slides。</dd></div>
+      <div class="row"><dt>食物</dt><dd>素食和 vegan 選項查不到資料，<b>需現場確認</b>。所以晚餐先吃飽再進場。</dd></div>
+    </dl>
+    <div class="maps">
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=HaveFun+Live+Show+Bugis%2B+Singapore" target="_blank" rel="noopener">Google Maps：HaveFun Live Show</a>
+      <a href="https://www.havefunliveshow.com/sg/" target="_blank" rel="noopener">HaveFun 官網</a>
+    </div>
+  </article>
+
+  <article class="stop">
+    <p class="time">00:00–00:20</p>
+    <h3>回住處</h3>
+    <ul class="meta">
+      <li><b>Couple A</b><span>Grab：Bugis 到 Geylang Lor 18 約 10 分鐘，一車約 S$10–15（估，深夜可能漲價）</span></li>
+      <li><b>Couple B</b><span>依實際住宿位置調整</span></li>
+    </ul>
+  </article>
+
+  <nav class="pager" aria-label="換日"><a href="#d2">上一天 D2</a><a href="#d4">下一天 D4</a></nav>
+</section>
+
+<!-- ===================== DAY 4 ===================== -->
+<section class="panel L4" id="d4">
+  <header class="dayhead"><span class="badge">D4</span><div><p class="date">10/11 週日</p><h2>回程：08:15 出發去 Changi T3</h2></div></header>
+  <a class="mapjump" href="#map" data-day="D4">在地圖看這一天</a>
+  <div class="facts">
+    <div><b>1–2 km</b><span>步行，Light</span></div>
+    <div><b>2–3 千步</b><span>約 2,000–3,000 步</span></div>
+    <div><b>S$136</b><span>4 人當天花費（估）</span></div>
+  </div>
+  <div class="sign red"><b class="t">MUST LEAVE BY 08:15</b><p>SQ878 11:45 從 T3 起飛。國際線建議提早 2 小時 45 分到 3 小時到機場，也就是 08:45–09:00 抵達。Geylang 到 T3 週日早上車程約 20–25 分鐘，再加 10 分鐘叫車，所以 Couple A 最晚 08:15 離開飯店。</p></div>
+
+  <article class="stop">
+    <p class="time">07:15–07:55</p>
+    <h3>早餐</h3>
+    <p class="what">在飯店附近吃，或進 T3 再吃。每人約 S$8–15。Kaya Toast 含蛋和椰奶，全素不行。</p>
+  </article>
+
+  <article class="stop">
+    <p class="time">08:00</p>
+    <h3>退房、開 Grab app 叫車</h3>
+  </article>
+
+  <article class="stop key">
+    <p class="time">08:15</p>
+    <h3>Couple A 離開飯店，Grab 到 Changi T3</h3>
+    <div class="tags"><span class="tag t-must">MUST LEAVE BY 08:15</span></div>
+    <ul class="meta">
+      <li><b>交通</b><span>Grab（選這個）</span></li>
+      <li><b>時間</b><span>約 20–25 分鐘</span></li>
+      <li><b>費用</b><span>一車約 S$20–30（估）。機場附加費只收從機場出發的行程，去機場不收</span></li>
+      <li><b>路線</b><span>走 PIE／ECP，不經過 Marina 周邊的管制區</span></li>
+    </ul>
+    <details>
+      <summary>為什麼選 Grab，不選 MRT</summary>
+      <p>2 人帶 2 個大行李，要轉車，週日早上 MRT 班距也比較長。搭 MRT 每人只省約 S$10–13。</p>
+    </details>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Changi+Airport+Terminal+3" target="_blank" rel="noopener">Google Maps：Changi Airport T3</a></div>
+  </article>
+
+  <article class="stop key">
+    <p class="time">08:45</p>
+    <h3>抵達 T3，集合點：SQ 報到櫃台區</h3>
+    <ul class="meta"><li><b>Couple B</b><span>照同一個時間抵達</span></li></ul>
+  </article>
+
+  <article class="stop">
+    <p class="time">08:45–09:30</p>
+    <h3>報到、託運行李、自動通關出境</h3>
+  </article>
+
+  <article class="stop">
+    <p class="time">09:30–10:45</p>
+    <h3>管制區內吃早餐、買伴手禮</h3>
+  </article>
+
+  <article class="stop">
+    <p class="time">10:45</p>
+    <h3>往登機門移動</h3>
+    <p class="what">實際登機時間以登機證為準。</p>
+  </article>
+
+  <article class="stop key">
+    <p class="time">11:45</p>
+    <h3>SQ878 起飛，16:30 抵達 TPE T2</h3>
+  </article>
+
+  <div class="sign"><b class="t">Jewel 取消</b><p>去 Jewel 要先出管制區、逛完再走回 T3，至少 1.5 小時，一定會壓縮報到時間，萬一卡在報到排隊或安檢就很難補救。</p></div>
+
+  <nav class="pager" aria-label="換日"><a href="#d3">上一天 D3</a><a href="#food">看美食頁</a></nav>
+</section>
+
+<!-- ===================== FOOD ===================== -->
+<section class="panel" id="food">
+  <h2 class="sec">每餐一覽</h2>
+  <p>每一餐的詳細資料、價格和付款方式在各天的行程裡。這裡是快速對照。</p>
+  <div class="scroll"><table>
+    <tr><th>餐</th><th>地點</th><th>葷</th><th>素</th><th>Vegan／備案</th></tr>
+    <tr><td class="num">D1 晚</td><td>飯店附近／GrabFood</td><td>隨意吃</td><td>100% 素食外送</td><td>機場先買</td></tr>
+    <tr><td class="num">D2 午</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Maxwell+Food+Centre" target="_blank" rel="noopener">Maxwell Food Centre</a></td><td>Tian Tian 海南雞飯</td><td>Soon Seng 素米粉</td><td>Traditional Delight／The Green Leaf</td></tr>
+    <tr><td class="num">D2 晚</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Lau+Pa+Sat" target="_blank" rel="noopener">Lau Pa Sat</a></td><td>Satay Street 沙爹</td><td>Su Xiang 素炒麵／Maya 素 briyani</td><td>Shree Bhaavan</td></tr>
+    <tr><td class="num">D2 夜</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Clarke+Quay+Singapore" target="_blank" rel="noopener">Clarke Quay</a></td><td>酒吧、甜點</td><td>mocktail、甜點</td><td>現場挑</td></tr>
+    <tr><td class="num">D3 早</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Tekka+Centre" target="_blank" rel="noopener">Tekka Centre</a></td><td>Biryani、Roti Prata</td><td>Thosai、Idli</td><td>Komala Vilas</td></tr>
+    <tr><td class="num">D3 午</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Food+Junction+Bugis+Junction" target="_blank" rel="noopener">Food Junction</a></td><td>Laksa／雞飯</td><td>Truly Vegetarian</td><td>Herbivore</td></tr>
+    <tr><td class="num">D3 晚</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Herbivore+Fortune+Centre+Singapore" target="_blank" rel="noopener">Herbivore</a></td><td>配合吃素（只有這一餐）</td><td>全素食店</td><td>Warung Ijo／Beirut Grill</td></tr>
+    <tr><td class="num">D4 早</td><td>飯店附近／T3</td><td>Kaya Toast</td><td>Kaya Toast（蛋奶素）</td><td>全素不行</td></tr>
+  </table></div>
+
+  <h2 class="sec">Hawker Centre 比較與選擇</h2>
+  <div class="scroll"><table>
+    <tr><th>地點</th><th>葷食</th><th>素食</th><th>座位與付款</th><th>用不用</th></tr>
+    <tr><td><b>Maxwell Food Centre</b></td><td>天天海南雞飯（米其林必比登）等</td><td>第 15 攤素食攤、Traditional Delight、The Green Leaf（#01-100）</td><td>沒冷氣，中午很擠；很多攤只收現金或 PayNow；約 8:00–22:00，各攤不同</td><td><b>用：D2 午餐</b></td></tr>
+    <tr><td><b>Lau Pa Sat</b></td><td>Satay Street（平日 19:00–03:00，週末 15:00–03:00）、炒粿條等</td><td>Su Xiang（46 攤）、Maya（47 攤，8:00–22:30，S$6 起）、Shree Bhaavan（40 攤）</td><td>室內外座位多，4 人坐得下；多數只收現金；建築 24 小時開放</td><td><b>用：D2 晚餐</b></td></tr>
+    <tr><td><b>Food Junction（Bugis Junction）</b></td><td>一般美食廣場的各種攤位</td><td>Truly Vegetarian（#03-30 第 15 攤，約 S$10）</td><td>有冷氣，通常可刷卡；營業時間跟商場走</td><td><b>用：D3 午餐</b></td></tr>
+    <tr><td>Tekka Centre</td><td>印度和馬來料理</td><td>印度素食攤（沒有逐攤查證）</td><td>多數收現金</td><td><b>用：D3 早餐</b></td></tr>
+    <tr><td>Chinatown Complex</td><td>選擇很多</td><td>遊客論壇提到 2 樓有 3 家以上中式素食攤，但資料很舊</td><td>收現金</td><td>只當備案</td></tr>
+    <tr><td>Old Airport Road／Albert Centre</td><td>—</td><td>—</td><td>—</td><td>不排，繞路</td></tr>
+  </table></div>
+
+  <h2 class="sec">想吃的葷食清單</h2>
+  <div class="scroll"><table>
+    <tr><th>料理</th><th>安排</th></tr>
+    <tr><td>Hainanese Chicken Rice</td><td>D2 Maxwell 天天</td></tr>
+    <tr><td>Satay</td><td>D2 Lau Pa Sat</td></tr>
+    <tr><td>Kaya Toast</td><td>D2、D4 早餐</td></tr>
+    <tr><td>Hawker Food</td><td>每天都有</td></tr>
+    <tr><td>Laksa</td><td>D3 午餐，看 Food Junction 當天的攤位</td></tr>
+    <tr><td>Bak Kut Teh</td><td>選配：Clarke Quay 附近的 Song Fa（New Bridge Rd 一帶，營業時間沒查證）</td></tr>
+    <tr><td>Chilli Crab</td><td>選配：價格高，素食者沒什麼能吃，沒排進主行程。想吃的話，請兩位葷食者另外訂 Clarke Quay 一帶的海鮮餐廳（需現場確認或先訂位）</td></tr>
+  </table></div>
+
+  <h2 class="sec">素食 Cheat Sheet（12 個，都在行程經過的地方）</h2>
+  <div class="sign warn"><b class="t">沒有肉塊不等於素食</b><p>叻沙湯底常用蝦，Nasi Lemak 的 sambal 常加 belacan 和江魚仔，炒麵常淋蠔油或用豬油，清湯常是雞湯或豬骨湯。不是專門的素食攤，一律用下面的「給店員看」問清楚。</p></div>
+
+  <div class="vc"><h4>1. Soon Seng Vegetarian（Maxwell 第 15 攤）</h4>
+    <p><span class="tag t-veg">素，部分 vegan</span><span class="tag t-cash">只收現金</span> Day 2，Chinatown</p>
+    <p>推薦：素米粉　價格：約 S$3–5</p>
+    <p class="k2">五辛：未知<br>魚露／蝦醬／蠔油：素食攤應該不加，蠔油要問<br>共用廚房風險：低　營業：需確認　備案：#3</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Soon+Seng+Vegetarian+Maxwell+Food+Centre" target="_blank" rel="noopener">Google Maps：Soon Seng Vegetarian</a></div></div>
+
+  <div class="vc"><h4>2. Traditional Delight（Maxwell）</h4>
+    <p><span class="tag t-veg">素（蛋奶要問）</span><span class="tag t-cash">只收現金</span> Day 2，Chinatown</p>
+    <p>推薦：素糕點、芝麻球　價格：S$1–4</p>
+    <p class="k2">五辛：未知<br>魚露／蝦醬／蠔油：低風險<br>共用廚房風險：低　營業：需確認　備案：#1</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Traditional+Delight+Maxwell+Food+Centre" target="_blank" rel="noopener">Google Maps：Traditional Delight</a></div></div>
+
+  <div class="vc"><h4>3. The Green Leaf（Maxwell #01-100）</h4>
+    <p><span class="tag t-veg">素（需確認）</span><span class="tag t-cash">只收現金</span> Day 2，Chinatown</p>
+    <p>推薦：蔬菜飯　價格：S$5 以下</p>
+    <p class="k2">五辛：未知<br>魚露／蝦醬／蠔油：要問<br>共用廚房風險：中　營業：需確認　備案：#1</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Green+Leaf+Maxwell+Food+Centre" target="_blank" rel="noopener">Google Maps：The Green Leaf</a></div></div>
+
+  <div class="vc"><h4>4. Su Xiang Chinese Vegetarian Cuisine（Lau Pa Sat 第 46 攤）</h4>
+    <p><span class="tag t-veg">素</span><span class="tag t-cash">現金為主</span> Day 2，Marina 和 CBD</p>
+    <p>推薦：素炒麵、素煮炒、素肉　價格：約 S$6–10</p>
+    <p class="k2">五辛：中式素食攤常見不放五辛，但不保證<br>魚露／蝦醬／蠔油：素蠔油要問<br>共用廚房風險：低　營業：需確認　備案：#5</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Su+Xiang+Chinese+Vegetarian+Lau+Pa+Sat" target="_blank" rel="noopener">Google Maps：Su Xiang Vegetarian</a></div></div>
+
+  <div class="vc"><h4>5. Maya Indian Veggie Delight（Lau Pa Sat 第 47 攤）</h4>
+    <p><span class="tag t-veg">素（paneer 和 ghee 含乳）</span><span class="tag t-cash">現金為主</span> Day 2</p>
+    <p>推薦：素 Briyani、Paneer　價格：S$6 起</p>
+    <p class="k2">五辛：有（洋蔥和大蒜常見）<br>魚露／蝦醬／蠔油：低風險<br>共用廚房風險：低　營業：8:00–22:30　備案：#6</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Maya+Indian+Veggie+Delight+Lau+Pa+Sat" target="_blank" rel="noopener">Google Maps：Maya Indian Veggie Delight</a></div></div>
+
+  <div class="vc"><h4>6. Shree Bhaavan（Lau Pa Sat 第 40 攤）</h4>
+    <p><span class="tag t-veg">純素食攤</span><span class="tag t-cash">現金為主</span> Day 2</p>
+    <p>推薦：印度素套餐　價格：約 S$6–10</p>
+    <p class="k2">五辛：多半有<br>魚露／蝦醬／蠔油：低風險<br>共用廚房風險：低　營業：需確認　備案：#5</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Shree+Bhaavan+Lau+Pa+Sat" target="_blank" rel="noopener">Google Maps：Shree Bhaavan</a></div></div>
+
+  <div class="vc"><h4>7. Tekka Centre 印度素食攤</h4>
+    <p><span class="tag t-veg">素，部分 vegan</span><span class="tag t-cash">現金為主</span> Day 3，Little India</p>
+    <p>推薦：Thosai、Idli　價格：S$3–6</p>
+    <p class="k2">五辛：有<br>魚露／蝦醬／蠔油：低風險<br>共用廚房風險：中　營業：需確認　備案：#8</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Tekka+Centre" target="_blank" rel="noopener">Google Maps：Tekka Centre</a></div></div>
+
+  <div class="vc"><h4>8. Komala Vilas</h4>
+    <p><span class="tag t-veg">純素食店</span> Day 3，Little India（備案）</p>
+    <p>推薦：南印度套餐　價格：需確認</p>
+    <p class="k2">五辛：多半有<br>魚露／蝦醬／蠔油：低風險<br>共用廚房風險：低　營業：<b>未查證</b>　付款：需確認　備案：#7</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Komala+Vilas+Serangoon+Road" target="_blank" rel="noopener">Google Maps：Komala Vilas</a></div></div>
+
+  <div class="vc"><h4>9. Truly Vegetarian（Bugis Junction Food Junction #03-30 第 15 攤）</h4>
+    <p><span class="tag t-veg">素</span> Day 3，Haji Lane 附近</p>
+    <p>推薦：素食飯麵　價格：約 S$10</p>
+    <p class="k2">五辛：未知<br>魚露／蝦醬／蠔油：要問<br>共用廚房風險：低　營業：跟商場時間　付款：需確認　備案：#10</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Truly+Vegetarian+Food+Junction+Bugis+Junction" target="_blank" rel="noopener">Google Maps：Truly Vegetarian</a></div></div>
+
+  <div class="vc"><h4>10. Herbivore（Fortune Centre #01-13/14）</h4>
+    <p><span class="tag t-veg">全素食店，vegan 選擇多</span> Day 3，Bugis</p>
+    <p>推薦：日式素食、在地素食　價格：約 S$25</p>
+    <p class="k2">五辛：未知<br>魚露／蝦醬／蠔油：低風險（全素店）<br>共用廚房風險：低　營業：需確認　付款：可刷卡（估）　備案：#11</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Herbivore+Fortune+Centre+Singapore" target="_blank" rel="noopener">Google Maps：Herbivore Fortune Centre</a></div></div>
+
+  <div class="vc"><h4>11. Warung Ijo</h4>
+    <p><span class="tag t-veg">素，有 vegan</span> Day 3，Bugis（備案）</p>
+    <p>推薦：素 Nasi Lemak、素 Rendang 炒飯　價格：約 S$15</p>
+    <p class="k2">五辛：未知<br>魚露／蝦醬／蠔油：要問<br>共用廚房風險：低　營業：<b>地址和營業時間未查證</b>　付款：需確認　備案：#12</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Warung+Ijo+Singapore" target="_blank" rel="noopener">Google Maps：Warung Ijo</a></div></div>
+
+  <div class="vc"><h4>12. Green Dot（Bugis）</h4>
+    <p><span class="tag t-veg">素，vegan 友善</span> Day 3，Bugis（備案）</p>
+    <p>推薦：亞洲融合素食　價格：約 S$10–15</p>
+    <p class="k2">五辛：可要求<br>魚露／蝦醬／蠔油：低風險<br>共用廚房風險：低　營業：到 22:00（Yelp 資料）　付款：可刷卡（估）　備案：#10</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Green+Dot+Bugis+Singapore" target="_blank" rel="noopener">Google Maps：Green Dot Bugis</a></div></div>
+
+  <h2 class="sec">給店員看：點一下就全螢幕顯示</h2>
+  <p>點下面任何一句，會放大成全螢幕，直接把手機給店員看。再點一下關閉。</p>
+  <button type="button" class="phrase" data-en="Is this vegetarian?" data-zh="這是素的嗎？" data-ms="Ini makanan vegetarian?" data-ta="இது சைவமா? (Idhu saivamaa?)"><b>Is this vegetarian?</b><span>這是素的嗎？</span></button>
+  <button type="button" class="phrase" data-en="Does this contain fish sauce or shrimp paste?" data-zh="有沒有加魚露或蝦醬（峇拉煎）？" data-ms="Ada sos ikan atau belacan?"><b>Does this contain fish sauce or shrimp paste?</b><span>有沒有加魚露或蝦醬？</span></button>
+  <button type="button" class="phrase" data-en="Does this contain oyster sauce?" data-zh="有沒有加蠔油？" data-ms="Ada sos tiram?"><b>Does this contain oyster sauce?</b><span>有沒有加蠔油？</span></button>
+  <button type="button" class="phrase" data-en="Is there any lard, chicken stock or pork stock in this?" data-zh="有沒有豬油、雞湯或豬骨湯？" data-ms="Ada lemak babi, stok ayam atau stok babi?"><b>Is there any lard, chicken stock or pork stock in this?</b><span>有沒有豬油、雞湯或豬骨湯？</span></button>
+  <button type="button" class="phrase" data-en="Does this contain dried shrimp or anchovies?" data-zh="有沒有蝦米或江魚仔？" data-ms="Ada udang kering atau ikan bilis?"><b>Does this contain dried shrimp or anchovies?</b><span>有沒有蝦米或江魚仔？</span></button>
+  <button type="button" class="phrase" data-en="Can you make this vegan?" data-zh="可以做全素嗎？不要蛋、奶、蜂蜜。" data-ms="Boleh buat vegan? Tak mahu telur dan susu." data-ta="முட்டை, பால் வேண்டாம் (Muttai, paal vendaam)"><b>Can you make this vegan?</b><span>可以做全素嗎？不要蛋、奶、蜂蜜。</span></button>
+  <button type="button" class="phrase" data-en="If possible, no fish sauce, shrimp paste, oyster sauce or meat stock." data-zh="麻煩不要放魚露、蝦醬、蠔油，也不要用肉湯。" data-ms="Tolong jangan letak sos ikan, belacan, sos tiram atau stok daging."><b>If possible, no fish sauce, shrimp paste, oyster sauce or meat stock.</b><span>麻煩不要放魚露、蝦醬、蠔油，也不要用肉湯。</span></button>
+
+  <h3 style="margin:22px 0 4px">最簡單的一句</h3>
+  <button type="button" class="phrase" data-en="I'm vegetarian. No meat, no seafood, no fish sauce, no shrimp paste." data-zh="我吃素，不吃肉和海鮮，也不要魚露和蝦醬。" data-ms=""><b>Vegetarian</b><span>I'm vegetarian. No meat, no seafood, no fish sauce, no shrimp paste.</span></button>
+  <button type="button" class="phrase" data-en="I'm vegan. No meat, seafood, egg, dairy or honey." data-zh="我吃全素，不吃肉、海鮮、蛋、奶、蜂蜜。" data-ms=""><b>Vegan</b><span>I'm vegan. No meat, seafood, egg, dairy or honey.</span></button>
+  <button type="button" class="phrase" data-en="No onion, garlic, spring onion, leek or chives, please." data-zh="我吃齋，不要蔥、蒜、洋蔥、韭菜、蕎頭。" data-ms=""><b>不吃五辛（之後確認才用）</b><span>No onion, garlic, spring onion, leek or chives, please.</span></button>
+
+  <nav class="pager" aria-label="換頁"><a href="#d4">回 D4</a><a href="#move">看交通頁</a></nav>
+</section>
+
+<!-- ===================== TRANSPORT ===================== -->
+<section class="panel" id="move">
+  <h2 class="sec">Grab 是什麼、怎麼用</h2>
+  <div class="sign blue gbox">
+<p><b>Grab 是什麼：</b>東南亞最常用的叫車 app，就像 Uber。用手機叫車，司機到你設定的地點接你，不用在路邊攔車，也不用跟司機講價。新加坡的私家車和計程車都能在上面叫，它也能叫外送（GrabFood）。</p>
+<ol class="steps">
+<li><b>出發前先裝好。</b>下載「Grab」app，用台灣手機號碼註冊並收簡訊驗證。如果驗證失敗，落地後連上機場 Wi-Fi 再試一次。</li>
+<li><b>綁一張信用卡。</b>Visa、Mastercard 都可以。綁卡後車資自動扣款，不用準備現金。Grab 官網也說可以付現金，但綁卡最省事。</li>
+<li><b>到新加坡要有網路。</b>用漫遊、eSIM，或 Changi 機場的免費 Wi-Fi。</li>
+<li><b>輸入目的地。</b>直接搜尋「Hotel 81 Premier Star」，確認地圖上的位置。</li>
+<li><b>選車型。</b>2 人帶 2 個大箱，選 4 人座就夠。4 人一起帶行李，要選 6 人座。叫車前 app 會先顯示價格。</li>
+<li><b>按確認，等司機。</b>app 會顯示車牌、車款和司機名字，上車前核對車牌。到了直接下車，費用從綁定的卡扣款。</li>
+</ol>
+<p><b>在 Changi 機場：</b>領完行李、準備走出去再叫車。app 會問你在哪個門（door）或柱子（pillar），要和出關後看到的標示一致。</p>
+<p><b>價格：</b>叫車前顯示的價格不含過路費和附加費，最後金額可能略高。尖峰、下雨、深夜會加價。綁的卡會算海外消費，手續費照卡片規定。</p>
+<p><b>兩對各自叫車：</b>Couple A 和 Couple B 住不同飯店，各自用自己的手機叫車。每個人的手機都先裝好 Grab。</p>
+  </div>
+
+  <div class="sign green"><b class="t">最省事的做法</b><p>每人用自己的一張感應式信用卡（最好是有海外回饋的那張），或綁進 Apple Pay，搭車、吃飯都用它。手續費 3 天每人才 S$1.80，<b>不用另外買 EZ-Link 或 Tourist Pass</b>。</p></div>
+
+  <h2 class="sec">MRT 與公車：SimplyGo</h2>
+  <div class="scroll"><table>
+    <tr><th>項目</th><th>規則（2026/10 查證）</th></tr>
+    <tr><td>怎麼付</td><td>SimplyGo：用感應式 Visa、Mastercard（實體卡或 Apple Pay、Google Pay）在閘門或公車讀卡機嗶卡</td></tr>
+    <tr><td>外國卡手續費</td><td>外國發行的 Visa／Mastercard 每個「使用日」收 <b>S$0.60</b>，不是每趟收</td></tr>
+    <tr><td>Visa 和 Mastercard</td><td>Visa 每天結算一次扣款。Mastercard 和 Amex 會先做預授權，最多累積 5 天或滿 S$15 才結算（遊客論壇的說法）</td></tr>
+    <tr><td>Apple Pay 和實體卡</td><td>都可以用。<b>同一趟進出站要用同一個載具</b>：用手機進站就要用手機出站，換成實體卡會被當成兩張不同的卡</td></tr>
+    <tr><td>要不要註冊</td><td>不用，直接嗶。想查乘車紀錄才要註冊 app，綁卡時要收銀行簡訊 OTP</td></tr>
+    <tr><td>4 人規則</td><td><b>一張卡或一支手機只能付一個人</b>，每個人都要有自己的感應式卡</td></tr>
+    <tr><td>公車</td><td>上車和下車都要嗶卡，下車忘記嗶會多收車資</td></tr>
+    <tr><td>EZ-Link</td><td>用外國卡加值：S$30 以內收 S$1.10，超過 S$30 收 4%，不划算</td></tr>
+    <tr><td>Singapore Tourist Pass</td><td>沒查到價格。照本行程每人 3 天車資約 S$10，不建議買</td></tr>
+  </table></div>
+
+  <h2 class="sec">公車票價</h2>
+  <div class="scroll"><table>
+    <tr><th>距離</th><th>感應卡票價</th></tr>
+    <tr><td>3.2 km 以內</td><td>S$1.28</td></tr>
+    <tr><td>4.3–5.2 km</td><td>S$1.49</td></tr>
+    <tr><td>5.3–6.2 km</td><td>S$1.59</td></tr>
+    <tr><td>6.3–7.2 km</td><td>S$1.68</td></tr>
+  </table></div>
+  <p>用現金付公車是 S$2.30–2.50。新票價 12/26 才上路，這趟不受影響（來源：PTC）。</p>
+
+  <h2 class="sec">Grab 和 MRT 怎麼選</h2>
+  <p>2 人一車的短程（10 分鐘內），Grab 每人約 S$5–7，MRT 約 S$1.3–1.9。</p>
+  <p><b>搭 MRT：</b>不用轉車、時間差不多的路線（例如 Aljunied 到 Tanjong Pagar）。</p>
+  <p><b>叫 Grab：</b>要轉車、深夜或趕時間（D3 早上、所有深夜回程、機場來回）。</p>
+  <p>4 人一起坐一般 GrabCar（4 座）只有白天沒行李時夠坐。4 人加行李要叫 6 人座。週末晚上和下雨時會漲價。</p>
+
+  <div class="sign red"><b class="t">Marina 周邊不要叫 Grab</b>
+    <p>Marina Bay Sands、Suntec 周邊 10/7–10/13 有道路管制，會塞車也會加價。先搭 MRT 到 Bayfront 或 Downtown，離開管制區再叫車。</p></div>
+
+  <h2 class="sec">雙層巴士：最後選公車 7 號</h2>
+  <div class="sign blue"><b class="t">Day 3（10/10 六）13:50 上車</b>
+    <p><b>去程：</b>Bugis Stn/Parkview Sq（01139，往 Clementi）→ Napier Stn Exit 2（13011），約 25–30 分鐘。<br><b>回程：</b>Napier Stn Exit 1（13019，往 Bedok）→ Opp Bugis Stn Exit C（01112），約 30–35 分鐘，走 Orchard Road。<br><b>座位：</b>上層最前排。前排被坐走，回程選左側。</p></div>
+  <div class="scroll"><table>
+    <tr><th>比較</th><th>A. Big Bus</th><th>B. 公車 7 號（選這個）</th></tr>
+    <tr><td>價格</td><td>官網 1 日票成人 US$53 起，經銷商報價約 S$67 起</td><td>每段約 S$1.49–1.68</td></tr>
+    <tr><td>4 人總價</td><td>約 US$212 起（約 S$270+）</td><td>來回約 S$12–14</td></tr>
+    <tr><td>路線</td><td>Red、Yellow 兩條線，Red 線約 60 分鐘</td><td>Bugis → Capitol → Dhoby Ghaut → Somerset → Napier；回程走 Orchard Road</td></tr>
+    <tr><td>班距</td><td>約 25–35 分鐘（經銷商資料）</td><td>週六白天約 8–15 分鐘（第三方資料）</td></tr>
+    <tr><td>觀光品質</td><td>開頂、有語音導覽</td><td>有冷氣、是真正的在地公車、上層前排視野好</td></tr>
+    <tr><td>道路管制風險</td><td>轉運站在 Suntec City，10/7–10/13 周邊道路管制，很可能改道或停駛</td><td>不在 10 月的公車改道名單上</td></tr>
+    <tr><td>會不會浪費時間</td><td>會，要專程去 Suntec</td><td>不會，剛好連接 Haji Lane 和 Botanic Gardens</td></tr>
+  </table></div>
+  <p>坐 7 號要注意：它也有單層車，來的是單層就等下一班。</p>
+
+  <h2 class="sec">機場往返</h2>
+  <p><b>去程（10/8 晚上）：</b>Grab，約 20–30 分鐘，一車約 S$25–40。詳見 <a href="#d1" class="lnk">D1</a>。</p>
+  <p><b>回程（10/11）：</b>08:15 離開飯店，Grab 約 20–25 分鐘到 T3，08:45 抵達。詳見 <a href="#d4" class="lnk">D4</a>。</p>
+
+  <nav class="pager" aria-label="換頁"><a href="#food">回美食頁</a><a href="#money">看錢的頁面</a></nav>
+</section>
+
+<!-- ===================== MONEY ===================== -->
+<section class="panel" id="money">
+  <h2 class="sec">現金：帶多少</h2>
+  <div class="calc">
+    <p class="big">每人 S$80　每對 S$160　四人 S$320</p>
+    <p>Maxwell、Lau Pa Sat、Tekka 的攤位多數只收現金或 PayNow。這三餐 4 人的現金預估約 S$130，剩下是備用、零錢和飲料。不要帶過量。</p>
+  </div>
+
+  <h2 class="sec">換匯：臺灣銀行最划算</h2>
+  <div class="scroll"><table>
+    <tr><th>管道</th><th>匯率與費用</th><th>評價</th></tr>
+    <tr><td><b>臺灣銀行</b></td><td>現金賣出 <b>25.21</b>（即期賣出 24.99），免手續費，可線上申購後到分行領</td><td><b>最推薦</b></td></tr>
+    <tr><td>其他台灣銀行</td><td>第一銀行即期賣出 25.021；多數銀行換現鈔每筆收 NT$100；不一定有新加坡幣現鈔</td><td>普通</td></tr>
+    <tr><td>桃園機場</td><td>沒查到即時牌告；方便但排隊有風險</td><td>備案</td></tr>
+    <tr><td>Changi 機場</td><td>沒有查證，一般認為匯率比較差</td><td>急用時小額換</td></tr>
+    <tr><td>新加坡換匯所</td><td>沒有查證，要專程跑一趟</td><td>不值得</td></tr>
+    <tr><td>ATM 提款</td><td>每家銀行境外提款費不同，常見是每筆固定費加約 1.5% 國外手續費，新加坡的 ATM 業者可能另外收費。要選 SGD，不要接受 ATM 幫你換匯</td><td>現金不夠才用</td></tr>
+  </table></div>
+  <p>牌告是 10/2–10/3 的資料。四人帶 S$320，用現鈔匯率約 NT$8,067，用即期匯率是 NT$7,997，只差約 NT$70。</p>
+  <div class="sign green"><b class="t">如果是我會怎麼換</b><p>10/5–10/7 到臺灣銀行（或先線上申購）換每對 S$160，總共 S$320。不夠就在新加坡刷卡，真的需要現金才用 ATM 領一次。不在 Changi 換錢。</p></div>
+
+  <h2 class="sec">信用卡：主力</h2>
+  <p>每張卡先折疊，點卡名展開看細節。</p>
+  <div class="sign"><b class="t">我們還不知道你們手上有哪些卡</b><p>下面只是市場參考，不建議現在才去辦新卡，10/8 就出發，卡片很可能來不及寄到。「淨回饋」是用多數台灣卡常見的國外交易手續費 1.5% 扣掉後算的，請用自己的卡實際確認。</p></div>
+
+  <details class="cc"><summary><span class="cn">星展 eco 永續卡（Mastercard）</span><span class="cs">淨回饋 3.5%，上限 NT$15,000／每期帳單</span></summary><dl>
+    <div class="row"><dt>海外回饋</dt><dd>1% 無上限，加上指定地區實體店加碼 4%，合計 <b>5%</b></dd></div>
+    <div class="row"><dt>國外手續費</dt><dd>1.5%</dd></div>
+    <div class="row"><dt>淨回饋</dt><dd><b>3.5%</b>；超過上限的部分是 1% − 1.5% = <b>−0.5%</b></dd></div>
+    <div class="row"><dt>回饋上限</dt><dd>加碼的 4% 每期帳單上限 600 點</dd></div>
+    <div class="row"><dt>有效消費上限</dt><dd>600 ÷ 4% = <b>NT$15,000／每期帳單</b></dd></div>
+    <div class="row"><dt>登錄</dt><dd>官網沒看到需要登錄（以活動注意事項為準）</dd></div>
+    <div class="row"><dt>新加坡適用</dt><dd>是。新加坡在名單內，限實體店、交易幣別不是台幣、帳單上要出現國外交易手續費</dd></div>
+    <div class="row"><dt>Apple Pay</dt><dd>Apple Pay、Samsung Pay 都算</dd></div>
+    <div class="row"><dt>最佳用法</dt><dd>主力卡，刷到 NT$15,000 為止</dd></div>
+    <div class="row"><dt>來源</dt><dd>dbs.com.tw，活動到 2026/12/31</dd></div>
+  </dl>
+    <div class="calc">
+    <p><b>上限怎麼算，別只看到 5%</b></p>
+    <p>舉例：一期帳單在新加坡刷 NT$20,000。前 15,000 拿 5% = 750 點，後 5,000 拿 1% = 50 點，共 800 點。國外交易手續費 20,000 × 1.5% = NT$300。</p>
+    <p class="big">淨回饋 NT$500，約 2.5%</p>
+    <p>刷滿 15,000 後就換別張卡（例如 2.5% 無上限的卡）。上限是每期帳單算一次，旅行如果跨過結帳日，可能有兩期上限可用。一個第三方網站寫一般戶「800 點／每月刷 NT$20,000」，官網寫的是每期帳單 600 點，以官網為準。</p>
+  </div>
+  </details>
+
+
+  <details class="cc"><summary><span class="cn">遠東樂家+卡</span><span class="cs">淨回饋 1.0% 起，無上限</span></summary><dl>
+    <div class="row"><dt>海外回饋</dt><dd>2.5% 無上限，滿額另有加碼</dd></div>
+    <div class="row"><dt>國外手續費</dt><dd>1.5%（估）</dd></div>
+    <div class="row"><dt>淨回饋</dt><dd><b>1.0%</b> 起</dd></div>
+    <div class="row"><dt>上限</dt><dd>2.5% 無上限</dd></div>
+    <div class="row"><dt>登錄</dt><dd>加碼部分要確認</dd></div>
+    <div class="row"><dt>Apple Pay</dt><dd>需確認</dd></div>
+    <div class="row"><dt>最佳用法</dt><dd>超過 eco 上限後用</dd></div>
+    <div class="row"><dt>來源</dt><dd>只有第三方整理，請看遠東商銀官網</dd></div>
+  </dl></details>
+
+  <details class="cc"><summary><span class="cn">滙豐 現金回饋御璽卡</span><span class="cs">淨回饋 0.72%，無上限</span></summary><dl>
+    <div class="row"><dt>海外回饋</dt><dd>2.22% 無上限</dd></div>
+    <div class="row"><dt>國外手續費</dt><dd>1.5%（估）</dd></div>
+    <div class="row"><dt>淨回饋</dt><dd><b>0.72%</b></dd></div>
+    <div class="row"><dt>登錄</dt><dd>確認活動是否續辦</dd></div>
+    <div class="row"><dt>Apple Pay</dt><dd>需確認</dd></div>
+    <div class="row"><dt>最佳用法</dt><dd>不想動腦就刷這張</dd></div>
+    <div class="row"><dt>來源</dt><dd>只有第三方整理，請看滙豐官網</dd></div>
+  </dl></details>
+
+  <details class="cc"><summary><span class="cn">台新 Richart 卡</span><span class="cs">淨回饋 1.8%，要先切換玩旅刷</span></summary><dl>
+    <div class="row"><dt>海外回饋</dt><dd>「玩旅刷」方案最高 3.3% 無上限</dd></div>
+    <div class="row"><dt>國外手續費</dt><dd>1.5%（估）</dd></div>
+    <div class="row"><dt>淨回饋</dt><dd><b>1.8%</b></dd></div>
+    <div class="row"><dt>登錄</dt><dd><b>要先切換到玩旅刷方案</b></dd></div>
+    <div class="row"><dt>Apple Pay</dt><dd>需確認</dd></div>
+    <div class="row"><dt>最佳用法</dt><dd>出發前先切換方案</dd></div>
+    <div class="row"><dt>來源</dt><dd>只有第三方整理，請看台新官網</dd></div>
+  </dl></details>
+
+  <details class="cc"><summary><span class="cn">國泰 CUBE 卡</span><span class="cs">淨回饋 0.5–1.8%</span></summary><dl>
+    <div class="row"><dt>海外回饋</dt><dd>依等級約 2–3.3%</dd></div>
+    <div class="row"><dt>國外手續費</dt><dd>1.5%（估）</dd></div>
+    <div class="row"><dt>淨回饋</dt><dd><b>0.5–1.8%</b></dd></div>
+    <div class="row"><dt>登錄</dt><dd>要切換權益</dd></div>
+    <div class="row"><dt>Apple Pay</dt><dd>需確認</dd></div>
+    <div class="row"><dt>最佳用法</dt><dd>已經持有才用</dd></div>
+    <div class="row"><dt>來源</dt><dd>只有第三方整理</dd></div>
+  </dl></details>
+
+  <details class="cc"><summary><span class="cn">永豐 幣倍卡</span><span class="cs">視條件而定</span></summary><dl>
+    <div class="row"><dt>海外回饋</dt><dd>2% 無上限；大戶等級最高 6%，加碼每月以 2 萬元消費額為限</dd></div>
+    <div class="row"><dt>國外手續費</dt><dd>需確認</dd></div>
+    <div class="row"><dt>淨回饋</dt><dd>視條件而定</dd></div>
+    <div class="row"><dt>上限</dt><dd>2 萬元／帳單月（第三方資料）</dd></div>
+    <div class="row"><dt>登錄</dt><dd>大戶等級條件</dd></div>
+    <div class="row"><dt>Apple Pay</dt><dd>需確認</dd></div>
+    <div class="row"><dt>最佳用法</dt><dd>已經是大戶等級才划算</dd></div>
+    <div class="row"><dt>來源</dt><dd>sinopac.com，回饋細節以官網為準</dd></div>
+  </dl></details>
+
+  <h3 style="margin:22px 0 6px">我的持卡比較</h3>
+  <p>等你提供手上的卡片名稱，再排順序。</p>
+  <div class="scroll"><table>
+    <tr><th>順位</th><th>卡片名稱</th><th>用途</th><th>刷到多少就換卡</th></tr>
+    <tr><td>Primary</td><td>（待填）</td><td></td><td></td></tr>
+    <tr><td>Secondary</td><td>（待填）</td><td></td><td></td></tr>
+    <tr><td>Backup</td><td>（待填，最好是不同卡組織）</td><td></td><td></td></tr>
+  </table></div>
+
+  <h2 class="sec">DCC：刷卡機問 SGD 還是 TWD？</h2>
+  <div class="sign red"><b class="t">一律選 SGD</b>
+    <p>選 TWD 就是 DCC（動態貨幣轉換）：由商店那邊的收單機構幫你換成台幣，匯率通常比 Visa／Mastercard 的匯率差，而且台灣的銀行<b>照樣會收國外交易手續費</b>，等於被收兩次錢。很多卡的海外加碼回饋也會因為交易被判定為台幣而不給，eco 卡就明確要求交易幣別不是新台幣。帳單上看到 TWD 金額又出現國外交易手續費，就是被 DCC 了。</p></div>
+
+  <h2 class="sec">簽帳金融卡（Debit）</h2>
+  <div class="scroll"><table>
+    <tr><th>項目</th><th>台灣 Visa／Mastercard Debit 在新加坡</th></tr>
+    <tr><td>可不可以刷</td><td>通常可以，包括 SimplyGo（每日一樣收 S$0.60）</td></tr>
+    <tr><td>回饋</td><td>多數 Debit 卡海外回饋很低或沒有，這次沒有查到可以和信用卡比的方案</td></tr>
+    <tr><td>國外手續費</td><td>常見約 1.5%（以發卡行公告為準）</td></tr>
+    <tr><td>ATM 提款</td><td>台灣端收境外提款手續費（每筆固定金額加匯差，依銀行而定），新加坡的 ATM 業者可能另外收費</td></tr>
+    <tr><td>匯率</td><td>走卡組織匯率，再加發卡行手續費</td></tr>
+  </table></div>
+  <div class="sign green"><b class="t">這趟主力用信用卡</b><p>「可以刷」不代表「有回饋」。信用卡有回饋，被盜刷時也比較容易爭議退款。Debit 卡只用來在 ATM 領一次備用現金。</p></div>
+
+  <h2 class="sec">預算（4 位大人，不含機票和住宿，SGD）</h2>
+  <p>格式是「每人／4 人」。餐飲是「葷／素／4 人」。</p>
+  <div class="scroll"><table>
+    <tr><th>Day</th><th>交通</th><th>餐飲（葷／素／4 人）</th><th>景點</th><th>娛樂</th><th>4 人合計</th></tr>
+    <tr><td>D1</td><td class="num">17.5／70</td><td class="num">12／12／48</td><td class="num">0／0</td><td class="num">0／0</td><td class="num"><b>118</b></td></tr>
+    <tr><td>D2</td><td class="num">15.6／62.4</td><td class="num">56／50／212</td><td class="num">46／184</td><td class="num">0／0（Clarke Quay 飲料算在餐飲）</td><td class="num"><b>458.4</b></td></tr>
+    <tr><td>D3</td><td class="num">19.8／79.2</td><td class="num">48／48／192</td><td class="num">0／0</td><td class="num">60–95／240–380</td><td class="num"><b>511.2–651.2</b></td></tr>
+    <tr><td>D4</td><td class="num">14／56</td><td class="num">20／20／80</td><td class="num">0／0</td><td class="num">0／0</td><td class="num"><b>136</b></td></tr>
+    <tr><td><b>合計</b></td><td class="num">66.9／267.6</td><td class="num">136／130／532</td><td class="num">46／184</td><td class="num">60–95／240–380</td><td class="num"><b>約 1,224–1,364</b></td></tr>
+  </table></div>
+  <div class="calc">
+    <p><b>每人：</b>葷約 S$309–344，素約 S$303–338</p>
+    <p><b>每對：</b>約 S$612–682</p>
+    <p class="big">4 位大人約 S$1,224–1,364</p>
+    <p>建議再多預留 15%（Grab 加價、雨天改搭車、Chilli Crab 等選配），抓 S$1,400–1,570。</p>
+    <p>HaveFun 怎麼估：S$200 加 10% 服務費再加 9% GST，約 S$239.8，4 人每人約 S$60。如果另外收入場費（S$35／人），每人約 S$95。</p>
+  </div>
+
+  <nav class="pager" aria-label="換頁"><a href="#move">回交通頁</a><a href="#todo">看清單</a></nav>
+</section>
+
+<!-- ===================== CHECKLIST ===================== -->
+<section class="panel" id="todo">
+  <p>勾選的狀態會存在這支手機的瀏覽器裡。勾「HaveFun 已訂」之後，Day 3 的 HaveFun 會出現 BOOKED 標籤。</p>
+
+  <h2 class="sec">A. 現在就要做（10/4–10/5）</h2>
+  <label class="chk"><input type="checkbox" data-k="a1"><span>確認 4 人的護照效期<b>都超過 6 個月</b>（ICA 規定）。台灣護照的免簽資格，請到 ICA 的 Visa Requirements 頁面再確認一次。</span></label>
+  <label class="chk"><input type="checkbox" data-k="havefun"><span><b>HaveFun 已訂。</b>用 WhatsApp 聯絡 HaveFun，訂 10/10 的 4 人 High Table。問清楚：訂金多少、入場費要不要另外付、S$200++ 最低消費包含哪些、有沒有素食小點。<small>WhatsApp 8318 9300，請對照官網確認號碼。</small></span></label>
+  <label class="chk"><input type="checkbox" data-k="a3"><span>打給信用卡客服或在 app 裡<b>開啟海外交易和感應支付</b>。星展 eco 卡確認活動條件；台新 Richart 先切換到玩旅刷方案。</span></label>
+  <label class="chk"><input type="checkbox" data-k="a4"><span>每人在 Apple Pay 綁好自己的主力卡。</span></label>
+  <label class="chk"><input type="checkbox" data-k="a5"><span>下載 Grab（完成手機號碼驗證並綁卡）和 Google Maps。Grab 怎麼用，看 D1 或交通頁。MyICA app 可選。</span></label>
+
+  <h2 class="sec">B. 出發前做（10/6–10/7）</h2>
+  <label class="chk"><input type="checkbox" data-k="b1"><span><b>填 SG Arrival Card。</b>規定在抵達前 3 天內填（含抵達當天），免費，只用 <a class="lnk" href="https://www.ica.gov.sg/enter-depart/for-visitors/ACI" target="_blank" rel="noopener">ICA 官網</a>或 MyICA app。email 一定要填對，e-Pass 會寄到那裡。小心收費的代辦網站。<small>不會填的話看<a class="lnk" href="https://ianchen.life/sgac-singapore-arrival-card/" target="_blank" rel="noopener">圖解教學</a>（第三方部落格，只當參考，實際只在 ICA 官網或 MyICA 填寫）。</small></span></label>
+  <label class="chk"><input type="checkbox" data-k="b2"><span>臺灣銀行換現鈔，每對 S$160。</span></label>
+  <label class="chk"><input type="checkbox" data-k="b3"><span>買 eSIM 或開漫遊（價格這次沒有查證）。</span></label>
+  <label class="chk"><input type="checkbox" data-k="b4"><span>準備 Type G 英規轉接頭。</span></label>
+  <label class="chk"><input type="checkbox" data-k="b5"><span>帶折傘或輕便雨衣、透氣衣物；進寺廟和 HaveFun 要穿的長褲和包鞋。</span></label>
+  <label class="chk"><input type="checkbox" data-k="b6"><span>下載 Google Maps 離線地圖（新加坡）。</span></label>
+  <label class="chk"><input type="checkbox" data-k="b7"><span>10/7 晚上看 <a class="lnk" href="https://www.weather.gov.sg/" target="_blank" rel="noopener">MSS 官方 4 天預報</a>。</span></label>
+  <label class="chk"><input type="checkbox" data-k="b8"><span>Gardens by the Bay 雙溫室票：建議先上網買，省排隊（可選）。</span></label>
+
+  <h2 class="sec">C. 到新加坡（Arrival）</h2>
+  <label class="chk"><input type="checkbox" data-k="c1"><span>確認 SG Arrival Card 的 e-Pass 已寄到 email，並存好。</span></label>
+  <label class="chk"><input type="checkbox" data-k="c2"><span>第一次搭 MRT 時，確認卡片能嗶過閘門。</span></label>
+  <label class="chk"><input type="checkbox" data-k="c3"><span>每一筆刷卡都確認是 <b>SGD</b>。</span></label>
+  <label class="chk"><input type="checkbox" data-k="c4"><span>Day 2 早上買 Gardens 門票（前一晚沒買的話）。</span></label>
+  <label class="chk"><input type="checkbox" data-k="c5"><span>10/10 下午確認 HaveFun 訂位。</span></label>
+
+  <h2 class="sec">D. 回程（Return flight）</h2>
+  <label class="chk"><input type="checkbox" data-k="d1"><span>10/10 晚上在手機設好 10/11 07:00 的鬧鐘。</span></label>
+  <label class="chk"><input type="checkbox" data-k="d2"><span>10/11 08:00 退房並開 Grab 叫車，<b>08:15 出發</b>。</span></label>
+  <label class="chk"><input type="checkbox" data-k="d3"><span>08:45 抵達 T3，到 SQ 報到櫃台區集合。</span></label>
+
+  <h2 class="sec">旅遊陷阱</h2>
+  <dl class="dl">
+    <div class="row"><dt>Marina 周邊</dt><dd>10/9–10/11 Marina Bay 一帶人潮多，部分道路封閉，Grab 會加價。去 Marina 一律搭 MRT；不要在 Marina Bay Sands 或 Suntec 附近叫車。</dd></div>
+    <div class="row"><dt>DCC</dt><dd>刷卡機問幣別，一律選 SGD。</dd></div>
+    <div class="row"><dt>素食隱藏成分</dt><dd>魚露、belacan、蠔油、豬油、雞湯、蝦米、江魚仔。沙爹醬和叻沙都可能有。</dd></div>
+    <div class="row"><dt>只收現金</dt><dd>Lau Pa Sat 和 Maxwell 很多攤只收現金或 PayNow，身上要有零錢。</dd></div>
+    <div class="row"><dt>SimplyGo</dt><dd>每人一張卡，進出站要用同一個載具，外國卡每日收 S$0.60。</dd></div>
+    <div class="row"><dt>天氣</dt><dd>午後雷雨隨時可能來，室內行程排在下午（D2 雙溫室、D3 遇雨改去 ION）。</dd></div>
+    <div class="row"><dt>HaveFun</dt><dd>要穿包鞋、不能穿短褲；訂金不退；週五、六 21:30 才開演，用 WhatsApp 確認。</dd></div>
+    <div class="row"><dt>機場</dt><dd>10/11 08:15 一定要出發；Jewel 取消。</dd></div>
+    <div class="row"><dt>假網站</dt><dd>SG Arrival Card 是免費的，只用 ica.gov.sg 或 MyICA。</dd></div>
+  </dl>
+
+  <nav class="pager" aria-label="換頁"><a href="#money">回錢的頁面</a><a href="#src">看來源</a></nav>
+</section>
+
+<!-- ===================== SOURCES ===================== -->
+<section class="panel src" id="src">
+  <p><b>查證日：2026/10/4。</b>下面標「官方」的是政府或業者官網，標「第三方」的是媒體、部落格或經銷商整理，請以官方為準。</p>
+
+  <h2 class="sec">驗證狀態</h2>
+  <div class="scroll"><table>
+    <tr><th>項目</th><th>狀態</th></tr>
+    <tr><td>HaveFun 營業時間、最低消費、服裝規定、年齡、訂金不退</td><td>官網 havefunliveshow.com/sg（首頁兩處時間寫法不同，以 Fri–Sat 9:30PM 為準，請用 WhatsApp 確認）</td></tr>
+    <tr><td>HaveFun 入場費 S$15／S$35</td><td>只在 2026/1 版條款的搜尋摘要看到，原頁面打不開，<b>需確認</b></td></tr>
+    <tr><td>HaveFun 食物與素食選項</td><td>查不到，<b>需現場確認</b></td></tr>
+    <tr><td>SimplyGo 每日 S$0.60、Top-up 費用</td><td>官方 simplygo.com.sg</td></tr>
+    <tr><td>SG Arrival Card、自動通關、護照效期 6 個月</td><td>官方 ica.gov.sg</td></tr>
+    <tr><td>Marina 周邊道路管制</td><td>官方 lta.gov.sg（2026/9 新聞稿）</td></tr>
+    <tr><td>Grab 付款方式、叫車前顯示價格、機場叫車</td><td>官方 transport.grab.com、grab.com；「不需要本地號碼註冊」和「機場要選 door／pillar」來自第三方</td></tr>
+    <tr><td>入境卡填寫教學</td><td>第三方部落格 ianchen.life，只當參考</td></tr>
+    <tr><td>公車 7 號站牌代碼、班距、不在改道名單</td><td>第三方 Land Transport Guru，乘車時間是估計值</td></tr>
+    <tr><td>公車票價</td><td>官方 PTC、SimplyGo</td></tr>
+    <tr><td>Big Bus 價格</td><td>官網（美元）；路線和班距來自經銷商</td></tr>
+    <tr><td>Gardens 雙溫室 S$46</td><td>搜尋摘要，出發前請看官網</td></tr>
+    <tr><td>Garden Rhapsody 19:45／20:45</td><td>第三方整理（Tripadvisor、Kido）</td></tr>
+    <tr><td>臺灣銀行 SGD 牌告</td><td>官方 rate.bot.com.tw（10/2–10/3）</td></tr>
+    <tr><td>星展 eco 卡</td><td>官方 dbs.com.tw；其他卡片只有第三方整理</td></tr>
+    <tr><td>天氣</td><td>第三方預報，準確度低</td></tr>
+    <tr><td>個別餐廳營業時間</td><td>多半是第三方資料或沒查證，出發前用 Google Maps 再看一次</td></tr>
+    <tr><td>計程車附加費</td><td>Changi Airport 官網；Grab 價格是估算</td></tr>
+    <tr><td>臺灣外交部急難救助專線</td><td>官方 boca.gov.tw</td></tr>
+  </table></div>
+
+  <h2 class="sec">刻意不排的景點</h2>
+  <div class="scroll"><table>
+    <tr><th>景點</th><th>為什麼不排</th></tr>
+    <tr><td><b>Jewel Changi</b></td><td>回程時間不夠，抵達那晚也累。只有 10/8 出關時間比預期早很多才考慮</td></tr>
+    <tr><td><b>Big Bus</b></td><td>4 人要 US$212 起，Suntec 轉運站又在道路管制區，公車 7 號體驗更真實</td></tr>
+    <tr><td><b>Sentosa</b></td><td>只有兩個完整旅遊日，去一趟要半天以上，第一次來的 CP 值不如市區</td></tr>
+    <tr><td><b>Singapore Flyer</b></td><td>就在 Marina Bay 道路管制區旁邊，週末人潮和交通管制都多</td></tr>
+    <tr><td><b>Marina Bay Sands SkyPark</b></td><td>週末人潮多；Gardens 和沿河夜景已經足夠</td></tr>
+    <tr><td><b>Merlion Park</b></td><td>鄰近 Marina Bay 道路管制的 Fullerton 和 Esplanade 一帶，週五、六晚上動線不確定。D2 沿河走時，視現場開放情況順路繞一下</td></tr>
+    <tr><td><b>Spectra 水舞</b></td><td>平常 20:00 和 21:00 各一場，週五、六多一場 22:00，但這週是否照常演出沒有查證，所以不排主行程</td></tr>
+    <tr><td><b>Satay by the Bay</b></td><td>Gardens by the Bay 官網公告自 10/1 起關閉</td></tr>
+    <tr><td><b>Old Airport Road／Albert Centre</b></td><td>不順路，Maxwell 和 Lau Pa Sat 已經夠用</td></tr>
+    <tr><td><b>Orchard 長時間購物</b></td><td>改成搭公車 7 號經過，想逛的人在 Orchard Stn/Lucky Plaza 下車</td></tr>
+  </table></div>
+
+  <h2 class="sec">來源連結</h2>
+  <ul>
+    <li>官方｜LTA：Marina 周邊道路管制與交通安排（2026/9 新聞稿）<br><a class="lnk" href="https://www.lta.gov.sg/content/ltagov/en/newsroom/2026/9/news-releases/road-closure-and-transport-arrangements-f1-spore-grand-prix-26.html" target="_blank" rel="noopener">lta.gov.sg</a></li>
+    <li>第三方｜Land Transport Guru：公車 7 號<br><a class="lnk" href="https://landtransportguru.net/bus7/" target="_blank" rel="noopener">landtransportguru.net/bus7</a></li>
+    <li>第三方｜Land Transport Guru：10 月公車改道<br><a class="lnk" href="https://landtransportguru.net/formula-1-bus-diversions-plans-2026/" target="_blank" rel="noopener">landtransportguru.net/formula-1-bus-diversions-plans-2026</a></li>
+    <li>官方｜SimplyGo：感應式銀行卡 FAQ<br><a class="lnk" href="https://simplygo.com.sg/faqs/cards-and-charms/simplygo/contactless-bank-cards/" target="_blank" rel="noopener">simplygo.com.sg（contactless bank cards）</a></li>
+    <li>官方｜SimplyGo：外國卡加值 FAQ<br><a class="lnk" href="https://simplygo.com.sg/faqs/cards-and-charms/top-ups/top-ups-via-foreign-issued-creditdebit-cards/" target="_blank" rel="noopener">simplygo.com.sg（foreign-issued cards）</a></li>
+    <li>官方｜SimplyGo：服務條款<br><a class="lnk" href="https://simplygo.com.sg/terms-and-conditions-simplygo-services/" target="_blank" rel="noopener">simplygo.com.sg（terms）</a></li>
+    <li>官方｜PTC：公共交通票價<br><a class="lnk" href="https://www.ptc.gov.sg/fares/public-transport-fares-and-passes/" target="_blank" rel="noopener">ptc.gov.sg</a></li>
+    <li>官方｜ICA：SG Arrival Card<br><a class="lnk" href="https://www.ica.gov.sg/enter-depart/for-visitors/ACI" target="_blank" rel="noopener">ica.gov.sg（ACI）</a></li>
+    <li>官方｜ICA：入境新加坡<br><a class="lnk" href="https://www.ica.gov.sg/enter-transit-depart/entering-singapore" target="_blank" rel="noopener">ica.gov.sg（entering-singapore）</a></li>
+    <li>官方｜ICA 問答（ask.gov.sg）<br><a class="lnk" href="https://ask.gov.sg/ica/questions/clos83fsw00315k0wck6rs8dg" target="_blank" rel="noopener">ask.gov.sg</a></li>
+    <li>官方｜HaveFun Live Show 官網<br><a class="lnk" href="https://www.havefunliveshow.com/sg/" target="_blank" rel="noopener">havefunliveshow.com/sg</a></li>
+    <li>官方｜HaveFun 條款<br><a class="lnk" href="https://havefunkaraoke.com/havefunliveshow_terms_and_conditions/" target="_blank" rel="noopener">havefunkaraoke.com（terms）</a></li>
+    <li>官方｜Big Bus Tours Singapore<br><a class="lnk" href="https://www.bigbustours.com/en/singapore/hop-on-hop-off-singapore" target="_blank" rel="noopener">bigbustours.com</a></li>
+    <li>官方｜Gardens by the Bay：Cloud Forest<br><a class="lnk" href="https://www.gardensbythebay.com.sg/en/things-to-do/attractions/cloud-forest.html" target="_blank" rel="noopener">gardensbythebay.com.sg</a></li>
+    <li>官方｜臺灣銀行牌告匯率<br><a class="lnk" href="https://rate.bot.com.tw/xrt?Lang=zh-TW" target="_blank" rel="noopener">rate.bot.com.tw</a></li>
+    <li>官方｜星展 eco 永續卡<br><a class="lnk" href="https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html" target="_blank" rel="noopener">dbs.com.tw</a></li>
+    <li>第三方｜夏綠蒂聊投資：星展 eco 卡評價<br><a class="lnk" href="https://ccinvest.com.tw/dbs_eco/" target="_blank" rel="noopener">ccinvest.com.tw</a></li>
+    <li>第三方｜Money101：海外信用卡比較<br><a class="lnk" href="https://www.money101.com.tw/blog/%E6%B5%B7%E5%A4%96%E4%BF%A1%E7%94%A8%E5%8D%A1-%E7%8F%BE%E9%87%91%E5%9B%9E%E9%A5%8B-%E6%B5%B7%E5%A4%96%E5%88%B7%E5%8D%A1%E6%8E%A8%E8%96%A6-%E6%89%8B%E7%BA%8C%E8%B2%BB-pod" target="_blank" rel="noopener">money101.com.tw</a></li>
+    <li>官方｜外交部領事事務局：旅外國人急難救助服務專線<br><a class="lnk" href="https://www.boca.gov.tw/np-87-1.html" target="_blank" rel="noopener">boca.gov.tw</a></li>
+    <li>官方｜Grab Singapore 叫車<br><a class="lnk" href="https://transport.grab.com/sg/" target="_blank" rel="noopener">transport.grab.com/sg</a></li>
+    <li>官方｜Grab：Changi 機場叫車<br><a class="lnk" href="https://www.grab.com/global/airport-rides/changi-airport/" target="_blank" rel="noopener">grab.com（Changi Airport）</a></li>
+    <li>第三方｜Singapore Spirit：Grab 與計程車<br><a class="lnk" href="https://www.singapore-spirit.com/guides/grab-taxis-singapore/" target="_blank" rel="noopener">singapore-spirit.com（grab-taxis）</a></li>
+    <li>第三方｜入境卡填寫教學（Ian Chen）<br><a class="lnk" href="https://ianchen.life/sgac-singapore-arrival-card/" target="_blank" rel="noopener">ianchen.life</a></li>
+    <li>官方｜MSS 新加坡氣象署<br><a class="lnk" href="https://www.weather.gov.sg/" target="_blank" rel="noopener">weather.gov.sg</a></li>
+    <li>第三方｜Lau Pa Sat 指南<br><a class="lnk" href="https://www.singapore-spirit.com/guides/lau-pa-sat-guide/" target="_blank" rel="noopener">singapore-spirit.com</a></li>
+    <li>第三方｜Maxwell Food Centre：Soon Seng Vegetarian<br><a class="lnk" href="https://maxwellfoodcentre.com/soon-seng-vegetarian/" target="_blank" rel="noopener">maxwellfoodcentre.com</a></li>
+    <li>第三方｜Spectra 水舞指南<br><a class="lnk" href="https://www.singapore-spirit.com/guides/spectra-light-show/" target="_blank" rel="noopener">singapore-spirit.com</a></li>
+  </ul>
+
+  <p class="foot">這份指南是 2026/10/4 的查證結果。出發前價格、營業時間、HaveFun 訂位條件請再確認一次。</p>
+  <nav class="pager" aria-label="換頁"><a href="#todo">回清單</a><a href="#home">回首頁</a></nav>
+</section>
+
+<section class="panel" id="map" aria-label="行程地圖">
+  <div class="mapui" id="mapui">
+    <div class="mtabs" id="mtabs" role="group" aria-label="選擇哪一天"></div>
+    <div class="mwrap">
+      <div class="mapc" id="mapc" tabindex="0" role="application" aria-label="行程地圖。可拖曳、縮放；方向鍵移動，加減號縮放">
+        <div class="m-tiles" id="m-tiles"></div>
+        <svg class="m-svg" id="m-svg" aria-hidden="true"></svg>
+        <div class="m-marks" id="m-marks"></div>
+        <div class="m-pop" id="m-pop" hidden role="dialog" aria-label="地點資訊"></div>
+        <div class="m-ctl">
+          <button type="button" id="m-loc">我的位置</button>
+          <button type="button" id="m-leg" aria-expanded="false">圖例</button>
+        </div>
+        <div class="m-zoom"><button type="button" id="m-zin" aria-label="放大">+</button><button type="button" id="m-zout" aria-label="縮小">−</button></div>
+        <div class="m-legend" id="m-legend" hidden></div>
+        <div class="m-note" id="m-note" hidden>底圖沒載入（安全限制或沒網路）。標記是真實座標，街道請用 Google Maps。<button type="button" id="m-note-x">知道了</button></div>
+        <div class="m-attr">© OpenStreetMap contributors</div>
+        <div class="m-scale" id="m-scale"></div>
+      </div>
+    </div>
+    <div class="mpanel">
+      <div class="mhead" id="mhead"></div>
+      <div class="mcards" id="mcards" role="list"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="show" id="show" hidden role="dialog" aria-label="給店員看的句子">
+  <div class="en"></div>
+  <div class="zh"></div>
+  <div class="ms"></div>
+  <div class="ta"></div>
+  <small>點一下關閉</small>
+</div>
+<script>
+(function(){
+  var doc = document.documentElement;
+  doc.classList.add('js');
+
+  var ids = ['home','map','d1','d2','d3','d4','food','move','money','todo','src'];
+  function $(s, r){ return (r || document).querySelector(s); }
+  function $$(s, r){ return [].slice.call((r || document).querySelectorAll(s)); }
+
+  /* ---------- 分頁切換 ---------- */
+  function show(id, keepScroll){
+    if (ids.indexOf(id) < 0) id = 'home';
+    $$('.panel').forEach(function(p){ p.classList.toggle('on', p.id === id); });
+    var row = $('.nav .row');
+    $$('.nav a').forEach(function(a){
+      if (a.getAttribute('href') === '#' + id){
+        a.setAttribute('aria-current', 'page');
+        if (row){ row.scrollLeft = a.offsetLeft - (row.clientWidth - a.offsetWidth) / 2; }
+      } else {
+        a.removeAttribute('aria-current');
+      }
+    });
+    try { history.replaceState(null, '', '#' + id); } catch (e) {}
+    if (!keepScroll) window.scrollTo(0, 0);
+  }
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    if (ids.indexOf(id) < 0) return;
+    e.preventDefault();
+    show(id);
+  });
+  window.addEventListener('hashchange', function(){
+    show((location.hash || '#home').slice(1));
+  });
+
+  /* 沒有指定分頁時：旅行期間自動打開「今天」是 D 幾 */
+  var start = (location.hash || '').slice(1);
+  if (ids.indexOf(start) < 0){
+    start = 'home';
+    var sg = new Date(Date.now() + 8 * 3600 * 1000);
+    if (sg.getUTCFullYear() === 2026 && sg.getUTCMonth() === 9){
+      var d = sg.getUTCDate();
+      if (d >= 8 && d <= 11) start = 'd' + (d - 7);
+    }
+  }
+  show(start, true);
+
+  /* ---------- 外觀：自動 / 淺色 / 深色 ---------- */
+  var themes = ['auto', 'light', 'dark'];
+  var labels = { auto: '外觀：自動', light: '外觀：淺色', dark: '外觀：深色' };
+  var theme = 'auto';
+  try { theme = localStorage.getItem('sg-theme') || 'auto'; } catch (e) {}
+  if (themes.indexOf(theme) < 0) theme = 'auto';
+  var themeBtn = $('#themeBtn');
+  function applyTheme(){
+    doc.setAttribute('data-theme', theme);
+    if (themeBtn) themeBtn.textContent = labels[theme];
+  }
+  applyTheme();
+  if (themeBtn){
+    themeBtn.addEventListener('click', function(){
+      theme = themes[(themes.indexOf(theme) + 1) % themes.length];
+      try { localStorage.setItem('sg-theme', theme); } catch (e) {}
+      applyTheme();
+    });
+  }
+
+  /* ---------- 清單：勾選狀態存在這支手機 ---------- */
+  var store = {};
+  try { store = JSON.parse(localStorage.getItem('sg-checks') || '{}') || {}; } catch (e) { store = {}; }
+  function saveChecks(){
+    try { localStorage.setItem('sg-checks', JSON.stringify(store)); } catch (e) {}
+  }
+  function syncBooked(){
+    $$('[data-booked]').forEach(function(el){
+      el.hidden = !store[el.getAttribute('data-booked')];
+    });
+  }
+  $$('input[data-k]').forEach(function(box){
+    var k = box.getAttribute('data-k');
+    box.checked = !!store[k];
+    box.addEventListener('change', function(){
+      store[k] = box.checked;
+      saveChecks();
+      syncBooked();
+    });
+  });
+  syncBooked();
+
+  /* ---------- 給店員看：全螢幕顯示 ---------- */
+  var ov = $('#show');
+  function fill(cls, text){
+    var el = $('.' + cls, ov);
+    el.textContent = text || '';
+    el.style.display = text ? '' : 'none';
+  }
+  $$('.phrase').forEach(function(b){
+    b.addEventListener('click', function(){
+      fill('en', b.getAttribute('data-en'));
+      fill('zh', b.getAttribute('data-zh'));
+      fill('ms', b.getAttribute('data-ms'));
+      fill('ta', b.getAttribute('data-ta'));
+      ov.hidden = false;
+    });
+  });
+  ov.addEventListener('click', function(){ ov.hidden = true; });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') ov.hidden = true;
+  });
+
+  /* ---------- 列印：展開所有折疊內容 ---------- */
+  var printBtn = $('#printBtn');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+  window.addEventListener('beforeprint', function(){
+    $$('details').forEach(function(d){ d.setAttribute('open', ''); });
+  });
+})();
+</script>
+<script>
+(function(){
+'use strict';
+var panel=document.getElementById('map'); if(!panel) return;
+var $=function(s,r){return (r||document).querySelector(s)};
+var mapc=$('#mapc'),tilesEl=$('#m-tiles'),svg=$('#m-svg'),marksEl=$('#m-marks'),pop=$('#m-pop'),noteEl=$('#m-note'),scaleEl=$('#m-scale'),legend=$('#m-legend');
+var NS='http://www.w3.org/2000/svg';
+
+/* ------------------------------------------------------------------
+   Verified locations (checked 2026-10-04). Source for each is kept here.
+   Anything not in this table is NOT drawn on the map.
+------------------------------------------------------------------ */
+var V={
+ airport:{ll:[1.35917,103.98944],src:'Wikipedia：Changi Airport（機場整體座標，航廈細部座標未驗證）'},
+ hotel:{ll:[1.311607,103.880790],src:'HotelPlanner 住宿頁座標；地址 31 Lor 18 Geylang, Singapore 398828'},
+ maxwell:{ll:[1.2803315,103.8447473],src:'Wikipedia：Maxwell Food Centre'},
+ btrt:{ll:[1.281567,103.844192],src:'Travelfish GPS：1°16′53.64″N 103°50′39.09″E'},
+ gardens:{ll:[1.284669,103.864617],src:'Structurae：Flower Dome 1°17′4.81″N 103°51′52.62″E（Cloud Forest 在東邊約 140 m：1.284002, 103.866058）'},
+ lau:{ll:[1.280629,103.850396],src:'Wikipedia：Lau Pa Sat'},
+ clarke:{ll:[1.289497,103.845161],src:'Sygic Travel：1°17′22.19″N 103°50′42.58″E（30 North Boat Quay）'},
+ tekka:{ll:[1.3062,103.8508],src:'Wikipedia：Tekka Centre'},
+ sultan:{ll:[1.3022,103.8590],src:'Wikipedia：Sultan Mosque'},
+ bugismrt:{ll:[1.30028,103.85611],src:'Wikipedia：Bugis MRT station'},
+ bugisplus:{ll:[1.299617,103.854408],src:'Wikipedia：Bugis+'},
+ botanic:{ll:[1.3151,103.8162],src:'Wikipedia：Singapore Botanic Gardens（園區座標）'}
+};
+var TYPES={
+ hotel:{c:'#1E293B',zh:'住宿',sq:1},airport:{c:'#0F172A',zh:'機場',sq:1},meeting:{c:'#0E7490',zh:'集合點'},
+ attraction:{c:null,zh:'景點（顏色＝當天）'},food:{c:'#C2410C',zh:'餐廳'},transport:{c:'#475569',zh:'交通站'}
+};
+var DAYC={D1:'#007A38',D2:'#005EC4',D3:'#9900AA',D4:'#E58A00'};
+var MODE={walk:'步行',mrt:'MRT',bus:'公車',grab:'Grab'};
+var GM_MODE={walk:'walking',mrt:'transit',bus:'transit',grab:'driving'};
+
+/* ---------------- itinerary stops (times and transport come from the guide) ---------------- */
+var DAYS=[
+{id:'D1',name:'抵達',date:'10/8 週四',tag:'19:00 落地，回飯店，不排付費景點',stops:[
+ {t:'19:00',name:'Changi Airport',type:'airport',v:'airport',q:'Changi Airport Singapore',act:'SQ877 落地，入境、領行李，在入境大廳 Taxi Stand 前分開（出關估約 20:10）。',stay:'約 70 分鐘',
+  next:{mode:'grab',to:'Hotel 81 Premier Star',min:'20–30 分',cost:'約 S$25–40／車（預算 S$35，2 人每人 S$17.5，估；Grab 會先報價）',alt:'MRT 約 45–60 分、每人約 S$2，要轉車、拖行李'}},
+ {t:'20:45',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'辦入住；晚餐在飯店附近簡單吃。',stay:'過夜',
+  food:{n:'飯店附近隨意吃（預算每人約 S$12）',v:'叫 GrabFood 選 100% 素食店；Geylang 一帶不保證有素'}}
+]},
+{id:'D2',name:'Chinatown、雙溫室、Clarke Quay',date:'10/9 週五',tag:'中午在室內，傍晚走河邊',stops:[
+ {t:'09:15',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'早餐（Kaya Toast）後出發，走到 Aljunied（EW9）。',stay:'—',
+  next:{mode:'mrt',to:'Maxwell Food Centre',min:'約 35 分（含走路）',cost:'每人約 S$1.6–1.9（估）',alt:'Aljunied EW9 → Tanjong Pagar EW15，同線不轉車'}},
+ {t:'10:00',name:'Maxwell Food Centre',type:'meeting',v:'maxwell',q:'Maxwell Food Centre, 1 Kadayanallur St, Singapore 069184',act:'4 人集合（Kadayanallur St 側門口），開始走 Chinatown。Couple B 依實際住宿位置前往。',stay:'10:00–11:30（含寺廟與老街）',
+  next:{mode:'walk',to:'Buddha Tooth Relic Temple',calc:1,alt:'整段 Chinatown 步行約 1.5 km'}},
+ {t:'10:00–11:30',name:'Buddha Tooth Relic Temple',type:'attraction',v:'btrt',q:'Buddha Tooth Relic Temple and Museum, 288 South Bridge Rd, Singapore',act:'佛牙寺（遮住肩膀和膝蓋），再走 Sri Mariamman Temple、Pagoda Street（這兩處座標未驗證，不另標）。',stay:'約 1 小時 30 分（Chinatown）',
+  next:{mode:'walk',to:'Maxwell Food Centre（午餐）',calc:1}},
+ {t:'11:30',name:'Maxwell Food Centre',type:'food',veg:1,v:'maxwell',q:'Maxwell Food Centre, 1 Kadayanallur St, Singapore 069184',act:'午餐；12:40 起 Chinatown 隨意逛。',stay:'11:30–12:30',cash:1,
+  food:{n:'Tian Tian 海南雞飯（約 S$6–8）',v:'Soon Seng 素米粉（第 15 攤，約 S$3–5）；糕點 Traditional Delight；備案 The Green Leaf'},
+  next:{mode:'mrt',to:'Gardens by the Bay',min:'約 30 分（13:30–14:00）',cost:'每人約 S$1.3–1.6（估）',alt:'Maxwell TE18 → Gardens by the Bay TE22，約 4 站'}},
+ {t:'14:00',name:'Gardens by the Bay',type:'attraction',v:'gardens',q:'Gardens by the Bay Flower Dome, 18 Marina Gardens Dr, Singapore 018953',act:'14:00 Flower Dome＋Cloud Forest（室內冷氣），17:15 Supertree Grove，19:45 Garden Rhapsody（免費）。非居民成人 S$46，出發前看官網確認。',stay:'14:00–20:00',
+  next:{mode:'mrt',to:'Lau Pa Sat',min:'約 30 分（20:00–20:30）',cost:'每人約 S$1.1–1.3（估）',alt:'Bayfront DT16 → Downtown DT17 一站，再走約 3 分鐘'}},
+ {t:'20:30',name:'Lau Pa Sat',type:'food',veg:1,v:'lau',q:'Lau Pa Sat, 18 Raffles Quay, Singapore 048582',act:'沙爹街晚餐。多數攤位只收現金；Maya 營業到 22:30，21:45 前點完。',stay:'20:30–21:45',cash:1,
+  food:{n:'Satay Street 雞牛羊沙爹（每人約 S$15–20）',v:'Su Xiang（46）素炒麵；Maya（47）素 briyani；Shree Bhaavan（40）（每人約 S$10–14）。沙爹和沾醬不是素的'},
+  next:{mode:'walk',to:'Clarke Quay',min:'約 30 分（21:45–22:15）',alt:'沿河步行約 1.5–2 km（Raffles Place → Boat Quay → Clarke Quay）'}},
+ {t:'22:15',name:'Clarke Quay',type:'attraction',must:1,v:'clarke',q:'Clarke Quay, Singapore',act:'河邊散步、喝一杯或吃甜點，過 Read Bridge 拍夜景。每人約 S$15–28，可刷卡。',stay:'22:15–23:30',
+  next:{mode:'grab',to:'Hotel 81 Premier Star',min:'約 15 分',cost:'一車約 S$15–22（估，深夜可能漲價）'}},
+ {t:'23:30',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'回飯店。',stay:'過夜'}
+]},
+{id:'D3',name:'Little India、Kampong Glam、雙層巴士、HaveFun',date:'10/10 週六',tag:'上午走路，下午搭公車 7 號，晚上 HaveFun',stops:[
+ {t:'08:30',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'出發去 Little India。',stay:'—',
+  next:{mode:'grab',to:'Tekka Centre',min:'10–15 分',cost:'一車約 S$10–14（估）',alt:'MRT 要轉車，兩人分攤 Grab 更划算'}},
+ {t:'09:00',name:'Tekka Centre',type:'meeting',veg:1,v:'tekka',q:'Tekka Centre, 665 Buffalo Rd, Singapore 210665',act:'集合點（Buffalo Rd 側入口，Little India MRT 旁），早餐；再逛 Little India（Sri Veeramakaliamman Temple、Tan Teng Niah，座標未驗證，不另標）。',stay:'09:00–11:00',cash:1,
+  food:{n:'Biryani、Roti Prata 配 Teh Tarik（每人約 S$5–8）',v:'Thosai、Idli（印度素食通常有五辛）；備案 Komala Vilas'},
+  next:{mode:'walk',to:'Kampong Glam',calc:1,min:'約 20 分',alt:'步行約 1.3 km；天熱可叫 Grab，4 人一車約 S$8–10（估）'}},
+ {t:'11:20',name:'Kampong Glam（Sultan Mosque）',type:'attraction',v:'sultan',q:'Sultan Mosque, 3 Muscat St, Singapore 198833',act:'Sultan Mosque 看外觀，Bussorah St，Haji Lane（塗鴉小巷，位置在附近，座標未單獨驗證），Arab Street。',stay:'11:20–13:00',
+  next:{mode:'walk',to:'Food Junction（Bugis Junction）',min:'約 5 分'}},
+ {t:'13:00',name:'Food Junction（Bugis Junction）',type:'food',veg:1,v:null,q:'Food Junction, Bugis Junction, 200 Victoria St, Singapore',act:'午餐，有冷氣，4 人坐得下。（Bugis Junction 的精確座標未驗證，所以地圖上不標點。）',stay:'13:00–13:45',
+  food:{n:'Laksa 或雞飯類，看當天開哪些攤（每人約 S$8–12）',v:'Truly Vegetarian（#03-30，約 S$10）'},
+  next:{mode:'bus',to:'Botanic Gardens',min:'25–30 分（13:50–14:20）',cost:'每人約 S$1.49–1.68（4 人約 S$6–7）',alt:'公車 7 號（雙層）：Bugis Stn/Parkview Sq（01139）→ Napier Stn Exit 2（13011），上層最前排'}},
+ {t:'14:20',name:'Singapore Botanic Gardens',type:'attraction',v:'botanic',q:'Singapore Botanic Gardens Tanglin Gate, Singapore',act:'從 Tanglin Gate 進園，天鵝湖、Bandstand（免費）。雨勢大就提早在 Orchard Stn Exit 13（09022）下車改逛 ION Orchard。',stay:'14:20–15:30',
+  next:{mode:'bus',to:'Hotel 81（休息）',min:'公車 30–35 分＋MRT／Grab 約 10 分',cost:'公車每人約 S$1.49–1.68；MRT 每人約 S$1.3（估）',alt:'回程 Napier Stn Exit 1（13019）→ Opp Bugis Stn Exit C（01112），走 Orchard Road；再 Bugis EW12 → Aljunied EW9'}},
+ {t:'16:15',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'休息，換好包鞋和長褲（HaveFun 有服裝規定）。',stay:'16:15–18:30',
+  next:{mode:'mrt',to:'Bugis MRT',min:'約 10–15 分',cost:'每人約 S$1.3（估）',alt:'Aljunied EW9 → Bugis EW12，3 站'}},
+ {t:'18:45',name:'Bugis MRT',type:'meeting',v:'bugismrt',q:'Bugis MRT Station, 220 Victoria St, Singapore 188022',act:'集合點：往 Bugis Junction 的出口（實際出口以站內指標為準）。',stay:'—',
+  next:{mode:'walk',to:'Herbivore（Fortune Centre）',min:'約 5–8 分'}},
+ {t:'19:00',name:'Herbivore（Fortune Centre）',type:'food',veg:1,v:null,q:'Herbivore, Fortune Centre, 190 Middle Rd #01-13/14, Singapore 188979',act:'全素晚餐，每人約 S$25。週六晚上建議先訂位。（Fortune Centre 的精確座標未驗證，所以地圖上不標點。）',stay:'19:00–20:30',
+  food:{n:'葷食的兩位這一餐配合吃素（只有這一餐）',v:'全店素食，vegan 選擇多'},
+  next:{mode:'walk',to:'HaveFun Live Show',min:'約 5–8 分'}},
+ {t:'20:45',name:'HaveFun Live Show',type:'attraction',must:1,v:'bugisplus',q:'HaveFun Live Show, 201 Victoria St #07-01, Singapore 188067',act:'Bugis+ 7 樓。21:30 開演，待到約 00:00。建議訂位，週五、六最低消費 S$200++，要穿包鞋和長褲。',stay:'20:45–00:00',
+  food:{n:'食物與素食選項查不到資料，需現場確認',v:'晚餐先吃飽再進場'},
+  next:{mode:'grab',to:'Hotel 81 Premier Star',min:'約 10 分',cost:'一車約 S$10–15（估，深夜可能漲價）'}},
+ {t:'00:00',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'回飯店。',stay:'過夜'}
+]},
+{id:'D4',name:'回程',date:'10/11 週日',tag:'08:15 最晚出發，11:45 起飛',stops:[
+ {t:'08:15',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'最晚 08:15 離開飯店。',stay:'—',
+  next:{mode:'grab',to:'Changi Airport T3',min:'20–25 分',cost:'一車約 S$20–30（估；機場附加費只收從機場出發的行程）',alt:'MRT 每人省約 S$10–13，但要轉車、帶行李'}},
+ {t:'08:45',name:'Changi Airport T3',type:'airport',v:'airport',q:'Changi Airport Terminal 3, Singapore',act:'SQ 報到櫃台集合，報到、託運、出境。Jewel 取消（會趕）。11:45 SQ878 起飛。',stay:'08:45–10:45'}
+]}
+];
+var OVERVIEW=[
+ {label:'Changi 機場',days:'D1 D4',type:'airport',v:'airport',q:'Changi Airport Singapore'},
+ {label:'Hotel 81',days:'D1–D4',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828'},
+ {label:'Chinatown',days:'D2',type:'attraction',dc:'D2',v:'maxwell',q:'Maxwell Food Centre, 1 Kadayanallur St, Singapore 069184'},
+ {label:'Gardens by the Bay',days:'D2',type:'attraction',dc:'D2',v:'gardens',q:'Gardens by the Bay Flower Dome, 18 Marina Gardens Dr, Singapore 018953'},
+ {label:'Clarke Quay',days:'D2 必去',type:'attraction',dc:'D2',must:1,v:'clarke',q:'Clarke Quay, Singapore'},
+ {label:'Little India',days:'D3',type:'attraction',dc:'D3',v:'tekka',q:'Tekka Centre, 665 Buffalo Rd, Singapore 210665'},
+ {label:'Kampong Glam',days:'D3',type:'attraction',dc:'D3',v:'sultan',q:'Sultan Mosque, 3 Muscat St, Singapore 198833'},
+ {label:'HaveFun（Bugis+）',days:'D3 必去',type:'attraction',dc:'D3',must:1,v:'bugisplus',q:'HaveFun Live Show, 201 Victoria St #07-01, Singapore 188067'},
+ {label:'Botanic Gardens',days:'D3（公車 7 號）',type:'attraction',dc:'D3',v:'botanic',q:'Singapore Botanic Gardens Tanglin Gate, Singapore'}
+];
+
+/* ---------------- helpers ---------------- */
+function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function svgel(tag,attrs){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);return e}
+function enc(s){return encodeURIComponent(s)}
+function gmPlace(q){return 'https://www.google.com/maps/search/?api=1&query='+enc(q)}
+function gmDir(q,mode){return 'https://www.google.com/maps/dir/?api=1&destination='+enc(q)+'&travelmode='+(GM_MODE[mode]||'transit')}
+function gmDay(stops){
+  var seq=[];stops.forEach(function(s){if(!seq.length||seq[seq.length-1].q!==s.q)seq.push(s)});
+  if(seq.length<2)return gmPlace(seq[0].q);
+  var wp=seq.slice(1,-1).slice(0,9).map(function(s){return s.q}).join('|');
+  return 'https://www.google.com/maps/dir/?api=1&origin='+enc(seq[0].q)+'&destination='+enc(seq[seq.length-1].q)+(wp?'&waypoints='+enc(wp):'')+'&travelmode=transit';
+}
+function km(a,b){var R=6371,r=Math.PI/180,dl=(b[0]-a[0])*r,dg=(b[1]-a[1])*r;var x=Math.sin(dl/2)*Math.sin(dl/2)+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dg/2)*Math.sin(dg/2);return 2*R*Math.asin(Math.sqrt(x))}
+function ll(s){return s.v&&V[s.v]?V[s.v].ll:null}
+function color(s,dayId){
+  if(s.type==='attraction')return DAYC[dayId]||'#005EC4';
+  return TYPES[s.type].c;
+}
+/* number the stops, then derive walking estimates from verified coordinates */
+DAYS.forEach(function(d){
+  d.stops.forEach(function(s,i){s.n=i+1;s.day=d.id;s.ll=ll(s);s.mc=color(s,d.id);s.gk=s.v||('x'+d.id+i)});
+  d.stops.forEach(function(s,i){
+    var nx=d.stops[i+1];
+    if(s.next&&nx){
+      if(s.ll&&nx.ll){var kmv=km(s.ll,nx.ll);s.next.km=kmv}
+      if(s.next.calc&&s.next.km!=null&&!s.next.min){s.next.min='約 '+Math.max(1,Math.round(s.next.km*1.3/0.08))+' 分（由座標估算）'}
+    }
+  });
+});
+
+/* ---------------- state + projection ---------------- */
+var S={cx:.5,cy:.5,z:11,w:0,h:0,day:'ov',sel:null,tileOk:0,tileFail:0,moved:false,me:null,inited:false,anim:0};
+function mx(lng){return(lng+180)/360}
+function my(lat){var s=Math.sin(lat*Math.PI/180);return .5-Math.log((1+s)/(1-s))/(4*Math.PI)}
+function Wd(z){return 256*Math.pow(2,z)}
+function toPx(p){var W=Wd(S.z);return[(mx(p[1])-S.cx)*W+S.w/2,(my(p[0])-S.cy)*W+S.h/2]}
+function fromPx(x,y){var W=Wd(S.z),X=(x-S.w/2)/W+S.cx,Y=(y-S.h/2)/W+S.cy,n=Math.PI-2*Math.PI*Y;return[180/Math.PI*Math.atan(.5*(Math.exp(n)-Math.exp(-n))),X*360-180]}
+function clampZ(z){return Math.max(9,Math.min(19,z))}
+function setView(cx,cy,z){cancelAnimationFrame(S.anim);S.cx=cx;S.cy=cy;S.z=clampZ(z);schedule()}
+var raf=0;function schedule(){if(!raf)raf=requestAnimationFrame(function(){raf=0;render()})}
+function fitPoints(pts,pad,maxZ){
+  if(!pts.length)return;
+  var P=typeof pad==='number'?{l:pad,r:pad,t:pad,b:pad}:pad,x0=1,x1=0,y0=1,y1=0;
+  pts.forEach(function(p){var X=mx(p[1]),Y=my(p[0]);x0=Math.min(x0,X);x1=Math.max(x1,X);y0=Math.min(y0,Y);y1=Math.max(y1,Y)});
+  var aw=Math.max(80,S.w-P.l-P.r),ah=Math.max(80,S.h-P.t-P.b),dx=Math.max(x1-x0,1e-7),dy=Math.max(y1-y0,1e-7);
+  var z=clampZ(Math.min(Math.log(aw/(256*dx))/Math.LN2,Math.log(ah/(256*dy))/Math.LN2,maxZ||17)),W=Wd(z);
+  var offx=(S.w/2)-((P.l+(S.w-P.r))/2),offy=(S.h/2)-((P.t+(S.h-P.b))/2);
+  setView((x0+x1)/2+offx/W,(y0+y1)/2+offy/W,z);
+}
+function animTo(cx,cy,z,dur){
+  cancelAnimationFrame(S.anim);var a={cx:S.cx,cy:S.cy,z:S.z},t0=performance.now();dur=dur||420;
+  (function step(t){var k=Math.min(1,(t-t0)/dur),e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2;
+    S.cx=a.cx+(cx-a.cx)*e;S.cy=a.cy+(cy-a.cy)*e;S.z=a.z+(clampZ(z)-a.z)*e;render();
+    if(k<1)S.anim=requestAnimationFrame(step)})(t0);
+}
+function zoomAt(f,px,py){
+  var before=fromPx(px,py);S.z=clampZ(S.z+f);var after=toPx(before);
+  var W=Wd(S.z);S.cx+=(after[0]-px)/W;S.cy+=(after[1]-py)/W;schedule();
+}
+
+/* ---------------- rendering: tiles ---------------- */
+var tiles={},tileTimer=0;
+function layoutTiles(){
+  var tz=Math.max(1,Math.min(19,Math.round(S.z))),sc=Math.pow(2,S.z-tz),ts=256*sc,n=Math.pow(2,tz),W=Wd(S.z);
+  var left=S.cx*W-S.w/2,top=S.cy*W-S.h/2;
+  var x0=Math.floor(left/ts),x1=Math.floor((left+S.w)/ts),y0=Math.floor(top/ts),y1=Math.floor((top+S.h)/ts),need={};
+  for(var x=x0;x<=x1;x++)for(var y=y0;y<=y1;y++){
+    if(y<0||y>=n)continue;var xx=((x%n)+n)%n,key=tz+'/'+xx+'/'+y+'@'+x;need[key]=1;var im=tiles[key];
+    if(!im){
+      im=new Image();im.className='tile';im.alt='';im.draggable=false;im.decoding='async';
+      im.onload=function(){S.tileOk++;this.classList.add('ok');noteEl.hidden=true};
+      im.onerror=function(){S.tileFail++;this.style.display='none';if(S.tileOk===0&&S.tileFail>=2&&!noteDismissed)noteEl.hidden=false};
+      im.src='https://tile.openstreetmap.org/'+tz+'/'+xx+'/'+y+'.png';tilesEl.appendChild(im);tiles[key]=im;
+    }
+    im.style.width=im.style.height=ts+'px';im.style.transform='translate('+(x*ts-left)+'px,'+(y*ts-top)+'px)';
+  }
+  for(var k in tiles)if(!need[k]){var o=tiles[k];if(o.parentNode)o.parentNode.removeChild(o);delete tiles[k]}
+}
+var noteDismissed=false;
+$('#m-note-x').addEventListener('click',function(){noteDismissed=true;noteEl.hidden=true});
+
+/* ---------------- rendering: svg (grid when no basemap, route) ---------------- */
+function fmtDeg(v,d){return v.toFixed(d)}
+function layoutSvg(){
+  svg.setAttribute('width',S.w);svg.setAttribute('height',S.h);while(svg.firstChild)svg.removeChild(svg.firstChild);
+  var noBase=S.tileOk===0&&S.tileFail>0;
+  if(noBase){
+    var tl=fromPx(0,0),br=fromPx(S.w,S.h),steps=[.1,.05,.02,.01,.005,.002,.001,.0005,.0002,.0001],W=Wd(S.z),pxPerDeg=W/360,step=steps[0];
+    for(var i=0;i<steps.length;i++){if(steps[i]*pxPerDeg>=90)step=steps[i]}
+    var dec=step<.001?4:step<.01?3:2,g=svgel('g',{stroke:'currentColor','stroke-width':'1',opacity:'.18'});
+    for(var lg=Math.ceil(tl[1]/step)*step;lg<=br[1];lg+=step){var xx=toPx([tl[0],lg])[0];g.appendChild(svgel('line',{x1:xx,y1:0,x2:xx,y2:S.h}))}
+    for(var lt=Math.ceil(br[0]/step)*step;lt<=tl[0];lt+=step){var yy=toPx([lt,tl[1]])[1];g.appendChild(svgel('line',{x1:0,y1:yy,x2:S.w,y2:yy}))}
+    var tg=svgel('g',{fill:'currentColor',opacity:'.55','font-size':'10','font-family':'Sora,system-ui'});
+    for(lg=Math.ceil(tl[1]/step)*step;lg<=br[1];lg+=step){var tx=svgel('text',{x:toPx([tl[0],lg])[0]+3,y:S.h-22});tx.textContent=fmtDeg(lg,dec)+'°E';tg.appendChild(tx)}
+    for(lt=Math.ceil(br[0]/step)*step;lt<=tl[0];lt+=step){var ty=svgel('text',{x:3,y:toPx([lt,tl[1]])[1]-3});ty.textContent=fmtDeg(lt,dec)+'°N';tg.appendChild(ty)}
+    svg.appendChild(g);svg.appendChild(tg);svg.style.color=getComputedStyle(mapc).color;
+  }
+  /* route: simple visual connection in itinerary order (not a street route) */
+  if(S.day!=='ov'){
+    var d=DAYS.filter(function(x){return x.id===S.day})[0],pts=d.stops.filter(function(s){return s.ll}).map(function(s){return{s:s,p:toPx(s.ll)}});
+    var col=DAYC[d.id];
+    for(var j=0;j<pts.length-1;j++){
+      var a=pts[j].p,b=pts[j+1].p,len=Math.hypot(b[0]-a[0],b[1]-a[1]);if(len<2)continue;
+      svg.appendChild(svgel('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:'#fff','stroke-width':'8','stroke-linecap':'round',opacity:'.9'}));
+      svg.appendChild(svgel('line',{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:col,'stroke-width':'4','stroke-linecap':'round','stroke-dasharray':pts[j].s.next&&pts[j].s.next.mode==='walk'?'1 8':'none'}));
+      if(len>70){var mxp=(a[0]+b[0])/2,myp=(a[1]+b[1])/2,ang=Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI;
+        svg.appendChild(svgel('polygon',{points:'-7,-6 7,0 -7,6',fill:col,stroke:'#fff','stroke-width':'2','stroke-linejoin':'round',transform:'translate('+mxp+','+myp+') rotate('+ang+')'}))}
+    }
+  }
+}
+
+/* ---------------- rendering: markers ---------------- */
+var marks=[],groups={};
+function buildMarkers(){
+  marksEl.innerHTML='';marks=[];groups={};
+  if(S.day==='ov'){
+    OVERVIEW.forEach(function(o,i){
+      var p=V[o.v].ll,b=el('button','mk small'+(TYPES[o.type].sq?' sq':'')+(o.must?' must':''));b.type='button';
+      b.setAttribute('aria-label',o.label+'（'+o.days+'）');
+      var dot=el('span','dot');b.style.setProperty('--mc',o.type==='attraction'?DAYC[o.dc]:TYPES[o.type].c);b.appendChild(dot);
+      if(o.must){var bd=el('span','bd must','★');b.appendChild(bd)}
+      var lab=el('span','lab',o.label);b.appendChild(lab);
+      b.addEventListener('click',function(){if(S.moved)return;openOverview(i)});
+      marksEl.appendChild(b);marks.push({el:b,ll:p,ov:o,i:i});
+    });
+  }else{
+    var d=DAYS.filter(function(x){return x.id===S.day})[0];
+    d.stops.forEach(function(s,i){if(!s.ll)return;(groups[s.gk]=groups[s.gk]||[]).push(i)});
+    var made={};
+    d.stops.forEach(function(s,i){
+      if(!s.ll||made[s.gk])return;made[s.gk]=1;
+      var idxs=groups[s.gk],b=el('button','mk'+(TYPES[s.type].sq?' sq':'')+(idxs.some(function(k){return d.stops[k].must})?' must':''));b.type='button';
+      b.style.setProperty('--mc',s.mc);
+      var dot=el('span','dot',idxs.map(function(k){return d.stops[k].n}).join('·'));b.appendChild(dot);
+      var anyVeg=idxs.some(function(k){return d.stops[k].veg}),anyMust=idxs.some(function(k){return d.stops[k].must});
+      if(s.type==='airport')b.appendChild(el('span','bd ap','✈︎'));
+      else if(anyVeg)b.appendChild(el('span','bd veg','素'));
+      else if(anyMust)b.appendChild(el('span','bd must','★'));
+      b.setAttribute('aria-label','第 '+idxs.map(function(k){return d.stops[k].n}).join('、')+' 站 '+s.name);
+      b.addEventListener('click',function(){
+        if(S.moved)return;var cur=S.sel!=null?idxs.indexOf(S.sel):-1;select(idxs[(cur+1)%idxs.length],{center:false,pop:true,scroll:true});
+      });
+      marksEl.appendChild(b);marks.push({el:b,ll:s.ll,idxs:idxs,s:s});
+    });
+  }
+  if(S.me){marksEl.appendChild(S.me.el);}
+}
+function layoutMarks(){
+  marks.forEach(function(m){var p=toPx(m.ll);m.el.style.transform='translate('+p[0]+'px,'+p[1]+'px)';
+    var sel=S.day!=='ov'&&S.sel!=null&&m.idxs&&m.idxs.indexOf(S.sel)>=0;m.el.classList.toggle('sel',!!sel);if(S.day!=='ov')m.el.classList.toggle('tiny',S.z<14.2&&!sel);
+    if(S.day==='ov'){var lab=m.el.querySelector('.lab');if(lab)lab.style.display=(S.sel===('o'+m.i)||S.z>=13.2)?'':'none';m.el.classList.toggle('sel',S.sel===('o'+m.i))}
+    else{var lb=m.el.querySelector('.lab');if(lb)lb.remove()}
+  });
+  if(S.me){var q=toPx(S.me.ll);S.me.el.style.transform='translate('+q[0]+'px,'+q[1]+'px)'}
+}
+
+/* ---------------- popup ---------------- */
+var popFor=null;
+function closePop(){pop.hidden=true;popFor=null;S.sel=(S.day==='ov'?null:S.sel)}
+function stopOf(i){return DAYS.filter(function(x){return x.id===S.day})[0].stops[i]}
+function dlRow(dl,k,v){if(!v)return;var r=el('div');r.appendChild(el('dt',null,k));r.appendChild(el('dd',null,v));dl.appendChild(r)}
+function showPopStop(i){
+  var d=DAYS.filter(function(x){return x.id===S.day})[0],s=d.stops[i];pop.innerHTML='';
+  var x=el('button','px','×');x.type='button';x.setAttribute('aria-label','關閉');x.addEventListener('click',function(){closePop();layoutMarks()});pop.appendChild(x);
+  pop.appendChild(el('p','pt','第 '+s.n+' 站　'+s.t));pop.appendChild(el('h4',null,s.name));
+  var pb=el('div','pb'),a1=el('a',null,'在 Google Maps 開啟'),a2=el('a','alt','路線導航');
+  a1.href=gmPlace(s.q);a2.href=gmDir(s.q,(d.stops[i-1]&&d.stops[i-1].next&&d.stops[i-1].next.mode)||'transit');
+  [a1,a2].forEach(function(a){a.target='_blank';a.rel='noopener'});pb.appendChild(a1);pb.appendChild(a2);pop.appendChild(pb);
+
+  var dl=el('dl');dlRow(dl,'活動',s.act);dlRow(dl,'停留',s.stay&&s.stay!=='—'?s.stay:'');
+  if(s.next){var t=MODE[s.next.mode]+' → '+s.next.to+(s.next.min?'，'+s.next.min:'')+(s.next.km!=null?'（直線 '+s.next.km.toFixed(1)+' km）':'');dlRow(dl,'下一段',t);dlRow(dl,'費用',s.next.cost);dlRow(dl,'備案',s.next.alt)}
+  if(s.food){dlRow(dl,'葷食',s.food.n);dlRow(dl,'素食',s.food.v)}
+  pop.appendChild(dl);
+  var tags=el('div','nv');if(s.veg)tags.appendChild(el('span','v','附近有素食'));if(s.cash)tags.appendChild(el('span','m','多數只收現金'));if(s.must)tags.appendChild(el('span','m','必去'));
+  if(tags.firstChild)pop.appendChild(tags);
+  var same=(groups[s.gk]||[]).filter(function(k){return k!==i});
+  if(same.length){var p=el('p','same','同一地點也是：');same.forEach(function(k){var b=el('button',null,'第 '+d.stops[k].n+' 站 '+d.stops[k].t);b.type='button';b.addEventListener('click',function(){select(k,{center:false,pop:true,scroll:true})});p.appendChild(b)});pop.appendChild(p)}
+  if(!s.ll)pop.appendChild(el('p','same','地圖座標沒有查證，所以不標點；請用下面的按鈕在 Google Maps 開啟。'));
+  pop.hidden=false;popFor={kind:'stop',i:i,ll:s.ll};layoutPop();
+}
+function openOverview(i){
+  var o=OVERVIEW[i];S.sel='o'+i;pop.innerHTML='';
+  var x=el('button','px','×');x.type='button';x.setAttribute('aria-label','關閉');x.addEventListener('click',function(){closePop();layoutMarks()});pop.appendChild(x);
+  pop.appendChild(el('p','pt',o.days));pop.appendChild(el('h4',null,o.label));
+  var pb=el('div','pb'),a1=el('a',null,'在 Google Maps 開啟'),a2=el('a','alt','路線導航');a1.href=gmPlace(o.q);a2.href=gmDir(o.q,'transit');
+  [a1,a2].forEach(function(a){a.target='_blank';a.rel='noopener'});pb.appendChild(a1);pb.appendChild(a2);pop.appendChild(pb);
+  var dl=el('dl');dlRow(dl,'位置',V[o.v].src);pop.appendChild(dl);
+  var tags=el('div','nv');if(o.must)tags.appendChild(el('span','m','必去'));if(tags.firstChild)pop.appendChild(tags);
+  pop.hidden=false;popFor={kind:'ov',i:i,ll:V[o.v].ll};
+  var p=V[o.v].ll,tz=Math.max(S.z,13.5);animTo(mx(p[1]),my(p[0])-0.2*S.h/Wd(tz),tz,380);layoutMarks();
+}
+function layoutPop(){
+  if(pop.hidden||!popFor||!popFor.ll)return;
+  var p=toPx(popFor.ll),w=pop.offsetWidth,gap=30,room=8;
+  pop.style.maxHeight='';var h=pop.offsetHeight;
+  var above=p[1]-gap-room,below=S.h-p[1]-gap-room,useAbove=above>=Math.min(h,below)||above>=below;
+  var space=useAbove?above:below;if(h>space){pop.style.maxHeight=Math.max(120,space)+'px';h=pop.offsetHeight}
+  var x=Math.max(10,Math.min(S.w-w-10,p[0]-w/2)),y=useAbove?p[1]-gap-h:p[1]+gap;
+  pop.style.transform='translate('+x+'px,'+Math.max(room,Math.min(S.h-h-room,y))+'px)';
+}
+
+/* ---------------- cards + header + tabs ---------------- */
+var cardsEl=$('#mcards'),headEl=$('#mhead'),tabsEl=$('#mtabs');
+function buildTabs(){
+  tabsEl.innerHTML='';
+  [['ov','總覽']].concat(DAYS.map(function(d){return[d.id,d.id]})).forEach(function(t){
+    var b=el('button',t[0]==='ov'?'':'dy',t[1]);b.type='button';b.setAttribute('aria-pressed',S.day===t[0]?'true':'false');
+    if(t[0]!=='ov'){b.style.setProperty('--lnc',DAYC[t[0]]);b.style.setProperty('--lni',t[0]==='D4'?'#1B1100':'#fff')}
+    b.addEventListener('click',function(){setDay(t[0])});tabsEl.appendChild(b);
+  });
+}
+function badge(s){var f=el('span','c-n',String(s.n));f.style.setProperty('--mc',s.mc);return f}
+function buildCards(){
+  cardsEl.innerHTML='';
+  if(S.day==='ov'){
+    headEl.innerHTML='';var l=el('div');l.appendChild(el('b',null,'四天總覽'));l.appendChild(el('small',null,'點一天，看那天的站點、路線和交通'));headEl.appendChild(l);
+    DAYS.forEach(function(d){
+      var c=el('article','card day');c.tabIndex=0;c.setAttribute('role','listitem');
+      var top=el('div','c-top'),n=el('span','c-n',d.id);n.style.setProperty('--lnc',DAYC[d.id]);n.style.setProperty('--lni',d.id==='D4'?'#1B1100':'#fff');top.appendChild(n);top.appendChild(el('span','c-t',d.date));c.appendChild(top);
+      c.appendChild(el('h3',null,d.name));c.appendChild(el('p',null,d.tag+'（'+d.stops.length+' 站）'));
+      c.addEventListener('click',function(){setDay(d.id)});c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();setDay(d.id)}});cardsEl.appendChild(c);
+    });
+    return;
+  }
+  var d=DAYS.filter(function(x){return x.id===S.day})[0];headEl.innerHTML='';
+  var l2=el('div');l2.appendChild(el('b',null,d.id+'　'+d.date));l2.appendChild(el('small',null,d.stops.length+' 站，點卡片看地圖位置'));headEl.appendChild(l2);
+  var a=el('a',null,'整天路線');a.href=gmDay(d.stops);a.target='_blank';a.rel='noopener';headEl.appendChild(a);
+  d.stops.forEach(function(s,i){
+    var c=el('article','card');c.tabIndex=0;c.setAttribute('role','listitem');c.dataset.i=i;
+    var top=el('div','c-top');top.appendChild(badge(s));top.appendChild(el('span','c-t',s.t));
+    var tg=el('span','c-tags');if(s.veg)tg.appendChild(el('span',null,'素'));if(s.must)tg.appendChild(el('span','m','必去'));if(!s.ll)tg.appendChild(el('span','u','未上圖'));top.appendChild(tg);c.appendChild(top);
+    c.appendChild(el('h3',null,s.name));c.appendChild(el('p','c-act',s.act));
+    var nx=el('div','c-next');
+    if(s.next){var b=el('b',null,'下一段');nx.appendChild(b);nx.appendChild(document.createTextNode(MODE[s.next.mode]+' → '+s.next.to+(s.next.min?'　'+s.next.min:'')))}
+    else{nx.appendChild(el('b',null,'下一段'));nx.appendChild(document.createTextNode('當天結束'))}
+    c.appendChild(nx);
+    c.addEventListener('click',function(){select(i,{center:true,pop:true,scroll:false})});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();select(i,{center:true,pop:true,scroll:false})}});
+    cardsEl.appendChild(c);
+  });
+}
+function markCards(){Array.prototype.forEach.call(cardsEl.children,function(c,i){if(S.day==='ov')return;c.setAttribute('aria-current',S.sel===i?'true':'false')})}
+
+/* ---------------- selection + day switching ---------------- */
+function select(i,o){
+  var s=stopOf(i);S.sel=i;markCards();
+  if(o.scroll){var c=cardsEl.children[i];if(c){var wide=getComputedStyle(cardsEl).flexDirection==='column';
+    if(wide)cardsEl.scrollTo({top:c.offsetTop-cardsEl.offsetTop-8,behavior:'smooth'});else cardsEl.scrollTo({left:c.offsetLeft-cardsEl.offsetLeft-12,behavior:'smooth'})}}
+  else{var cc=cardsEl.children[i];if(cc&&getComputedStyle(cardsEl).flexDirection==='column'){}}
+  if(s.ll&&o.center){var tz=Math.max(S.z,15);animTo(mx(s.ll[1]),my(s.ll[0])-0.2*S.h/Wd(tz),tz,420)}
+  if(o.pop)showPopStop(i);layoutMarks();
+}
+function setDay(id){
+  S.day=id;S.sel=null;pop.hidden=true;popFor=null;buildTabs();buildCards();buildMarkers();legendRender();
+  if(S.w>0)fitDay();else S.pendingFit=true;
+  schedule();
+}
+function fitDay(){
+  if(S.day==='ov'){fitPoints(OVERVIEW.map(function(o){return V[o.v].ll}),{l:74,r:74,t:30,b:30},15)}
+  else{var d=DAYS.filter(function(x){return x.id===S.day})[0];fitPoints(d.stops.filter(function(s){return s.ll}).map(function(s){return s.ll}),{l:78,r:78,t:56,b:44},16)}
+  S.pendingFit=false;
+}
+function legendRender(){
+  legend.innerHTML='';
+  var rows=S.day==='ov'?[['hotel','住宿',1],['airport','機場',1],['att','景點（顏色＝第幾天）'],['must','必去（金框＋★）']]:
+   [['hotel','住宿',1],['airport','機場 ✈︎',1],['meeting','集合點'],['att','景點（顏色＝當天）'],['food','餐廳'],['veg','附近有素食（素）'],['must','必去（金框＋★）']];
+  rows.forEach(function(r){var d=el('div'),i=el('i'+(r[2]?'':''));i.className=r[2]?'sq':'';
+    var c={hotel:TYPES.hotel.c,airport:TYPES.airport.c,meeting:TYPES.meeting.c,att:S.day==='ov'?'#005EC4':DAYC[S.day]||'#005EC4',food:TYPES.food.c,veg:'#15803D',must:'#F5B301'}[r[0]];i.style.background=c;d.appendChild(i);d.appendChild(document.createTextNode(r[1]));legend.appendChild(d)});
+  if(S.day!=='ov'){var d2=el('div');d2.appendChild(document.createTextNode('— 示意連線（依行程順序，不是實際路線）'));legend.appendChild(d2)}
+}
+$('#m-leg').addEventListener('click',function(){legend.hidden=!legend.hidden;this.setAttribute('aria-expanded',legend.hidden?'false':'true')});
+
+/* ---------------- scale bar ---------------- */
+function scaleBar(){
+  var lat=fromPx(S.w/2,S.h/2)[0],mpp=156543.03392*Math.cos(lat*Math.PI/180)/Math.pow(2,S.z)*(256/256),opts=[20,50,100,200,500,1000,2000,5000,10000,20000],tgt=mpp*90,pick=opts[0];
+  opts.forEach(function(o){if(o<=tgt)pick=o});var px=pick/mpp;scaleEl.innerHTML='';var i=el('i');i.style.width=px+'px';scaleEl.appendChild(i);scaleEl.appendChild(document.createTextNode(pick>=1000?(pick/1000)+' km':pick+' m'));
+}
+
+/* ---------------- main render ---------------- */
+function render(){if(S.w<=0)return;layoutTiles();layoutSvg();layoutMarks();layoutPop();scaleBar()}
+
+/* ---------------- interaction: pan / pinch / wheel / keys ---------------- */
+var ptrs={},start=null;
+mapc.addEventListener('pointerdown',function(e){
+  if(e.target.closest('.m-pop,.m-ctl,.m-zoom,.m-legend,.m-note'))return;
+  ptrs[e.pointerId]={x:e.clientX,y:e.clientY};S.moved=false;
+  var ids=Object.keys(ptrs);start={cx:S.cx,cy:S.cy,z:S.z,x:e.clientX,y:e.clientY,t:Date.now(),d:pinchDist()};
+  cancelAnimationFrame(S.anim);
+});
+window.addEventListener('pointermove',function(e){
+  var p=ptrs[e.pointerId];if(!p||!start)return;var ids=Object.keys(ptrs);p.x=e.clientX;p.y=e.clientY;
+  if(ids.length>=2){
+    var d=pinchDist();if(start.d>0){var f=Math.log(d/start.d)/Math.LN2,r=mapc.getBoundingClientRect(),m=pinchMid();S.moved=true;
+      var z=clampZ(start.z+f);var before=fromPx0(start,m.x-r.left,m.y-r.top);S.z=z;var after=toPx(before);var W=Wd(S.z);S.cx+=(after[0]-(m.x-r.left))/W;S.cy+=(after[1]-(m.y-r.top))/W;schedule()}
+    return;
+  }
+  var dx=e.clientX-start.x,dy=e.clientY-start.y;
+  if(!S.moved&&Math.hypot(dx,dy)>6){S.moved=true;mapc.classList.add('drag')}
+  if(S.moved){var W2=Wd(start.z);S.z=start.z;S.cx=start.cx-dx/W2;S.cy=start.cy-dy/W2;schedule()}
+});
+function fromPx0(st,x,y){var W=Wd(st.z),X=(x-S.w/2)/W+st.cx,Y=(y-S.h/2)/W+st.cy,n=Math.PI-2*Math.PI*Y;return[180/Math.PI*Math.atan(.5*(Math.exp(n)-Math.exp(-n))),X*360-180]}
+function pinchDist(){var k=Object.keys(ptrs);if(k.length<2)return 0;var a=ptrs[k[0]],b=ptrs[k[1]];return Math.hypot(a.x-b.x,a.y-b.y)}
+function pinchMid(){var k=Object.keys(ptrs),a=ptrs[k[0]],b=ptrs[k[1]];return{x:(a.x+b.x)/2,y:(a.y+b.y)/2}}
+function endPtr(e){
+  var had=ptrs[e.pointerId];delete ptrs[e.pointerId];mapc.classList.remove('drag');
+  if(had&&Object.keys(ptrs).length===1){var k=Object.keys(ptrs)[0];start={cx:S.cx,cy:S.cy,z:S.z,x:ptrs[k].x,y:ptrs[k].y,t:Date.now(),d:0}}
+  if(had&&Object.keys(ptrs).length===0){
+    var moved=S.moved;
+    if(!moved&&e.target&&!e.target.closest('.mk,.m-pop,.m-ctl,.m-zoom,.m-legend,.m-note')&&!pop.hidden){closePop();layoutMarks()}
+    setTimeout(function(){S.moved=false},0);start=null;
+  }
+}
+window.addEventListener('pointerup',endPtr);window.addEventListener('pointercancel',endPtr);
+mapc.addEventListener('wheel',function(e){e.preventDefault();var r=mapc.getBoundingClientRect();zoomAt(-e.deltaY*0.0022,e.clientX-r.left,e.clientY-r.top)},{passive:false});
+mapc.addEventListener('keydown',function(e){
+  var W=Wd(S.z),st=80/W,k=e.key;
+  if(k==='ArrowLeft'){S.cx-=st}else if(k==='ArrowRight'){S.cx+=st}else if(k==='ArrowUp'){S.cy-=st}else if(k==='ArrowDown'){S.cy+=st}
+  else if(k==='+'||k==='='){zoomAt(.5,S.w/2,S.h/2);return}else if(k==='-'){zoomAt(-.5,S.w/2,S.h/2);return}else if(k==='Escape'){closePop();layoutMarks();return}else return;
+  e.preventDefault();schedule();
+});
+$('#m-zin').addEventListener('click',function(){animTo(S.cx,S.cy,S.z+1,200)});
+$('#m-zout').addEventListener('click',function(){animTo(S.cx,S.cy,S.z-1,200)});
+
+/* ---------------- my location: only after an explicit tap ---------------- */
+var toastEl=null,toastT=0;
+function toast(msg){if(!toastEl){toastEl=el('div','m-toast');toastEl.setAttribute('role','status');mapc.appendChild(toastEl)}toastEl.textContent=msg;toastEl.hidden=false;clearTimeout(toastT);toastT=setTimeout(function(){toastEl.hidden=true},4500)}
+$('#m-loc').addEventListener('click',function(){
+  if(!('geolocation' in navigator)){toast('這個瀏覽器不支援定位。');return}
+  toast('定位中…');
+  navigator.geolocation.getCurrentPosition(function(pos){
+    var la=pos.coords.latitude,lo=pos.coords.longitude;
+    if(la<1.15||la>1.5||lo<103.55||lo>104.1){toast('你現在不在新加坡附近（'+la.toFixed(2)+', '+lo.toFixed(2)+'），所以地圖不會移動。到了新加坡再按一次。');return}
+    if(!S.me){var d=el('div','me');d.setAttribute('aria-label','我的位置');S.me={el:d,ll:[la,lo]};marksEl.appendChild(d)}S.me.ll=[la,lo];
+    animTo(mx(lo),my(la),Math.max(S.z,15),420);toast('已顯示你的位置。');layoutMarks();
+  },function(err){
+    toast(err&&err.code===1?'沒有取得定位權限。要用的話，請在瀏覽器的網站設定允許定位，再按一次。':'暫時無法取得位置，請稍後再試。');
+  },{enableHighAccuracy:true,timeout:10000,maximumAge:30000});
+});
+
+/* ---------------- size + visibility ---------------- */
+function measure(){
+  var r=mapc.getBoundingClientRect();if(r.width<=0||r.height<=0)return false;
+  var first=S.w===0;S.w=r.width;S.h=r.height;
+  if(first||S.pendingFit)fitDay();
+  schedule();return true;
+}
+function setHeight(){
+  var nav=document.querySelector('.nav'),top=nav?nav.getBoundingClientRect().bottom:120,vh=(window.visualViewport?window.visualViewport.height:window.innerHeight);
+  var h=Math.max(540,vh-top-6);document.getElementById('mapui').style.setProperty('--mh',h+'px');
+}
+var ro=window.ResizeObserver?new ResizeObserver(function(){measure()}):null;if(ro)ro.observe(mapc);
+window.addEventListener('resize',function(){setHeight();measure()});
+new MutationObserver(function(){var on=panel.classList.contains('on');document.body.classList.toggle('map-on',on);if(on){setHeight();setTimeout(measure,30)}}).observe(panel,{attributes:true,attributeFilter:['class']});
+/* "在地圖看這一天" links set the day, then the guide's own router opens the tab */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a.mapjump');if(a){var d=a.getAttribute('data-day');if(d)setDay(d)}},true);
+
+/* ---------------- init ---------------- */
+buildTabs();buildCards();buildMarkers();legendRender();setHeight();
+if(panel.classList.contains('on')){document.body.classList.add('map-on');measure()}
+window.SGMAP={setDay:setDay,state:S,days:DAYS,V:V,select:select,gmPlace:gmPlace,gmDir:gmDir,gmDay:gmDay,markers:function(){return marks}};
+})();
+
+</script>
+</body>
+</html>
