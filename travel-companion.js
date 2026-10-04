@@ -331,7 +331,10 @@
     if (!label || label === '下一站' || label === '下一個時段') return false;
     var candidate = [target.name, target.q, target.entry && target.entry.places.length <= 1 && target.entry.title].filter(Boolean).join(' ').toLowerCase();
     var stem = label.split(/[（(，,]/)[0].trim().toLowerCase();
-    return stem.split(/\s+/).some(function (part) { return part.length > 2 && candidate.indexOf(part) >= 0; });
+    return stem.split(/[／/]/).some(function (part) {
+      return part.trim().split(/\s+/).filter(function (word) { return word.length > 2 && word !== 'singapore'; })
+        .some(function (word) { return candidate.indexOf(word) >= 0; });
+    });
   }
   function routeLeg(day, from, to) {
     var transport = day.entries.find(function (e) {
@@ -343,13 +346,11 @@
         detail: transport.option.move || '路線請依即時導航確認', certainty: '預估時間', departure: transport.start };
     }
     var points = from.stops, sourceLeg = from.leg || (points.length === 1 ? points[0].leg : null);
-    var inbound = to.stops.length === 1 ? to.stops[0].leg : null;
-    var leg = matchesDestination(sourceLeg && sourceLeg.to, to) ? sourceLeg :
-      matchesDestination(inbound && inbound.to, to) ? inbound : null;
+    // A map point's leg describes leaving that point, never arriving at it.
+    var leg = matchesDestination(sourceLeg && sourceLeg.to, to) ? sourceLeg : null;
     if (leg) return { mode: leg.mode, duration: durationOf(leg.min), durationText: durationText(leg.min), detail: leg.min || '移動時間尚未確認',
       certainty: /官方/.test(leg.min || '') ? '官方指引' : '預估時間' };
-    var move = to.entry && to.entry.option && to.entry.option.move || '';
-    return { mode: modeOf(move), duration: null, detail: move || '請依即時路線確認交通方式與時間', certainty: '尚未確認' };
+    return { mode: 'unknown', duration: null, detail: '這兩站之間的交通方式與時間尚未確認，請查即時路線', certainty: '尚未確認' };
   }
   function legForEntry(day, id, destination) {
     var at = day.route.findIndex(function (s) { return s.itemId === id && (!destination || s.q === destination); });
@@ -438,12 +439,16 @@
         var altPlaces = placesFor(original.id, alternative.id), fallback = firstPlace(alternative.maps);
         result.title = alternative.title; result.destination = altPlaces.length ? altPlaces[0].q : fallback && fallback.q;
         result.slotId = original.id; result.move = alternative.move || result.move; result.mode = modeOf(result.move);
+        if (!original.source.transport && alternative.area !== original.area) {
+          result.move = '從目前地點前往備選地點的交通與時間尚未確認，請查即時導航。抵達後的既有安排：' + (alternative.move || '請查看這個時段的備選。');
+          result.mode = 'unknown';
+        }
         result.note = (original.source.transport ? '沿用這個時段已有的避雨交通備選。' : '沿用這個時段已有的室內備選。') +
           (alternative.area !== original.area ? '地點不在原本同一區，移動與營業時間需先確認。' : '仍請確認營業與入場條件。');
       } else if (future) {
         result.title = future.title; result.destination = future.destination; result.slotId = future.source.slot ? future.id : null;
         result.note = '可考慮提前前往今日已排的室內行程；請先確認營業、預約、門票與是否能提早入場。';
-        result.move = future.option.move || result.move; result.mode = modeOf(result.move);
+        result.move = '從目前地點提前前往的交通與時間尚未確認，請查即時導航。既有行程交通說明：' + (future.option.move || '尚未確認');
         result.rejoin = '回到「' + original.title + '」，或依剩餘時間接續「' + future.title + '」；避免重複走訪。';
       } else {
         result.title = '暫留目前有遮蔽的地方';

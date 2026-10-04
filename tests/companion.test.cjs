@@ -106,7 +106,20 @@ test('rain recommendations reuse existing choices and leave them unchanged', () 
   const evening = suggestions.find(r => r.original.id === 'd3-eve');
   assert.ok(d.source.items.find(i => i.id === 'd3-eve').opts.some(o => o.title === evening.title));
   assert.match(evening.note, /不在原本同一區/);
+  assert.match(evening.move, /從目前地點前往備選地點的交通與時間尚未確認/);
+  assert.equal(evening.mode, 'unknown');
+  assert.match(fixed.move, /從目前地點提前前往的交通與時間尚未確認/);
   assert.equal(JSON.stringify(trip), original);
+});
+
+test('outgoing transport from the destination is not reused as an incoming leg', () => {
+  const from = { index: 0, stops: [{ leg: { mode: 'mrt', to: 'Sentosa（Singapore Oceanarium）', min: '約 30 分鐘' } }] };
+  const to = { index: 1, name: '喜園', q: 'YY Kafei Dian Singapore', stops: [{ leg: { mode: 'mrt', to: 'Singapore Oceanarium', min: '約 30 分鐘' } }],
+    entry: { places: [], title: '喜園', option: { move: '從 Beach Road 前往 Sentosa' } } };
+  const result = C.routeLeg({ entries: [] }, from, to);
+  assert.equal(result.mode, 'unknown');
+  assert.equal(result.duration, null);
+  assert.match(result.detail, /這兩站之間/);
 });
 
 test('a mixed stop keeps its existing indoor portion and rain transport uses an existing option', () => {
