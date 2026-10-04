@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>新加坡 4天3夜自由行指南 2026/10/8–10/11</title>
 <meta name="theme-color" content="#0F1F2E">
+<link rel="stylesheet" href="travel-companion.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;family=Sora:wght@500;700;800&amp;display=swap" rel="stylesheet">
@@ -421,6 +422,10 @@ ul.pm.dot li::before{content:"•";position:absolute;left:4px;color:var(--muted)
 
 <!-- ===================== HOME ===================== -->
 <section class="panel on" id="home">
+  <section id="travel-status" class="tc-status" aria-label="旅行即時狀態">
+    <p>今日狀態以新加坡時間顯示。</p>
+    <noscript><p>開啟 JavaScript 即可查看即時狀態；完整行程仍可往下閱讀。</p></noscript>
+  </section>
   <div class="hero">
     <h1>Singapore<span>新加坡 4天3夜自由行</span></h1>
     <p class="lead">2026/10/8 Thu 到 10/11 Sun。4 位大人、一對夫妻和一對兄弟，2 位吃葷、2 位吃素。</p>
@@ -1244,7 +1249,7 @@ days:[
    {id:'a',from:'n',title:'Jewel 內簡單吃，依營業狀況選店',chip:'Jewel 用餐',short:'看完 21:00 場後簡單補給；不少店約 22:00 打烊',area:'airport',time:'約 45 分鐘',walk:'輕鬆',move:'Jewel 內步行',cost:'依店家',wx:'室內冷氣',plus:['不用先進市區再找晚餐'],minus:['表演後可用時間短，營業時間依店家而異；可改買外帶']},
    {id:'b',from:'c',title:'不在 Jewel 用餐，直接前往住宿',chip:'直接回住宿',short:'把抵達日晚餐留到住宿附近或買外帶',area:'airport',time:'—',walk:'—',move:'接續前往住宿',cost:'依店家',wx:'—',plus:['多留時間給交通和入住'],minus:['抵達日較晚，住宿附近店家營業狀況需現場確認']}
    ]},
-  {slot:true,id:'d1-ride',t:'22:00–23:00',label:'Jewel 到住宿',dl:'Day 1 Jewel 到住宿',st:'likely',draft:'a',
+  {slot:true,transport:true,id:'d1-ride',t:'22:00–23:00',label:'Jewel 到住宿',dl:'Day 1 Jewel 到住宿',st:'likely',draft:'a',
   opts:[
   {id:'a',from:'p',title:'MRT 綠線（EW）進市區',chip:'MRT 綠線',short:'兩組同一班車，Aljunied 與 Lavender 各自下車放行李',area:'airport',
    time:'約 45–60 分鐘（先前研究的估計）',walk:'輕鬆到中等（拖行李走到飯店）',
@@ -1473,7 +1478,7 @@ days:[
  walk:{km:'尚未估',steps:'尚未估',lvl:'輕鬆'},cost:'尚未估',
  items:[
  {id:'d4-out',t:'08:00–08:30',title:'各自退房',st:'likely',area:'stay',text:'兄弟組：Hotel 81；夫妻組：ibis budget Imperial。你的行程沒排早餐，可以在機場吃（報到後，管制區內）。',maps:[HA,HB]},
- {slot:true,id:'d4-go',t:'08:30–09:30',label:'去機場',dl:'Day 4 去機場',st:'likely',draft:'a',
+ {slot:true,transport:true,id:'d4-go',t:'08:30–09:30',label:'去機場',dl:'Day 4 去機場',st:'likely',draft:'a',
   opts:[
   {id:'a',from:'p',title:'MRT 綠線去 Changi（08:30 出發）',chip:'MRT 08:30',short:'兩組同一班車，Lavender 先上、Aljunied 再上',area:'airport',
    time:'約 45–60 分鐘（估）→ 約 09:30–09:45 到 T3',walk:'中等（拖行李走到站、再走到 T3 櫃台）',
@@ -1526,7 +1531,7 @@ var FROM={p:'你的原行程',c:'先前 Claude 行程',n:'新增'};
 window.SGPLAN={dec:dec,shown:shown,setDec:setDec,T:T};
 
 function entry(e){
-  var a=h('article',{class:'stop'+(e.anchor?' key':'')});
+  var a=h('article',{class:'stop'+(e.anchor?' key':''),'data-item-id':e.id});
   a.appendChild(h('p',{class:'time'},e.t,e.st==='confirmed'||(e.bookKey&&false)?h('small',{class:'st',text:'　'+ST.confirmed}):null));
   a.appendChild(h('h3',{text:e.title}));
   if(e.text)a.appendChild(h('p',{class:'what',text:e.text}));
@@ -1556,7 +1561,7 @@ function optBlock(slot,o,i){
 }
 function slotBlock(slot){
   var i=shown(slot),o=i.opt,n=slot.opts.length;
-  var a=h('article',{class:'stop slot'+(i.chosen?' chosen':'')+(!o?' free':'')});
+  var a=h('article',{class:'stop slot'+(i.chosen?' chosen':'')+(!o?' free':''),'data-item-id':slot.id});
   a.appendChild(h('p',{class:'time'},slot.t,h('small',{class:'st',text:'　'+(i.chosen?'你選的':ST[i.state])})));
   a.appendChild(h('p',{class:'slabel',text:slot.label}));
   a.appendChild(h('h3',{text:o?o.title:'自由時段（還沒排）'}));
@@ -1673,6 +1678,10 @@ var BASE={
   jewel:{n:'Jewel Changi Airport',ty:'attraction',v:'jewel',q:'Jewel Changi Airport, 78 Airport Boulevard, Singapore 819666',act:'看 Rain Vortex 室內瀑布。Jewel 在管制區外，要在報到、出境前逛完（至少 1.5 小時，先前研究）。'},
   bbqbox:{n:'BBQ Box（Geylang）',ty:'food',v:null,q:'BBQ Box Geylang, 182 Geylang Road, Singapore 389252',act:'兄弟組宵夜選項。位於 Geylang，適合入住 Hotel 81 後再前往；週四營業時間需出發當晚再確認。'}
 };
+/* Shelter metadata describes existing places, never a second itinerary. */
+['changi','changiT3','jewel','toastbox','nationalmuseum','gardens','oceanarium','harrypotter','foodjunction','herbivore','havefun','yy','fortune','bbqbox'].forEach(function(k){if(BASE[k])BASE[k].shelter='indoor'});
+['clarke','merlion','botanic','sultan','lugeroute','wingstime'].forEach(function(k){if(BASE[k])BASE[k].shelter='outdoor'});
+BASE.btrt.shelter='mixed';
 function P(k,o){var r={};for(var a in BASE[k])r[a]=BASE[k][a];if(o)for(var b in o)r[b]=o[b];return r}
 function L(mode,to,min,cost,alt){return{mode:mode,to:to,min:min,cost:cost,alt:alt}}
 var HOMELEG=L('mrt','Hotel 81（Aljunied）','EW 線 Raffles Place（EW14）→ Aljunied（EW9），末班車時間未查證',null,'Grab 約 15 分，一車約 S$15–22（估，深夜可能漲價）');
@@ -1761,12 +1770,12 @@ function rebuildDays(){
     var raw=[];
     if(START[d.id])raw.push(START[d.id]);
     d.items.forEach(function(it){
-      var key=it.id;if(it.slot){var i=PLN.shown(it);if(!i.opt)return;key=it.id+':'+i.opt.id}
+      var key=it.id,optionId=null;if(it.slot){var i=PLN.shown(it);if(!i.opt)return;optionId=i.opt.id;key=it.id+':'+optionId}
       var p=PL[key];if(!p)return;
-      [].concat(p).forEach(function(x){var c={};for(var k in x)c[k]=x[k];if(!c.t)c.t=it.t;if(!c.act)c.act=it.text||'';raw.push(c)});
+      [].concat(p).forEach(function(x){var c={};for(var k in x)c[k]=x[k];c.itemId=it.id;c.optionId=optionId;if(!c.t)c.t=it.t;if(!c.act)c.act=it.text||'';raw.push(c)});
     });
     var code=d.code,stops=raw.map(function(s,i){
-      var o={t:s.t,name:s.n,type:s.ty,v:s.v,q:s.q,veg:s.veg,vtag:s.vtag,cash:s.cash,must:s.must,act:s.act||'',stay:s.stay||'',food:s.food,n:i+1,day:code,leg:s.leg};
+      var o={t:s.t,name:s.n,type:s.ty,v:s.v,q:s.q,veg:s.veg,vtag:s.vtag,cash:s.cash,must:s.must,act:s.act||'',stay:s.stay||'',food:s.food,n:i+1,day:code,leg:s.leg,itemId:s.itemId,optionId:s.optionId,shelter:s.shelter};
       o.ll=o.v&&V[o.v]?V[o.v].ll:null;o.mc=colorOf(o,code);o.gk=o.v||('x'+code+i);return o});
     stops.forEach(function(s,i){
       var nx=stops[i+1];if(!nx){s.next=null;return}
@@ -2108,9 +2117,10 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 buildTabs();buildCards();buildMarkers();legendRender();setHeight();
 if(panel.classList.contains('on')){document.body.classList.add('map-on');measure()}
 document.addEventListener('sg:dec',function(){rebuildDays();if(S.day!=='ov'){pop.hidden=true;popFor=null;S.sel=null;buildCards();buildMarkers();legendRender();schedule()}});
-window.SGMAP={setDay:setDay,state:S,days:DAYS,V:V,select:select,gmPlace:gmPlace,gmDir:gmDir,gmDay:gmDay,markers:function(){return marks}};
+window.SGMAP={setDay:setDay,state:S,days:DAYS,V:V,select:select,gmPlace:gmPlace,gmDir:gmDir,gmDay:gmDay,markers:function(){return marks},placesFor:function(itemId,optionId){return [].concat(PL[itemId+(optionId?':'+optionId:'')]||[]).map(function(s){return {name:s.n,q:s.q,shelter:s.shelter,ll:s.v&&V[s.v]?V[s.v].ll:null}})}};
 })();
 
 </script>
+<script src="travel-companion.js"></script>
 </body>
 </html>

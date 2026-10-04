@@ -1,0 +1,36 @@
+/* Additive styling: all colors and typography inherit the existing MRT theme. */
+.tc-status,.tc-day{margin:0 0 22px;padding:16px 14px;border:2px solid var(--ink);border-radius:6px;background:var(--surface)}
+.tc-status{border-left:8px solid var(--ew-r)}
+.tc-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;margin-bottom:10px}
+.tc-top h2,.tc-top h3{font-size:19px;margin:0}
+.tc-clock{margin:0;font-size:14px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.tc-destination{font-size:21px;font-weight:800;line-height:1.5;margin:8px 0;overflow-wrap:anywhere}
+.tc-context{font-size:14px;color:var(--muted);line-height:1.6;margin:4px 0}
+.tc-footnote{margin-top:10px}
+.tc-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tc-action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;max-width:100%;padding:9px 12px;border:2px solid var(--ink);border-radius:8px;background:var(--ink);color:var(--paper);font:700 14px/1.5 "Noto Sans TC",system-ui,sans-serif;text-align:center;text-decoration:none;cursor:pointer;overflow-wrap:anywhere}
+.tc-secondary,.tc-top .tc-action,.tc-route .tc-action{background:var(--surface);color:var(--ink)}
+.tc-day{border-color:var(--lnr);padding:14px}
+.tc-day .tc-top .tc-action[aria-expanded="true"]{background:var(--rain-bg);color:var(--rain-ink);border-color:var(--rain-ink)}
+.tc-route{margin:14px 0;padding:0;list-style:none}
+.tc-route-stop{position:relative;display:grid;grid-template-columns:30px minmax(0,1fr);gap:0 10px}
+.tc-number{display:grid;place-items:center;align-self:start;width:28px;height:28px;border:2px solid var(--lnr);border-radius:50%;font:800 13px/1 Sora,system-ui,sans-serif;color:var(--lnr);margin-top:4px}
+.tc-route-place{min-width:0}
+.tc-route h4{font-size:16px;line-height:1.5;overflow-wrap:anywhere;margin:3px 0}
+.tc-route .tc-action{min-height:44px;margin:4px 0 0;font-size:13px;padding:6px 10px}
+.tc-place-link{display:inline-flex;align-items:center;min-height:44px;max-width:100%;padding:4px 6px 4px 0;margin-right:12px;font-size:13px;line-height:1.5;font-weight:700;color:var(--dt-r);overflow-wrap:anywhere}
+.tc-leg{grid-column:2;border-left:3px dotted var(--lnr);margin:8px 0 12px 1px;padding:6px 0 0 12px}
+.tc-leg p:first-child{font-size:14px;font-weight:700;line-height:1.6;margin-bottom:3px}
+.tc-rain{margin:12px 0 16px;padding:14px 12px;border:2px solid var(--rain-ink);border-left-width:7px;border-radius:4px;background:var(--rain-bg);color:var(--rain-ink)}
+.tc-rain h4{font-size:16px;line-height:1.5}
+.tc-rain .tc-context{color:inherit}
+.tc-rain-option{padding:12px 0;border-top:1px solid currentColor;margin-top:12px}
+.tc-rain-option .tc-action{margin:4px 8px 4px 0}
+[data-item-id]{scroll-margin-top:90px}
+@media(max-width:420px){
+  .tc-status,.tc-day{padding:12px 10px}
+  .tc-destination{font-size:19px}
+  .tc-actions>.tc-action{flex:1 1 auto}
+  .tc-rain{padding:12px 9px}
+}
+@media print{.tc-status,.tc-day{break-inside:avoid}.tc-action,.tc-place-link{display:none}.tc-rain{background:none}}
