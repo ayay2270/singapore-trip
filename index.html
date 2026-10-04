@@ -342,8 +342,53 @@ body.map-on .top{display:none}
 .mk.tiny.sq .dot{border-radius:7px}
 .mk.tiny .bd{top:-9px;right:-9px;min-width:16px;height:16px;font-size:10px}
 
+.mk.alt .dot{opacity:.65;border-style:dashed}
+
 .mapjump{display:inline-flex;align-items:center;min-height:44px;margin:0 0 16px;padding:0 16px;border:2px solid var(--lnc);border-radius:999px;font:700 14px/1 "Noto Sans TC",system-ui,sans-serif;text-decoration:none;color:var(--ink);background:var(--surface)}
 @media print{.mapjump{display:none}}
+/* ===== main plan + options (inside the existing guide's look) ===== */
+.stop .st{font:600 12.5px/1 "Noto Sans TC",system-ui,sans-serif;color:var(--muted);letter-spacing:.01em}
+.slabel{margin:0 0 1px;font:700 13px/1.4 "Noto Sans TC",system-ui,sans-serif;color:var(--muted)}
+.stop.free h3{color:var(--muted)}
+.stop.slot::before{background:none;width:0;border-left:6px dotted var(--lnr);border-radius:0;opacity:.8}
+.stop.slot:last-of-type::before{display:none}
+.stop.slot::after{border-style:dashed}
+details.opts{margin:8px 0 2px}
+details.opts>summary{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:2px solid var(--ink);border-radius:999px;background:var(--surface);color:var(--ink);font:700 14.5px/1 "Noto Sans TC",system-ui,sans-serif;cursor:pointer;list-style:none}
+details.opts>summary::-webkit-details-marker{display:none}
+details.opts>summary::before{content:"+";font:800 18px/1 Sora,system-ui}
+details.opts[open]>summary::before{content:"−"}
+.opt{margin:12px 0 0;padding:12px 0 4px;border-top:2px solid var(--line)}
+.opt.on{border-top-color:var(--lnr)}
+.oh{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.oh .ol{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--paper);font:800 13px/1 Sora,system-ui}
+.opt.on .oh .ol{background:var(--lnr);color:#fff}
+.oh b{font:700 16.5px/1.4 "Noto Sans TC",system-ui,sans-serif}
+.ot{display:flex;gap:6px;flex-wrap:wrap}
+.ot em{font:600 12px/1.6 "Noto Sans TC",system-ui,sans-serif;font-style:normal;color:var(--muted)}
+.ot em.main{color:var(--ink);font-weight:800}
+.ot em.pick{color:var(--lnr);font-weight:800}
+.opt .what{margin:3px 0 4px;font-size:15.5px}
+ul.pm{list-style:none;margin:6px 0;padding:0;font-size:15px;line-height:1.6}
+ul.pm li{position:relative;padding-left:18px;margin:2px 0}
+ul.pm.plus li::before{content:"+";position:absolute;left:2px;font-weight:800;color:var(--ew-r)}
+ul.pm.minus li::before{content:"−";position:absolute;left:3px;font-weight:800;color:var(--red-t)}
+ul.pm.dot li::before{content:"•";position:absolute;left:4px;color:var(--muted)}
+.opt details.more{margin:4px 0}
+.opt details.more>summary{min-height:40px;display:flex;align-items:center;cursor:pointer;font:700 14px/1 "Noto Sans TC",system-ui,sans-serif;color:var(--muted)}
+.pick-btn{min-height:46px;margin:8px 0 6px;padding:0 20px;border:0;border-radius:23px;background:var(--ink);color:var(--paper);font:700 15px/1 "Noto Sans TC",system-ui,sans-serif;cursor:pointer}
+.pick-btn.is{background:var(--lnr);color:#fff}
+.clear-btn{min-height:44px;margin:10px 0 4px;padding:0;border:0;background:none;color:var(--muted);text-decoration:underline;font:600 14px/1 "Noto Sans TC",system-ui,sans-serif;cursor:pointer}
+.areas details.area{border-top:1px solid var(--line)}
+.areas details.area>summary{display:flex;align-items:center;min-height:48px;cursor:pointer;font-weight:700}
+.arealist{list-style:none;margin:0 0 10px;padding:0;font-size:15px;line-height:1.55}
+.arealist li{padding:5px 0;border-top:1px solid var(--line)}
+.arealist a{font:700 13px Sora,system-ui;color:var(--dt-r);text-decoration:none}
+.amark{font-size:12.5px;color:var(--muted)}
+.principle{margin:14px 0 0;padding:10px 14px;border-left:6px solid var(--ink);background:var(--surface);border-radius:2px;font-size:15.5px}
+.principle b{margin-right:8px}
+@media print{ details.opts>summary{display:none} .pick-btn,.clear-btn{display:none} }
+
 </style>
 </head>
 <body>
@@ -379,34 +424,38 @@ body.map-on .top{display:none}
     <h1>Singapore<span>新加坡 4天3夜自由行</span></h1>
     <p class="lead">2026/10/8 Thu 到 10/11 Sun。4 位大人、2 對情侶，2 位吃葷、2 位吃素。</p>
     <ol class="strip" aria-label="四天路線">
-      <li><a href="#d1"><b>10/8</b><span>週四 抵達</span></a></li>
-      <li><a href="#d2"><b>10/9</b><span>週五 雙溫室＋河邊夜景</span></a></li>
-      <li><a href="#d3"><b>10/10</b><span>週六 雙層巴士＋HaveFun</span></a></li>
+      <li><a href="#d1"><b>10/8</b><span>週四 抵達＋HaveFun</span></a></li>
+      <li><a href="#d2"><b>10/9</b><span>週五 牛車水＋傍晚河岸</span></a></li>
+      <li><a href="#d3"><b>10/10</b><span>週六 Kampong Glam＋Sentosa</span></a></li>
       <li><a href="#d4"><b>10/11</b><span>週日 回程</span></a></li>
     </ol>
   </div>
   <p class="stamp">資料查證日 2026/10/4。價格和營業時間出發前請再確認，標「估」的是估算值，標「需確認」的是沒查到可靠資料。</p>
 
-  <h2 class="sec">先看這 9 個答案</h2>
+  <h2 class="sec">先看這幾件事</h2>
   <dl class="dl">
-    <div class="row"><dt>雙層巴士</dt><dd><b>Day 3（10/10 六）搭公車 7 號。</b>13:50 在 Bugis Stn/Parkview Sq（01139）上車，到 Napier Stn Exit 2（13011）。回程 15:35 在 Napier Stn Exit 1（13019）上車，到 Opp Bugis Stn Exit C（01112）。坐上層最前排，四人來回約 S$12–14。</dd></div>
-    <div class="row"><dt>Clarke Quay</dt><dd><b>10/9（五）22:15–23:30。</b>先在 Lau Pa Sat 吃完沙爹，再沿河走過去。</dd></div>
-    <div class="row"><dt>HaveFun</dt><dd><b>10/10（六）21:30 那場。</b>建議先訂 4 人 High Table，週五、六最低消費 S$200++。</dd></div>
-    <div class="row"><dt>Hawker Centre</dt><dd>D2 午餐 Maxwell Food Centre、D2 晚餐 Lau Pa Sat、D3 午餐 Food Junction（有冷氣）。</dd></div>
-    <div class="row"><dt>主要付款</dt><dd>自己的實體信用卡或 Apple Pay。刷卡機問幣別，一律選 <b>SGD</b>。</dd></div>
-    <div class="row"><dt>備用付款</dt><dd>第二張不同卡組織的信用卡（Visa 和 Mastercard 各一張），加上少量現金。</dd></div>
+    <div class="row"><dt>主計畫</dt><dd>用你的原行程排：Day 1 夜裡 HaveFun、Day 2 亞坤＋牛車水＋觀音堂＋興化素食、傍晚 Clarke Quay／Merlion／Lau Pa Sat、Day 3 Kampong Glam＋Sentosa、Day 4 MRT 去 Changi。先前我排的行程放在各時段的備選裡。</dd></div>
+    <div class="row"><dt>留白</dt><dd>Day 2 的 14:00–17:00 和 Day 3 的 16:30 之後是你留白的時段，裡面放了可以做的事，不替你選。</dd></div>
+    <div class="row"><dt>HaveFun</dt><dd><b>主計畫：Day 1（10/8 四）22:30 進場。</b>週一到週四免最低消費，但週四的開演時間、訂位規則、入場費沒查到，要先 WhatsApp 問。備選：Day 3 週六 21:30（最低消費 S$200++）。</dd></div>
+    <div class="row"><dt>Clarke Quay</dt><dd><b>主計畫：Day 2 傍晚 17:30 起</b>，接 Merlion Park 夕陽，再到 Lau Pa Sat 吃沙爹。備選：由東往西、Clarke Quay 留到夜晚 22:15 之後。</dd></div>
+    <div class="row"><dt>雙層巴士</dt><dd><b>備選，不在主計畫裡。</b>Day 3 午後選項：公車 7 號，上層最前排，四人來回約 S$12–14（站牌代碼在交通頁）。</dd></div>
+    <div class="row"><dt>美食</dt><dd>Day 2 午餐興化素食（Fortune Centre）、晚餐 Lau Pa Sat。備選：Maxwell、Food Junction、Herbivore。</dd></div>
+    <div class="row"><dt>付款</dt><dd>主要用自己的實體信用卡或 Apple Pay，刷卡機問幣別一律選 <b>SGD</b>；備用是第二張不同卡組織的卡加少量現金。搭 MRT 和公車每人用自己的感應卡（外國卡每個搭乘日加收 S$0.60）。</dd></div>
     <div class="row"><dt>現金</dt><dd>每人 <b>S$80</b>、每對 S$160、四人 S$320。在臺灣銀行換現鈔。</dd></div>
-    <div class="row"><dt>搭車付款</dt><dd>SimplyGo：每人用自己的感應式卡或手機嗶卡。外國卡每個搭乘日加收 S$0.60。</dd></div>
-    <div class="row"><dt>現在要訂</dt><dd>① HaveFun 10/10 的 4 人 High Table　② SG Arrival Card（10/6 到 10/8 之間填）　③ Gardens by the Bay 雙溫室票（建議先上網買，省排隊）</dd></div>
+    <div class="row"><dt>現在要訂</dt><dd>① WhatsApp 問 HaveFun 週四　② SG Arrival Card（10/6 到 10/8 之間填）　③ 想去 Gardens 雙溫室才需要買票。</dd></div>
   </dl>
-
-  <h2 class="sec">四天怎麼走</h2>
+<h2 class="sec">四天怎麼走</h2>
   <div class="daylist">
-    <a href="#d1" class="L1"><span class="badge">D1</span><span><b>10/8 週四 抵達日</b><span class="t2">19:00 落地，入境後兩對各自搭 Grab 回飯店。晚上不排付費景點。</span></span></a>
-    <a href="#d2" class="L2"><span class="badge">D2</span><span><b>10/9 週五 Chinatown、雙溫室、Clarke Quay</b><span class="t2">Maxwell 午餐、Gardens by the Bay、19:45 Garden Rhapsody、Lau Pa Sat 晚餐，22:15 起在 Clarke Quay。</span></span></a>
-    <a href="#d3" class="L3"><span class="badge">D3</span><span><b>10/10 週六 Little India、Kampong Glam、雙層巴士、HaveFun</b><span class="t2">Tekka 早餐、Haji Lane、公車 7 號、Herbivore 晚餐，21:30 進 HaveFun。</span></span></a>
-    <a href="#d4" class="L4"><span class="badge">D4</span><span><b>10/11 週日 回程</b><span class="t2">08:15 最晚出發，Grab 到 Changi T3，11:45 起飛。Jewel 取消。</span></span></a>
+    <a href="#d1" class="L1"><span class="badge">D1</span><span><b>10/8 週四 抵達日</b><span class="t2">19:00 落地，搭 EW 綠線進市區放行李（Aljunied、Lavender），22:30 HaveFun。</span></span></a>
+    <a href="#d2" class="L2"><span class="badge">D2</span><span><b>10/9 週五 Chinatown、觀音堂、傍晚河岸</b><span class="t2">亞坤早餐、佛牙寺、觀音堂＋興化素食午餐；14:00–17:00 留白；傍晚 Clarke Quay、Merlion、Lau Pa Sat。</span></span></a>
+    <a href="#d3" class="L3"><span class="badge">D3</span><span><b>10/10 週六 Kampong Glam、午後避暑</b><span class="t2">喜園早餐、Haji Lane；中午去 Sentosa 海洋館吹冷氣；16:30 之後留白。</span></span></a>
+    <a href="#d4" class="L4"><span class="badge">D4</span><span><b>10/11 週日 回程</b><span class="t2">08:30 MRT 去 Changi；Jewel 要在報到前逛（時間偏緊）；11:45 起飛。</span></span></a>
   </div>
+  <div class="principle"><b>三個原則</b>中午最熱躲冷氣房或休整，傍晚涼爽才走戶外，動線順向不繞路。</div>
+  <p class="stamp">我們是大 P 人：不用一次決定，留白也算計畫。每個時段都有備選，想換再換。</p>
+<h2 class="sec">依區域整合</h2>
+  <p>兩份行程裡重複的地點放在同一區。想知道這一區附近還能做什麼，從這裡找。</p>
+  <div id="areas-root"></div>
 
   <h2 class="sec">航班</h2>
   <div class="sign green">
@@ -415,14 +464,15 @@ body.map-on .top{display:none}
   </div>
   <div class="sign red">
     <b class="t">回程 SQ878　10/11 Sun</b>
-    <p>SIN Terminal 3　11:45 起飛<br>TPE Terminal 2　16:30 抵達<br><span class="tag t-must">MUST LEAVE BY 08:15</span>08:45 前後抵達 T3。</p>
+    <p>SIN Terminal 3　11:45 起飛<br>TPE Terminal 2　16:30 抵達<br><span class="tag t-must">主計畫 08:30 搭 MRT</span>約 09:30–09:45 到 T3，離起飛約 2 小時，偏緊。備選：Grab 08:15 出發，08:45 抵達 T3。</p>
   </div>
   <p>新加坡和臺灣同為 UTC+8，沒有時差。</p>
 
   <h2 class="sec">住宿</h2>
   <dl class="dl">
     <div class="row"><dt>Couple A</dt><dd><b>Hotel 81 (Premier) Star</b><br>31 Lor 18 Geylang, Singapore 398828<br>10/8 入住，10/11 退房<div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+81+Premier+Star+31+Lor+18+Geylang+Singapore" target="_blank" rel="noopener">Google Maps：Hotel 81 Premier Star</a></div></dd></div>
-    <div class="row"><dt>Couple B</dt><dd>住宿還沒確定。每天標示「依實際住宿位置調整」，集合點都選在 MRT 站、商場入口或景點入口。</dd></div>
+    <div class="row"><dt>Couple B</dt><dd><b>ibis budget Imperial</b><br>28 Penhas Rd, Singapore 208187（訂房網站寫從 Lavender 站走路約 5 分鐘；入住時間第三方寫 15:00，沒有向飯店確認）<div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=ibis+budget+Singapore+Imperial+28+Penhas+Rd+Singapore+208187" target="_blank" rel="noopener">Google Maps：ibis budget Imperial</a></div></dd></div>
+    <div class="row"><dt>EW 線</dt><dd>Aljunied（EW9）、Kallang（EW10）、Lavender（EW11）、Bugis（EW12）、City Hall（EW13）、Raffles Place（EW14）都在 EW 綠線上，兩對可以同線移動。</dd></div>
   </dl>
 
   <h2 class="sec">同行與飲食</h2>
@@ -455,545 +505,33 @@ body.map-on .top{display:none}
 </section>
 
 <!-- ===================== DAY 1 ===================== -->
-<section class="panel L1" id="d1">
-  <header class="dayhead"><span class="badge">D1</span><div><p class="date">10/8 週四</p><h2>抵達日：落地、入境、回飯店</h2></div></header>
-  <a class="mapjump" href="#map" data-day="D1">在地圖看這一天</a>
-  <div class="facts">
-    <div><b>1–2 km</b><span>步行，Light</span></div>
-    <div><b>2–3 千步</b><span>約 2,000–3,000 步</span></div>
-    <div><b>S$118</b><span>4 人當天花費（估）</span></div>
-  </div>
-  <div class="sign blue"><b class="t">這天的原則</b><p>19:00 才落地，不排錯過就補不回來的付費行程。入境到出關預留 70 分鐘。</p></div>
-
-  <article class="stop">
-    <p class="time">19:00–19:20</p>
-    <h3>SQ877 落地，走到入境大廳</h3>
-    <p class="what">不同航廈走到入境大廳的距離差很多，航廈以登機證和 SQ app 為準。</p>
-  </article>
-
-  <article class="stop">
-    <p class="time">19:20–19:40</p>
-    <h3>自動通關</h3>
-    <p class="what">ICA 規定外國旅客都能走自動通關，不用先註冊。條件是護照效期超過 6 個月，而且<b>已經填好 SG Arrival Card</b>。e-Pass 會寄到你填的 email，護照不蓋章。</p>
-    <div class="tags"><span class="tag t-must">MUST DO 先填 SG Arrival Card</span></div>
-    <div class="maps"><a href="https://www.ica.gov.sg/enter-depart/for-visitors/ACI" target="_blank" rel="noopener">ICA 官網：填入境卡</a><a href="https://ianchen.life/sgac-singapore-arrival-card/" target="_blank" rel="noopener">入境卡填寫教學（圖解）</a></div>
-    <p class="what" style="margin-top:8px"><small>教學文章是第三方部落格，只當參考。實際只在 ICA 官網或 MyICA app 填寫，免費。</small></p>
-  </article>
-
-  <article class="stop">
-    <p class="time">19:40–20:10</p>
-    <h3>領行李</h3>
-    <p class="what">估 15–30 分鐘。</p>
-  </article>
-
-  <article class="stop key">
-    <p class="time">20:10</p>
-    <h3>集合點：入境大廳的 Taxi Stand 前</h3>
-    <p class="what">4 人在這裡分開，兩對各自搭車回飯店。</p>
-    <ul class="meta"><li><b>Couple B</b><span>依實際住宿位置調整</span></li></ul>
-  </article>
-
-  <article class="stop">
-    <p class="time">20:15–20:45</p>
-    <h3>Couple A：Grab 到 Hotel 81 Premier Star</h3>
-    <ul class="meta">
-      <li><b>交通</b><span>Grab（推薦），門口上下車</span></li>
-      <li><b>時間</b><span>約 20–30 分鐘，不用轉車，不用走路</span></li>
-      <li><b>費用</b><span>預算用 S$35 一車，兩人每人 S$17.5（估，Grab 會先報價）</span></li>
-      <li><b>行李</b><span>2 人 2 個大箱放一般 GrabCar 就夠</span></li>
-      <li><b>備案</b><span>叫不到車或價格跳太高，就去排計程車</span></li>
-    </ul>
-    <details class="grab" open>
-      <summary>Grab 是什麼？怎麼用？</summary>
-      <div class="gb">
-<p><b>Grab 是什麼：</b>東南亞最常用的叫車 app，就像 Uber。用手機叫車，司機到你設定的地點接你，不用在路邊攔車，也不用跟司機講價。新加坡的私家車和計程車都能在上面叫，它也能叫外送（GrabFood）。</p>
-<ol class="steps">
-<li><b>出發前先裝好。</b>下載「Grab」app，用台灣手機號碼註冊並收簡訊驗證。如果驗證失敗，落地後連上機場 Wi-Fi 再試一次。</li>
-<li><b>綁一張信用卡。</b>Visa、Mastercard 都可以。綁卡後車資自動扣款，不用準備現金。Grab 官網也說可以付現金，但綁卡最省事。</li>
-<li><b>到新加坡要有網路。</b>用漫遊、eSIM，或 Changi 機場的免費 Wi-Fi。</li>
-<li><b>輸入目的地。</b>直接搜尋「Hotel 81 Premier Star」，確認地圖上的位置。</li>
-<li><b>選車型。</b>2 人帶 2 個大箱，選 4 人座就夠。4 人一起帶行李，要選 6 人座。叫車前 app 會先顯示價格。</li>
-<li><b>按確認，等司機。</b>app 會顯示車牌、車款和司機名字，上車前核對車牌。到了直接下車，費用從綁定的卡扣款。</li>
-</ol>
-<p><b>在 Changi 機場：</b>領完行李、準備走出去再叫車。app 會問你在哪個門（door）或柱子（pillar），要和出關後看到的標示一致。</p>
-<p><b>價格：</b>叫車前顯示的價格不含過路費和附加費，最後金額可能略高。尖峰、下雨、深夜會加價。綁的卡會算海外消費，手續費照卡片規定。</p>
-<p><b>兩對各自叫車：</b>Couple A 和 Couple B 住不同飯店，各自用自己的手機叫車。每個人的手機都先裝好 Grab。</p>
-      </div>
-    </details>
-    <details>
-      <summary>為什麼選 Grab，不選 MRT 或 Taxi</summary>
-      <div class="scroll"><table>
-        <tr><th>方式</th><th>時間</th><th>費用</th><th>走路／轉乘</th><th>行李</th></tr>
-        <tr><td>MRT（Changi Airport → Tanah Merah 轉 EW 線 → Aljunied）</td><td>約 45–60 分</td><td>每人約 S$2</td><td>轉 1 次，下車拖行李走約 10 分</td><td>差</td></tr>
-        <tr><td><b>Grab（選這個）</b></td><td>約 20–30 分</td><td>一車約 S$25–40（先報價）</td><td>門口上下車</td><td>好</td></tr>
-        <tr><td>Taxi</td><td>約 20–30 分</td><td>跳表約 S$20–25，加機場附加費 S$8（17:00–23:59），同時段另加 25% 尖峰附加費</td><td>門口上下車</td><td>好</td></tr>
-      </table></div>
-      <p>兩人分攤後 Grab 每人只比 MRT 多 S$13–18，卻省 30 分鐘、少轉一次車，晚上也不用拖行李走路。計程車附加費來自 Changi Airport 官網。</p>
-    </details>
-    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+81+Premier+Star+31+Lor+18+Geylang+Singapore" target="_blank" rel="noopener">Google Maps：Hotel 81 Premier Star</a></div>
-  </article>
-
-  <article class="stop">
-    <p class="time">20:45–21:00</p>
-    <h3>辦入住</h3>
-  </article>
-
-  <article class="stop">
-    <p class="time">21:00–22:00</p>
-    <h3>簡單晚餐</h3>
-    <div class="meal">
-      <div class="r"><span class="k n">葷</span><span>飯店附近隨意吃，或回飯店叫外送。</span></div>
-      <div class="r"><span class="k v">素</span><span>Geylang 一帶的店<b>都不保證是素食</b>。素食者在機場先買好，或叫 GrabFood 並選 100% 素食的店。</span></div>
-      <div class="r"><span class="k b">備案</span><span>如果 20:00 前就出關，4 人可以在入境大廳附近的美食街一起吃完再分開（營業時間沒查到，需現場確認）。20:15 之後不要在機場逗留。</span></div>
-      <p class="info">預算每人約 S$12。不用訂位。</p>
-    </div>
-  </article>
-
-  <nav class="pager" aria-label="換日"><a href="#home">回首頁</a><a href="#d2">下一天 D2</a></nav>
-</section>
+<section class="panel L1" id="d1"><div class="dayroot"></div></section>
 
 <!-- ===================== DAY 2 ===================== -->
-<section class="panel L2" id="d2">
-  <header class="dayhead"><span class="badge">D2</span><div><p class="date">10/9 週五</p><h2>Chinatown、雙溫室、Clarke Quay 夜晚</h2></div></header>
-  <a class="mapjump" href="#map" data-day="D2">在地圖看這一天</a>
-  <div class="facts">
-    <div><b>9–10 km</b><span>步行，Moderate</span></div>
-    <div><b>1.3–1.5 萬步</b><span>約 13,000–15,000 步</span></div>
-    <div><b>S$458</b><span>4 人當天花費（估）</span></div>
-  </div>
-  <div class="sign blue"><b class="t">這天的原則</b><p>下午排在有冷氣的溫室，不怕午後雷雨。Marina Bay 周邊 10/9–10/11 有道路管制、人潮多，去 Marina 一律搭 MRT，不要在 Marina Bay Sands 或 Suntec 附近叫 Grab。9 公里以上但不到 12 公里，不用刪景點。</p></div>
-
-  <article class="stop">
-    <p class="time">08:00–09:15</p>
-    <h3>早餐：Kaya Toast 加 kopi</h3>
-    <p class="what">飯店附近的 kopitiam，或 Ya Kun、Toast Box 這類連鎖店。</p>
-    <div class="tags"><span class="tag t-veg">VEGETARIAN 蛋奶素可以</span></div>
-    <p class="what"><small>Kaya 裡有蛋和椰奶，蛋奶素可以吃，全素不行。</small></p>
-  </article>
-
-  <article class="stop">
-    <p class="time">09:15–09:50</p>
-    <h3>Couple A：Hotel 81 → Aljunied MRT → Tanjong Pagar</h3>
-    <ul class="meta">
-      <li><b>步行</b><span>飯店走到 Aljunied（EW9）約 10–12 分鐘（推估，請用 Google Maps 確認）</span></li>
-      <li><b>交通</b><span>EW 線 Aljunied（EW9）到 Tanjong Pagar（EW15），同一條線不用轉車</span></li>
-      <li><b>費用</b><span>每人約 S$1.6–1.9（估）</span></li>
-    </ul>
-    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Aljunied+MRT+Station" target="_blank" rel="noopener">Google Maps：Aljunied MRT</a></div>
-  </article>
-
-  <article class="stop key">
-    <p class="time">10:00–11:30</p>
-    <h3>集合點：Maxwell Food Centre 門口（Kadayanallur St 側）</h3>
-    <p class="what">從這裡開始走 Chinatown：Buddha Tooth Relic Temple、Sri Mariamman Temple、Pagoda Street。</p>
-    <ul class="meta">
-      <li><b>Couple B</b><span>依實際住宿位置調整</span></li>
-      <li><b>步行</b><span>約 1.5 km</span></li>
-      <li><b>提醒</b><span>進寺廟要遮住肩膀和膝蓋</span></li>
-    </ul>
-    <div class="maps">
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Maxwell+Food+Centre" target="_blank" rel="noopener">Google Maps：Maxwell Food Centre</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Buddha+Tooth+Relic+Temple+Singapore" target="_blank" rel="noopener">Google Maps：Buddha Tooth Relic Temple</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Mariamman+Temple+Singapore" target="_blank" rel="noopener">Google Maps：Sri Mariamman Temple</a>
-    </div>
-  </article>
-
-  <article class="stop">
-    <p class="time">11:30–12:30</p>
-    <h3>午餐：Maxwell Food Centre</h3>
-    <p class="what">12:00–13:30 是上班族人潮，11:30 先到先佔位。</p>
-    <div class="meal">
-      <div class="r"><span class="k n">葷</span><span><b>Tian Tian Hainanese Chicken Rice</b> 海南雞飯，約 S$6–8（估）</span></div>
-      <div class="r"><span class="k v">素</span><span><b>Soon Seng／Shun Cheng Vegetarian（第 15 攤）</b> 素米粉套餐。有評論寫約 S$3，價格可能已經漲了</span></div>
-      <div class="r"><span class="k g">Vegan</span><span><b>Traditional Delight</b> 的部分糕點，蛋奶要現場問</span></div>
-      <div class="r"><span class="k b">備案</span><span>The Green Leaf（#01-100）；MS Dessert 的甜湯（例如 tau suan）</span></div>
-      <p class="info">每人約 S$8–12。付款以現金或 PayNow 為主。天天都排隊，約 15–30 分鐘。不用訂位。4 人可同桌（11:30 前到比較好找位）。素食可靠度中高（是專門素食攤），隱藏動物成分風險中等：醬料和湯底要問。選這裡是因為它就在 Chinatown 集合點，坐 TE 線直達 Gardens。</p>
-    </div>
-    <div class="tags"><span class="tag t-cash">CASH ONLY 帶現金</span><span class="tag t-veg">VEGETARIAN</span></div>
-  </article>
-
-  <article class="stop">
-    <p class="time">12:40–13:30</p>
-    <h3>Chinatown 隨意逛</h3>
-    <p class="what">Chinatown Complex 或街區逛逛、買伴手禮、躲太陽。</p>
-  </article>
-
-  <article class="stop">
-    <p class="time">13:30–14:00</p>
-    <h3>MRT：Maxwell（TE18）→ Gardens by the Bay（TE22）</h3>
-    <ul class="meta">
-      <li><b>交通</b><span>TE 線，約 4 站</span></li>
-      <li><b>費用</b><span>每人約 S$1.3–1.6（估），4 人約 S$5–6</span></li>
-    </ul>
-  </article>
-
-  <article class="stop key">
-    <p class="time">14:00–17:15</p>
-    <h3>Gardens by the Bay：Flower Dome 和 Cloud Forest</h3>
-    <p class="what">兩座溫室都在室內，有冷氣，下雨也不受影響。</p>
-    <ul class="meta">
-      <li><b>門票</b><span>非居民成人 <b>S$46</b>（來源是搜尋摘要，出發前請看官網確認）。4 人約 S$184</span></li>
-      <li><b>休館</b><span>官網提到 Flower Dome 只有 10/6 休館，10/9 照常開放</span></li>
-      <li><b>預約</b><span>可現場買，建議先上網買省排隊</span></li>
-    </ul>
-    <div class="tags"><span class="tag t-rain">RAIN BACKUP 下雨照排</span><span class="tag t-res">建議先買票</span></div>
-    <div class="maps">
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Flower+Dome+Gardens+by+the+Bay" target="_blank" rel="noopener">Google Maps：Flower Dome</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Cloud+Forest+Gardens+by+the+Bay" target="_blank" rel="noopener">Google Maps：Cloud Forest</a>
-    </div>
-  </article>
-
-  <article class="stop">
-    <p class="time">17:15–19:30</p>
-    <h3>Supertree Grove 散步、休息</h3>
-    <p class="what">在 Supertree 下散步、拍照、找位子休息，等 19:45 的燈光秀。</p>
-    <p class="what"><small>Satay by the Bay 依 Gardens by the Bay 官網公告自 10/1 起關閉，所以不排。</small></p>
-    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Supertree+Grove+Gardens+by+the+Bay" target="_blank" rel="noopener">Google Maps：Supertree Grove</a></div>
-  </article>
-
-  <article class="stop key">
-    <p class="time">19:45–20:00</p>
-    <h3>Garden Rhapsody 燈光秀</h3>
-    <p class="what">免費，每晚 19:45 和 20:45 兩場，每場約 15 分鐘。提早 15–20 分鐘去卡位。</p>
-  </article>
-
-  <article class="stop">
-    <p class="time">20:00–20:30</p>
-    <h3>MRT：Bayfront（DT16）→ Downtown（DT17）</h3>
-    <ul class="meta">
-      <li><b>交通</b><span>DT 線坐 1 站</span></li>
-      <li><b>費用</b><span>每人約 S$1.1–1.3（估）</span></li>
-      <li><b>提醒</b><span>週五晚上 Bayfront 周邊有道路管制、人多，照現場指示走</span></li>
-    </ul>
-  </article>
-
-  <article class="stop key">
-    <p class="time">20:30–21:45</p>
-    <h3>晚餐：Lau Pa Sat（Satay Street, Boon Tat St）</h3>
-    <p class="what">從 Downtown 站走過來約 3 分鐘。Satay Street 平日 19:00–03:00。</p>
-    <div class="meal">
-      <div class="r"><span class="k n">葷</span><span>Satay Street 的雞、牛、羊沙爹（第 7、8 攤人氣高，要排隊）。每人約 S$15–20</span></div>
-      <div class="r"><span class="k v">素</span><span><b>Su Xiang Chinese Vegetarian（第 46 攤）</b> 素炒麵、炒飯、素肉、素煮炒；或 <b>Maya Indian Veggie Delight（第 47 攤）</b> 素 briyani、paneer。每人約 S$10–14</span></div>
-      <div class="r"><span class="k g">Vegan</span><span>Maya 的豆類或蔬菜咖哩（要確認沒有 ghee 和乳製品）；Su Xiang 的炒麵（要確認沒放蛋）</span></div>
-      <div class="r"><span class="k b">備案</span><span>Shree Bhaavan（第 40 攤，純印度素食）</span></div>
-      <p class="info">付款以現金為主。週五 20:30 有人潮，不用訂位，4 人可以同桌（坐戶外長桌）。素食可靠度高（專門素食攤）。<b>沙爹不是素的，沾醬也可能有蝦醬，素食者不要碰。</b>Maya 營業到 22:30，21:45 前要點完。</p>
-    </div>
-    <div class="tags"><span class="tag t-cash">CASH ONLY 多數攤位</span><span class="tag t-veg">VEGETARIAN</span></div>
-    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Lau+Pa+Sat" target="_blank" rel="noopener">Google Maps：Lau Pa Sat</a></div>
-  </article>
-
-  <article class="stop">
-    <p class="time">21:45–22:15</p>
-    <h3>沿新加坡河散步</h3>
-    <p class="what">Raffles Place → Boat Quay 河岸 → Clarke Quay，約 1.5–2 km。</p>
-  </article>
-
-  <article class="stop key">
-    <p class="time">22:15–23:30</p>
-    <h3>Clarke Quay：河邊喝一杯或吃甜點</h3>
-    <p class="what">過 Read Bridge 拍夜景，找河邊的位子坐。雞尾酒大約 S$18–28（經驗值，以現場為準）。不喝酒的可以點 mocktail。</p>
-    <ul class="meta">
-      <li><b>費用</b><span>每人約 S$15–28，可以刷卡，不用訂位。個別店家沒有查證，現場挑。</span></li>
-    </ul>
-    <div class="maps">
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Clarke+Quay+Singapore" target="_blank" rel="noopener">Google Maps：Clarke Quay</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Read+Bridge+Singapore" target="_blank" rel="noopener">Google Maps：Read Bridge</a>
-    </div>
-  </article>
-
-  <article class="stop">
-    <p class="time">23:30</p>
-    <h3>回住處</h3>
-    <ul class="meta">
-      <li><b>Couple A</b><span>Grab 到 Geylang，約 15 分鐘，一車約 S$15–22（估，深夜可能漲價）</span></li>
-      <li><b>Couple B</b><span>依實際住宿位置調整</span></li>
-    </ul>
-  </article>
-
-  <nav class="pager" aria-label="換日"><a href="#d1">上一天 D1</a><a href="#d3">下一天 D3</a></nav>
-</section>
+<section class="panel L2" id="d2"><div class="dayroot"></div></section>
 
 <!-- ===================== DAY 3 ===================== -->
-<section class="panel L3" id="d3">
-  <header class="dayhead"><span class="badge">D3</span><div><p class="date">10/10 週六</p><h2>Little India、Kampong Glam、雙層巴士、HaveFun</h2></div></header>
-  <a class="mapjump" href="#map" data-day="D3">在地圖看這一天</a>
-  <div class="facts">
-    <div><b>8–9 km</b><span>步行，Moderate</span></div>
-    <div><b>1.1–1.3 萬步</b><span>約 11,000–13,000 步</span></div>
-    <div><b>S$511–651</b><span>4 人當天花費（估）</span></div>
-  </div>
-  <div class="sign blue"><b class="t">這天的原則</b><p>Bugis、Kampong Glam、Haji Lane 集中在同一天，HaveFun 就在 Bugis，不用為它單獨再跑一趟。下午有雷雨就改去 ION Orchard。</p></div>
-
-  <article class="stop">
-    <p class="time">08:30</p>
-    <h3>Couple A：Grab 到 Little India</h3>
-    <ul class="meta">
-      <li><b>時間</b><span>約 10–15 分鐘</span></li>
-      <li><b>費用</b><span>一車約 S$10–14（估）。搭 MRT 要轉車，兩人分攤 Grab 更划算</span></li>
-    </ul>
-  </article>
-
-  <article class="stop key">
-    <p class="time">09:00–09:45</p>
-    <h3>集合點：Tekka Centre（Buffalo Rd 側入口，Little India MRT 旁）</h3>
-    <ul class="meta"><li><b>Couple B</b><span>依實際住宿位置調整</span></li></ul>
-    <div class="meal">
-      <h4>早餐</h4>
-      <div class="r"><span class="k n">葷</span><span>Biryani、Roti Prata 配 Teh Tarik</span></div>
-      <div class="r"><span class="k v">素</span><span>印度素食攤的 Thosai（dosa）、Idli</span></div>
-      <div class="r"><span class="k g">Vegan</span><span>Plain Thosai 配 sambar（要確認沒用 ghee）</span></div>
-      <div class="r"><span class="k b">備案</span><span>Komala Vilas（Serangoon Rd，老字號南印度素食，營業時間沒查證）</span></div>
-      <p class="info">每人約 S$5–8。付款以現金為主。4 人可以同桌。素食要選掛「Vegetarian」招牌的攤位；印度素食通常會用洋蔥和大蒜（有五辛）。各攤營業時間沒查證，需現場確認。</p>
-    </div>
-    <div class="tags"><span class="tag t-cash">CASH ONLY 多數攤位</span><span class="tag t-veg">VEGETARIAN</span></div>
-    <div class="maps">
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Tekka+Centre" target="_blank" rel="noopener">Google Maps：Tekka Centre</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Komala+Vilas+Serangoon+Road" target="_blank" rel="noopener">Google Maps：Komala Vilas</a>
-    </div>
-  </article>
-
-  <article class="stop">
-    <p class="time">09:45–11:00</p>
-    <h3>Little India 散步</h3>
-    <p class="what">Serangoon Road → Sri Veeramakaliamman Temple → 彩色的 Tan Teng Niah 舊宅。</p>
-    <div class="maps">
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Sri+Veeramakaliamman+Temple" target="_blank" rel="noopener">Google Maps：Sri Veeramakaliamman Temple</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Tan+Teng+Niah" target="_blank" rel="noopener">Google Maps：Tan Teng Niah</a>
-    </div>
-  </article>
-
-  <article class="stop">
-    <p class="time">11:00–11:20</p>
-    <h3>往 Kampong Glam</h3>
-    <ul class="meta">
-      <li><b>步行</b><span>約 1.3 km</span></li>
-      <li><b>Grab</b><span>天熱就叫 Grab，4 人一車約 S$8–10（估）。4 人坐一般 GrabCar（4 座）就夠，白天沒行李</span></li>
-    </ul>
-  </article>
-
-  <article class="stop">
-    <p class="time">11:20–13:00</p>
-    <h3>Kampong Glam：Sultan Mosque、Bussorah St、Haji Lane、Arab Street</h3>
-    <p class="what">Sultan Mosque 看外觀就好。Haji Lane 是塗鴉小巷和小店。</p>
-    <div class="maps">
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Sultan+Mosque+Singapore" target="_blank" rel="noopener">Google Maps：Sultan Mosque</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Haji+Lane+Singapore" target="_blank" rel="noopener">Google Maps：Haji Lane</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Arab+Street+Singapore" target="_blank" rel="noopener">Google Maps：Arab Street</a>
-    </div>
-  </article>
-
-  <article class="stop">
-    <p class="time">13:00–13:45</p>
-    <h3>午餐：Food Junction（Bugis Junction）</h3>
-    <p class="what">走路約 5 分鐘。有冷氣，4 人坐得下。</p>
-    <div class="meal">
-      <div class="r"><span class="k n">葷</span><span>Laksa 或雞飯類，看當天開哪些攤位</span></div>
-      <div class="r"><span class="k v">素</span><span><b>Truly Vegetarian（#03-30 第 15 攤）</b> 素食飯麵，約 S$10</span></div>
-      <div class="r"><span class="k g">Vegan</span><span>問 Truly Vegetarian 有沒有不含蛋奶的菜</span></div>
-      <div class="r"><span class="k b">備案</span><span>Herbivore（Fortune Centre，走路約 8 分鐘）</span></div>
-      <p class="info">每人約 S$8–12。通常可以刷卡（需確認）。有冷氣。營業時間跟商場時間走，需確認。</p>
-    </div>
-    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Food+Junction+Bugis+Junction" target="_blank" rel="noopener">Google Maps：Food Junction Bugis Junction</a></div>
-  </article>
-
-  <article class="stop key">
-    <p class="time">13:50–14:20</p>
-    <h3>雙層巴士①：公車 7 號去程</h3>
-    <p class="what"><b>Bugis Stn/Parkview Sq（01139，North Bridge Rd，往 Clementi）→ Napier Stn Exit 2（13011）</b>。坐<b>上層最前排</b>。</p>
-    <ul class="meta">
-      <li><b>時間</b><span>約 25–30 分鐘（估）</span></li>
-      <li><b>費用</b><span>每人約 S$1.49–1.68，用感應卡嗶</span></li>
-      <li><b>沿途</b><span>Bugis 和 Kampong Glam、National Library、Capitol Building、SMU 和博物館一帶、Dhoby Ghaut、Somerset</span></li>
-      <li><b>注意</b><span>7 號大多是雙層車，偶爾會來單層車，單層就讓它過，等下一班</span></li>
-    </ul>
-    <div class="tags"><span class="tag t-must">BUS 7 上層最前排</span></div>
-    <div class="maps">
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Bugis+Stn%2FParkview+Sq+bus+stop+01139" target="_blank" rel="noopener">Google Maps：上車站 01139</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Napier+Stn+Exit+2+bus+stop+13011" target="_blank" rel="noopener">Google Maps：下車站 13011</a>
-    </div>
-  </article>
-
-  <article class="stop">
-    <p class="time">14:20–15:30</p>
-    <h3>Singapore Botanic Gardens（Tanglin Gate 進）</h3>
-    <p class="what">走天鵝湖、Bandstand，免費。</p>
-    <div class="tags"><span class="tag t-rain">RAIN BACKUP</span></div>
-    <p class="what">雨勢大就不要下到 Napier，提早在 Orchard Stn Exit 13（09022）下車，改逛 ION Orchard。站序請用 Google Maps 確認。</p>
-    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Singapore+Botanic+Gardens+Tanglin+Gate" target="_blank" rel="noopener">Google Maps：Botanic Gardens Tanglin Gate</a></div>
-  </article>
-
-  <article class="stop key">
-    <p class="time">15:35–16:10</p>
-    <h3>雙層巴士②：公車 7 號回程，走 Orchard Road</h3>
-    <p class="what"><b>Napier Stn Exit 1（13019，往 Bedok）→ Opp Bugis Stn Exit C（01112）</b>，經過 Orchard Road、Somerset、Dhoby Ghaut。</p>
-    <ul class="meta">
-      <li><b>時間</b><span>約 30–35 分鐘（估）</span></li>
-      <li><b>費用</b><span>每人約 S$1.49–1.68</span></li>
-      <li><b>座位</b><span>回程坐左側（靠人行道和商場門口那一側）。前排被坐走就選這邊</span></li>
-      <li><b>逛街</b><span>想逛 Orchard 就在 Orchard Stn/Lucky Plaza（09048）下車</span></li>
-    </ul>
-    <div class="maps">
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Napier+Stn+Exit+1+bus+stop+13019" target="_blank" rel="noopener">Google Maps：上車站 13019</a>
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=Opp+Bugis+Stn+Exit+C+bus+stop+01112" target="_blank" rel="noopener">Google Maps：下車站 01112</a>
-    </div>
-  </article>
-
-  <article class="stop">
-    <p class="time">16:15–18:30</p>
-    <h3>休息、換衣服</h3>
-    <ul class="meta">
-      <li><b>Couple A</b><span>Bugis（EW12）→ Aljunied（EW9）坐 3 站，每人約 S$1.3（估）；或叫 Grab 約 10 分鐘</span></li>
-      <li><b>Couple B</b><span>依實際住宿位置調整</span></li>
-      <li><b>服裝</b><span>HaveFun 有服裝規定，換好包鞋和長褲再出門</span></li>
-    </ul>
-  </article>
-
-  <article class="stop key">
-    <p class="time">18:45</p>
-    <h3>集合點：Bugis MRT 往 Bugis Junction 的出口</h3>
-    <p class="what">實際出口以站內指標為準。</p>
-    <ul class="meta"><li><b>Couple B</b><span>依實際住宿位置調整</span></li></ul>
-    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bugis+MRT+Station" target="_blank" rel="noopener">Google Maps：Bugis MRT</a></div>
-  </article>
-
-  <article class="stop">
-    <p class="time">19:00–20:30</p>
-    <h3>晚餐：Herbivore（Fortune Centre）</h3>
-    <p class="what">190 Middle Rd #01-13/14，走路約 5–8 分鐘。全店素食，有日式和在地菜色。葷食的兩位這一餐配合吃素（只有這一餐）。</p>
-    <div class="meal">
-      <div class="r"><span class="k v">素</span><span>全店素食，每人約 S$25</span></div>
-      <div class="r"><span class="k g">Vegan</span><span>選擇很多</span></div>
-      <div class="r"><span class="k b">備案</span><span><b>Warung Ijo</b>（印尼素食，素 rendang 炒飯、素 nasi lemak；地址沒查證，用 Google Maps 搜尋）；<b>Beirut Grill（Arab Street）</b>黎巴嫩菜，鷹嘴豆泥、falafel 這類蔬食冷盤多，葷食的人也有肉可以點，4 人同桌最容易</span></div>
-      <p class="info">週六晚上建議先訂位或早點到。4 人可同桌。素食可靠度高，隱藏動物成分風險低（全素店）。付款可刷卡（估，需確認）。</p>
-    </div>
-    <div class="tags"><span class="tag t-res">建議訂位</span><span class="tag t-veg">VEGETARIAN／VEGAN</span></div>
-    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Herbivore+Fortune+Centre+Singapore" target="_blank" rel="noopener">Google Maps：Herbivore Fortune Centre</a></div>
-  </article>
-
-  <article class="stop key">
-    <p class="time">20:45–00:00</p>
-    <h3>HaveFun Live Show（Bugis+ 7 樓）</h3>
-    <p class="what">20:45–21:00 到報到或排隊，<b>21:30 開演</b>，待到 00:00 左右。現場演出加 DJ。</p>
-    <div class="tags">
-      <span class="tag t-res">RESERVATION REQUIRED 建議訂位</span>
-      <span class="tag t-booked" data-booked="havefun" hidden>BOOKED 已訂</span>
-      <span class="tag t-must">服裝：包鞋、長褲</span>
-    </div>
-    <dl class="dl">
-      <div class="row"><dt>地址</dt><dd>201 Victoria St #07-01, Singapore 188067（Bugis+ 7 樓）</dd></div>
-      <div class="row"><dt>開演</dt><dd>Fri–Sat 9:30PM。官網首頁另一處寫 20:30，以 9:30PM 為準，訂位時用 WhatsApp 再確認。</dd></div>
-      <div class="row"><dt>最低消費</dt><dd>週五、六 S$200++（4 人 High Table）；週一到週四免最低消費。S$200 加 10% 服務費再加 9% GST，約 S$239.8，4 人每人約 S$60。</dd></div>
-      <div class="row"><dt>入場費</dt><dd>2026/1 版條款的搜尋摘要寫週五、六每人 S$35，含 1 杯飲料。原頁面現在打不開，<b>需確認</b>。如果另外收，每人約 S$95。</dd></div>
-      <div class="row"><dt>訂位</dt><dd>WhatsApp 8318 9300（請對照官網確認號碼）。訂金不退。</dd></div>
-      <div class="row"><dt>規定</dt><dd>限 18 歲以上，帶護照。男生不能穿無袖或短褲，刺青要遮住，要穿包鞋；女生不能穿拖鞋、Crocs、slides。</dd></div>
-      <div class="row"><dt>食物</dt><dd>素食和 vegan 選項查不到資料，<b>需現場確認</b>。所以晚餐先吃飽再進場。</dd></div>
-    </dl>
-    <div class="maps">
-      <a href="https://www.google.com/maps/search/?api=1&amp;query=HaveFun+Live+Show+Bugis%2B+Singapore" target="_blank" rel="noopener">Google Maps：HaveFun Live Show</a>
-      <a href="https://www.havefunliveshow.com/sg/" target="_blank" rel="noopener">HaveFun 官網</a>
-    </div>
-  </article>
-
-  <article class="stop">
-    <p class="time">00:00–00:20</p>
-    <h3>回住處</h3>
-    <ul class="meta">
-      <li><b>Couple A</b><span>Grab：Bugis 到 Geylang Lor 18 約 10 分鐘，一車約 S$10–15（估，深夜可能漲價）</span></li>
-      <li><b>Couple B</b><span>依實際住宿位置調整</span></li>
-    </ul>
-  </article>
-
-  <nav class="pager" aria-label="換日"><a href="#d2">上一天 D2</a><a href="#d4">下一天 D4</a></nav>
-</section>
+<section class="panel L3" id="d3"><div class="dayroot"></div></section>
 
 <!-- ===================== DAY 4 ===================== -->
-<section class="panel L4" id="d4">
-  <header class="dayhead"><span class="badge">D4</span><div><p class="date">10/11 週日</p><h2>回程：08:15 出發去 Changi T3</h2></div></header>
-  <a class="mapjump" href="#map" data-day="D4">在地圖看這一天</a>
-  <div class="facts">
-    <div><b>1–2 km</b><span>步行，Light</span></div>
-    <div><b>2–3 千步</b><span>約 2,000–3,000 步</span></div>
-    <div><b>S$136</b><span>4 人當天花費（估）</span></div>
-  </div>
-  <div class="sign red"><b class="t">MUST LEAVE BY 08:15</b><p>SQ878 11:45 從 T3 起飛。國際線建議提早 2 小時 45 分到 3 小時到機場，也就是 08:45–09:00 抵達。Geylang 到 T3 週日早上車程約 20–25 分鐘，再加 10 分鐘叫車，所以 Couple A 最晚 08:15 離開飯店。</p></div>
-
-  <article class="stop">
-    <p class="time">07:15–07:55</p>
-    <h3>早餐</h3>
-    <p class="what">在飯店附近吃，或進 T3 再吃。每人約 S$8–15。Kaya Toast 含蛋和椰奶，全素不行。</p>
-  </article>
-
-  <article class="stop">
-    <p class="time">08:00</p>
-    <h3>退房、開 Grab app 叫車</h3>
-  </article>
-
-  <article class="stop key">
-    <p class="time">08:15</p>
-    <h3>Couple A 離開飯店，Grab 到 Changi T3</h3>
-    <div class="tags"><span class="tag t-must">MUST LEAVE BY 08:15</span></div>
-    <ul class="meta">
-      <li><b>交通</b><span>Grab（選這個）</span></li>
-      <li><b>時間</b><span>約 20–25 分鐘</span></li>
-      <li><b>費用</b><span>一車約 S$20–30（估）。機場附加費只收從機場出發的行程，去機場不收</span></li>
-      <li><b>路線</b><span>走 PIE／ECP，不經過 Marina 周邊的管制區</span></li>
-    </ul>
-    <details>
-      <summary>為什麼選 Grab，不選 MRT</summary>
-      <p>2 人帶 2 個大行李，要轉車，週日早上 MRT 班距也比較長。搭 MRT 每人只省約 S$10–13。</p>
-    </details>
-    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Changi+Airport+Terminal+3" target="_blank" rel="noopener">Google Maps：Changi Airport T3</a></div>
-  </article>
-
-  <article class="stop key">
-    <p class="time">08:45</p>
-    <h3>抵達 T3，集合點：SQ 報到櫃台區</h3>
-    <ul class="meta"><li><b>Couple B</b><span>照同一個時間抵達</span></li></ul>
-  </article>
-
-  <article class="stop">
-    <p class="time">08:45–09:30</p>
-    <h3>報到、託運行李、自動通關出境</h3>
-  </article>
-
-  <article class="stop">
-    <p class="time">09:30–10:45</p>
-    <h3>管制區內吃早餐、買伴手禮</h3>
-  </article>
-
-  <article class="stop">
-    <p class="time">10:45</p>
-    <h3>往登機門移動</h3>
-    <p class="what">實際登機時間以登機證為準。</p>
-  </article>
-
-  <article class="stop key">
-    <p class="time">11:45</p>
-    <h3>SQ878 起飛，16:30 抵達 TPE T2</h3>
-  </article>
-
-  <div class="sign"><b class="t">Jewel 取消</b><p>去 Jewel 要先出管制區、逛完再走回 T3，至少 1.5 小時，一定會壓縮報到時間，萬一卡在報到排隊或安檢就很難補救。</p></div>
-
-  <nav class="pager" aria-label="換日"><a href="#d3">上一天 D3</a><a href="#food">看美食頁</a></nav>
-</section>
+<section class="panel L4" id="d4"><div class="dayroot"></div></section>
 
 <!-- ===================== FOOD ===================== -->
 <section class="panel" id="food">
   <h2 class="sec">每餐一覽</h2>
-  <p>每一餐的詳細資料、價格和付款方式在各天的行程裡。這裡是快速對照。</p>
+  <p>這是主計畫的餐點。每一餐在各天的選項裡都有備選。</p>
   <div class="scroll"><table>
-    <tr><th>餐</th><th>地點</th><th>葷</th><th>素</th><th>Vegan／備案</th></tr>
-    <tr><td class="num">D1 晚</td><td>飯店附近／GrabFood</td><td>隨意吃</td><td>100% 素食外送</td><td>機場先買</td></tr>
-    <tr><td class="num">D2 午</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Maxwell+Food+Centre" target="_blank" rel="noopener">Maxwell Food Centre</a></td><td>Tian Tian 海南雞飯</td><td>Soon Seng 素米粉</td><td>Traditional Delight／The Green Leaf</td></tr>
-    <tr><td class="num">D2 晚</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Lau+Pa+Sat" target="_blank" rel="noopener">Lau Pa Sat</a></td><td>Satay Street 沙爹</td><td>Su Xiang 素炒麵／Maya 素 briyani</td><td>Shree Bhaavan</td></tr>
-    <tr><td class="num">D2 夜</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Clarke+Quay+Singapore" target="_blank" rel="noopener">Clarke Quay</a></td><td>酒吧、甜點</td><td>mocktail、甜點</td><td>現場挑</td></tr>
-    <tr><td class="num">D3 早</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Tekka+Centre" target="_blank" rel="noopener">Tekka Centre</a></td><td>Biryani、Roti Prata</td><td>Thosai、Idli</td><td>Komala Vilas</td></tr>
-    <tr><td class="num">D3 午</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Food+Junction+Bugis+Junction" target="_blank" rel="noopener">Food Junction</a></td><td>Laksa／雞飯</td><td>Truly Vegetarian</td><td>Herbivore</td></tr>
-    <tr><td class="num">D3 晚</td><td><a href="https://www.google.com/maps/search/?api=1&amp;query=Herbivore+Fortune+Centre+Singapore" target="_blank" rel="noopener">Herbivore</a></td><td>配合吃素（只有這一餐）</td><td>全素食店</td><td>Warung Ijo／Beirut Grill</td></tr>
-    <tr><td class="num">D4 早</td><td>飯店附近／T3</td><td>Kaya Toast</td><td>Kaya Toast（蛋奶素）</td><td>全素不行</td></tr>
+    <tr><th>餐</th><th>主計畫</th><th>素食者</th><th>備選</th></tr>
+    <tr><td class="num">D1 晚</td><td>沒排晚餐</td><td>—</td><td>HaveFun／GrabFood 素食／住宿附近</td></tr>
+    <tr><td class="num">D2 早</td><td>Ya Kun Kaya Toast（Far East Square）</td><td>蛋奶素可，全素不行</td><td>住宿附近 kopitiam</td></tr>
+    <tr><td class="num">D2 午</td><td>Fortune Centre 興化素食</td><td>全素食店</td><td>Herbivore（同棟）／Maxwell／Lau Pa Sat</td></tr>
+    <tr><td class="num">D2 晚</td><td>Lau Pa Sat 沙爹街</td><td>Su Xiang、Maya、Shree Bhaavan</td><td>Clarke Quay 一帶</td></tr>
+    <tr><td class="num">D3 早</td><td>YY Kafei Dian（Beach Rd）</td><td>蛋奶素可，全素不行（推估）</td><td>Tekka Centre／住宿附近</td></tr>
+    <tr><td class="num">D3 午</td><td>名勝世界地下美食街（Sentosa 選項）</td><td>素食選擇未查證</td><td>Food Junction／Herbivore／Beirut Grill</td></tr>
+    <tr><td class="num">D3 晚</td><td>還沒排</td><td>—</td><td>Herbivore／Beirut Grill／Warung Ijo</td></tr>
+    <tr><td class="num">D4 早</td><td>沒排，機場吃</td><td>—</td><td>住宿附近</td></tr>
   </table></div>
-
-  <h2 class="sec">Hawker Centre 比較與選擇</h2>
+<h2 class="sec">Hawker Centre 比較與選擇</h2>
   <div class="scroll"><table>
     <tr><th>地點</th><th>葷食</th><th>素食</th><th>座位與付款</th><th>用不用</th></tr>
     <tr><td><b>Maxwell Food Centre</b></td><td>天天海南雞飯（米其林必比登）等</td><td>第 15 攤素食攤、Traditional Delight、The Green Leaf（#01-100）</td><td>沒冷氣，中午很擠；很多攤只收現金或 PayNow；約 8:00–22:00，各攤不同</td><td><b>用：D2 午餐</b></td></tr>
@@ -1019,6 +557,16 @@ body.map-on .top{display:none}
   <h2 class="sec">素食 Cheat Sheet（12 個，都在行程經過的地方）</h2>
   <div class="sign warn"><b class="t">沒有肉塊不等於素食</b><p>叻沙湯底常用蝦，Nasi Lemak 的 sambal 常加 belacan 和江魚仔，炒麵常淋蠔油或用豬油，清湯常是雞湯或豬骨湯。不是專門的素食攤，一律用下面的「給店員看」問清楚。</p></div>
 
+  <div class="vc"><h4>新增 A. 興化素食 Xing Hua（Fortune Centre）</h4>
+    <p><span class="tag t-veg">素食店（你提供的資訊）</span> Day 2 午餐（主計畫）</p>
+    <p>推薦：素食煲仔飯、素沙爹串、橄欖菜炒飯　價格：未查證</p>
+    <p class="k2">五辛：未查證<br>魚露／蝦醬／蠔油：未查證，點餐前用溝通卡確認<br>營業：未查證　付款：未查證　備案：Herbivore（同棟 #01-13/14，約 S$25，第三方寫營業到約 20:30）</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Xing+Hua+Vegetarian+Fortune+Centre+Singapore" target="_blank" rel="noopener">Google Maps：Xing Hua</a></div></div>
+  <div class="vc"><h4>新增 B. Kaya Toast 店：Ya Kun、YY Kafei Dian</h4>
+    <p><span class="tag t-veg">蛋奶素可，全素不行</span> Day 2、Day 3 早餐（主計畫）</p>
+    <p>推薦：咖椰吐司／厚切咖椰包、半熟蛋、咖啡　價格：未查證</p>
+    <p class="k2">Kaya 含蛋與椰奶；半熟蛋是蛋；牛油與咖啡奶的成分未查證<br>營業：Ya Kun 第三方寫平日 07:30–18:30、週末 08:30–17:00；YY 未查證　備案：住宿附近的 kopitiam</p>
+    <div class="maps"><a href="https://www.google.com/maps/search/?api=1&amp;query=Ya+Kun+Kaya+Toast+Far+East+Square+Singapore" target="_blank" rel="noopener">Google Maps：Ya Kun</a><a href="https://www.google.com/maps/search/?api=1&amp;query=YY+Kafei+Dian+Beach+Road+Singapore" target="_blank" rel="noopener">Google Maps：YY Kafei Dian</a></div></div>
   <div class="vc"><h4>1. Soon Seng Vegetarian（Maxwell 第 15 攤）</h4>
     <p><span class="tag t-veg">素，部分 vegan</span><span class="tag t-cash">只收現金</span> Day 2，Chinatown</p>
     <p>推薦：素米粉　價格：約 S$3–5</p>
@@ -1162,11 +710,11 @@ body.map-on .top{display:none}
   <div class="sign red"><b class="t">Marina 周邊不要叫 Grab</b>
     <p>Marina Bay Sands、Suntec 周邊 10/7–10/13 有道路管制，會塞車也會加價。先搭 MRT 到 Bayfront 或 Downtown，離開管制區再叫車。</p></div>
 
-  <h2 class="sec">雙層巴士：最後選公車 7 號</h2>
-  <div class="sign blue"><b class="t">Day 3（10/10 六）13:50 上車</b>
+  <h2 class="sec">雙層巴士：公車 7 號 vs Big Bus（備選，Day 3 午後）</h2>
+  <div class="sign blue"><b class="t">如果選公車 7 號（Day 3 午後的選項）</b>
     <p><b>去程：</b>Bugis Stn/Parkview Sq（01139，往 Clementi）→ Napier Stn Exit 2（13011），約 25–30 分鐘。<br><b>回程：</b>Napier Stn Exit 1（13019，往 Bedok）→ Opp Bugis Stn Exit C（01112），約 30–35 分鐘，走 Orchard Road。<br><b>座位：</b>上層最前排。前排被坐走，回程選左側。</p></div>
   <div class="scroll"><table>
-    <tr><th>比較</th><th>A. Big Bus</th><th>B. 公車 7 號（選這個）</th></tr>
+    <tr><th>比較</th><th>A. Big Bus</th><th>B. 公車 7 號（備選裡的選擇）</th></tr>
     <tr><td>價格</td><td>官網 1 日票成人 US$53 起，經銷商報價約 S$67 起</td><td>每段約 S$1.49–1.68</td></tr>
     <tr><td>4 人總價</td><td>約 US$212 起（約 S$270+）</td><td>來回約 S$12–14</td></tr>
     <tr><td>路線</td><td>Red、Yellow 兩條線，Red 線約 60 分鐘</td><td>Bugis → Capitol → Dhoby Ghaut → Somerset → Napier；回程走 Orchard Road</td></tr>
@@ -1178,8 +726,8 @@ body.map-on .top{display:none}
   <p>坐 7 號要注意：它也有單層車，來的是單層就等下一班。</p>
 
   <h2 class="sec">機場往返</h2>
-  <p><b>去程（10/8 晚上）：</b>Grab，約 20–30 分鐘，一車約 S$25–40。詳見 <a href="#d1" class="lnk">D1</a>。</p>
-  <p><b>回程（10/11）：</b>08:15 離開飯店，Grab 約 20–25 分鐘到 T3，08:45 抵達。詳見 <a href="#d4" class="lnk">D4</a>。</p>
+  <p><b>去程（10/8 晚上）：</b>主計畫是 MRT 綠線（Changi Airport → Tanah Merah 轉 EW 線），約 45–60 分鐘，每人約 S$2；備選 Grab 約 20–30 分鐘，一車約 S$25–40。詳見 <a href="#d1" class="lnk">D1</a>。</p>
+  <p><b>回程（10/11）：</b>主計畫是 08:30 搭 MRT，約 45–60 分鐘加走路，約 09:30–09:45 到 T3（比研究建議的提早 2 小時 45 分到 3 小時少）；備選 Grab 08:15 出發，08:45 抵達。詳見 <a href="#d4" class="lnk">D4</a>。</p>
 
   <nav class="pager" aria-label="換頁"><a href="#food">回美食頁</a><a href="#money">看錢的頁面</a></nav>
 </section>
@@ -1307,6 +855,7 @@ body.map-on .top{display:none}
   <div class="sign green"><b class="t">這趟主力用信用卡</b><p>「可以刷」不代表「有回饋」。信用卡有回饋，被盜刷時也比較容易爭議退款。Debit 卡只用來在 ATM 領一次備用現金。</p></div>
 
   <h2 class="sec">預算（4 位大人，不含機票和住宿，SGD）</h2>
+  <p class="stamp">這張表是先前 Claude 行程的預算。新的主計畫（Sentosa、Ya Kun 等）還沒重新估算，海洋館票價和 Sentosa 交通費都沒查證，請當參考。</p>
   <p>格式是「每人／4 人」。餐飲是「葷／素／4 人」。</p>
   <div class="scroll"><table>
     <tr><th>Day</th><th>交通</th><th>餐飲（葷／素／4 人）</th><th>景點</th><th>娛樂</th><th>4 人合計</th></tr>
@@ -1329,11 +878,13 @@ body.map-on .top{display:none}
 
 <!-- ===================== CHECKLIST ===================== -->
 <section class="panel" id="todo">
-  <p>勾選的狀態會存在這支手機的瀏覽器裡。勾「HaveFun 已訂」之後，Day 3 的 HaveFun 會出現 BOOKED 標籤。</p>
+  <p>勾選的狀態會存在這支手機的瀏覽器裡。「HaveFun 已訂」勾起來，方便自己記得。</p>
 
   <h2 class="sec">A. 現在就要做（10/4–10/5）</h2>
   <label class="chk"><input type="checkbox" data-k="a1"><span>確認 4 人的護照效期<b>都超過 6 個月</b>（ICA 規定）。台灣護照的免簽資格，請到 ICA 的 Visa Requirements 頁面再確認一次。</span></label>
   <label class="chk"><input type="checkbox" data-k="havefun"><span><b>HaveFun 已訂。</b>用 WhatsApp 聯絡 HaveFun，訂 10/10 的 4 人 High Table。問清楚：訂金多少、入場費要不要另外付、S$200++ 最低消費包含哪些、有沒有素食小點。<small>WhatsApp 8318 9300，請對照官網確認號碼。</small></span></label>
+  <label class="chk"><input type="checkbox" data-k="a6"><span>決定 HaveFun 排哪一晚（週四 22:30 或週六 21:30），先問週四的開演時間。</span></label>
+  <label class="chk"><input type="checkbox" data-k="a7"><span>決定 Day 4 幾點出發、去不去 Jewel（Jewel 要在報到前逛完）。</span></label>
   <label class="chk"><input type="checkbox" data-k="a3"><span>打給信用卡客服或在 app 裡<b>開啟海外交易和感應支付</b>。星展 eco 卡確認活動條件；台新 Richart 先切換到玩旅刷方案。</span></label>
   <label class="chk"><input type="checkbox" data-k="a4"><span>每人在 Apple Pay 綁好自己的主力卡。</span></label>
   <label class="chk"><input type="checkbox" data-k="a5"><span>下載 Grab（完成手機號碼驗證並綁卡）和 Google Maps。Grab 怎麼用，看 D1 或交通頁。MyICA app 可選。</span></label>
@@ -1404,12 +955,33 @@ body.map-on .top{display:none}
     <tr><td>臺灣外交部急難救助專線</td><td>官方 boca.gov.tw</td></tr>
   </table></div>
 
+  <h2 class="sec">新主計畫還沒查證的事</h2>
+  <p>你的原行程裡有些地方我沒有替你補數字：HaveFun 週四的開演時間、訂位規則、入場費、Last entry、食物與素食選項；Singapore Oceanarium 的票價、營業時間和交通；Ya Kun、YY Kafei Dian、興化素食、觀音堂的營業時間與價格；Chinatown → Bugis、Bugis → Gardens、Kampong Glam → Sentosa 的路線與時間；EW 線末班車；新主計畫的步行距離、步數與每日預算。</p>
+  <h2 class="sec">地圖座標來源</h2>
+  <p>地圖上只標有來源的座標。沒有查到座標的地點（Ya Kun、Fortune Centre、Food Junction、Herbivore、YY Kafei Dian、ibis budget、Haji Lane）不標點，卡片上標「未上圖」。</p>
+  <div class="scroll"><table><tr><th>地點</th><th>座標</th><th>來源</th></tr><tr><td>airport</td><td class="num">1.35917, 103.98944</td><td>Wikipedia：Changi Airport（機場整體座標，航廈細部座標未驗證）</td></tr>
+<tr><td>hotel</td><td class="num">1.311607, 103.880790</td><td>HotelPlanner 住宿頁座標；地址 31 Lor 18 Geylang, Singapore 398828</td></tr>
+<tr><td>maxwell</td><td class="num">1.2803315, 103.8447473</td><td>Wikipedia：Maxwell Food Centre</td></tr>
+<tr><td>btrt</td><td class="num">1.281567, 103.844192</td><td>Travelfish GPS：1°16′53.64″N 103°50′39.09″E</td></tr>
+<tr><td>kwanim</td><td class="num">1.300817, 103.853200</td><td>Travelfish GPS：1°18′2.94″N 103°51′11.52″E（178 Waterloo St）</td></tr>
+<tr><td>gardens</td><td class="num">1.284669, 103.864617</td><td>Structurae：Flower Dome 1°17′4.81″N 103°51′52.62″E（Cloud Forest 在東邊約 140 m）</td></tr>
+<tr><td>merlion</td><td class="num">1.286833, 103.854528</td><td>Wikipedia：Merlion Park（1 Fullerton Rd）</td></tr>
+<tr><td>lau</td><td class="num">1.280629, 103.850396</td><td>Wikipedia：Lau Pa Sat</td></tr>
+<tr><td>clarke</td><td class="num">1.289497, 103.845161</td><td>Sygic Travel：1°17′22.19″N 103°50′42.58″E（30 North Boat Quay）</td></tr>
+<tr><td>tekka</td><td class="num">1.3062, 103.8508</td><td>Wikipedia：Tekka Centre</td></tr>
+<tr><td>sultan</td><td class="num">1.3022, 103.8590</td><td>Wikipedia：Sultan Mosque</td></tr>
+<tr><td>bugismrt</td><td class="num">1.30028, 103.85611</td><td>Wikipedia：Bugis MRT station</td></tr>
+<tr><td>bugisplus</td><td class="num">1.299617, 103.854408</td><td>Wikipedia：Bugis+（201 Victoria St）</td></tr>
+<tr><td>botanic</td><td class="num">1.3151, 103.8162</td><td>Wikipedia：Singapore Botanic Gardens（園區座標）</td></tr>
+<tr><td>oceanarium</td><td class="num">1.2584, 103.8177</td><td>Wikipedia：Marine Life Park, Resorts World Sentosa（Singapore Oceanarium，原 S.E.A. Aquarium）</td></tr>
+<tr><td>jewel</td><td class="num">1.3644, 103.9915</td><td>Wikipedia：Jewel Changi Airport（78 Airport Boulevard）</td></tr></table></div>
+
   <h2 class="sec">刻意不排的景點</h2>
   <div class="scroll"><table>
     <tr><th>景點</th><th>為什麼不排</th></tr>
-    <tr><td><b>Jewel Changi</b></td><td>回程時間不夠，抵達那晚也累。只有 10/8 出關時間比預期早很多才考慮</td></tr>
+    <tr><td><b>Jewel Changi</b></td><td>先前研究時取消：回程時間不夠。現在是你的主計畫（Day 4），但 Jewel 要在報到前逛完，時間偏緊</td></tr>
     <tr><td><b>Big Bus</b></td><td>4 人要 US$212 起，Suntec 轉運站又在道路管制區，公車 7 號體驗更真實</td></tr>
-    <tr><td><b>Sentosa</b></td><td>只有兩個完整旅遊日，去一趟要半天以上，第一次來的 CP 值不如市區</td></tr>
+    <tr><td><b>Sentosa</b></td><td>先前研究時沒排：只有兩個完整旅遊日，去一趟要半天以上。現在是你的主計畫（Day 3 午後）</td></tr>
     <tr><td><b>Singapore Flyer</b></td><td>就在 Marina Bay 道路管制區旁邊，週末人潮和交通管制都多</td></tr>
     <tr><td><b>Marina Bay Sands SkyPark</b></td><td>週末人潮多；Gardens 和沿河夜景已經足夠</td></tr>
     <tr><td><b>Merlion Park</b></td><td>鄰近 Marina Bay 道路管制的 Fullerton 和 Esplanade 一帶，週五、六晚上動線不確定。D2 沿河走時，視現場開放情況順路繞一下</td></tr>
@@ -1613,106 +1185,511 @@ body.map-on .top{display:none}
 </script>
 <script>
 (function(){
+/* Shared travel data, v2.
+   MAIN PLAN = the user's earlier itinerary (from: 'p'). Options keep the first Claude draft (from: 'c') or are new (from: 'n').
+   Facts come from the verified research (2026-10-04) or from what the user wrote. Anything else is marked 未查證 / 需確認. */
+var HA=['Hotel 81 Premier Star','Hotel 81 Premier Star 31 Lor 18 Geylang Singapore'];
+var HB=['ibis budget Imperial','ibis budget Imperial Lavender Singapore'];
+var HF=['HaveFun Live Show','HaveFun Live Show Bugis+ Singapore'];
+var HF_MORE=['地址：201 Victoria St #07-01, Singapore 188067（Bugis+ 7 樓）','週五、六開演 9:30PM（官網）；週四的開演時間沒查到','最低消費：週一到週四免；週五、六 S$200++（4 人 High Table），約 S$239.8，每人約 S$60','入場費：2026/1 版條款的搜尋摘要寫週五、六每人 S$35（含 1 杯飲料），需確認','訂位：WhatsApp 8318 9300（請對照官網確認），訂金不退','規定：限 18 歲以上、帶護照；男生不能穿無袖或短褲、刺青要遮住、要穿包鞋；女生不能穿拖鞋、Crocs、slides','食物：素食和 vegan 選項查不到資料；建議停留多久、Last order、Last entry 都沒查到'];
+var TRIP = window.TRIP = {
+meta:{name:'Singapore',code:'4D3N',dates:'2026/10/8–10/11',people:'4 位大人，2 對情侶',verified:'2026-10-04'},
+principle:'中午最熱躲冷氣房或休整，傍晚涼爽才走戶外，動線順向不繞路。',
+areas:[
+ {id:'airport',name:'Changi 機場'},{id:'stay',name:'住宿一帶（Aljunied、Geylang、Lavender）'},{id:'chinatown',name:'Chinatown／Telok Ayer'},
+ {id:'cbd',name:'Raffles Place／Lau Pa Sat'},{id:'river',name:'Clarke Quay／新加坡河'},{id:'marina',name:'Marina Bay／Merlion／Gardens by the Bay'},
+ {id:'bugis',name:'Bugis／Waterloo Street／Fortune Centre'},{id:'kg',name:'Kampong Glam／Haji Lane／Beach Road'},{id:'li',name:'Little India'},
+ {id:'sentosa',name:'Sentosa'},{id:'orchard',name:'Orchard／Botanic Gardens'}],
+days:[
+/* ===================================================== D1 */
+{id:'d1',code:'D1',date:'10/8 週四',name:'抵達',zh:'抵達日',line:'ew',
+ tag:'19:00 落地，搭地鐵進市區放行李，夜裡 HaveFun',
+ walk:{km:'尚未估',steps:'尚未估',lvl:'輕鬆'},cost:'尚未估',
+ items:[
+ {id:'d1-land',t:'19:00–19:20',title:'SQ877 抵達 Changi（T2）',st:'confirmed',anchor:true,short:'抵達',area:'airport',
+  text:'你的行程寫 T2，實際航廈以登機證和 SQ app 為準。'},
+ {id:'d1-imm',t:'19:20–20:10',title:'入境、自動通關、領行李',st:'likely',area:'airport',
+  text:'ICA 規定外國旅客都能走自動通關，條件是護照效期超過 6 個月，而且已經填好 SG Arrival Card。e-Pass 寄到你填的 email，護照不蓋章。我的估算：入境約 20 分鐘、領行李 15–30 分鐘，約 20:10 出關。你的行程是 19:40 就搭車，會偏樂觀。',
+  tags:['必做：先填 SG Arrival Card'],
+  maps:[['ICA：SG Arrival Card','https://www.ica.gov.sg/enter-depart/for-visitors/ACI'],['入境卡圖解教學（第三方）','https://ianchen.life/sgac-singapore-arrival-card/']]},
+ {slot:true,id:'d1-ride',t:'20:10–21:15',label:'機場到住宿',dl:'Day 1 機場到住宿',st:'likely',draft:'a',
+  opts:[
+  {id:'a',from:'p',title:'MRT 綠線（EW）進市區',chip:'MRT 綠線',short:'兩對同一班車，Aljunied 與 Lavender 各自下車放行李',area:'airport',
+   time:'約 45–60 分鐘（先前研究的估計）',walk:'輕鬆到中等（拖行李走到飯店）',
+   move:'Changi Airport → 在 Tanah Merah 轉 EW 線 → Aljunied（EW9，Couple A）→ Kallang（EW10）→ Lavender（EW11，Couple B）',
+   cost:'每人約 S$2',wx:'下車後要走一小段露天路',
+   plus:['最便宜','兩對同車，先到 Aljunied 再到 Lavender','晚上不用等叫車'],
+   minus:['要轉車、拖行李','出關比 19:40 晚，實際到住宿約 21:00–21:15（推估）'],
+   more:['Hotel 81：飯店自己的說明是從 Aljunied 站走路約 10 分鐘（Hotels.com 另寫離 Mountbatten 站走路約 8 分鐘）；ibis budget（28 Penhas Rd）：訂房網站寫從 Lavender 站走路約 5 分鐘','你寫「停靠阿裕尼站：朋友至 81酒店」，我當作打字誤植：Aljunied 是 Hotel 81（Couple A），Lavender 是 ibis budget Imperial（Couple B）'],
+   maps:[HA,HB]},
+  {id:'b',from:'c',title:'Grab 各自回住宿',chip:'Grab',short:'門口上下車，行李最方便',area:'airport',
+   time:'約 20–30 分鐘',walk:'無',move:'兩對各叫一台，門口上下車，不用轉車',cost:'Couple A 預算 S$35／車，每人 S$17.5（估，Grab 會先報價）；Couple B 的車資沒查證',wx:'不受天氣影響',
+   plus:['2 人 2 個大箱放一般車款就夠','省約 30 分鐘，不用轉車'],minus:['比 MRT 貴：兩人分攤後每人多約 S$13–18','兩對要分開行動'],
+   more:['叫不到車或價格太高，就改排計程車','Grab 怎麼用：見「交通」分頁'],maps:[HA]},
+  {id:'c',from:'c',title:'計程車',chip:'計程車',short:'不用 app，但附加費會疊加',area:'airport',
+   time:'約 20–30 分鐘',walk:'無',move:'門口上下車',cost:'跳表約 S$20–25，加機場附加費 S$8（17:00–23:59），同時段另加 25% 尖峰附加費（Changi Airport 官網）',wx:'不受天氣影響',
+   plus:['不用 app、不用網路'],minus:['附加費疊加，實際價格以跳表為準'],more:['排隊時間未查證']}
+  ]},
+ {id:'d1-in',t:'21:00–21:30',title:'放行李、入住',st:'confirmed',anchor:true,short:'住宿',area:'stay',
+  text:'Couple A：Hotel 81 (Premier) Star，31 Lor 18 Geylang, Singapore 398828，10/8 入住、10/11 退房。Couple B：ibis budget Imperial，28 Penhas Rd, Singapore 208187（訂房網站寫從 Lavender 站走路約 5 分鐘），你說先放行李；入住時間第三方寫 15:00，沒有向飯店確認。',
+  maps:[HA,HB]},
+ {slot:true,id:'d1-dinner',t:'21:15–22:15',label:'晚餐',dl:'Day 1 晚餐',st:'open',draft:null,free:true,
+  opts:[
+  {id:'a',from:'n',title:'在 HaveFun 吃',chip:'HaveFun',short:'你的行程沒排晚餐；HaveFun 的食物與素食選項沒查到',area:'bugis',
+   time:'—',walk:'無',move:'直接進場',cost:'未查證',wx:'室內',
+   plus:['省一次移動'],minus:['食物與素食選項查不到資料，要先問','如果進場前沒吃，會餓著等'],more:['WhatsApp 訂位時一起問有沒有素食小點']},
+  {id:'b',from:'c',title:'GrabFood 素食外送',chip:'GrabFood',short:'叫外送到住宿，素食者最穩',area:'stay',
+   time:'等外送時間未查證',walk:'無',move:'外送到住宿',cost:'預算每人約 S$12（估）',wx:'不受天氣影響',
+   plus:['素食者最穩（選 100% 素食的店）'],minus:['要等外送，店家沒有逐一查證']},
+  {id:'c',from:'c',title:'住宿附近簡單吃',chip:'住宿附近',short:'Geylang 或 Lavender 一帶隨意吃',area:'stay',
+   time:'約 1 小時',walk:'輕鬆',move:'步行',cost:'預算每人約 S$12（估）',wx:'—',
+   plus:['最近、最省事'],minus:['Geylang 一帶的店都不保證是素食','Lavender 一帶的店沒有查證'],more:['素食要用「美食」分頁的溝通卡確認']}
+  ]},
+ {slot:true,id:'d1-hf',t:'22:30–深夜',label:'HaveFun Live Show',dl:'HaveFun 哪一晚',st:'likely',draft:'a',home:true,
+  opts:[
+  {id:'a',from:'p',title:'今晚（週四）22:30 進場',chip:'今晚',short:'落地當晚就去，全室內冷氣，結束後搭車回住宿',area:'bugis',
+   time:'22:30 到深夜（週四的開演時間沒查到）',walk:'輕鬆',move:'從 Aljunied、Lavender 到 Bugis（EW12）；結束後搭車回各自住宿',
+   cost:'週一到週四免最低消費（官網）；飲料自費，價格未查證；Grab Bugis → Geylang Lor 18 約 10 分鐘，一車約 S$10–15（估，深夜可能漲價）',wx:'全室內強冷氣（你提供的資訊）',
+   plus:['週一到週四免最低消費，比週六的 S$200++ 省','全室內，剛下飛機也不怕熱','Aljunied 到 Bugis 坐 3 站，Lavender 坐 1 站'],
+   minus:['很趕：落地、進市區放行李、再去 Bugis+ 都在同一晚','週四的開演時間、訂位規則、入場費、Last entry 都沒查到，要先 WhatsApp 問','要穿包鞋和長褲（男生不能短褲、無袖；女生不能拖鞋），在飛機上就要穿好或在行李裡備好','隔天 09:00 就要吃早餐，睡眠偏少'],
+   more:HF_MORE,maps:[HF,['HaveFun 官網','https://www.havefunliveshow.com/sg/']]},
+  {id:'b',from:'c',title:'改到週六晚上（Day 3）',chip:'週六',short:'睡飽再去，週六 21:30 有完整場次，但有最低消費',area:'bugis',
+   time:'週六 21:30 開演（官網），待到約 00:00',walk:'輕鬆',move:'Grab：Bugis → Geylang Lor 18 約 10 分鐘，一車約 S$10–15（估）',
+   cost:'週五、六最低消費 S$200++（4 人 High Table），約 S$239.8，每人約 S$60；入場費需確認',wx:'全室內',
+   plus:['精神好，晚上時間完整','有官網寫明的 21:30 開演時間'],minus:['週五、六才有 S$200++ 最低消費','訂金不退，建議先訂位'],
+   more:['選這個時，Day 3 晚上的選項選「HaveFun（週六）」，今晚就留白休息'].concat(HF_MORE),maps:[HF]},
+  {id:'c',from:'n',title:'今晚先休息，之後再決定',chip:'先休息',short:'保留彈性，想去再補排',area:'stay',
+   time:'—',walk:'無',move:'—',cost:'免費',wx:'—',
+   plus:['睡眠最充足','之後週六晚上仍可選'],minus:['要記得之後補排 HaveFun（你的必去清單）']}
+  ]}
+ ]},
+/* ===================================================== D2 */
+{id:'d2',code:'D2',date:'10/9 週五',name:'Chinatown／Marina Bay',zh:'Chinatown 與傍晚河岸',line:'dt',
+ tag:'Chinatown 寺廟、Bugis 素食午餐，中午躲冷氣，傍晚走河岸',
+ walk:{km:'尚未估',steps:'尚未估',lvl:'中等（推估）'},cost:'尚未估',
+ items:[
+ {slot:true,id:'d2-bf',t:'09:00–10:00',label:'早餐',dl:'Day 2 早餐',st:'likely',draft:'a',
+  opts:[
+  {id:'a',from:'p',title:'Ya Kun Kaya Toast（Far East Square 總店）',chip:'Ya Kun',short:'炭烤薄片咖椰吐司、半熟雙蛋、熱南洋咖啡',area:'chinatown',
+   time:'約 1 小時',walk:'輕鬆',
+   move:'Couple A：Aljunied（EW9）搭 EW 線；Couple B：Lavender（EW11）搭 EW 線。Far East Square 在 Telok Ayer（DT18）或 Raffles Place（EW14）一帶，路線請用 Google Maps 確認',
+   cost:'價格未查證',wx:'—',
+   plus:['經典 kaya toast，吃完走路到牛車水','兩對都在 EW 線上，可以同線出發'],minus:['Kaya 含蛋與椰奶，蛋奶素可以吃、全素不行','營業時間和人潮沒查證'],
+   more:['半熟雙蛋是蛋，蛋奶素可；全素不行','地址：18 China St #01-01, Far East Square, Singapore 049560；營業時間（第三方）平日 07:30–18:30、週末 08:30–17:00，週五 09:00 在營業時間內'],maps:[['Ya Kun Far East Square','Ya Kun Kaya Toast Far East Square Singapore']]},
+  {id:'b',from:'c',title:'住宿附近的 kopitiam',chip:'住宿附近',short:'就近吃，可以晚一點出門',area:'stay',
+   time:'約 1 小時',walk:'輕鬆',move:'步行',cost:'未估',wx:'—',
+   plus:['不用提早出門'],minus:['Kaya 含蛋與椰奶，全素不行','10:00 的 Chinatown 集合要重新抓時間'],more:['Ya Kun、Toast Box 這類連鎖店也可以']}
+  ]},
+ {id:'d2-ct',t:'10:00–11:15',title:'牛車水（Chinatown）文化散步',st:'likely',anchor:true,short:'Chinatown',area:'chinatown',
+  text:'佛牙寺（唐式風格寺廟，室內較涼）參拜，再走五腳基遮蔭騎樓老街（Pagoda Street 一帶）。',
+  meta:[['集合','Ya Kun 吃完直接接上；Couple B 同路線'],['先前也有','Sri Mariamman Temple（印度廟）'],['提醒','進寺廟要遮住肩膀和膝蓋']],
+  maps:[['Buddha Tooth Relic Temple','Buddha Tooth Relic Temple Singapore'],['Sri Mariamman Temple','Sri Mariamman Temple Singapore'],['Pagoda Street','Pagoda Street Singapore']]},
+ {slot:true,id:'d2-lunch',t:'11:30–13:30',label:'午餐與寺廟',dl:'Day 2 午餐',st:'likely',draft:'a',
+  opts:[
+  {id:'a',from:'p',title:'觀音堂佛祖廟＋Fortune Centre 興化素食',chip:'觀音堂＋興化',short:'百年香火名廟，再到 Fortune Centre 吃素食煲仔飯，吹冷氣',area:'bugis',
+   time:'11:30–13:30（含前往）',walk:'輕鬆',
+   move:'Chinatown → Bugis／Waterloo Street 一帶（路線與時間未查證，用 Google Maps；DT 線可到 Bugis）',
+   cost:'興化素食的價格未查證',wx:'寺廟與 Fortune Centre 都在室內（你提供的資訊），中午不怕曬',
+   plus:['最熱的 12:00–14:00 在室內','同一棟 Fortune Centre 還有 Herbivore（全素），當備案','素食者吃得好，葷食的人可選同區別家（未查證）'],
+   minus:['Chinatown → Bugis 要多一段移動','觀音堂的開放時間、興化的營業時間都沒查證'],
+   more:['興化素食（Xing Hua，Fortune Centre 1 樓）：素食煲仔飯、素沙爹串、橄欖菜炒飯（你提供的資訊）','五辛、蛋奶情形未查證，點餐前用溝通卡確認','Herbivore：Fortune Centre #01-13/14（190 Middle Rd），全素、vegan 選擇多，每人約 S$25，可刷卡（估）'],
+   maps:[['觀音堂佛祖廟','Kwan Im Thong Hood Cho Temple Singapore'],['Fortune Centre','Fortune Centre Singapore'],['Herbivore','Herbivore Fortune Centre Singapore']]},
+  {id:'b',from:'c',title:'Maxwell Food Centre（留在 Chinatown）',chip:'Maxwell',short:'海南雞飯與素米粉，不用離開 Chinatown',area:'chinatown',
+   time:'約 1 小時',walk:'輕鬆',move:'走路就到，不用移動',cost:'每人約 S$8–12',wx:'半戶外，沒冷氣；中午很擠',
+   plus:['葷：Tian Tian 海南雞飯；素：Soon Seng 素米粉（第 15 攤）','不用再換區'],
+   minus:['中午沒冷氣，不符合你的原則','12:00–13:30 人潮多，天天排隊約 15–30 分鐘','多數攤位只收現金或 PayNow'],
+   more:['Vegan：Traditional Delight 的部分糕點（蛋奶要現場問）','備案：The Green Leaf（#01-100）','11:30 前到比較好找 4 人座位'],maps:[['Maxwell Food Centre','Maxwell Food Centre']]},
+  {id:'c',from:'c',title:'Lau Pa Sat（當午餐）',chip:'Lau Pa Sat',short:'素食攤多，但午餐吃不到沙爹',area:'cbd',
+   time:'約 1 小時',walk:'輕鬆',move:'Chinatown → Lau Pa Sat 的路線和時間未查證',cost:'素食攤約 S$6–14；葷食午餐價格未查證',wx:'室內外座位都有',
+   plus:['素食攤多：Su Xiang（46）、Maya（47）、Shree Bhaavan（40）'],
+   minus:['Satay Street 平日 19:00 才開，午餐吃不到沙爹','多數攤位只收現金','選了它，傍晚的 Lau Pa Sat 晚餐要換別家'],maps:[['Lau Pa Sat','Lau Pa Sat']]}
+  ]},
+ {slot:true,id:'d2-mid',t:'14:00–17:00',label:'午後避暑（你還沒排）',dl:'Day 2 午後',st:'open',draft:null,free:true,home:true,
+  opts:[
+  {id:'a',from:'c',title:'Gardens by the Bay 雙溫室',chip:'Gardens',short:'Flower Dome＋Cloud Forest，全室內冷氣',area:'marina',
+   time:'14:00–17:15（約 3 小時）',walk:'輕鬆到中等',move:'Bugis 一帶 → Bayfront／Gardens（用 Google Maps；先前行程是 Maxwell TE18 → Gardens TE22）',
+   cost:'非居民成人 S$46（來源是搜尋摘要，出發前看官網確認）；4 人約 S$184',wx:'室內，下雨也不受影響',
+   plus:['符合「中午躲冷氣」，而且是第一次來新加坡的經典','下午結束後接傍晚的 Marina Bay，動線順向'],
+   minus:['要付門票','Bugis → Gardens 的移動時間未查證'],
+   more:['官網提到 Flower Dome 只有 10/6 休館，10/9 照常','可現場買；建議先上網買省排隊','Garden Rhapsody 每晚 19:45 和 20:45（免費，各約 15 分鐘）'],
+   maps:[['Flower Dome','Flower Dome Gardens by the Bay'],['Cloud Forest','Cloud Forest Gardens by the Bay']]},
+  {id:'b',from:'n',title:'回住宿休息、洗澡',chip:'回住宿休息',short:'把最熱的時段留給冷氣房與午睡',area:'stay',
+   time:'彈性',walk:'輕鬆',move:'EW 線回 Aljunied／Lavender',cost:'免費',wx:'室內',
+   plus:['最符合「中午躲冷氣或休整」','為傍晚的河岸行程留體力'],minus:['沒有新景點','來回住宿會花時間'],more:['Day 1 很晚睡的話，這段最划算']},
+  {id:'c',from:'c',title:'Bugis 一帶逛街、咖啡店',chip:'Bugis 逛街',short:'Bugis Junction／Bugis+ 商場有冷氣',area:'bugis',
+   time:'彈性',walk:'輕鬆',move:'午餐就在 Bugis，不用移動',cost:'未估（咖啡和逛街自行決定）',wx:'商場內，可躲雨',
+   plus:['最不累、不用移動','傍晚再出發去河岸'],minus:['沒有新景點'],more:['Food Junction（Bugis Junction，有冷氣）：素 Truly Vegetarian（#03-30，約 S$10）']},
+  {id:'d',from:'c',title:'Marina Bay Sands',chip:'MBS',short:'還沒研究，只知道和 Gardens 同在 Bayfront 一帶',area:'marina',
+   time:'未查證',walk:'未查證',move:'行程原本就使用 Bayfront（DT16）站',cost:'未查證',wx:'未查證',
+   plus:['在 Bayfront 一帶，下午接傍晚的 Marina Bay'],minus:['營業時間、價格、素食選項都還沒研究','SkyPark 在研究時因週末人潮多被列為跳過'],
+   more:['Din Tai Fung MBS 是舊行程提過的候選，本次研究沒有它的資料'],maps:[['Marina Bay Sands','Marina Bay Sands']]}
+  ]},
+ {slot:true,id:'d2-eve',t:'17:30–21:30',label:'傍晚到晚餐的順序',dl:'Day 2 傍晚順序',st:'likely',draft:'a',home:true,
+  opts:[
+  {id:'a',from:'p',title:'Clarke Quay → Merlion Park → Lau Pa Sat',chip:'Clarke Quay 先',short:'河畔散步、看夕陽與點燈，再到老巴剎吃沙爹',area:'river',
+   time:'17:30–21:30',walk:'中等（河岸步行；Clarke Quay 到 Merlion 約 2 km，推估）',
+   move:'沿新加坡河步行；Merlion → Lau Pa Sat 會有一小段回頭路（推估）',
+   cost:'Clarke Quay 喝一杯約 S$18–28（經驗值）；Lau Pa Sat 葷約 S$15–20、素約 S$10–14（每人）',wx:'傍晚戶外，比中午涼；雷雨要躲（未規劃）',
+   plus:['傍晚才走戶外，符合你的原則','河畔、夕陽、天際線點燈、沙爹街一次吃到','Lau Pa Sat 沙爹街平日 19:00 才開，剛好接晚餐'],
+   minus:['Clarke Quay → Merlion → Lau Pa Sat 有一小段回頭路','Clarke Quay 排在 17:30，不是最晚的夜景時段','Merlion Park 靠近 Marina Bay 道路管制區，週五傍晚的人潮與動線沒查證'],
+   more:['Lau Pa Sat：Satay Street 平日 19:00–03:00；素食攤 Su Xiang（46）、Maya（47，營業到 22:30，21:45 前點完）、Shree Bhaavan（40）；多數只收現金；沙爹和沾醬不是素的','Clarke Quay：Read Bridge 拍夜景；可刷卡，不用訂位','Marina Bay Sands、Suntec 周邊 10/7–10/13 有道路管制，不要在那附近叫 Grab，先搭 MRT'],
+   maps:[['Clarke Quay','Clarke Quay Singapore'],['Merlion Park','Merlion Park Singapore'],['Lau Pa Sat','Lau Pa Sat']]},
+  {id:'b',from:'n',title:'Merlion（夕陽）→ Lau Pa Sat → Clarke Quay（夜）',chip:'由東往西',short:'動線順向不回頭，Clarke Quay 留到夜晚',area:'marina',
+   time:'17:30–23:30',walk:'中等',move:'Marina Bay → Raffles Place → 沿河往 Clarke Quay，一路由東往西',
+   cost:'同上',wx:'傍晚到夜間戶外',
+   plus:['動線順向，符合你的原則','Clarke Quay 留到夜晚（22:15 之後），也是你原本「Clarke Quay 排晚上」的想法','Lau Pa Sat 沙爹街 19:00 開'],
+   minus:['比較晚才回住宿','Merlion 傍晚的人潮與管制沒查證'],
+   more:['回程：City Hall（EW13）或 Raffles Place（EW14）搭 EW 線回 Lavender、Aljunied（末班車時間未查證）'],
+   maps:[['Merlion Park','Merlion Park Singapore'],['Lau Pa Sat','Lau Pa Sat'],['Clarke Quay','Clarke Quay Singapore']]},
+  {id:'c',from:'c',title:'Garden Rhapsody → Lau Pa Sat → Clarke Quay（先前行程）',chip:'先前行程',short:'燈光秀 19:45，沙爹晚餐，Clarke Quay 夜景',area:'marina',
+   time:'19:45 燈光秀 → 20:30 Lau Pa Sat → 22:15 Clarke Quay 到 23:30',walk:'中等',move:'Bayfront（DT16）→ Downtown（DT17），走到 Lau Pa Sat 約 3 分鐘；再沿河走 1.5–2 km 到 Clarke Quay',
+   cost:'Lau Pa Sat 葷約 S$15–20、素約 S$10–14；Clarke Quay 每人約 S$15–28',wx:'戶外為主',
+   plus:['燈光秀免費','Clarke Quay 排在最晚，夜景最完整'],minus:['晚上很晚才回住宿','要先選「午後 Gardens」才順'],
+   more:['Garden Rhapsody 每晚 19:45 和 20:45，各約 15 分鐘（第三方資料）','Satay by the Bay 自 10/1 起關閉，不能在 Gardens 吃沙爹'],
+   maps:[['Lau Pa Sat','Lau Pa Sat'],['Clarke Quay','Clarke Quay Singapore']]}
+  ]},
+ {id:'d2-home',t:'21:30–23:30',title:'回住宿',st:'likely',anchor:true,short:'回住宿',area:'stay',
+  text:'兩對都在 EW 線上：Raffles Place（EW14）或 City Hall（EW13）搭回 Lavender（EW11）、Aljunied（EW9），末班車時間未查證。',
+  meta:[['Couple A','Grab 到 Geylang 約 15 分鐘，一車約 S$15–22（估，深夜可能漲價）'],['Couple B','Lavender 的車資沒查證']]}
+ ]},
+/* ===================================================== D3 */
+{id:'d3',code:'D3',date:'10/10 週六',name:'Kampong Glam／Sentosa',zh:'Kampong Glam 與午後避暑',line:'ne',
+ tag:'Haji Lane 上午、冷氣房午後，晚上還沒排',
+ walk:{km:'尚未估',steps:'尚未估',lvl:'中等（推估）'},cost:'尚未估',
+ items:[
+ {slot:true,id:'d3-bf',t:'09:00–10:00',label:'早餐',dl:'Day 3 早餐',st:'likely',draft:'a',
+  opts:[
+  {id:'a',from:'p',title:'喜園海南咖啡店（YY Kafei Dian，Beach Rd）',chip:'YY 喜園',short:'厚切咖椰包＋牛油熱咖啡，離 Lavender 與阿拉伯區都很近',area:'kg',
+   time:'約 1 小時',walk:'輕鬆',move:'離 Lavender（EW11）與阿拉伯區都近（你提供的資訊）',cost:'未查證',wx:'—',
+   plus:['順路接 Kampong Glam','Couple B 住 Lavender，最近'],minus:['營業時間、人潮、價格未查證','Kaya 含蛋與椰奶，蛋奶素可、全素不行'],
+   maps:[['YY Kafei Dian','YY Kafei Dian Beach Road Singapore']]},
+  {id:'b',from:'c',title:'Tekka Centre＋Little India 早餐',chip:'Tekka',short:'素食 Thosai、Idli，再逛 Little India',area:'li',
+   time:'約 2 小時（含 Little India 散步）',walk:'中等',move:'Couple A：Grab 約 10–15 分鐘，一車約 S$10–14（估）；MRT 要轉車。集合點：Tekka Centre（Buffalo Rd 側入口，Little India MRT 旁）',
+   cost:'Tekka 早餐每人約 S$5–8（現金為主）',wx:'戶外散步；雷雨時要找地方躲',
+   plus:['素：Thosai、Idli；葷：Biryani、Roti Prata','Sri Veeramakaliamman Temple、Tan Teng Niah 彩色舊宅'],
+   minus:['多一段移動：到 Kampong Glam 步行約 1.3 km，或 Grab 4 人一車約 S$8–10（估）','Tekka 攤位的營業時間沒查證','印度素食通常有五辛'],
+   more:['備案：Komala Vilas（Serangoon Rd），營業時間沒查證'],
+   maps:[['Tekka Centre','Tekka Centre'],['Sri Veeramakaliamman Temple','Sri Veeramakaliamman Temple'],['Tan Teng Niah','Tan Teng Niah']]},
+  {id:'c',from:'c',title:'住宿附近的 kopitiam',chip:'住宿附近',short:'就近吃，可以晚一點出門',area:'stay',
+   time:'約 1 小時',walk:'輕鬆',move:'步行',cost:'未估',wx:'—',plus:['不用提早出門'],minus:['10:00 的 Kampong Glam 集合要重新抓時間']}
+  ]},
+ {id:'d3-kg',t:'10:00–11:30',title:'Kampong Glam／阿拉伯區',st:'likely',anchor:true,short:'Kampong Glam',area:'kg',
+  text:'上午太陽還沒曬透，在陰影處拍 Haji Lane 的街頭彩繪壁畫；Bussorah St 騎樓散步，遠眺 Sultan Mosque 金色穹頂。',
+  meta:[['先前也有','Arab Street 逛街']],
+  maps:[['Haji Lane','Haji Lane Singapore'],['Sultan Mosque','Sultan Mosque Singapore'],['Arab Street','Arab Street Singapore']]},
+ {slot:true,id:'d3-mid',t:'12:00–16:00',label:'午後避暑',dl:'Day 3 午後',st:'likely',draft:'a',home:true,
+  opts:[
+  {id:'a',from:'p',title:'Sentosa：海洋館（原 S.E.A.，現名 Singapore Oceanarium）＋名勝世界午餐',chip:'Sentosa',short:'全室內強冷氣看鯊魚與魟魚，午餐在名勝世界地下美食街',area:'sentosa',
+   time:'12:00–16:00（含來回交通與午餐，你的行程）',walk:'輕鬆到中等（以室內為主）',
+   move:'Kampong Glam → Sentosa（路線與時間未查證，用 Google Maps；常見是 MRT 到 HarbourFront 再進島）',
+   cost:'海洋館門票、Sentosa 交通費都未查證',wx:'全室內強冷氣（你提供的資訊），下雨不受影響',
+   plus:['符合「中午躲冷氣」','深海大洋池前放鬆消暑','午餐一起解決'],
+   minus:['移動量最大：來回 Sentosa 會吃掉不少時間（路線未查證）','先前研究把 Sentosa 列為跳過：只有兩個完整旅遊日，去一趟要半天以上','門票、開放時間、素食選項都未查證','S.E.A. Aquarium 2025/4/30 關閉整修，2025/7/24 以 Singapore Oceanarium 重新開幕，規模約 3 倍（第三方資料）；你寫的「低光源深海大洋池」是否還是原樣，沒有查證'],
+   more:['名勝世界地下美食街的素食選擇沒查證','出發前先查官網：Singapore Oceanarium 要不要先買票、營業時間；地址 8 Sentosa Gateway, Singapore 098269（Marine Life Park）'],
+   maps:[['S.E.A. Aquarium','S.E.A. Aquarium Sentosa'],['Resorts World Sentosa','Resorts World Sentosa']]},
+  {id:'b',from:'c',title:'Bugis 冷氣午餐＋逛街咖啡',chip:'Bugis',short:'最不累，午餐選擇多，葷素都好選',area:'bugis',
+   time:'彈性',walk:'輕鬆',move:'從 Haji Lane 一帶步行或一站 MRT',cost:'每人約 S$8–25（看午餐選哪家）',wx:'商場內，有冷氣，可躲雨',
+   plus:['最近、最省事','符合「中午躲冷氣」','午餐選擇多'],minus:['沒有新景點'],
+   more:['Food Junction（Bugis Junction，有冷氣）：素 Truly Vegetarian（#03-30，約 S$10）；葷 Laksa 或雞飯類','Herbivore（Fortune Centre）全素，每人約 S$25','Beirut Grill（Arab Street）黎巴嫩菜，葷素都有可點；價格和營業時間沒查證'],
+   maps:[['Food Junction Bugis Junction','Food Junction Bugis Junction'],['Herbivore','Herbivore Fortune Centre Singapore'],['Beirut Grill','Beirut Grill Arab Street Singapore']]},
+  {id:'c',from:'c',title:'雙層巴士 7 號兜一圈',chip:'公車 7 號',short:'有冷氣的在地雙層巴士，上層前排看市區',area:'orchard',
+   time:'來回搭車約 55–65 分鐘（估）',walk:'輕鬆',
+   move:'公車 7 號：Bugis Stn/Parkview Sq（01139，往 Clementi）→ Napier Stn Exit 2（13011）；回程 Napier Stn Exit 1（13019，往 Bedok）→ Opp Bugis Stn Exit C（01112），走 Orchard Road',
+   cost:'每人每段約 S$1.49–1.68；4 人來回約 S$12–14（Big Bus 4 人 US$212 起）',wx:'有冷氣，下雨也能搭',
+   plus:['符合「中午躲冷氣」','上層最前排視野好','沿途 Capitol、Dhoby Ghaut、Somerset、Orchard Road','很便宜'],minus:['增加移動時間','7 號偶爾來單層車，要等下一班'],
+   more:['班距：週六白天約 8–15 分鐘一班（第三方資料）；乘車時間是估計值','前排被坐走，回程選左側（靠人行道和商場那一側）','想逛 Orchard：Orchard Stn/Lucky Plaza（09048）下車','Big Bus 不選：轉運站在 Suntec City，10/7–10/13 周邊道路管制，很可能改道或停駛'],
+   maps:[['上車站 01139','Bugis Stn/Parkview Sq bus stop 01139'],['下車站 13011','Napier Stn Exit 2 bus stop 13011'],['回程上車 13019','Napier Stn Exit 1 bus stop 13019']]},
+  {id:'d',from:'c',title:'Botanic Gardens（公車 7 號過去）',chip:'植物園',short:'戶外散步、免費，但白天最熱',area:'orchard',
+   time:'約 2.5 小時（含來回公車 7 號，園內約 70 分鐘；估）',walk:'中等',move:'同公車 7 號到 Napier Stn Exit 2（13011），從 Tanglin Gate 進園',cost:'入園免費；公車每人每段約 S$1.49–1.68',wx:'戶外，怕午後雷雨',
+   plus:['免費、放鬆','走天鵝湖、Bandstand'],minus:['中午最熱，不符合你的原則；比較適合 16:30 之後（推估）','看天氣','比留在 Bugis 累'],
+   more:['雨勢大就提早在 Orchard Stn Exit 13（09022）下車，改逛 ION Orchard；站序請用 Google Maps 確認'],
+   maps:[['Botanic Gardens Tanglin Gate','Singapore Botanic Gardens Tanglin Gate']]},
+  {id:'e',from:'n',title:'回住宿休息',chip:'回住宿',short:'洗澡、午睡，晚上還有力氣',area:'stay',
+   time:'彈性',walk:'輕鬆',move:'EW 線回 Lavender、Aljunied',cost:'免費',wx:'室內',
+   plus:['最符合「中午休整」','晚上不累'],minus:['沒有新景點']}
+  ]},
+ {slot:true,id:'d3-eve',t:'16:30–深夜',label:'傍晚與晚上（你還沒排）',dl:'Day 3 晚上',st:'open',draft:null,free:true,home:true,
+  opts:[
+  {id:'a',from:'c',title:'HaveFun（週六 21:30）＋ Herbivore 晚餐',chip:'HaveFun 週六',short:'先吃全素晚餐，21:30 進場；選這個時 Day 1 夜裡留白',area:'bugis',
+   time:'19:00 晚餐，21:30 開演，待到約 00:00',walk:'輕鬆',move:'Bugis 一帶步行；Grab 回住宿約 10 分鐘，一車約 S$10–15（估）',
+   cost:'最低消費 S$200++（約 S$239.8，每人約 S$60）；Herbivore 每人約 S$25；入場費需確認',wx:'室內',
+   plus:['完整場次','Herbivore 全素，隱藏動物成分風險低'],minus:['最低消費 S$200++、訂金不退','隔天 Day 4 要提早出發，晚睡要留意','葷食的兩位晚餐要吃素（只有這一餐）；週六晚上 Herbivore 建議先訂位'],
+   more:['要穿包鞋和長褲，16:30–18:30 可先回住宿換衣服','Herbivore：Fortune Centre #01-13/14，走路約 5–8 分鐘，營業到約 20:30（第三方 MoneySmart）；備案 Beirut Grill、Warung Ijo（地址未查證）'].concat(HF_MORE),
+   maps:[HF,['Herbivore','Herbivore Fortune Centre Singapore']]},
+  {id:'b',from:'c',title:'Bugis／阿拉伯區晚餐，早點休息',chip:'晚餐＋早睡',short:'隔天要去機場，晚上輕鬆吃完就回',area:'kg',
+   time:'約 1.5–2 小時',walk:'輕鬆',move:'步行；Bugis（EW12）搭 EW 線回 Lavender 1 站、Aljunied 3 站',cost:'Herbivore 每人約 S$25；Beirut Grill 與 Warung Ijo 未查證（Warung Ijo 約 S$15）',wx:'室內外都有',
+   plus:['Day 4 提早出發，睡眠最充足','葷素都有選擇：Herbivore 全素、Beirut Grill 蔬食冷盤多且有肉可點'],minus:['沒有夜生活'],
+   more:['Warung Ijo：印尼素食，素 rendang 炒飯、素 nasi lemak；地址和營業時間沒查證'],
+   maps:[['Herbivore','Herbivore Fortune Centre Singapore'],['Beirut Grill','Beirut Grill Arab Street Singapore']]},
+  {id:'c',from:'c',title:'Clarke Quay 夜晚',chip:'Clarke Quay 夜',short:'如果 Day 2 的 Clarke Quay 排在傍晚，這裡可以補一次夜景',area:'river',
+   time:'22:15–23:30（先前行程）',walk:'輕鬆',move:'MRT 到 Clarke Quay（路線未查證）；Grab 回住宿深夜可能漲價',cost:'每人約 S$15–28（飲料甜點）',wx:'戶外',
+   plus:['夜景完整'],minus:['Day 4 要早起','如果 Day 2 已選「由東往西」或「先前行程」，就重複了'],
+   more:['Read Bridge 拍夜景；可刷卡，不用訂位'],maps:[['Clarke Quay','Clarke Quay Singapore']]}
+  ]},
+ {id:'d3-home',t:'深夜',title:'回住宿，整理行李',st:'likely',anchor:true,short:'回住宿',area:'stay',
+  text:'隔天 08:30 退房。',meta:[['Couple A','Hotel 81（Aljunied EW9）'],['Couple B','ibis budget Imperial（Lavender EW11）']]}
+ ]},
+/* ===================================================== D4 */
+{id:'d4',code:'D4',date:'10/11 週日',name:'回程',zh:'回程',line:'cc',
+ tag:'08:30 退房，MRT 去 Changi，11:45 起飛',
+ walk:{km:'尚未估',steps:'尚未估',lvl:'輕鬆'},cost:'尚未估',
+ items:[
+ {id:'d4-out',t:'08:00–08:30',title:'各自退房',st:'likely',area:'stay',text:'Couple A：Hotel 81；Couple B：ibis budget Imperial。你的行程沒排早餐，可以在機場吃（報到後，管制區內）。',maps:[HA,HB]},
+ {slot:true,id:'d4-go',t:'08:30–09:30',label:'去機場',dl:'Day 4 去機場',st:'likely',draft:'a',
+  opts:[
+  {id:'a',from:'p',title:'MRT 綠線去 Changi（08:30 出發）',chip:'MRT 08:30',short:'兩對同一班車，Lavender 先上、Aljunied 再上',area:'airport',
+   time:'約 45–60 分鐘（估）→ 約 09:30–09:45 到 T3',walk:'中等（拖行李走到站、再走到 T3 櫃台）',
+   move:'Lavender（EW11）→ Kallang → Aljunied（EW9）→ … → Tanah Merah 轉 Changi Airport 支線（要轉 1 次）',cost:'每人約 S$2',wx:'不受天氣影響',
+   plus:['最便宜','兩對同車','Aljunied 與 Lavender 都在 EW 線上'],
+   minus:['到機場約 09:30–09:45，離 11:45 起飛只剩約 2 小時到 2 小時 15 分，比研究建議的提早 2 小時 45 分到 3 小時少','這個時間下，沒時間在報到前逛 Jewel','週日早上班距可能較長（未查證）'],
+   more:['你的行程寫「09:15 抵達 T3」，用 MRT 要抓 45–60 分鐘加走路，大約會晚到 15–30 分鐘（推估）','要更安全：提早到 07:45 左右出發，或改搭 Grab'],maps:[['Changi Airport T3','Changi Airport Terminal 3']]},
+  {id:'b',from:'c',title:'Grab，08:15 出發',chip:'Grab 08:15',short:'約 20–25 分鐘到 T3，08:45 抵達',area:'airport',
+   time:'約 20–25 分鐘',walk:'無',move:'走 PIE／ECP，不經過 Marina 周邊的管制區',cost:'Couple A 一車約 S$20–30（估）；機場附加費只收從機場出發的行程；Couple B 的車資沒查證',wx:'不受天氣影響',
+   plus:['不用轉車，行李最方便','08:45 抵達 T3，離起飛 3 小時，最安全'],minus:['比 MRT 貴：每人多約 S$10–13','兩對要各叫一台車'],
+   more:['先前研究的倒推：最晚 08:15 離開飯店'],maps:[['Changi Airport T3','Changi Airport Terminal 3']]},
+  {id:'c',from:'n',title:'MRT 提早到 07:45 出發',chip:'MRT 07:45',short:'為了去 Jewel：約 08:30–08:45 到機場',area:'airport',
+   time:'約 45–60 分鐘（估）→ 約 08:30–08:45 到機場',walk:'中等',move:'同 MRT 路線，只是提早 45 分鐘',cost:'每人約 S$2',wx:'不受天氣影響',
+   plus:['有時間在報到前逛 Jewel','仍然便宜'],minus:['要早起，早餐在機場吃'],more:['這是我用先前研究算出來的，不是你的行程']}
+  ]},
+ {id:'d4-arr',t:'09:15–09:45',title:'抵達 Changi T3，SQ 報到櫃台',st:'likely',anchor:true,short:'Changi T3',area:'airport',
+  text:'集合點：SQ 報到櫃台區。實際抵達時間看上面選哪個交通方式。',maps:[['Changi Airport T3','Changi Airport Terminal 3']]},
+ {slot:true,id:'d4-jewel',t:'報到前',label:'Jewel 星耀樟宜',dl:'Day 4 Jewel',st:'open',draft:'a',home:true,
+  opts:[
+  {id:'a',from:'p',title:'Jewel：看 Rain Vortex 室內瀑布',chip:'去 Jewel',short:'吹冷氣、看雨漩渦大瀑布，要在報到、出境之前逛完',area:'airport',
+   time:'至少 1.5 小時（先前研究）',walk:'中等',move:'Jewel 在管制區外，出境後就回不去，所以要排在報到前',cost:'未估',wx:'室內冷氣',
+   plus:['看到 Jewel 的室內瀑布'],
+   minus:['你的行程把 Jewel 排在「T3 報到、逛免稅店」之後，這在實際動線上做不到：免稅店在出境後','要把出發提早到約 07:15–07:45（推估）','壓縮報到時間，卡在報到排隊或安檢就很難補救'],
+   more:['先前研究的結論：若會趕，直接取消 Jewel','要去的話，交通選「MRT 07:45」或更早','地址：78 Airport Boulevard, Singapore 819666（Wikipedia）'],maps:[['Jewel Changi Airport','Jewel Changi Airport']]},
+  {id:'b',from:'c',title:'不去 Jewel，只逛 T3 免稅店',chip:'不去 Jewel',short:'報到、出境後逛 T3 免稅店（Prada 等精品與伴手禮）',area:'airport',
+   time:'報到後到登機前（約 09:30–10:45）',walk:'輕鬆',move:'管制區內步行',cost:'依購物',wx:'室內冷氣',
+   plus:['不壓縮報到時間','在管制區內吹冷氣、買伴手禮'],minus:['沒去 Jewel'],more:['這也是先前行程的選擇']}
+  ]},
+ {id:'d4-ck',t:'09:45–11:15',title:'報到、託運、出境，逛免稅店',st:'likely',area:'airport',text:'T3 辦理報到託運、自動通關出境，再逛免稅店與買伴手禮，早餐也在管制區內吃。實際登機時間以登機證為準。'},
+ {id:'d4-fly',t:'11:45',title:'SQ878 起飛，16:30 抵達 TPE T2',st:'confirmed',anchor:true,short:'SQ878',area:'airport'}
+ ]}
+]};
+(function(){
+  var slots=[],byId={},day={};
+  TRIP.days.forEach(function(d){ d.items.forEach(function(it){ it.day=d.id; if(it.slot){ slots.push(it); byId[it.id]=it; } }); day[d.id]=d; });
+  TRIP.slots=slots; TRIP.slotById=byId; TRIP.dayById=day;
+})();
+
+})();
+
+</script>
+<script>
+(function(){
+'use strict';
+var T=window.TRIP; if(!T) return;
+function add(e,c){if(c==null||c===false)return;if(Array.isArray(c))c.forEach(function(x){add(e,x)});else if(c.nodeType)e.appendChild(c);else e.appendChild(document.createTextNode(String(c)))}
+function h(tag,attrs){var e=document.createElement(tag);if(attrs){for(var k in attrs){var v=attrs[k];if(v==null||v===false)continue;if(k==='class')e.className=v;else if(k==='text')e.textContent=v;else if(k.slice(0,2)==='on')e.addEventListener(k.slice(2),v);else e.setAttribute(k,v===true?'':v)}}for(var i=2;i<arguments.length;i++)add(e,arguments[i]);return e}
+var KEY='sg-plan-dec',mem={};
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){return mem}}
+function save(){mem=dec;try{localStorage.setItem(KEY,JSON.stringify(dec))}catch(e){}}
+var dec=load(),openSet={};
+var ST={confirmed:'已確認',likely:'暫定',option:'備選',open:'未決定'};
+function opt(slot,id){for(var i=0;i<slot.opts.length;i++)if(slot.opts[i].id===id)return slot.opts[i];return null}
+function shown(slot){var c=dec[slot.id];if(c&&opt(slot,c))return{opt:opt(slot,c),chosen:true,state:'confirmed'};return{opt:slot.draft?opt(slot,slot.draft):null,chosen:false,state:slot.st||'open'}}
+function setDec(id,o){if(o)dec[id]=o;else delete dec[id];save();document.dispatchEvent(new CustomEvent('sg:dec',{detail:{slot:id}}))}
+function murl(q){return /^https?:/.test(q)?q:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q)}
+function maps(list){if(!list||!list.length)return null;return h('div',{class:'maps'},list.map(function(m){return h('a',{href:murl(m[1]),target:'_blank',rel:'noopener',text:(/^https?:/.test(m[1])&&m[1].indexOf('google')<0)?m[0]:'Google Maps：'+m[0]})}))}
+function tagClass(t){return /訂位/.test(t)?'t-res':/必做|最晚|服裝/.test(t)?'t-must':/雨/.test(t)?'t-rain':/素食/.test(t)?'t-veg':''}
+var DT={d1:'抵達：落地、放行李、HaveFun',d2:'Chinatown、觀音堂、傍晚河岸',d3:'Kampong Glam、午後避暑',d4:'回程：MRT 去 Changi'};
+var FROM={p:'你的原行程',c:'先前 Claude 行程',n:'新增'};
+window.SGPLAN={dec:dec,shown:shown,setDec:setDec,T:T};
+
+function entry(e){
+  var a=h('article',{class:'stop'+(e.anchor?' key':'')});
+  a.appendChild(h('p',{class:'time'},e.t,e.st==='confirmed'||(e.bookKey&&false)?h('small',{class:'st',text:'　'+ST.confirmed}):null));
+  a.appendChild(h('h3',{text:e.title}));
+  if(e.text)a.appendChild(h('p',{class:'what',text:e.text}));
+  if(e.meta&&e.meta.length)a.appendChild(h('ul',{class:'meta'},e.meta.map(function(r){return h('li',null,h('b',{text:r[0]}),h('span',{text:r[1]}))})));
+  if(e.tags&&e.tags.length)a.appendChild(h('div',{class:'tags'},e.tags.map(function(t){return h('span',{class:'tag '+tagClass(t),text:t})})));
+  var m=maps(e.maps);if(m)a.appendChild(m);
+  return a;
+}
+function optBlock(slot,o,i){
+  var isCh=dec[slot.id]===o.id,isDr=!dec[slot.id]&&slot.draft===o.id;
+  var b=h('div',{class:'opt'+(isCh?' on':'')});
+  var hd=h('div',{class:'oh'},h('span',{class:'ol',text:String.fromCharCode(65+i)}),h('b',{text:o.title}));
+  var tg=h('span',{class:'ot'});
+  if(isDr)tg.appendChild(h('em',{class:'main',text:'主計畫'}));
+  if(isCh)tg.appendChild(h('em',{class:'pick',text:'你選的'}));
+  if(o.from&&FROM[o.from])tg.appendChild(h('em',{text:FROM[o.from]}));
+  hd.appendChild(tg);b.appendChild(hd);
+  if(o.short)b.appendChild(h('p',{class:'what',text:o.short}));
+  var rows=[['所需時間',o.time],['步行量',o.walk],['交通',o.move],['額外費用',o.cost],['天氣',o.wx]].filter(function(r){return r[1]&&r[1]!=='—'});
+  if(rows.length)b.appendChild(h('ul',{class:'meta'},rows.map(function(r){return h('li',null,h('b',{text:r[0]}),h('span',{text:r[1]}))})));
+  if(o.plus&&o.plus.length)b.appendChild(h('ul',{class:'pm plus'},o.plus.map(function(x){return h('li',{text:x})})));
+  if(o.minus&&o.minus.length)b.appendChild(h('ul',{class:'pm minus'},o.minus.map(function(x){return h('li',{text:x})})));
+  if(o.more&&o.more.length)b.appendChild(h('details',{class:'more'},h('summary',{text:'更多細節'}),h('ul',{class:'pm dot'},o.more.map(function(x){return h('li',{text:x})}))));
+  var m=maps(o.maps);if(m)b.appendChild(m);
+  b.appendChild(h('button',{type:'button',class:'pick-btn'+(isCh?' is':''),onclick:function(){setDec(slot.id,isCh?null:o.id)}},isCh?'已選這個，點一下取消':'選這個'));
+  return b;
+}
+function slotBlock(slot){
+  var i=shown(slot),o=i.opt,n=slot.opts.length;
+  var a=h('article',{class:'stop slot'+(i.chosen?' chosen':'')+(!o?' free':'')});
+  a.appendChild(h('p',{class:'time'},slot.t,h('small',{class:'st',text:'　'+(i.chosen?'你選的':ST[i.state])})));
+  a.appendChild(h('p',{class:'slabel',text:slot.label}));
+  a.appendChild(h('h3',{text:o?o.title:'自由時段（還沒排）'}));
+  if(o){if(o.short)a.appendChild(h('p',{class:'what',text:o.short}));if(!i.chosen&&slot.draft)a.appendChild(h('p',{class:'what'},h('small',{text:'目前是主計畫。點下面看備選，想換再選。'})));}
+  else a.appendChild(h('p',{class:'what',text:'不排也可以。想排的時候，下面有可以做的事。'}));
+  var m=o&&maps(o.maps);if(m)a.appendChild(m);
+  var d=h('details',{class:'opts',open:openSet[slot.id]?true:null},h('summary',{text:(i.chosen?'換一個選項（':'看 ')+n+(i.chosen?'）':' 個選項')}));
+  d.addEventListener('toggle',function(){openSet[slot.id]=d.open});
+  slot.opts.forEach(function(x,k){d.appendChild(optBlock(slot,x,k))});
+  if(i.chosen)d.appendChild(h('button',{type:'button',class:'clear-btn',onclick:function(){setDec(slot.id,null)}},'清除選擇，回到主計畫'));
+  a.appendChild(d);
+  return a;
+}
+function dayPanel(d,idx){
+  var root=document.querySelector('#'+d.id+' .dayroot');if(!root)return;
+  var open=d.items.filter(function(x){return x.slot&&!dec[x.id]&&(x.st==='open'||!x.draft)}).length;
+  root.innerHTML='';
+  root.appendChild(h('header',{class:'dayhead'},h('span',{class:'badge',text:d.code}),h('div',null,h('p',{class:'date',text:d.date}),h('h2',{text:DT[d.id]}))));
+  root.appendChild(h('a',{class:'mapjump',href:'#map','data-day':d.code,text:'在地圖看這一天'}));
+  root.appendChild(h('div',{class:'facts'},
+    h('div',null,h('b',{text:open+' 項'}),h('span',{text:'還沒決定的時段'})),
+    h('div',null,h('b',{text:d.walk.lvl.replace(/（.*?）/,'')}),h('span',{text:'步行強度（推估）'})),
+    h('div',null,h('b',{text:'尚未估'}),h('span',{text:'步行距離與預算'}))));
+  root.appendChild(h('div',{class:'sign blue'},h('b',{class:'t',text:'主計畫加備選'}),h('p',{text:'每個時段先排你的原行程，點「看 N 個選項」可以換。先前 Claude 行程也在選項裡。'+(idx===1?' 14:00–17:00 是你留白的時段。':'')+(idx===2?' 16:30 之後是你留白的時段。':'')})));
+  d.items.forEach(function(it){root.appendChild(it.slot?slotBlock(it):entry(it))});
+  var pg=h('nav',{class:'pager','aria-label':'換日'});
+  pg.appendChild(h('a',{href:idx===0?'#home':'#d'+idx,text:idx===0?'回首頁':'上一天 D'+idx}));
+  pg.appendChild(h('a',{href:idx===3?'#food':'#d'+(idx+2),text:idx===3?'看美食頁':'下一天 D'+(idx+2)}));
+  root.appendChild(pg);
+}
+function areasBlock(){
+  var by={};T.areas.forEach(function(a){by[a.id]=[]});
+  T.days.forEach(function(d){d.items.forEach(function(it){
+    if(it.slot){it.opts.forEach(function(o){if(o.area&&by[o.area])by[o.area].push({d:d,t:it.t,title:o.title,kind:it.draft===o.id?'主計畫':'備選',from:o.from})})}
+    else if(it.area&&by[it.area])by[it.area].push({d:d,t:it.t,title:it.title,kind:'固定',from:null})})});
+  var w=h('div',{class:'areas'});
+  T.areas.forEach(function(a){var rows=by[a.id];if(!rows.length)return;
+    w.appendChild(h('details',{class:'area'},h('summary',{text:a.name+'（'+rows.length+'）'}),
+      h('ul',{class:'arealist'},rows.map(function(r){return h('li',null,h('a',{href:'#d'+r.d.code.slice(1),text:r.d.code+' '+r.t}),' ',h('b',{text:r.title}),' ',h('span',{class:'amark',text:r.kind+(r.from==='c'?'，先前 Claude 行程':(r.from==='n'?'，新增':''))}))}))))});
+  return w;
+}
+function renderAll(){T.days.forEach(function(d,i){dayPanel(d,i)})}
+renderAll();
+var ar=document.getElementById('areas-root');if(ar)ar.appendChild(areasBlock());
+document.addEventListener('sg:dec',function(){
+  var y=window.scrollY;renderAll();window.scrollTo(0,y);
+  // keep the option list the person was just using open
+});
+})();
+
+</script>
+<script>
+(function(){
 'use strict';
 var panel=document.getElementById('map'); if(!panel) return;
 var $=function(s,r){return (r||document).querySelector(s)};
 var mapc=$('#mapc'),tilesEl=$('#m-tiles'),svg=$('#m-svg'),marksEl=$('#m-marks'),pop=$('#m-pop'),noteEl=$('#m-note'),scaleEl=$('#m-scale'),legend=$('#m-legend');
 var NS='http://www.w3.org/2000/svg';
 
-/* ------------------------------------------------------------------
-   Verified locations (checked 2026-10-04). Source for each is kept here.
-   Anything not in this table is NOT drawn on the map.
------------------------------------------------------------------- */
+/* Verified locations (checked 2026-10-04). Anything without a verified coordinate is NOT drawn on the map. */
 var V={
  airport:{ll:[1.35917,103.98944],src:'Wikipedia：Changi Airport（機場整體座標，航廈細部座標未驗證）'},
  hotel:{ll:[1.311607,103.880790],src:'HotelPlanner 住宿頁座標；地址 31 Lor 18 Geylang, Singapore 398828'},
  maxwell:{ll:[1.2803315,103.8447473],src:'Wikipedia：Maxwell Food Centre'},
  btrt:{ll:[1.281567,103.844192],src:'Travelfish GPS：1°16′53.64″N 103°50′39.09″E'},
- gardens:{ll:[1.284669,103.864617],src:'Structurae：Flower Dome 1°17′4.81″N 103°51′52.62″E（Cloud Forest 在東邊約 140 m：1.284002, 103.866058）'},
+ kwanim:{ll:[1.300817,103.853200],src:'Travelfish GPS：1°18′2.94″N 103°51′11.52″E（178 Waterloo St）'},
+ gardens:{ll:[1.284669,103.864617],src:'Structurae：Flower Dome 1°17′4.81″N 103°51′52.62″E（Cloud Forest 在東邊約 140 m）'},
+ merlion:{ll:[1.286833,103.854528],src:'Wikipedia：Merlion Park（1 Fullerton Rd）'},
  lau:{ll:[1.280629,103.850396],src:'Wikipedia：Lau Pa Sat'},
  clarke:{ll:[1.289497,103.845161],src:'Sygic Travel：1°17′22.19″N 103°50′42.58″E（30 North Boat Quay）'},
  tekka:{ll:[1.3062,103.8508],src:'Wikipedia：Tekka Centre'},
  sultan:{ll:[1.3022,103.8590],src:'Wikipedia：Sultan Mosque'},
  bugismrt:{ll:[1.30028,103.85611],src:'Wikipedia：Bugis MRT station'},
- bugisplus:{ll:[1.299617,103.854408],src:'Wikipedia：Bugis+'},
- botanic:{ll:[1.3151,103.8162],src:'Wikipedia：Singapore Botanic Gardens（園區座標）'}
+ bugisplus:{ll:[1.299617,103.854408],src:'Wikipedia：Bugis+（201 Victoria St）'},
+ botanic:{ll:[1.3151,103.8162],src:'Wikipedia：Singapore Botanic Gardens（園區座標）'},
+ oceanarium:{ll:[1.2584,103.8177],src:'Wikipedia：Marine Life Park, Resorts World Sentosa（Singapore Oceanarium，原 S.E.A. Aquarium）'},
+ jewel:{ll:[1.3644,103.9915],src:'Wikipedia：Jewel Changi Airport（78 Airport Boulevard）'}
 };
-var TYPES={
- hotel:{c:'#1E293B',zh:'住宿',sq:1},airport:{c:'#0F172A',zh:'機場',sq:1},meeting:{c:'#0E7490',zh:'集合點'},
- attraction:{c:null,zh:'景點（顏色＝當天）'},food:{c:'#C2410C',zh:'餐廳'},transport:{c:'#475569',zh:'交通站'}
-};
+var TYPES={hotel:{c:'#1E293B',zh:'住宿',sq:1},airport:{c:'#0F172A',zh:'機場',sq:1},meeting:{c:'#0E7490',zh:'集合點'},attraction:{c:null,zh:'景點'},food:{c:'#C2410C',zh:'餐廳'},transport:{c:'#475569',zh:'交通站'}};
 var DAYC={D1:'#007A38',D2:'#005EC4',D3:'#9900AA',D4:'#E58A00'};
 var MODE={walk:'步行',mrt:'MRT',bus:'公車',grab:'Grab'};
 var GM_MODE={walk:'walking',mrt:'transit',bus:'transit',grab:'driving'};
-
-/* ---------------- itinerary stops (times and transport come from the guide) ---------------- */
-var DAYS=[
-{id:'D1',name:'抵達',date:'10/8 週四',tag:'19:00 落地，回飯店，不排付費景點',stops:[
- {t:'19:00',name:'Changi Airport',type:'airport',v:'airport',q:'Changi Airport Singapore',act:'SQ877 落地，入境、領行李，在入境大廳 Taxi Stand 前分開（出關估約 20:10）。',stay:'約 70 分鐘',
-  next:{mode:'grab',to:'Hotel 81 Premier Star',min:'20–30 分',cost:'約 S$25–40／車（預算 S$35，2 人每人 S$17.5，估；Grab 會先報價）',alt:'MRT 約 45–60 分、每人約 S$2，要轉車、拖行李'}},
- {t:'20:45',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'辦入住；晚餐在飯店附近簡單吃。',stay:'過夜',
-  food:{n:'飯店附近隨意吃（預算每人約 S$12）',v:'叫 GrabFood 選 100% 素食店；Geylang 一帶不保證有素'}}
-]},
-{id:'D2',name:'Chinatown、雙溫室、Clarke Quay',date:'10/9 週五',tag:'中午在室內，傍晚走河邊',stops:[
- {t:'09:15',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'早餐（Kaya Toast）後出發，走到 Aljunied（EW9）。',stay:'—',
-  next:{mode:'mrt',to:'Maxwell Food Centre',min:'約 35 分（含走路）',cost:'每人約 S$1.6–1.9（估）',alt:'Aljunied EW9 → Tanjong Pagar EW15，同線不轉車'}},
- {t:'10:00',name:'Maxwell Food Centre',type:'meeting',v:'maxwell',q:'Maxwell Food Centre, 1 Kadayanallur St, Singapore 069184',act:'4 人集合（Kadayanallur St 側門口），開始走 Chinatown。Couple B 依實際住宿位置前往。',stay:'10:00–11:30（含寺廟與老街）',
-  next:{mode:'walk',to:'Buddha Tooth Relic Temple',calc:1,alt:'整段 Chinatown 步行約 1.5 km'}},
- {t:'10:00–11:30',name:'Buddha Tooth Relic Temple',type:'attraction',v:'btrt',q:'Buddha Tooth Relic Temple and Museum, 288 South Bridge Rd, Singapore',act:'佛牙寺（遮住肩膀和膝蓋），再走 Sri Mariamman Temple、Pagoda Street（這兩處座標未驗證，不另標）。',stay:'約 1 小時 30 分（Chinatown）',
-  next:{mode:'walk',to:'Maxwell Food Centre（午餐）',calc:1}},
- {t:'11:30',name:'Maxwell Food Centre',type:'food',veg:1,v:'maxwell',q:'Maxwell Food Centre, 1 Kadayanallur St, Singapore 069184',act:'午餐；12:40 起 Chinatown 隨意逛。',stay:'11:30–12:30',cash:1,
-  food:{n:'Tian Tian 海南雞飯（約 S$6–8）',v:'Soon Seng 素米粉（第 15 攤，約 S$3–5）；糕點 Traditional Delight；備案 The Green Leaf'},
-  next:{mode:'mrt',to:'Gardens by the Bay',min:'約 30 分（13:30–14:00）',cost:'每人約 S$1.3–1.6（估）',alt:'Maxwell TE18 → Gardens by the Bay TE22，約 4 站'}},
- {t:'14:00',name:'Gardens by the Bay',type:'attraction',v:'gardens',q:'Gardens by the Bay Flower Dome, 18 Marina Gardens Dr, Singapore 018953',act:'14:00 Flower Dome＋Cloud Forest（室內冷氣），17:15 Supertree Grove，19:45 Garden Rhapsody（免費）。非居民成人 S$46，出發前看官網確認。',stay:'14:00–20:00',
-  next:{mode:'mrt',to:'Lau Pa Sat',min:'約 30 分（20:00–20:30）',cost:'每人約 S$1.1–1.3（估）',alt:'Bayfront DT16 → Downtown DT17 一站，再走約 3 分鐘'}},
- {t:'20:30',name:'Lau Pa Sat',type:'food',veg:1,v:'lau',q:'Lau Pa Sat, 18 Raffles Quay, Singapore 048582',act:'沙爹街晚餐。多數攤位只收現金；Maya 營業到 22:30，21:45 前點完。',stay:'20:30–21:45',cash:1,
-  food:{n:'Satay Street 雞牛羊沙爹（每人約 S$15–20）',v:'Su Xiang（46）素炒麵；Maya（47）素 briyani；Shree Bhaavan（40）（每人約 S$10–14）。沙爹和沾醬不是素的'},
-  next:{mode:'walk',to:'Clarke Quay',min:'約 30 分（21:45–22:15）',alt:'沿河步行約 1.5–2 km（Raffles Place → Boat Quay → Clarke Quay）'}},
- {t:'22:15',name:'Clarke Quay',type:'attraction',must:1,v:'clarke',q:'Clarke Quay, Singapore',act:'河邊散步、喝一杯或吃甜點，過 Read Bridge 拍夜景。每人約 S$15–28，可刷卡。',stay:'22:15–23:30',
-  next:{mode:'grab',to:'Hotel 81 Premier Star',min:'約 15 分',cost:'一車約 S$15–22（估，深夜可能漲價）'}},
- {t:'23:30',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'回飯店。',stay:'過夜'}
-]},
-{id:'D3',name:'Little India、Kampong Glam、雙層巴士、HaveFun',date:'10/10 週六',tag:'上午走路，下午搭公車 7 號，晚上 HaveFun',stops:[
- {t:'08:30',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'出發去 Little India。',stay:'—',
-  next:{mode:'grab',to:'Tekka Centre',min:'10–15 分',cost:'一車約 S$10–14（估）',alt:'MRT 要轉車，兩人分攤 Grab 更划算'}},
- {t:'09:00',name:'Tekka Centre',type:'meeting',veg:1,v:'tekka',q:'Tekka Centre, 665 Buffalo Rd, Singapore 210665',act:'集合點（Buffalo Rd 側入口，Little India MRT 旁），早餐；再逛 Little India（Sri Veeramakaliamman Temple、Tan Teng Niah，座標未驗證，不另標）。',stay:'09:00–11:00',cash:1,
-  food:{n:'Biryani、Roti Prata 配 Teh Tarik（每人約 S$5–8）',v:'Thosai、Idli（印度素食通常有五辛）；備案 Komala Vilas'},
-  next:{mode:'walk',to:'Kampong Glam',calc:1,min:'約 20 分',alt:'步行約 1.3 km；天熱可叫 Grab，4 人一車約 S$8–10（估）'}},
- {t:'11:20',name:'Kampong Glam（Sultan Mosque）',type:'attraction',v:'sultan',q:'Sultan Mosque, 3 Muscat St, Singapore 198833',act:'Sultan Mosque 看外觀，Bussorah St，Haji Lane（塗鴉小巷，位置在附近，座標未單獨驗證），Arab Street。',stay:'11:20–13:00',
-  next:{mode:'walk',to:'Food Junction（Bugis Junction）',min:'約 5 分'}},
- {t:'13:00',name:'Food Junction（Bugis Junction）',type:'food',veg:1,v:null,q:'Food Junction, Bugis Junction, 200 Victoria St, Singapore',act:'午餐，有冷氣，4 人坐得下。（Bugis Junction 的精確座標未驗證，所以地圖上不標點。）',stay:'13:00–13:45',
-  food:{n:'Laksa 或雞飯類，看當天開哪些攤（每人約 S$8–12）',v:'Truly Vegetarian（#03-30，約 S$10）'},
-  next:{mode:'bus',to:'Botanic Gardens',min:'25–30 分（13:50–14:20）',cost:'每人約 S$1.49–1.68（4 人約 S$6–7）',alt:'公車 7 號（雙層）：Bugis Stn/Parkview Sq（01139）→ Napier Stn Exit 2（13011），上層最前排'}},
- {t:'14:20',name:'Singapore Botanic Gardens',type:'attraction',v:'botanic',q:'Singapore Botanic Gardens Tanglin Gate, Singapore',act:'從 Tanglin Gate 進園，天鵝湖、Bandstand（免費）。雨勢大就提早在 Orchard Stn Exit 13（09022）下車改逛 ION Orchard。',stay:'14:20–15:30',
-  next:{mode:'bus',to:'Hotel 81（休息）',min:'公車 30–35 分＋MRT／Grab 約 10 分',cost:'公車每人約 S$1.49–1.68；MRT 每人約 S$1.3（估）',alt:'回程 Napier Stn Exit 1（13019）→ Opp Bugis Stn Exit C（01112），走 Orchard Road；再 Bugis EW12 → Aljunied EW9'}},
- {t:'16:15',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'休息，換好包鞋和長褲（HaveFun 有服裝規定）。',stay:'16:15–18:30',
-  next:{mode:'mrt',to:'Bugis MRT',min:'約 10–15 分',cost:'每人約 S$1.3（估）',alt:'Aljunied EW9 → Bugis EW12，3 站'}},
- {t:'18:45',name:'Bugis MRT',type:'meeting',v:'bugismrt',q:'Bugis MRT Station, 220 Victoria St, Singapore 188022',act:'集合點：往 Bugis Junction 的出口（實際出口以站內指標為準）。',stay:'—',
-  next:{mode:'walk',to:'Herbivore（Fortune Centre）',min:'約 5–8 分'}},
- {t:'19:00',name:'Herbivore（Fortune Centre）',type:'food',veg:1,v:null,q:'Herbivore, Fortune Centre, 190 Middle Rd #01-13/14, Singapore 188979',act:'全素晚餐，每人約 S$25。週六晚上建議先訂位。（Fortune Centre 的精確座標未驗證，所以地圖上不標點。）',stay:'19:00–20:30',
-  food:{n:'葷食的兩位這一餐配合吃素（只有這一餐）',v:'全店素食，vegan 選擇多'},
-  next:{mode:'walk',to:'HaveFun Live Show',min:'約 5–8 分'}},
- {t:'20:45',name:'HaveFun Live Show',type:'attraction',must:1,v:'bugisplus',q:'HaveFun Live Show, 201 Victoria St #07-01, Singapore 188067',act:'Bugis+ 7 樓。21:30 開演，待到約 00:00。建議訂位，週五、六最低消費 S$200++，要穿包鞋和長褲。',stay:'20:45–00:00',
-  food:{n:'食物與素食選項查不到資料，需現場確認',v:'晚餐先吃飽再進場'},
-  next:{mode:'grab',to:'Hotel 81 Premier Star',min:'約 10 分',cost:'一車約 S$10–15（估，深夜可能漲價）'}},
- {t:'00:00',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'回飯店。',stay:'過夜'}
-]},
-{id:'D4',name:'回程',date:'10/11 週日',tag:'08:15 最晚出發，11:45 起飛',stops:[
- {t:'08:15',name:'Hotel 81 (Premier) Star',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',act:'最晚 08:15 離開飯店。',stay:'—',
-  next:{mode:'grab',to:'Changi Airport T3',min:'20–25 分',cost:'一車約 S$20–30（估；機場附加費只收從機場出發的行程）',alt:'MRT 每人省約 S$10–13，但要轉車、帶行李'}},
- {t:'08:45',name:'Changi Airport T3',type:'airport',v:'airport',q:'Changi Airport Terminal 3, Singapore',act:'SQ 報到櫃台集合，報到、託運、出境。Jewel 取消（會趕）。11:45 SQ878 起飛。',stay:'08:45–10:45'}
-]}
-];
+var HQ='Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828',IQ='ibis budget Singapore Imperial, 28 Penhas Rd, Singapore 208187';
+var LATER='路線與時間用 Google Maps 查（尚未研究）';
+var BASE={
+ changi:{n:'Changi Airport',ty:'airport',v:'airport',q:'Changi Airport Singapore'},
+ changiT3:{n:'Changi Airport T3',ty:'airport',v:'airport',q:'Changi Airport Terminal 3, Singapore'},
+ hotelA:{n:'Hotel 81 (Premier) Star（Couple A）',ty:'hotel',v:'hotel',q:HQ},
+ ibis:{n:'ibis budget Imperial（Couple B）',ty:'hotel',v:null,q:IQ,act:'28 Penhas Rd（訂房網站寫從 Lavender 站走路約 5 分鐘）。精確座標未驗證，所以地圖上不標點。'},
+ btrt:{n:'Buddha Tooth Relic Temple',ty:'attraction',v:'btrt',q:'Buddha Tooth Relic Temple and Museum, 288 South Bridge Rd, Singapore',act:'佛牙寺參拜（唐式風格寺廟，室內較涼）；再走五腳基遮蔭騎樓老街（Pagoda Street 一帶，座標未驗證，不另標）。進寺廟要遮住肩膀和膝蓋。',stay:'10:00–11:15'},
+ kwanim:{n:'觀音堂佛祖廟',ty:'attraction',v:'kwanim',q:'Kwan Im Thong Hood Cho Temple, 178 Waterloo St, Singapore',act:'百年香火名廟，祈福參拜。開放時間未查證。',stay:'11:30–13:30（含午餐）'},
+ fortune:{n:'Fortune Centre・興化素食',ty:'food',veg:1,v:null,q:'Xing Hua Vegetarian Restaurant, Fortune Centre, 190 Middle Rd, Singapore 188979',act:'午餐：素食煲仔飯、素沙爹串、橄欖菜炒飯（你提供的資訊）。Fortune Centre 緊鄰觀音堂；精確座標未驗證，所以地圖上不標點。',food:{n:'葷食者：跟著吃素，或去 Bugis 附近別家（未查證）',v:'興化素食；同棟 Herbivore 全素（#01-13/14，約 S$25）'}},
+ maxwell:{n:'Maxwell Food Centre',ty:'food',veg:1,cash:1,v:'maxwell',q:'Maxwell Food Centre, 1 Kadayanallur St, Singapore 069184',act:'午餐（備選）。',stay:'11:30–12:30',food:{n:'Tian Tian 海南雞飯（約 S$6–8）',v:'Soon Seng 素米粉（第 15 攤，約 S$3–5）；Traditional Delight；The Green Leaf'}},
+ lau:{n:'Lau Pa Sat',ty:'food',veg:1,cash:1,v:'lau',q:'Lau Pa Sat, 18 Raffles Quay, Singapore 048582',act:'老巴剎，沙爹街晚餐。多數攤位只收現金；Maya 營業到 22:30，21:45 前點完。',stay:'晚餐',food:{n:'Satay Street 雞牛羊沙爹（每人約 S$15–20）',v:'Su Xiang（46）素炒麵；Maya（47）素 briyani；Shree Bhaavan（40）（每人約 S$10–14）。沙爹和沾醬不是素的'}},
+ clarke:{n:'Clarke Quay',ty:'attraction',must:1,v:'clarke',q:'Clarke Quay, Singapore',act:'河畔散步，喝一杯或吃甜點，過 Read Bridge 拍夜景。每人約 S$15–28，可刷卡。',stay:'依選的時段'},
+ merlion:{n:'Merlion Park',ty:'attraction',v:'merlion',q:'Merlion Park, 1 Fullerton Rd, Singapore 049213',act:'看夕陽與港灣天際線點燈。靠近 Marina Bay 道路管制區，週五傍晚的人潮與動線沒查證。'},
+ gardens:{n:'Gardens by the Bay',ty:'attraction',v:'gardens',q:'Gardens by the Bay Flower Dome, 18 Marina Gardens Dr, Singapore 018953',act:'Flower Dome＋Cloud Forest（室內冷氣）。非居民成人 S$46，出發前看官網確認。Garden Rhapsody 每晚 19:45、20:45（免費）。',stay:'約 3 小時'},
+ mbs:{n:'Marina Bay Sands',ty:'attraction',v:null,q:'Marina Bay Sands, Singapore',act:'還沒研究。座標未驗證，所以地圖上不標點。'},
+ yakun:{n:'Ya Kun Kaya Toast（Far East Square）',ty:'food',veg:1,vtag:'蛋奶素可',v:null,q:'Ya Kun Kaya Toast Far East Square, 18 China St, Singapore 049560',act:'早餐：炭烤薄片咖椰吐司、半熟雙蛋、熱南洋咖啡。地址 18 China St #01-01；第三方寫營業時間平日 07:30–18:30。精確座標未驗證，所以地圖上不標點。',stay:'09:00–10:00',food:{n:'Kaya Toast＋半熟蛋＋咖啡（價格未查證）',v:'蛋奶素可，全素不行'}},
+ yy:{n:'喜園海南咖啡店（YY Kafei Dian）',ty:'food',veg:1,vtag:'蛋奶素可',v:null,q:'YY Kafei Dian, Beach Road, Singapore',act:'早餐：厚切咖椰包＋牛油熱咖啡。在 Beach Rd，離 Lavender 與阿拉伯區很近（你提供）。座標與營業時間未查證。',stay:'09:00–10:00',food:{n:'厚切咖椰包＋牛油熱咖啡（價格未查證）',v:'蛋奶素可（推估），全素不行'}},
+ tekka:{n:'Tekka Centre',ty:'meeting',veg:1,cash:1,v:'tekka',q:'Tekka Centre, 665 Buffalo Rd, Singapore 210665',act:'集合點（Buffalo Rd 側入口，Little India MRT 旁），早餐；再逛 Little India。',stay:'約 2 小時',food:{n:'Biryani、Roti Prata 配 Teh Tarik（每人約 S$5–8）',v:'Thosai、Idli（印度素食通常有五辛）'}},
+ sultan:{n:'Kampong Glam（Sultan Mosque）',ty:'attraction',v:'sultan',q:'Sultan Mosque, 3 Muscat St, Singapore 198833',act:'上午太陽還沒曬透，在陰影處拍 Haji Lane 的街頭壁畫（座標未單獨驗證）；Bussorah St 騎樓散步，遠眺 Sultan Mosque 金色穹頂。',stay:'10:00–11:30'},
+ oceanarium:{n:'Singapore Oceanarium（原 S.E.A. Aquarium）',ty:'attraction',v:'oceanarium',q:'Singapore Oceanarium, 8 Sentosa Gateway, Singapore 098269',act:'全室內冷氣的海洋館；午餐在名勝世界地下美食街（素食選擇未查證）。原 S.E.A. Aquarium 2025/7/24 以新名稱重新開幕（第三方資料），票價與開放時間未查證。',stay:'12:00–16:00',food:{n:'名勝世界地下美食街（價格未查證）',v:'素食選擇未查證'}},
+ foodjunction:{n:'Food Junction（Bugis Junction）',ty:'food',veg:1,v:null,q:'Food Junction, Bugis Junction, 200 Victoria St, Singapore',act:'午餐，有冷氣。Bugis Junction 精確座標未驗證，所以地圖上不標點。',food:{n:'Laksa 或雞飯類（每人約 S$8–12）',v:'Truly Vegetarian（#03-30，約 S$10）'}},
+ botanic:{n:'Singapore Botanic Gardens',ty:'attraction',v:'botanic',q:'Singapore Botanic Gardens Tanglin Gate, Singapore',act:'從 Tanglin Gate 進園，天鵝湖、Bandstand（免費）。白天最熱，比較適合 16:30 之後。'},
+ herbivore:{n:'Herbivore（Fortune Centre）',ty:'food',veg:1,v:null,q:'Herbivore, Fortune Centre, 190 Middle Rd #01-13/14, Singapore 188979',act:'全素晚餐，每人約 S$25；第三方寫營業到約 20:30。週六晚上建議先訂位。精確座標未驗證，所以地圖上不標點。',food:{n:'葷食的兩位這一餐配合吃素（只有這一餐）',v:'全店素食，vegan 選擇多'}},
+ havefun:{n:'HaveFun Live Show',ty:'attraction',must:1,v:'bugisplus',q:'HaveFun Live Show, 201 Victoria St #07-01, Singapore 188067',act:'Bugis+ 7 樓。建議訂位；週一到週四免最低消費，週五、六 S$200++；要穿包鞋和長褲。',food:{n:'食物與素食選項查不到資料，需現場確認',v:'晚餐先吃飽再進場'}},
+ jewel:{n:'Jewel Changi Airport',ty:'attraction',v:'jewel',q:'Jewel Changi Airport, 78 Airport Boulevard, Singapore 819666',act:'看 Rain Vortex 室內瀑布。Jewel 在管制區外，要在報到、出境前逛完（至少 1.5 小時，先前研究）。'}
+};
+function P(k,o){var r={};for(var a in BASE[k])r[a]=BASE[k][a];if(o)for(var b in o)r[b]=o[b];return r}
+function L(mode,to,min,cost,alt){return{mode:mode,to:to,min:min,cost:cost,alt:alt}}
+var HOMELEG=L('mrt','Hotel 81（Aljunied）','EW 線 Raffles Place（EW14）→ Aljunied（EW9），末班車時間未查證',null,'Grab 約 15 分，一車約 S$15–22（估，深夜可能漲價）');
+var PL={
+ 'd1-land':P('changi',{act:'SQ877 落地（你的行程寫 T2，以登機證為準）；入境、領行李，我估約 20:10 出關。',stay:'約 70 分鐘',leg:L('mrt','Hotel 81（Aljunied）','約 45–60 分（先前研究的估計）','每人約 S$2','Grab 約 20–30 分，一車約 S$25–40（估）')}),
+ 'd1-in':[P('hotelA',{act:'放行李、入住（10/8 入住，10/11 退房）。',leg:L('mrt','ibis budget（Lavender）','EW 線 2 站（Aljunied → Kallang → Lavender）',null,'兩對搭同一班車會先到 Aljunied，再到 Lavender')}),P('ibis',{leg:L('mrt','HaveFun（Bugis）','EW 線 1 站（Lavender → Bugis）','每人約 S$1.1–1.3（估，同 1 站票價）')})],
+ 'd1-hf:a':P('havefun',{act:'22:30 進場，全室內冷氣。週四的開演時間、訂位規則、入場費沒查到，要先 WhatsApp 問。週一到週四免最低消費。',leg:L('grab','各自住宿','約 10 分','一車約 S$10–15（估，深夜可能漲價）')}),
+ 'd2-bf:a':P('yakun',{leg:L('walk','Buddha Tooth Relic Temple','用 Google Maps 查步行時間（同在 Chinatown 一帶）')}),
+ 'd2-bf:b':null,
+ 'd2-ct':P('btrt',{leg:L('mrt','觀音堂佛祖廟','路線與時間用 Google Maps 查（DT 線可到 Bugis）')}),
+ 'd2-lunch:a':[P('kwanim',{leg:L('walk','Fortune Centre','緊鄰（Fortune Centre 靠觀音堂那一側）')}),P('fortune',{leg:L('mrt','下一個時段','午後 14:00–17:00 你還沒排')})],
+ 'd2-lunch:b':P('maxwell',{leg:L('mrt','下一個時段',LATER)}),
+ 'd2-lunch:c':P('lau',{stay:'午餐',act:'老巴剎當午餐：素食攤多，但沙爹街平日 19:00 才開。',leg:L('mrt','下一個時段',LATER)}),
+ 'd2-mid:a':P('gardens',{leg:L('mrt','下一站',LATER)}),
+ 'd2-mid:d':P('mbs'),
+ 'd2-eve:a':[P('clarke',{t:'17:30',stay:'傍晚',leg:L('walk','Merlion Park')}),P('merlion',{leg:L('walk','Lau Pa Sat')}),P('lau',{leg:HOMELEG})],
+ 'd2-eve:b':[P('merlion',{leg:L('walk','Lau Pa Sat')}),P('lau',{leg:L('walk','Clarke Quay')}),P('clarke',{act:'留到夜晚：河畔散步、喝一杯、Read Bridge 拍夜景（約 22:15 之後）。',leg:L('grab','Hotel 81','約 15 分','一車約 S$15–22（估，深夜可能漲價）')})],
+ 'd2-eve:c':[P('gardens',{act:'接 Garden Rhapsody（19:45 或 20:45，免費）。'}),P('lau',{leg:L('walk','Clarke Quay','約 30 分','免費','沿河步行約 1.5–2 km')}),P('clarke',{leg:L('grab','Hotel 81','約 15 分','一車約 S$15–22（估，深夜可能漲價）')})],
+ 'd2-home':P('hotelA',{act:'回住宿。兩對都在 EW 線上；Couple B 回 ibis budget（Lavender）。'}),
+ 'd3-bf:a':P('yy',{leg:L('walk','Kampong Glam','Beach Rd 離阿拉伯區很近（你提供）')}),
+ 'd3-bf:b':P('tekka',{leg:L('walk','Kampong Glam',null,null,'步行約 1.3 km；天熱可叫 Grab，4 人一車約 S$8–10（估）')}),
+ 'd3-kg':P('sultan',{leg:L('mrt','Sentosa（Singapore Oceanarium）','路線與時間未查證，用 Google Maps（常見是 MRT 到 HarbourFront 再進島）')}),
+ 'd3-mid:a':P('oceanarium'),
+ 'd3-mid:b':P('foodjunction',{leg:L('walk','下一站','步行為主')}),
+ 'd3-mid:d':P('botanic',{leg:L('bus','下一站','公車 7 號約 30–35 分（先前研究）','每人約 S$1.49–1.68')}),
+ 'd3-eve:a':[P('herbivore',{leg:L('walk','HaveFun','約 5–8 分')}),P('havefun',{act:'週六 21:30 開演，待到約 00:00。最低消費 S$200++（約每人 S$60）；訂金不退；要先訂位。',leg:L('grab','Hotel 81','約 10 分','一車約 S$10–15（估，深夜可能漲價）')})],
+ 'd3-eve:b':P('herbivore'),
+ 'd3-eve:c':P('clarke',{t:'22:15',leg:L('grab','Hotel 81','約 15 分','一車約 S$15–22（估，深夜可能漲價）')}),
+ 'd3-home':P('hotelA',{act:'回住宿。隔天 08:30 退房。'}),
+ 'd4-out':[P('ibis',{act:'Couple B 先在 Lavender（EW11）上車。',leg:L('mrt','Hotel 81（Aljunied）','同一班車，約 4 分鐘（2 站）')}),P('hotelA',{act:'退房。Couple A 在 Aljunied（EW9）上車。',leg:L('mrt','Changi Airport T3','約 45–60 分（估）→ 約 09:30–09:45 到 T3，比建議的 2 小時 45 分到 3 小時前到少','每人約 S$2','Grab 08:15 出發，約 20–25 分，一車約 S$20–30（估）')})],
+ 'd4-arr':P('changiT3',{act:'SQ 報到櫃台集合；報到、託運、出境。你的行程寫 09:15 抵達，用 MRT 要抓 45–60 分加走路。',stay:'報到到登機',leg:L('walk','Jewel')}),
+ 'd4-jewel:a':P('jewel',{leg:null})
+};
+var START={
+ d2:P('hotelA',{t:'早上出發',act:'Couple A 出發；Couple B 從 ibis budget（Lavender）出發，兩對都在 EW 線上。',leg:L('mrt','Ya Kun（Far East Square）','路線與時間用 Google Maps 查',null,'EW 線到 Raffles Place（EW14），或轉 DT 線到 Telok Ayer（DT18）')}),
+ d3:P('hotelA',{t:'早上出發',act:'Couple A 出發；Couple B 從 ibis budget（Lavender）出發。',leg:L('mrt','早餐地點',LATER)})
+};
 var OVERVIEW=[
- {label:'Changi 機場',days:'D1 D4',type:'airport',v:'airport',q:'Changi Airport Singapore'},
- {label:'Hotel 81',days:'D1–D4',type:'hotel',v:'hotel',q:'Hotel 81 Premier Star, 31 Lor 18 Geylang, Singapore 398828'},
- {label:'Chinatown',days:'D2',type:'attraction',dc:'D2',v:'maxwell',q:'Maxwell Food Centre, 1 Kadayanallur St, Singapore 069184'},
- {label:'Gardens by the Bay',days:'D2',type:'attraction',dc:'D2',v:'gardens',q:'Gardens by the Bay Flower Dome, 18 Marina Gardens Dr, Singapore 018953'},
+ {label:'Changi 機場',days:'D1、D4',type:'airport',v:'airport',q:'Changi Airport Singapore'},
+ {label:'Hotel 81',days:'D1–D4',type:'hotel',v:'hotel',q:HQ},
+ {label:'Chinatown（佛牙寺）',days:'D2',type:'attraction',dc:'D2',v:'btrt',q:'Buddha Tooth Relic Temple and Museum, 288 South Bridge Rd, Singapore'},
+ {label:'觀音堂（Bugis）',days:'D2',type:'attraction',dc:'D2',v:'kwanim',q:'Kwan Im Thong Hood Cho Temple, 178 Waterloo St, Singapore'},
  {label:'Clarke Quay',days:'D2 必去',type:'attraction',dc:'D2',must:1,v:'clarke',q:'Clarke Quay, Singapore'},
- {label:'Little India',days:'D3',type:'attraction',dc:'D3',v:'tekka',q:'Tekka Centre, 665 Buffalo Rd, Singapore 210665'},
+ {label:'Merlion Park',days:'D2',type:'attraction',dc:'D2',v:'merlion',q:'Merlion Park, 1 Fullerton Rd, Singapore 049213'},
  {label:'Kampong Glam',days:'D3',type:'attraction',dc:'D3',v:'sultan',q:'Sultan Mosque, 3 Muscat St, Singapore 198833'},
- {label:'HaveFun（Bugis+）',days:'D3 必去',type:'attraction',dc:'D3',must:1,v:'bugisplus',q:'HaveFun Live Show, 201 Victoria St #07-01, Singapore 188067'},
- {label:'Botanic Gardens',days:'D3（公車 7 號）',type:'attraction',dc:'D3',v:'botanic',q:'Singapore Botanic Gardens Tanglin Gate, Singapore'}
+ {label:'Sentosa 海洋館',days:'D3',type:'attraction',dc:'D3',v:'oceanarium',q:'Singapore Oceanarium, 8 Sentosa Gateway, Singapore 098269'},
+ {label:'HaveFun（Bugis+）',days:'D1 必去（備選 D3）',type:'attraction',dc:'D1',must:1,v:'bugisplus',q:'HaveFun Live Show, 201 Victoria St #07-01, Singapore 188067'},
+ {label:'Jewel',days:'D4',type:'attraction',dc:'D4',v:'jewel',q:'Jewel Changi Airport, 78 Airport Boulevard, Singapore 819666'},
+ {label:'Gardens by the Bay（備選）',days:'D2 備選',type:'attraction',dc:'D2',alt:1,v:'gardens',q:'Gardens by the Bay Flower Dome, 18 Marina Gardens Dr, Singapore 018953'},
+ {label:'Little India（備選）',days:'D3 備選',type:'attraction',dc:'D3',alt:1,v:'tekka',q:'Tekka Centre, 665 Buffalo Rd, Singapore 210665'},
+ {label:'Botanic Gardens（備選）',days:'D3 備選',type:'attraction',dc:'D3',alt:1,v:'botanic',q:'Singapore Botanic Gardens Tanglin Gate, Singapore'}
 ];
 
 /* ---------------- helpers ---------------- */
@@ -1723,27 +1700,37 @@ function gmPlace(q){return 'https://www.google.com/maps/search/?api=1&query='+en
 function gmDir(q,mode){return 'https://www.google.com/maps/dir/?api=1&destination='+enc(q)+'&travelmode='+(GM_MODE[mode]||'transit')}
 function gmDay(stops){
   var seq=[];stops.forEach(function(s){if(!seq.length||seq[seq.length-1].q!==s.q)seq.push(s)});
-  if(seq.length<2)return gmPlace(seq[0].q);
+  if(seq.length<2)return seq.length?gmPlace(seq[0].q):'https://www.google.com/maps';
   var wp=seq.slice(1,-1).slice(0,9).map(function(s){return s.q}).join('|');
   return 'https://www.google.com/maps/dir/?api=1&origin='+enc(seq[0].q)+'&destination='+enc(seq[seq.length-1].q)+(wp?'&waypoints='+enc(wp):'')+'&travelmode=transit';
 }
 function km(a,b){var R=6371,r=Math.PI/180,dl=(b[0]-a[0])*r,dg=(b[1]-a[1])*r;var x=Math.sin(dl/2)*Math.sin(dl/2)+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dg/2)*Math.sin(dg/2);return 2*R*Math.asin(Math.sqrt(x))}
-function ll(s){return s.v&&V[s.v]?V[s.v].ll:null}
-function color(s,dayId){
-  if(s.type==='attraction')return DAYC[dayId]||'#005EC4';
-  return TYPES[s.type].c;
-}
-/* number the stops, then derive walking estimates from verified coordinates */
-DAYS.forEach(function(d){
-  d.stops.forEach(function(s,i){s.n=i+1;s.day=d.id;s.ll=ll(s);s.mc=color(s,d.id);s.gk=s.v||('x'+d.id+i)});
-  d.stops.forEach(function(s,i){
-    var nx=d.stops[i+1];
-    if(s.next&&nx){
-      if(s.ll&&nx.ll){var kmv=km(s.ll,nx.ll);s.next.km=kmv}
-      if(s.next.calc&&s.next.km!=null&&!s.next.min){s.next.min='約 '+Math.max(1,Math.round(s.next.km*1.3/0.08))+' 分（由座標估算）'}
-    }
+function colorOf(s,dayId){return s.type==='attraction'?(DAYC[dayId]||'#005EC4'):TYPES[s.type].c}
+
+/* ---------------- stops derived from the main plan + the choices made in the day panels ---------------- */
+var DAYS=[];
+function rebuildDays(){
+  var TR=window.TRIP,PLN=window.SGPLAN;DAYS.length=0;
+  TR.days.forEach(function(d){
+    var raw=[];
+    if(START[d.id])raw.push(START[d.id]);
+    d.items.forEach(function(it){
+      var key=it.id;if(it.slot){var i=PLN.shown(it);if(!i.opt)return;key=it.id+':'+i.opt.id}
+      var p=PL[key];if(!p)return;
+      [].concat(p).forEach(function(x){var c={};for(var k in x)c[k]=x[k];if(!c.t)c.t=it.t;if(!c.act)c.act=it.text||'';raw.push(c)});
+    });
+    var code=d.code,stops=raw.map(function(s,i){
+      var o={t:s.t,name:s.n,type:s.ty,v:s.v,q:s.q,veg:s.veg,vtag:s.vtag,cash:s.cash,must:s.must,act:s.act||'',stay:s.stay||'',food:s.food,n:i+1,day:code,leg:s.leg};
+      o.ll=o.v&&V[o.v]?V[o.v].ll:null;o.mc=colorOf(o,code);o.gk=o.v||('x'+code+i);return o});
+    stops.forEach(function(s,i){
+      var nx=stops[i+1];if(!nx){s.next=null;return}
+      var lg=s.leg||L('mrt',nx.name,LATER);var n={mode:lg.mode,to:lg.to&&lg.to!=='下一站'?lg.to:nx.name,min:lg.min,cost:lg.cost,alt:lg.alt};
+      if(s.ll&&nx.ll){n.km=km(s.ll,nx.ll);if(n.mode==='walk'&&!n.min)n.min='約 '+Math.max(1,Math.round(n.km*1.3/0.08))+' 分（由座標估算）'}
+      s.next=n});
+    DAYS.push({id:code,name:d.name,date:d.date,tag:d.tag,stops:stops});
   });
-});
+}
+rebuildDays();
 
 /* ---------------- state + projection ---------------- */
 var S={cx:.5,cy:.5,z:11,w:0,h:0,day:'ov',sel:null,tileOk:0,tileFail:0,moved:false,me:null,inited:false,anim:0};
@@ -1834,7 +1821,7 @@ function buildMarkers(){
     OVERVIEW.forEach(function(o,i){
       var p=V[o.v].ll,b=el('button','mk small'+(TYPES[o.type].sq?' sq':'')+(o.must?' must':''));b.type='button';
       b.setAttribute('aria-label',o.label+'（'+o.days+'）');
-      var dot=el('span','dot');b.style.setProperty('--mc',o.type==='attraction'?DAYC[o.dc]:TYPES[o.type].c);b.appendChild(dot);
+      var dot=el('span','dot');if(o.alt)b.classList.add('alt');b.style.setProperty('--mc',o.type==='attraction'?DAYC[o.dc]:TYPES[o.type].c);b.appendChild(dot);
       if(o.must){var bd=el('span','bd must','★');b.appendChild(bd)}
       var lab=el('span','lab',o.label);b.appendChild(lab);
       b.addEventListener('click',function(){if(S.moved)return;openOverview(i)});
@@ -1888,7 +1875,7 @@ function showPopStop(i){
   if(s.next){var t=MODE[s.next.mode]+' → '+s.next.to+(s.next.min?'，'+s.next.min:'')+(s.next.km!=null?'（直線 '+s.next.km.toFixed(1)+' km）':'');dlRow(dl,'下一段',t);dlRow(dl,'費用',s.next.cost);dlRow(dl,'備案',s.next.alt)}
   if(s.food){dlRow(dl,'葷食',s.food.n);dlRow(dl,'素食',s.food.v)}
   pop.appendChild(dl);
-  var tags=el('div','nv');if(s.veg)tags.appendChild(el('span','v','附近有素食'));if(s.cash)tags.appendChild(el('span','m','多數只收現金'));if(s.must)tags.appendChild(el('span','m','必去'));
+  var tags=el('div','nv');if(s.veg)tags.appendChild(el('span','v',s.vtag||'附近有素食'));if(s.cash)tags.appendChild(el('span','m','多數只收現金'));if(s.must)tags.appendChild(el('span','m','必去'));
   if(tags.firstChild)pop.appendChild(tags);
   var same=(groups[s.gk]||[]).filter(function(k){return k!==i});
   if(same.length){var p=el('p','same','同一地點也是：');same.forEach(function(k){var b=el('button',null,'第 '+d.stops[k].n+' 站 '+d.stops[k].t);b.type='button';b.addEventListener('click',function(){select(k,{center:false,pop:true,scroll:true})});p.appendChild(b)});pop.appendChild(p)}
@@ -1902,7 +1889,7 @@ function openOverview(i){
   var pb=el('div','pb'),a1=el('a',null,'在 Google Maps 開啟'),a2=el('a','alt','路線導航');a1.href=gmPlace(o.q);a2.href=gmDir(o.q,'transit');
   [a1,a2].forEach(function(a){a.target='_blank';a.rel='noopener'});pb.appendChild(a1);pb.appendChild(a2);pop.appendChild(pb);
   var dl=el('dl');dlRow(dl,'位置',V[o.v].src);pop.appendChild(dl);
-  var tags=el('div','nv');if(o.must)tags.appendChild(el('span','m','必去'));if(tags.firstChild)pop.appendChild(tags);
+  var tags=el('div','nv');if(o.must)tags.appendChild(el('span','m','必去'));if(o.alt)tags.appendChild(el('span','v','備選，不在主計畫裡'));if(tags.firstChild)pop.appendChild(tags);
   pop.hidden=false;popFor={kind:'ov',i:i,ll:V[o.v].ll};
   var p=V[o.v].ll,tz=Math.max(S.z,13.5);animTo(mx(p[1]),my(p[0])-0.2*S.h/Wd(tz),tz,380);layoutMarks();
 }
@@ -2074,6 +2061,7 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 /* ---------------- init ---------------- */
 buildTabs();buildCards();buildMarkers();legendRender();setHeight();
 if(panel.classList.contains('on')){document.body.classList.add('map-on');measure()}
+document.addEventListener('sg:dec',function(){rebuildDays();if(S.day!=='ov'){pop.hidden=true;popFor=null;S.sel=null;buildCards();buildMarkers();legendRender();schedule()}});
 window.SGMAP={setDay:setDay,state:S,days:DAYS,V:V,select:select,gmPlace:gmPlace,gmDir:gmDir,gmDay:gmDay,markers:function(){return marks}};
 })();
 
