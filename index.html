@@ -455,7 +455,7 @@ ul.pm.dot li::before{content:"•";position:absolute;left:4px;color:var(--muted)
   </dl>
 <h2 class="sec">四天怎麼走</h2>
   <div class="daylist">
-    <a href="#d1" class="L1"><span class="badge">D1</span><span><b>10/8 週四 抵達日</b><span class="t2">19:00 落地，入境後先到 Jewel，目標看 21:00 雨漩渦燈光音樂秀，再去住宿。</span></span></a>
+    <a href="#d1" class="L1"><span class="badge">D1</span><span><b>10/8 週四 抵達日</b><span class="t2">19:00 落地，入境後看 Jewel 21:00 雨漩渦秀；入住後兄弟組可選 BBQ Box 宵夜。</span></span></a>
     <a href="#d2" class="L2"><span class="badge">D2</span><span><b>10/9 週五 Chinatown、觀音堂、傍晚河岸</b><span class="t2">亞坤早餐、佛牙寺、觀音堂＋興化素食午餐；14:00–17:00 留白；傍晚 Clarke Quay、Merlion、Lau Pa Sat。</span></span></a>
     <a href="#d3" class="L3"><span class="badge">D3</span><span><b>10/10 週六 Kampong Glam、午後避暑</b><span class="t2">喜園早餐、Haji Lane；中午去 Sentosa 海洋館吹冷氣；16:30 之後留白。</span></span></a>
     <a href="#d4" class="L4"><span class="badge">D4</span><span><b>10/11 週日 回程</b><span class="t2">08:30 MRT 去 Changi T3 報到；11:45 起飛。Jewel 已改排 D1。</span></span></a>
@@ -1233,9 +1233,18 @@ days:[
    plus:['不用 app、不用網路'],minus:['附加費疊加，實際價格以跳表為準'],more:['排隊時間未查證']}
   ]},
   {id:'d1-in',t:'約 23:00',title:'放行李、入住',st:'confirmed',anchor:true,short:'住宿',area:'stay',
-  text:'兄弟組：Hotel 81 (Premier) Star，31 Lor 18 Geylang, Singapore 398828，10/8 入住、10/11 退房。情侶組：ibis budget Imperial，28 Penhas Rd, Singapore 208187（訂房網站寫從 Lavender 站走路約 5 分鐘），你說先放行李；入住時間第三方寫 15:00，沒有向飯店確認。',
-  maps:[HA,HB]},
- ]},
+   text:'兄弟組：Hotel 81 (Premier) Star，31 Lor 18 Geylang, Singapore 398828，10/8 入住、10/11 退房。情侶組：ibis budget Imperial，28 Penhas Rd, Singapore 208187（訂房網站寫從 Lavender 站走路約 5 分鐘），你說先放行李；入住時間第三方寫 15:00，沒有向飯店確認。',
+   maps:[HA,HB]},
+  {slot:true,id:'d1-supper',t:'約 23:15–00:30',label:'兄弟組宵夜（可選）',dl:'兄弟組宵夜',st:'open',draft:'a',
+   opts:[
+   {id:'a',from:'n',title:'兄弟組：BBQ Box（Geylang）',chip:'BBQ Box',short:'Hotel 81 入住後去同區吃宵夜；情侶組可先回房休息',area:'stay',
+    time:'約 45–60 分鐘；週四營業時間資料列至 02:00（出發前再確認）',walk:'從 Hotel 81 步行或短程車，依 Google Maps 即時路線',move:'Hotel 81（Lorong 18 Geylang）→ BBQ Box Geylang（182 Geylang Road）',cost:'依點餐',wx:'室內',
+    plus:['店在 Geylang，和兄弟組住宿安排在同一區，入住後再去最順','只排兄弟組，不影響情侶組休息'],minus:['Jewel、交通或入住若延誤，就視體力和當晚營業狀況取消','蔬菜串燒／素食需求請向店家確認'],
+    more:['地址：182 Geylang Road, Singapore 389252','店家門市頁列有 Geylang 分店；週四營業至凌晨 2 點為第三方資料，時間可能變動。'],
+    maps:[['Google Maps：BBQ Box Geylang','BBQ Box Geylang, 182 Geylang Road, Singapore 389252'],['BBQ Box 門市資訊','https://bbqboxsg.evolut.com.sg/stores'],['BBQ Box Geylang 營業時間參考','https://www.waze.com/en-AU/live-map/directions/sg/singapore/bbq-box-%28geylang%29?to=place.ChIJQ7DgIzQY2jERRNXMMTxCJRw']]},
+   {id:'b',from:'c',title:'入住後直接休息',chip:'回房休息',short:'如果抵達太晚或累了，就不特別出門',area:'stay',time:'—',walk:'無',move:'Hotel 81 入住後休息',cost:'—',wx:'—',plus:['抵達日保留體力'],minus:['這晚先不吃 BBQ Box']}
+   ]},
+  ]},
 /* ===================================================== D2 */
 {id:'d2',code:'D2',date:'10/9 週五',name:'Chinatown／Marina Bay',zh:'Chinatown 與傍晚河岸',line:'dt',
  tag:'Chinatown 寺廟、Bugis 素食午餐，中午躲冷氣，傍晚走河岸',
@@ -1606,7 +1615,8 @@ var BASE={
  botanic:{n:'Singapore Botanic Gardens',ty:'attraction',v:'botanic',q:'Singapore Botanic Gardens Tanglin Gate, Singapore',act:'從 Tanglin Gate 進園，天鵝湖、Bandstand（免費）。白天最熱，比較適合 16:30 之後。'},
  herbivore:{n:'Herbivore（Fortune Centre）',ty:'food',veg:1,v:null,q:'Herbivore, Fortune Centre, 190 Middle Rd #01-13/14, Singapore 188979',act:'全素晚餐，每人約 S$25；第三方寫營業到約 20:30。週六晚上建議先訂位。精確座標未驗證，所以地圖上不標點。',food:{n:'葷食的兩位這一餐配合吃素（只有這一餐）',v:'全店素食，vegan 選擇多'}},
  havefun:{n:'HaveFun Live Show',ty:'attraction',must:1,v:'bugisplus',q:'HaveFun Live Show, 201 Victoria St #07-01, Singapore 188067',act:'Bugis+ 7 樓。建議訂位；週一到週四免最低消費，週五、六 S$200++；要穿包鞋和長褲。',food:{n:'食物與素食選項查不到資料，需現場確認',v:'晚餐先吃飽再進場'}},
- jewel:{n:'Jewel Changi Airport',ty:'attraction',v:'jewel',q:'Jewel Changi Airport, 78 Airport Boulevard, Singapore 819666',act:'看 Rain Vortex 室內瀑布。Jewel 在管制區外，要在報到、出境前逛完（至少 1.5 小時，先前研究）。'}
+  jewel:{n:'Jewel Changi Airport',ty:'attraction',v:'jewel',q:'Jewel Changi Airport, 78 Airport Boulevard, Singapore 819666',act:'看 Rain Vortex 室內瀑布。Jewel 在管制區外，要在報到、出境前逛完（至少 1.5 小時，先前研究）。'},
+  bbqbox:{n:'BBQ Box（Geylang）',ty:'food',v:null,q:'BBQ Box Geylang, 182 Geylang Road, Singapore 389252',act:'兄弟組宵夜選項。位於 Geylang，適合入住 Hotel 81 後再前往；週四營業時間需出發當晚再確認。'}
 };
 function P(k,o){var r={};for(var a in BASE[k])r[a]=BASE[k][a];if(o)for(var b in o)r[b]=o[b];return r}
 function L(mode,to,min,cost,alt){return{mode:mode,to:to,min:min,cost:cost,alt:alt}}
@@ -1615,6 +1625,7 @@ var PL={
   'd1-land':P('changi',{act:'SQ877 落地 T2，先入境、領行李，再步行前往 Jewel。',stay:'約 70 分鐘'}),
   'd1-jewel':P('jewel',{act:'入境後從 T2 步行到 Jewel；目標看 21:00 雨漩渦燈光音樂秀，若入境延誤可能錯過。',stay:'約 20:20–21:15',leg:L('walk','Jewel（T2 連通步道）','約 5–10 分鐘（官方指引）')}),
   'd1-in':[P('hotelA',{act:'放行李、入住（10/8 入住，10/11 退房）。',leg:L('mrt','ibis budget（Lavender）','EW 線 2 站（Aljunied → Kallang → Lavender）',null,'兩組搭同一班車會先到 Aljunied，再到 Lavender')}),P('ibis')],
+  'd1-supper:a':P('bbqbox',{t:'約 23:15',act:'兄弟組入住 Hotel 81 後可到 Geylang Road 吃宵夜；情侶組可在 ibis budget 休息。若抵達延誤或疲累，取消此選項。',stay:'約 45–60 分鐘',leg:L('walk','BBQ Box Geylang','同在 Geylang 一帶；用 Google Maps 確認步行路線')}),
  'd2-bf:a':P('yakun',{leg:L('walk','Buddha Tooth Relic Temple','用 Google Maps 查步行時間（同在 Chinatown 一帶）')}),
  'd2-bf:b':null,
  'd2-ct':P('btrt',{leg:L('mrt','觀音堂佛祖廟','路線與時間用 Google Maps 查（DT 線可到 Bugis）')}),
