@@ -148,3 +148,49 @@ test('a timed sub-stop sends the traveler to the fireworks, not back to the Luge
   assert.equal(s.current.destination, null);
   assert.match(s.current.title, /已過預定時段/);
 });
+
+test('Day 4 defaults to 08:15 Grab/taxi and keeps MRT as an explicitly chosen backup', () => {
+  const day = C.buildDays(trip, choose(), [])[3];
+  const ride = day.entries.find(e => e.id === 'd4-go');
+  assert.equal(ride.option.id, 'b');
+  assert.match(ride.title, /Grab／計程車/);
+  assert.equal(ride.start, 495);
+  assert.equal(day.entries.find(e => e.id === 'd4-out').end, 495);
+  assert.equal(day.entries.find(e => e.id === 'd4-arr').start, 525);
+  assert.match(C.departure(ride, C.legForEntry(day, ride.id)), /08:15/);
+  const arrival = day.entries.find(e => e.id === 'd4-arr');
+  const hotels={index:0,stops:[],name:'各自住宿'},airport={index:2,stops:[],name:'Changi T3'};
+  assert.match(C.departure(arrival,C.routeLeg(day,hotels,airport)),/08:15/);
+  assert.equal(C.legForEntry(day, ride.id).mode, 'grab');
+  assert.match(state('2026-10-11T00:10:00Z').next.title, /Grab/);
+  assert.match(state('2026-10-11T00:20:00Z', {'d4-go':'a'}).next.title, /MRT 備援/);
+  const backup=state('2026-10-11T01:00:00Z', {'d4-go':'a'});
+  assert.equal(backup.current.id,'d4-go');
+  assert.equal(backup.next.id,'d4-arr');
+  assert.equal(backup.next.displayTime,'09:30–09:45');
+  assert.equal(backup.day.entries.find(e=>e.id==='d4-ck').start,585);
+  assert.ok(!/主計畫.{0,10}08:30 搭 MRT|Day 2 早上買 Gardens/.test(html));
+});
+
+test('numbered map hotel origins stay one parallel stop when rebuilding companion models', () => {
+  const hotels = [
+    {name:'Hotel 81（兄弟組）',q:'Hotel 81',type:'hotel',parallel:true,branch:0,n:1,act:'兄弟組出發；夫妻組各自出發'},
+    {name:'ibis（夫妻組）',q:'ibis',type:'hotel',parallel:true,branch:1,n:1,act:'兄弟組出發；夫妻組各自出發'}
+  ];
+  const day = C.buildDays(trip, choose(), [{id:'D2',stops:hotels}])[1];
+  assert.equal(day.route.filter(s=>s.index===-1).length,1);
+  assert.equal(day.route[0].parallel,true);
+  assert.equal(day.route[0].stops.length,2);
+});
+
+test('Rain Mode focuses on current/upcoming activities and excludes finished outdoor slots', () => {
+  const day=C.buildDays(trip,choose(),[])[2];
+  const recs=C.rainRecommendations(day,()=>[]);
+  const live={kind:'during',day,clock:'17:00',current:day.entries.find(e=>e.id==='d3-eve')};
+  const focused=C.focusRain(day,recs,live);
+  assert.match(focused.title,/Oceanarium/);
+  assert.match(focused.rejoin,/Beach Station/);
+  assert.equal(focused.original.id,'d3-eve');
+  assert.equal(C.focusRain(day,recs,{kind:'during',day,clock:'23:30',current:null}),null);
+  assert.ok(C.focusRain(day,recs,{kind:'before'}));
+});

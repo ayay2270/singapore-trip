@@ -34,3 +34,40 @@
   .tc-rain{padding:12px 9px}
 }
 @media print{.tc-status,.tc-day{break-inside:avoid}.tc-action,.tc-place-link{display:none}.tc-rain{background:none}}
+/* Practical refinements within the original MRT palette and shapes. */
+.tc-quick{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.tc-quick .tc-action{flex:1 1 auto}
+.tc-disclosure{border-top:2px solid var(--ink);margin:16px 0;padding-top:6px}
+.tc-disclosure>summary,.tc-notice>summary{min-height:44px;padding:10px 0;font-weight:700;cursor:pointer;line-height:1.5}
+.tc-notice{margin:8px 0}
+.tc-stop-link{display:block;width:100%;min-height:44px;border:0;background:none;color:var(--ink);font:700 16px/1.5 "Noto Sans TC",system-ui,sans-serif;text-align:left;padding:6px 0;cursor:pointer;overflow-wrap:anywhere}
+.tc-stop-link:focus-visible{outline:2px solid var(--lnr);outline-offset:2px}
+.tc-route h4{min-height:44px;display:flex;align-items:center;margin:0}
+.tc-leg{padding-top:0;margin:0 0 6px}
+.tc-leg p:first-child{font-size:13px;margin:0}
+.tc-current-day{box-shadow:0 4px 0 var(--ink)}
+.nav button{flex:none;min-height:44px;padding:0 16px;border:2px solid var(--ink);border-radius:999px;background:var(--surface);color:var(--ink);font:700 15px/1 "Noto Sans TC",sans-serif;cursor:pointer}
+.tc-more-nav{position:absolute;right:max(12px,env(safe-area-inset-right));top:100%;padding:8px;background:var(--paper);border:2px solid var(--ink);display:grid;grid-template-columns:repeat(3,auto);gap:8px;box-shadow:0 3px 0 var(--ink)}
+.tc-more-nav[hidden]{display:none}
+#accommodation,#flights{scroll-margin-top:85px}
+.tc-rain{scroll-margin-top:80px}
+.tc-offline{font-size:13px;color:var(--muted);line-height:1.6}
+@media(max-width:600px){
+  #home .hero{padding:14px}
+  #home .hero h1{font-size:34px;margin-bottom:8px}
+  #home .hero h1 span{font-size:18px}
+  #home .hero .lead{font-size:14px;line-height:1.6;margin-bottom:12px}
+  #home .hero .strip{margin-top:12px}
+  .nav .row{gap:4px;padding:8px max(8px,env(safe-area-inset-left));justify-content:space-between;overflow:visible}
+  .nav .row>a,.nav .row>button{font-size:13px;padding:0 8px}
+  .nav .row>a.dy{min-width:40px;padding:0 5px}
+  .tc-status .tc-actions{gap:6px}
+  .tc-status .tc-actions>.tc-action{font-size:13px;padding:8px;flex:1 1 auto}
+}
+@media print{
+  .tc-quick,.tc-more-nav{display:none!important}
+  .tc-disclosure>summary{font-weight:800}
+  .tc-disclosure>*{display:block!important}
+  .tc-stop-link{color:var(--ink);padding:0}
+  .tc-day{break-inside:auto}
+}

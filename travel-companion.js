@@ -11,6 +11,7 @@
     var doc = win.document, T = win.TRIP, P = win.SGPLAN, M = win.SGMAP;
     if (!T || !P || !M) return;
     var rain = {}, lastClock = '';
+    if (M.syncRoutes) M.syncRoutes(C);
     function node(tag, cls, text) {
       var el = doc.createElement(tag);
       if (cls) el.className = cls;
@@ -37,7 +38,14 @@
       var host = doc.getElementById('travel-status'), state = C.status(T, P.shown, new Date(), M.days);
       var clockKey = JSON.stringify(state);
       if (clockKey === lastClock) return;
+      var wasExpanded = host.querySelector('details') && host.querySelector('details').open;
       lastClock = clockKey; host.replaceChildren();
+      doc.querySelectorAll('.nav .dy').forEach(function (a) {
+        var today = state.kind === 'during' && a.getAttribute('href') === '#' + state.day.id;
+        a.classList.toggle('tc-current-day', today);
+        if (today) a.setAttribute('aria-label', state.day.code + ' 今天');
+        else a.removeAttribute('aria-label');
+      });
       var top = node('div', 'tc-top');
       append(top, node('h2', '', state.kind === 'before' ? '旅行即將開始' :
         state.kind === 'after' ? '新加坡旅行已完成' : '今日 · 第 ' + (state.day.index + 1) + ' 天'),
@@ -55,16 +63,32 @@
         if (state.carry) host.appendChild(node('p', 'tc-context', '前一晚延續：' + state.carry.title + '（' + state.carry.dayCode + '）'));
         if (state.current) host.appendChild(node('p', 'tc-context', '目前時段：' + state.current.title));
         var target = state.next || state.current;
-        if (state.next) host.appendChild(node('p', 'tc-destination', '下一站 → ' + state.next.title));
+        if (state.next) {
+          var nextName = state.next.title;
+          if (state.next.source.transport) {
+            var nextPlace = state.day.route.find(function (s) { return s.index > state.next.index; });
+            nextName = state.next.destinations ? '各自住宿（兩組分流）' : nextPlace ? nextPlace.name : nextName;
+          }
+          host.appendChild(node('p', 'tc-destination', '下一站 → ' + nextName));
+        }
         else host.appendChild(node('p', 'tc-destination', state.current ? '按目前行程進行' : '今日已排定時段結束'));
         if (state.next) {
-          host.appendChild(node('p', '', '行程時間：' + state.next.displayTime));
+          if (!state.next.source.transport) host.appendChild(node('p', '', '行程時間：' + state.next.displayTime));
           var leg = C.legForEntry(state.day, state.next.id, state.next.destination);
           var departure = C.departure(state.next, leg);
-          host.appendChild(node('p', 'tc-context', departure + '；' + C.legLabel(leg)));
+          host.appendChild(node('p', '', departure));
+          host.appendChild(node('p', 'tc-context', '交通：' + C.legLabel(leg)));
         }
-        if (state.pending.length) host.appendChild(node('p', 'tc-context', '尚有 ' + state.pending.length + ' 個時段沒有確切時間，請查看今日行程。'));
-        state.day.warnings.forEach(function (warning) { host.appendChild(node('p', 'tc-context', warning)); });
+        var issues = state.day.warnings.concat(state.day.entries.filter(function (e) { return e.start == null || e.unresolved; })
+          .map(function (e) { return e.title + '：' + (e.unresolved ? '地點尚未選定' : '時間尚未確認'); }));
+        if (issues.length) {
+          var notice = node('details', 'tc-notice');
+          notice.open = !!wasExpanded;
+          notice.appendChild(node('summary', '', '⚠ ' + issues.length + ' 項需確認'));
+          issues.forEach(function (issue) { notice.appendChild(node('p', 'tc-context', issue)); });
+          notice.appendChild(link('到今日行程確認', '#' + state.day.id, 'tc-place-link'));
+          host.appendChild(notice);
+        }
         if (target && target.unresolved) {
           append(host, node('p', 'tc-context', '這個時段尚未選定地點。'));
           actions.appendChild(button('選擇這個時段', 'item', state.day.id, target.id));
@@ -86,7 +110,9 @@
     function renderDay(d) {
       var root = doc.querySelector('#' + d.id + ' .dayroot');
       if (!root) return;
-      var old = root.querySelector('.tc-day'); if (old) old.remove();
+      var old = root.querySelector('.tc-day');
+      var expanded = old ? [].map.call(old.querySelectorAll('details'), function (detail) { return detail.open; }) : [];
+      if (old) old.remove();
       var section = node('section', 'tc-day');
       section.setAttribute('aria-label', '每日路線與下雨建議');
       var heading = node('div', 'tc-top');
@@ -94,9 +120,13 @@
       toggle.id = 'tc-rain-toggle-' + d.id;
       toggle.setAttribute('aria-expanded', String(!!rain[d.id]));
       toggle.setAttribute('aria-controls', 'tc-rain-' + d.id);
-      append(heading, node('h3', '', '每日路線'), toggle);
-      append(section, heading, node('p', 'tc-context', '依目前主計畫與你選的備案同步；移動時間未查證時會註明。'));
-      d.warnings.forEach(function (warning) { section.appendChild(node('p', 'tc-context', warning)); });
+      append(heading, node('h3', '', '今日路線'), toggle);
+      append(section, heading, node('p', 'tc-context', '依主計畫與已選 OPTION 同步；點站名查看詳細行程。'));
+      if (d.warnings.length) {
+        var warnings = node('details', 'tc-notice'); warnings.appendChild(node('summary', '', '⚠ ' + d.warnings.length + ' 項時間提醒'));
+        d.warnings.forEach(function (warning) { warnings.appendChild(node('p', 'tc-context', warning)); });
+        section.appendChild(warnings);
+      }
       if (rain[d.id]) section.appendChild(rainLayer(d));
       var list = node('ol', 'tc-route');
       if (!d.route.length) section.appendChild(node('p', '', '尚無可顯示的地點，請先查看這一天的行程選項。'));
@@ -104,62 +134,69 @@
         var li = node('li', 'tc-route-stop');
         append(li, node('span', 'tc-number', String(i + 1)), node('div', 'tc-route-place'));
         var place = li.lastChild;
-        append(place, node('span', 'tc-context', stop.time || '時段尚未確認'), node('h4', '', stop.name));
-        if (stop.context) place.appendChild(node('p', 'tc-context', stop.context));
+        if (stop.itemId) {
+          var nameButton = button(stop.name, 'item', d.id, stop.itemId); nameButton.className = 'tc-stop-link'; place.appendChild(nameButton);
+        } else place.appendChild(node('h4', '', stop.name));
         if (stop.parallel) {
-          place.appendChild(node('p', 'tc-context', '兩組各自行動，非依序走訪兩家飯店。'));
-          stop.stops.forEach(function (s) { place.appendChild(link(s.name, M.gmPlace(s.q), 'tc-place-link')); });
-        } else if (stop.q) place.appendChild(link('查看地點', M.gmPlace(stop.q), 'tc-place-link'));
-        else place.appendChild(node('p', 'tc-context', '地點尚未確認；請在下方選擇備案。'));
-        if (stop.itemId) place.appendChild(button('查看這個時段', 'item', d.id, stop.itemId));
+          place.appendChild(node('p', 'tc-context', 'Hotel 81 · ibis budget（各自行動）'));
+        } else if (!stop.q) place.appendChild(node('p', 'tc-context', '地點尚未確認'));
         var next = d.route[i + 1];
         if (next) {
           var leg = C.routeLeg(d, stop, next);
           var move = node('div', 'tc-leg');
-          append(move, node('p', '', C.legLabel(leg)), node('p', 'tc-context', leg.detail));
-          if (next.q) {
-            if (stop.parallel) stop.stops.forEach(function (origin) {
-              move.appendChild(link('從 ' + origin.name + ' 查看路線', C.directions(next.q, leg.mode, origin.q), 'tc-place-link'));
-            });
-            else move.appendChild(link('查看即時路線', C.directions(next.q, leg.mode, stop.q), 'tc-place-link'));
-          }
+          append(move, node('p', '', '↓ ' + C.legLabel(leg)));
           li.appendChild(move);
         }
         list.appendChild(li);
       });
       section.appendChild(list);
-      var mapLink = link('在地圖看這一天', '#map', 'tc-action mapjump');
+      var mapLink = link('在地圖看今日路線', '#map', 'tc-action mapjump');
       mapLink.dataset.day = d.code;
       section.appendChild(mapLink);
       var first = root.querySelector('.stop');
       root.insertBefore(section, first || root.lastChild);
+      section.querySelectorAll('details').forEach(function (detail, i) { detail.open = !!expanded[i]; });
     }
     function rainLayer(d) {
       var layer = node('section', 'tc-rain');
       layer.id = 'tc-rain-' + d.id;
       layer.setAttribute('aria-label', '下雨模式建議');
-      append(layer, node('h4', '', '下雨模式已開啟'),
-        node('p', 'tc-context', '以下是既有行程的替代建議；開關此模式不會更改你已選的行程。'));
+      append(layer, node('h4', '', '☔ 下雨模式'));
+      layer.appendChild(link('🌧 查看新加坡即時 2 小時天氣', 'https://www.weather.gov.sg/weather-forecast-2hrnowcast-2/', 'tc-place-link'));
       var recommendations = C.rainRecommendations(d, M.placesFor);
+      var live = C.status(T, P.shown, new Date(), M.days);
+      var focused = C.focusRain(d, recommendations, live);
       if (!recommendations.length) {
         append(layer, node('p', '', '今天主要是室內活動或交通。先在目前有遮蔽的地方等候，戶外接駁仍要留意雨勢。'),
           node('p', 'tc-context', '沒有新增另一份行程；可在下方既有交通備選比較 MRT、Grab 等方案。'));
       }
-      recommendations.forEach(function (r) {
+      function blockFor(r, compact) {
         var block = node('div', 'tc-rain-option');
-        append(block, node('p', 'tc-context', '原行程 · ' + r.original.displayTime),
-          node('p', '', r.original.title), node('p', 'tc-context', '室內替代方案'),
-          node('h4', '', r.title), node('p', '', r.note),
-          node('p', 'tc-context', '前往方式：' + r.move),
-          node('p', 'tc-context', '雨停後：' + r.rejoin));
+        append(block, node('p', 'tc-context', '目前／接下來受影響 · ' + r.original.displayTime),
+          node('h4', '', r.original.title), node('p', 'tc-context', '建議替代 · 室內／遮蔽處'),
+          node('h4', '', r.title));
         if (r.destination) block.appendChild(link('開始導航', C.directions(r.destination, r.mode)));
-        if (r.slotId) block.appendChild(button('查看這個時段的備選', 'item', d.id, r.slotId));
+        var extra = compact ? node('details', 'tc-notice') : block;
+        if (compact) extra.appendChild(node('summary', '', '其他選項／入場提醒'));
+        append(extra, node('p', '', r.note), node('p', 'tc-context', '前往方式：' + r.move));
+        if (r.slotId) extra.appendChild(button('查看這個時段的備選', 'item', d.id, r.slotId));
         var official = (r.original.option && r.original.option.maps || []).filter(function (m) {
           return /^https:/.test(m[1]) && !/google|waze/.test(m[1]);
         });
-        official.forEach(function (m) { block.appendChild(link('查看 ' + m[0], m[1], 'tc-place-link')); });
-        layer.appendChild(block);
-      });
+        official.forEach(function (m) { extra.appendChild(link('查看 ' + m[0], m[1], 'tc-place-link')); });
+        if (compact) block.appendChild(extra);
+        block.appendChild(node('p', 'tc-context', '雨停後：' + r.rejoin));
+        return block;
+      }
+      if (focused) {
+        layer.appendChild(blockFor(focused, true));
+        if (/再次入場/.test(focused.note)) layer.appendChild(node('p', 'tc-context', '已去過海洋館：再次入場須確認；否則先留在目前遮蔽處。'));
+      }
+      else if (recommendations.length) layer.appendChild(node('p', '', '接下來沒有已排定的戶外時段；先留在有遮蔽的地方。'));
+      if (recommendations.length) {
+        var all = node('details', 'tc-disclosure'); all.appendChild(node('summary', '', '查看今日全部避雨方案'));
+        recommendations.forEach(function (r) { all.appendChild(blockFor(r)); }); layer.appendChild(all);
+      }
       append(layer, node('p', 'tc-context', '營業、門票、交通與戶外營運狀況請即時確認，雷雨時不要勉強走戶外段。'),
         button('返回原行程', 'rain', d.id));
       return layer;
@@ -182,6 +219,10 @@
       if (action === 'rain' || action === 'rain-link') {
         rain[day] = action === 'rain-link' || !rain[day];
         renderDays();
+        if (rain[day]) win.requestAnimationFrame(function () {
+          var layer = doc.getElementById('tc-rain-' + day);
+          if (layer) layer.scrollIntoView({ block: 'start' });
+        });
         if (action === 'rain') doc.getElementById('tc-rain-toggle-' + day).focus({ preventScroll: true });
       }
     });
@@ -191,10 +232,34 @@
       if (rain[id]) { rain[id] = false; renderDays(); doc.getElementById('tc-rain-toggle-' + id).focus({ preventScroll: true }); }
     });
     doc.addEventListener('sg:dec', function () { lastClock = ''; refreshToday(); renderDays(); });
+    doc.getElementById('moreBtn').addEventListener('click', function () {
+      var menu = doc.getElementById('moreNav'); menu.hidden = !menu.hidden;
+      this.setAttribute('aria-expanded', String(!menu.hidden));
+    });
+    doc.addEventListener('click', function (event) {
+      var quick = event.target.closest('[data-home-target]');
+      if (quick) {
+        doc.getElementById('home-more').open = true;
+        win.requestAnimationFrame(function () { doc.getElementById(quick.dataset.homeTarget).scrollIntoView({ block: 'start' }); });
+      }
+      if (event.target.closest('.nav a')) closeMore();
+      if (!event.target.closest('.nav')) closeMore();
+    });
+    function closeMore() { doc.getElementById('moreNav').hidden = true; doc.getElementById('moreBtn').setAttribute('aria-expanded', 'false'); }
+    doc.addEventListener('keydown', function (event) { if (event.key === 'Escape') closeMore(); });
     doc.addEventListener('visibilitychange', function () { if (!doc.hidden) refreshToday(); });
     win.addEventListener('focus', refreshToday);
     refreshToday(); renderDays();
-    win.setInterval(refreshToday, 30000);
+    win.setInterval(function () { refreshToday(); if (Object.keys(rain).some(function (id) { return rain[id]; })) renderDays(); }, 30000);
+    var offlineNote = node('p', 'tc-offline'); offlineNote.setAttribute('role', 'status');
+    doc.querySelector('.tc-quick').after(offlineNote);
+    C.registerOffline(win).then(function (registration) {
+      if (!registration) { offlineNote.textContent = '離線儲存不可用；目前仍可在線閱讀。'; return; }
+      offlineNote.textContent = '正在儲存離線指南…';
+      win.navigator.serviceWorker.ready.then(function () {
+        offlineNote.textContent = '指南已可離線閱讀；外部導航與地圖底圖需網路。';
+      }).catch(function () { offlineNote.textContent = '離線指南尚未儲存；請保持連線再開啟一次。'; });
+    });
   }
 }(typeof window === 'undefined' ? null : window, function () {
   'use strict';
@@ -244,6 +309,7 @@
       var entries = day.items.map(function (item, itemIndex) {
         var option = item.slot ? shown(item).opt : null;
         var title = item.slot ? option ? option.title : item.label : item.title;
+        if (item.optional) title = 'OPTION · ' + title;
         var time = item.t, timing = range(time);
         if (option && /^\s*(?:約\s*)?\d{1,2}:\d{2}\s*[–-]\s*\d{1,2}:\d{2}/.test(option.time || '')) {
           time = option.time; timing = range(time);
@@ -262,6 +328,14 @@
           unresolved: !!item.slot && !option, places: places,
           destination: places.length ? places[0].q : fallback && fallback.q };
       });
+      var airportRide = entries.find(function (e) { return e.id === 'd4-go'; });
+      if (airportRide && airportRide.option && airportRide.option.arrival) {
+        var arrivalTime = range(airportRide.option.arrival);
+        entries.forEach(function (e) {
+          if (e.id === 'd4-arr') { e.start = arrivalTime.start; e.end = arrivalTime.end; e.displayTime = airportRide.option.arrival; }
+          if (e.id === 'd4-ck') { e.start = arrivalTime.end; e.displayTime = formatMinute(e.start) + '–11:15'; }
+        });
+      }
       entries.forEach(function (e) {
         var next = entries[e.index + 1];
         if (hotels.length > 1 && (!e.source.slot && e.area === 'stay' ||
@@ -277,7 +351,7 @@
         }
       });
       var route = [];
-      stops.filter(function (s) { return !s.itemId; }).forEach(function (s) {
+      stops.filter(function (s) { return !s.itemId && (!s.parallel || s.branch === 0); }).forEach(function (s) {
         var separate = /兄弟組/.test(s.act || '') && /夫妻組/.test(s.act || '');
         route.push({ name: separate ? '各自住宿出發（兩組分流）' : s.name, context: s.act,
           time: s.t, q: separate ? null : s.q, stops: separate && hotels.length > 1 ? hotels : [s],
@@ -289,11 +363,11 @@
         if (!points.length && !entry.source.transport) {
           var place = firstPlace(entry.option && entry.option.maps || entry.source.maps);
           if (place) points = [place];
-          else if (entry.source.slot) points = [{ name: entry.title, q: null }];
+          else if (entry.source.slot && entry.unresolved) points = [{ name: entry.title, q: null }];
         }
         var parallel = points.length > 1 && points.every(function (s) { return s.type === 'hotel'; });
         (parallel ? [points] : points.map(function (p) { return [p]; })).forEach(function (group) {
-          route.push({ name: parallel ? '各自住宿（兩組分流）' : group[0].name,
+          route.push({ name: parallel ? '各自住宿（兩組分流）' : (entry.source.optional && !/^OPTION/.test(group[0].name) ? 'OPTION · ' : '') + group[0].name,
             q: parallel ? null : group[0].q, time: parallel || group[0].t === entry.source.t ? entry.displayTime : group[0].t || entry.displayTime,
             itemId: entry.id, entry: entry, index: entry.index, parallel: parallel, stops: group });
         });
@@ -367,8 +441,41 @@
   }
   function departure(entry, leg) {
     if (entry.source.transport) return '行程預定 ' + formatMinute(entry.start) + ' 出發';
+    if (leg.departure != null) return '建議 ' + formatMinute(leg.departure) + ' 出發（沿用已選交通時段）';
     if (leg.duration != null && entry.start != null) return '建議 ' + formatMinute(entry.start - leg.duration) + ' 前出發（依移動時間上限推估，另留候車緩衝）';
     return '建議出發：依即時導航確認';
+  }
+  function registerOffline(win) {
+    if (!win.navigator || !win.navigator.serviceWorker || !win.isSecureContext) return Promise.resolve(null);
+    // Scope stays relative so a repository/subdirectory preview works too.
+    try { return win.navigator.serviceWorker.register('./service-worker.js', { scope: './', updateViaCache: 'none' }).catch(function () { return null; }); }
+    catch (e) { return Promise.resolve(null); }
+  }
+  function focusRain(day, recommendations, state) {
+    var during = state.kind === 'during' && state.day.id === day.id;
+    var minute = during ? minutes(state.clock) : null;
+    var r = recommendations.find(function (r) {
+      if (during && state.current && r.original.id === state.current.id && /已過預定時段/.test(state.current.title)) return false;
+      return minute == null || r.original.end == null || r.original.end > minute;
+    });
+    if (!r) return null;
+    r = Object.assign({}, r);
+    if (during && state.current && state.current.id === r.original.id) r.original = state.current;
+    if (r.original.area === 'sentosa' && !/Wings of Time.*已過|已過.*Wings of Time/.test(r.original.title)) {
+      var affected = r.original.places.find(function (p) { return p.shelter === 'outdoor' && /Luge/.test(p.name); });
+      if (affected && !/Wings of Time/.test(r.original.title.replace(/＋.*$/, ''))) r.original = Object.assign({}, r.original, { title: affected.name });
+    }
+    // Reuse today's existing Sentosa indoor stop rather than sending a wet traveler back across town.
+    if (r.original.area === 'sentosa') {
+      var indoorStop = day.entries.find(function (e) { return e.area === 'sentosa' && indoor(e.option); });
+      if (indoorStop) {
+        r.title = indoorStop.title; r.destination = indoorStop.destination; r.slotId = indoorStop.id;
+        r.note = '室內 · 沿用今日海洋館；若已參觀，先確認是否可再次入場，否則暫留目前遮蔽處。';
+        r.move = '交通方式／時間尚未確認，請查即時導航'; r.mode = 'unknown';
+        r.rejoin = '接回 Beach Station／Wings of Time；先確認 Luge 與演出的營運及剩餘時間。';
+      }
+    }
+    return r;
   }
   function directions(q, mode, origin) {
     var modes = { walk: 'walking', mrt: 'transit', bus: 'transit', grab: 'driving', taxi: 'driving' };
@@ -459,5 +566,6 @@
     return results;
   }
   return { singaporeTime: singaporeTime, range: range, buildDays: buildDays, status: status, routeLeg: routeLeg,
-    legForEntry: legForEntry, legLabel: legLabel, departure: departure, directions: directions, rainRecommendations: rainRecommendations };
+    legForEntry: legForEntry, legLabel: legLabel, departure: departure, directions: directions, rainRecommendations: rainRecommendations,
+    focusRain: focusRain, registerOffline: registerOffline };
 }));
