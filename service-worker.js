@@ -1,7 +1,7 @@
 'use strict';
 // Bump this version whenever the saved itinerary/app shell changes.
 const CACHE_PREFIX = 'sg-travel-shell-';
-const CACHE = CACHE_PREFIX + '2026-10-05-v1';
+const CACHE = CACHE_PREFIX + '2026-10-05-v2';
 const SHELL = ['index.html', 'travel-companion.css', 'travel-companion.js', 'manifest.json', 'icon-192.png', 'icon-512.png'];
 const urls = SHELL.map(file => new URL(file, self.registration.scope).href);
 self.addEventListener('install', event => {

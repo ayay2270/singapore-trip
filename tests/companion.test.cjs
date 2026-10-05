@@ -12,6 +12,33 @@ const trip = context.window.TRIP;
 const choose = (overrides = {}) => item => ({ opt: item.opts.find(o => o.id === (overrides[item.id] || item.draft)) || null });
 const state = (iso, overrides) => C.status(trip, choose(overrides), new Date(iso), []);
 
+test('tomorrow preparation follows actual temple entry, once on D1, not a mosque view on D3', () => {
+  const reminder = '👖 明天有寺廟行程：記得準備長褲＋包鞋';
+  for (const iso of ['2026-10-07T16:00:00Z', '2026-10-08T12:00:00Z', '2026-10-08T15:59:59Z']) {
+    assert.deepEqual(state(iso).tomorrowReminders, [reminder]);
+  }
+  for (const iso of ['2026-10-08T16:00:00Z', '2026-10-09T12:00:00Z', '2026-10-10T00:00:00Z', '2026-10-11T00:00:00Z']) {
+    assert.deepEqual(state(iso).tomorrowReminders, []);
+  }
+  assert.equal(state('2026-10-07T15:59:59Z').tomorrowReminders, undefined);
+  assert.equal(state('2026-10-11T16:00:00Z').tomorrowReminders, undefined);
+  // If a future plan explicitly includes mosque entry, its preparation can use the same metadata.
+  const extended = JSON.parse(JSON.stringify(trip));
+  extended.days[2].items.find(i => i.id === 'd3-kg').templeVisit = true;
+  assert.deepEqual(C.status(extended, choose(), new Date('2026-10-09T12:00:00Z'), []).tomorrowReminders, [reminder]);
+});
+
+test('final cleanup keeps official offline help, two overview hotels, and current rain plan', () => {
+  const overview = html.match(/var OVERVIEW=\[([\s\S]*?)\n\];/)[1];
+  assert.match(overview, /兄弟組｜Hotel 81 Premier Star.*type:'hotel'.*v:'hotel'.*q:HQ/);
+  assert.match(overview, /夫妻組｜ibis budget Singapore Imperial.*type:'hotel'.*v:'ibis'.*q:IQ/);
+  assert.match(html, /class="lnk" href="https:\/\/support.google.com\/maps\/answer\/6291838\?co=GENIE.Platform%3DiOS&amp;hl=zh-Hant" target="_blank" rel="noopener">下載教學/);
+  assert.ok(!html.includes('D2 雙溫室、D3 遇雨改去 ION'));
+  assert.match(html, /D2 午後已安排國家博物館避暑；D3 Sentosa 遇雨時請開啟下雨模式/);
+  const manifest = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'manifest.json'), 'utf8'));
+  assert.equal(manifest.background_color.toLowerCase(), html.match(/--paper:(#[\da-fA-F]+);/)[1].toLowerCase());
+});
+
 test('Singapore calendar boundaries, countdown and four trip dates', () => {
   assert.equal(state('2026-10-04T16:00:00Z').daysLeft, 3);
   assert.equal(state('2026-10-07T15:59:59Z').kind, 'before');

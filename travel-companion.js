@@ -63,6 +63,10 @@
         if (state.carry) host.appendChild(node('p', 'tc-context', '前一晚延續：' + state.carry.title + '（' + state.carry.dayCode + '）'));
         if (state.current) host.appendChild(node('p', 'tc-context', '目前時段：' + state.current.title));
         var target = state.next || state.current;
+        var hotelEntry = [state.current, target].find(function (e) { return e && e.destinations; });
+        if (hotelEntry) hotelEntry.destinations.forEach(function (hotel) {
+          host.appendChild(node('p', 'tc-context', hotel.name));
+        });
         if (state.next) {
           var nextName = state.next.title;
           if (state.next.source.transport) {
@@ -105,6 +109,10 @@
         actions.appendChild(rainLink);
       }
       host.appendChild(actions);
+      if (state.kind === 'during') state.tomorrowReminders.forEach(function (reminder) {
+        var note = node('p', 'tc-context tc-footnote tc-tomorrow', reminder);
+        note.setAttribute('aria-label', '明日提醒'); host.appendChild(note);
+      });
       if (state.kind === 'during') host.appendChild(node('p', 'tc-context tc-footnote', '依行程預定時間提示，沒有追蹤你的實際位置。'));
     }
     function renderDay(d) {
@@ -138,7 +146,7 @@
           var nameButton = button(stop.name, 'item', d.id, stop.itemId); nameButton.className = 'tc-stop-link'; place.appendChild(nameButton);
         } else place.appendChild(node('h4', '', stop.name));
         if (stop.parallel) {
-          place.appendChild(node('p', 'tc-context', 'Hotel 81 · ibis budget（各自行動）'));
+          stop.stops.forEach(function (hotel) { place.appendChild(node('p', 'tc-context', hotel.name)); });
         } else if (!stop.q) place.appendChild(node('p', 'tc-context', '地點尚未確認'));
         var next = d.route[i + 1];
         if (next) {
@@ -515,7 +523,12 @@
       var overnight = previous.entries.find(function (e) { return e.end > 1440 && sg.minute < e.end - 1440; });
       if (overnight) carry = { title: overnight.title, dayCode: previous.code };
     }
-    return Object.assign(base, { kind: 'during', day: day, current: current, next: next, carry: carry,
+    var tomorrow = days[day.index + 1];
+    var tomorrowReminders = tomorrow && tomorrow.entries.some(function (e) {
+      // Explicit actual-entry metadata: a distant view of a mosque does not trigger preparation.
+      return e.source.templeVisit || e.option && e.option.templeVisit;
+    }) ? ['👖 明天有寺廟行程：記得準備長褲＋包鞋'] : [];
+    return Object.assign(base, { kind: 'during', day: day, current: current, next: next, carry: carry, tomorrowReminders: tomorrowReminders,
       pending: day.entries.filter(function (e) { return e.start == null; }).map(function (e) { return e.id; }) });
   }
   function indoor(option) {
